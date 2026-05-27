@@ -36,6 +36,10 @@ create policy "users_select_partner" on public.users
     id in (select partner_id from public.users where id = auth.uid())
   );
 
+-- Cada usuario puede insertar su propio perfil al registrarse
+create policy "users_insert_own" on public.users
+  for insert with check (auth.uid() = id);
+
 -- Cada usuario solo puede actualizar su propio perfil
 create policy "users_update_own" on public.users
   for update using (auth.uid() = id);

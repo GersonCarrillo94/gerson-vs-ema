@@ -53,7 +53,13 @@ export async function registerUser(payload: RegisterPayload): Promise<UserProfil
 
   if (profileError) {
     logger.error('authService.registerUser - creating profile', profileError.message);
-    throw mapSupabaseError(profileError.message);
+    // Rollback: cerrar sesión para que el usuario pueda reintentarlo limpiamente.
+    // Sin esto quedaría un auth user huérfano sin perfil.
+    await supabase.auth.signOut();
+    throw {
+      code: 'UNKNOWN',
+      message: 'No se pudo crear tu perfil. Por favor intenta registrarte de nuevo.',
+    } satisfies AuthError;
   }
 
   return profile;
@@ -72,8 +78,16 @@ export async function loginUser(payload: LoginPayload): Promise<UserProfile> {
   }
 
   const profile = await fetchCurrentProfile();
+
   if (!profile) {
-    throw { code: 'UNKNOWN', message: 'No se encontró el perfil del usuario.' } satisfies AuthError;
+    // La cuenta existe en Auth pero no tiene perfil — estado inconsistente.
+    // Cerramos sesión para que no quede un usuario logueado sin perfil.
+    await supabase.auth.signOut();
+    throw {
+      code: 'UNKNOWN',
+      message:
+        'Tu cuenta existe pero no tiene perfil asociado. Contacta soporte o intenta registrarte de nuevo.',
+    } satisfies AuthError;
   }
 
   return profile;
