@@ -22,11 +22,26 @@ function mapSupabaseError(message: string): AuthError {
   return { code, message };
 }
 
-/** Registra un nuevo usuario y crea su perfil en `public.users` */
+/**
+ * Registra un nuevo usuario.
+ *
+ * El perfil en public.users se crea automáticamente mediante el trigger
+ * `on_auth_user_created` en Supabase (SECURITY DEFINER, sin necesidad de
+ * que el cliente tenga política RLS de INSERT).
+ *
+ * Los datos de perfil viajan como metadata en signUp y el trigger los lee
+ * desde `raw_user_meta_data`.
+ */
 export async function registerUser(payload: RegisterPayload): Promise<UserProfile> {
   const { data: authData, error: authError } = await supabase.auth.signUp({
     email: payload.email,
     password: payload.password,
+    options: {
+      data: {
+        display_name: payload.displayName,
+        language_learning: payload.languageLearning,
+      },
+    },
   });
 
   if (authError) {
@@ -34,31 +49,24 @@ export async function registerUser(payload: RegisterPayload): Promise<UserProfil
     throw mapSupabaseError(authError.message);
   }
 
-  const userId = authData.user?.id;
-  if (!userId) {
-    throw { code: 'UNKNOWN', message: 'No se pudo obtener el ID del usuario creado.' } satisfies AuthError;
+  if (!authData.user) {
+    throw {
+      code: 'UNKNOWN',
+      message: 'No se pudo obtener el ID del usuario creado.',
+    } satisfies AuthError;
   }
 
-  // Crear perfil en public.users (Supabase Auth y public.users son tablas separadas)
-  const { data: profile, error: profileError } = await supabase
-    .from('users')
-    .insert({
-      id: userId,
-      email: payload.email,
-      display_name: payload.displayName,
-      language_learning: payload.languageLearning,
-    })
-    .select()
-    .single();
+  // El trigger on_auth_user_created ya habrá creado el perfil de forma
+  // sincrónica. Lo cargamos para retornarlo al caller.
+  const profile = await fetchCurrentProfile();
 
-  if (profileError) {
-    logger.error('authService.registerUser - creating profile', profileError.message);
-    // Rollback: cerrar sesión para que el usuario pueda reintentarlo limpiamente.
-    // Sin esto quedaría un auth user huérfano sin perfil.
+  if (!profile) {
+    // Esto solo ocurriría si el trigger no está instalado o falló.
     await supabase.auth.signOut();
     throw {
       code: 'UNKNOWN',
-      message: 'No se pudo crear tu perfil. Por favor intenta registrarte de nuevo.',
+      message:
+        'No se pudo crear tu perfil. Verifica que el trigger on_auth_user_created está activo en Supabase.',
     } satisfies AuthError;
   }
 
@@ -81,12 +89,12 @@ export async function loginUser(payload: LoginPayload): Promise<UserProfile> {
 
   if (!profile) {
     // La cuenta existe en Auth pero no tiene perfil — estado inconsistente.
-    // Cerramos sesión para que no quede un usuario logueado sin perfil.
+    // Cerramos sesión para dejar al usuario en estado limpio.
     await supabase.auth.signOut();
     throw {
       code: 'UNKNOWN',
       message:
-        'Tu cuenta existe pero no tiene perfil asociado. Contacta soporte o intenta registrarte de nuevo.',
+        'Tu cuenta existe pero no tiene perfil. Por favor regístrate de nuevo o contacta soporte.',
     } satisfies AuthError;
   }
 
