@@ -66,6 +66,13 @@ export async function registerUser(payload: RegisterPayload): Promise<UserProfil
     } satisfies AuthError;
   }
 
+  // Forzar que el cliente aplique la sesión antes de hacer queries a la DB.
+  // Sin esto, PostgREST puede enviar la petición sin el JWT y RLS bloquea la lectura.
+  await supabase.auth.setSession({
+    access_token: authData.session.access_token,
+    refresh_token: authData.session.refresh_token,
+  });
+
   // El trigger on_auth_user_created crea el perfil en la misma transacción
   // del signUp. Le damos un pequeño margen para que PostgREST lo refleje.
   const profile = await fetchProfileWithRetry(authData.user.id);
