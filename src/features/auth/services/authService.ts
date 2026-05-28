@@ -66,11 +66,12 @@ export async function registerUser(payload: RegisterPayload): Promise<UserProfil
     } satisfies AuthError;
   }
 
-  // El trigger ya creó el perfil de forma sincrónica — solo lo leemos
-  const profile = await fetchCurrentProfile();
+  // El trigger on_auth_user_created crea el perfil en la misma transacción
+  // del signUp. Le damos un pequeño margen para que PostgREST lo refleje.
+  const profile = await fetchProfileWithRetry(authData.user.id);
 
   if (!profile) {
-    logger.error('authService.registerUser', 'Trigger did not create profile');
+    logger.error('authService.registerUser', 'Profile not readable after 3 attempts');
     await supabase.auth.signOut();
     throw {
       code: 'UNKNOWN',
@@ -123,7 +124,13 @@ export async function fetchCurrentProfile(): Promise<UserProfile | null> {
 
   if (!user) return null;
 
-  const { data, error } = await supabase.from('users').select('*').eq('id', user.id).single();
+  // maybeSingle() devuelve null (sin error) si no hay filas,
+  // a diferencia de single() que lanza PGRST116 cuando no hay resultado.
+  const { data, error } = await supabase
+    .from('users')
+    .select('*')
+    .eq('id', user.id)
+    .maybeSingle();
 
   if (error) {
     logger.error('authService.fetchCurrentProfile', error.message);
@@ -131,4 +138,31 @@ export async function fetchCurrentProfile(): Promise<UserProfile | null> {
   }
 
   return data;
+}
+
+/**
+ * Reintenta obtener el perfil hasta 3 veces con backoff.
+ * Necesario porque el trigger de Supabase y PostgREST pueden tener
+ * un pequeño desfase de visibilidad justo después del signUp.
+ */
+async function fetchProfileWithRetry(userId: string, maxAttempts = 3): Promise<UserProfile | null> {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const { data, error } = await supabase
+      .from('users')
+      .select('*')
+      .eq('id', userId)
+      .maybeSingle();
+
+    if (error) {
+      logger.error(`fetchProfileWithRetry attempt ${attempt.toString()}`, error.message);
+    } else if (data) {
+      return data;
+    }
+
+    if (attempt < maxAttempts) {
+      // Backoff: 300ms → 700ms
+      await new Promise<void>((resolve) => setTimeout(resolve, attempt * 300));
+    }
+  }
+  return null;
 }
