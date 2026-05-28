@@ -25,18 +25,23 @@ function mapSupabaseError(message: string): AuthError {
 /**
  * Registra un nuevo usuario.
  *
- * Flujo:
- *  1. signUp → crea el auth user y devuelve sesión (email confirmation debe estar OFF)
- *  2. RPC create_user_profile → inserta en public.users con SECURITY DEFINER
- *     (bypasea RLS; la función verifica auth.uid() internamente)
+ * El perfil en public.users es creado automáticamente por el trigger
+ * on_auth_user_created (SECURITY DEFINER). Los datos de perfil viajan
+ * como metadata en signUp y el trigger los lee desde raw_user_meta_data.
  *
- * Si el paso 2 falla hacemos signOut para evitar auth users huérfanos.
+ * No es necesario hacer INSERT manual — solo leer el perfil creado.
  */
 export async function registerUser(payload: RegisterPayload): Promise<UserProfile> {
-  // Paso 1: crear auth user
   const { data: authData, error: authError } = await supabase.auth.signUp({
     email: payload.email,
     password: payload.password,
+    options: {
+      // El trigger on_auth_user_created lee estos valores de raw_user_meta_data
+      data: {
+        display_name: payload.displayName,
+        language_learning: payload.languageLearning,
+      },
+    },
   });
 
   if (authError) {
@@ -45,7 +50,10 @@ export async function registerUser(payload: RegisterPayload): Promise<UserProfil
   }
 
   if (!authData.user) {
-    throw { code: 'UNKNOWN', message: 'No se pudo obtener el ID del usuario creado.' } satisfies AuthError;
+    throw {
+      code: 'UNKNOWN',
+      message: 'No se pudo obtener el ID del usuario creado.',
+    } satisfies AuthError;
   }
 
   // Si session es null → "Confirm email" está activo en Supabase
@@ -58,29 +66,15 @@ export async function registerUser(payload: RegisterPayload): Promise<UserProfil
     } satisfies AuthError;
   }
 
-  // Paso 2: crear perfil via RPC (SECURITY DEFINER, sin RLS)
-  const { error: rpcError } = await supabase.rpc('create_user_profile', {
-    p_display_name: payload.displayName,
-    p_language_learning: payload.languageLearning,
-  });
-
-  if (rpcError) {
-    logger.error('authService.registerUser - create_user_profile RPC', rpcError.message);
-    // Rollback: cerrar sesión para evitar auth user huérfano
-    await supabase.auth.signOut();
-    throw {
-      code: 'UNKNOWN',
-      message: 'No se pudo crear tu perfil. Por favor intenta de nuevo.',
-    } satisfies AuthError;
-  }
-
-  // Cargar el perfil recién creado
+  // El trigger ya creó el perfil de forma sincrónica — solo lo leemos
   const profile = await fetchCurrentProfile();
+
   if (!profile) {
+    logger.error('authService.registerUser', 'Trigger did not create profile');
     await supabase.auth.signOut();
     throw {
       code: 'UNKNOWN',
-      message: 'Perfil creado pero no se pudo cargar. Intenta iniciar sesión.',
+      message: 'No se pudo cargar el perfil recién creado. Por favor intenta de nuevo.',
     } satisfies AuthError;
   }
 
