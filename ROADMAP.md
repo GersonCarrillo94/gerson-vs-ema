@@ -16,7 +16,7 @@ Plan completo de desarrollo en 6 fases. Cada fase tiene entregables claros, defi
 ---
 
 ## 🏗️ FASE 1 — Fundación y autenticación
-**Estado**: 🔴 · **Duración estimada**: 1 semana · **Dependencias**: ninguna
+**Estado**: 🟢 · **Completada**: 2026-05-27 · **Duración estimada**: 1 semana · **Dependencias**: ninguna
 **Agentes**: `frontend-builder`, `backend-architect`, `auth-specialist`
 
 ### Objetivo
@@ -66,7 +66,7 @@ README.md
 ---
 
 ## 🎓 FASE 2 — Sistema de lecciones (core educativo)
-**Estado**: 🔴 · **Duración estimada**: 1 semana · **Dependencias**: Fase 1
+**Estado**: 🔴 · **Duración estimada**: 1 semana · **Dependencias**: Fase 1 ✅
 **Agentes**: `lesson-designer`, `frontend-builder`, `backend-architect`
 
 ### Objetivo

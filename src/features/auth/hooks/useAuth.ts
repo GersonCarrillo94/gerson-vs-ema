@@ -1,49 +1,21 @@
-import { useCallback, useEffect } from 'react';
-import { supabase } from '@/lib/supabase';
+import { useCallback } from 'react';
 import { useAuthStore } from '@/store/authStore';
-import { fetchCurrentProfile, loginUser, logoutUser, registerUser } from '../services/authService';
+import { loginUser, logoutUser, registerUser } from '../services/authService';
 import type { LoginPayload, RegisterPayload } from '../types';
 
 /**
  * Hook principal de autenticación.
  * Expone el usuario actual, estado de carga y acciones de auth.
  *
+ * La inicialización de sesión (onAuthStateChange) vive en AuthProvider,
+ * que se monta UNA sola vez en App.tsx. Este hook solo lee del store
+ * y expone las acciones — sin efectos secundarios al montar.
+ *
  * Uso:
  *   const { user, isLoading, login, logout, register } = useAuth();
  */
 export function useAuth() {
   const { user, isLoading, setUser, setLoading } = useAuthStore();
-
-  // Escuchar cambios de sesión de Supabase (login, logout, refresh)
-  useEffect(() => {
-    setLoading(true);
-
-    // Intentar cargar sesión existente al montar
-    void fetchCurrentProfile().then((profile) => {
-      setUser(profile ?? null);
-      setLoading(false);
-    });
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session) {
-        setUser(null);
-        setLoading(false);
-        return;
-      }
-
-      // Recargar perfil cuando la sesión cambia
-      void fetchCurrentProfile().then((profile) => {
-        setUser(profile ?? null);
-        setLoading(false);
-      });
-    });
-
-    return () => {
-      subscription.unsubscribe();
-    };
-  }, [setUser, setLoading]);
 
   const login = useCallback(
     async (payload: LoginPayload) => {
