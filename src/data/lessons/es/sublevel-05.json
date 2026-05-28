@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-05",
+  "language": "spanish",
+  "number": 5,
+  "level": "basic",
+  "title": "Artículos y Género",
+  "description": "En español todas las palabras tienen género (masculino/femenino). Aprende los artículos.",
+  "estimatedMinutes": 15,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-05-act-1",
+      "type": "flashcards",
+      "title": "Artículos en español",
+      "items": [
+        { "id": "f1", "front": "el", "back": "the (masc. sing.)", "example": "el perro, el libro, el sol" },
+        { "id": "f2", "front": "la", "back": "the (fem. sing.)", "example": "la mesa, la luna, la idea" },
+        { "id": "f3", "front": "los", "back": "the (masc. pl.)", "example": "los gatos, los días" },
+        { "id": "f4", "front": "las", "back": "the (fem. pl.)", "example": "las flores, las casas" },
+        { "id": "f5", "front": "un", "back": "a / an (masc.)", "example": "un libro, un coche" },
+        { "id": "f6", "front": "una", "back": "a / an (fem.)", "example": "una mesa, una idea" },
+        { "id": "f7", "front": "Regla -o/-a", "back": "words ending -o usually masc., -a usually fem.", "example": "el libro (o), la mesa (a)" }
+      ]
+    },
+    {
+      "id": "es-05-act-2",
+      "type": "multiple_choice",
+      "title": "Elige el artículo correcto",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "___ libro está en la mesa.",
+          "options": ["La", "El", "Un", "Los"],
+          "correctIndex": 1,
+          "explanation": "'Libro' termina en -o → masculino → 'el libro'."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Ella es ___ ingeniera.",
+          "options": ["el", "un", "una", "la"],
+          "correctIndex": 2,
+          "explanation": "Para la profesión se usa artículo indefinido: 'una ingeniera'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "___ sol sale por el este.",
+          "options": ["La", "Un", "El", "Una"],
+          "correctIndex": 2,
+          "explanation": "'El sol' — hay un solo sol, es específico → artículo definido masculino."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Tengo ___ hermana mayor.",
+          "options": ["el", "la", "una", "un"],
+          "correctIndex": 2,
+          "explanation": "'Hermana' es femenino → artículo indefinido femenino: 'una hermana'."
+        },
+        {
+          "id": "mc5",
+          "prompt": "___ perros de mi vecino son muy ruidosos.",
+          "options": ["El", "La", "Las", "Los"],
+          "correctIndex": 3,
+          "explanation": "'Perros' es plural masculino → 'los perros'."
+        }
+      ]
+    },
+    {
+      "id": "es-05-act-3",
+      "type": "fill_blank",
+      "title": "Completa con el artículo",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "___ luna es muy bonita esta noche.",
+          "blanks": [{ "answer": "La", "alternatives": ["la"] }],
+          "hint": "'Luna' termina en -a."
+        },
+        {
+          "id": "fb2",
+          "sentence": "Quiero comprar ___ coche nuevo.",
+          "blanks": [{ "answer": "un", "alternatives": ["Un"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "¿Puedo tener ___ vaso de agua?",
+          "blanks": [{ "answer": "un", "alternatives": ["Un"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "___ niñas están en el parque.",
+          "blanks": [{ "answer": "Las", "alternatives": ["las"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Hay ___ flor en la mesa.",
+          "blanks": [{ "answer": "una", "alternatives": ["Una"] }],
+          "hint": "'Flor' es femenino aunque termina en consonante."
+        }
+      ]
+    }
+  ]
+}

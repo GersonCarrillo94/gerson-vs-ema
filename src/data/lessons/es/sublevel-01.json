@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-01",
+  "language": "spanish",
+  "number": 1,
+  "level": "basic",
+  "title": "El Abecedario y los Saludos",
+  "description": "Aprende las letras más importantes y cómo saludar en español.",
+  "estimatedMinutes": 12,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-01-act-1",
+      "type": "flashcards",
+      "title": "Saludos comunes",
+      "items": [
+        { "id": "f1", "front": "Hola", "back": "Hello / Hi", "example": "¡Hola! ¿Cómo estás?" },
+        { "id": "f2", "front": "Buenos días", "back": "Good morning", "example": "Buenos días, profesor." },
+        { "id": "f3", "front": "Buenas tardes", "back": "Good afternoon", "example": "Buenas tardes a todos." },
+        { "id": "f4", "front": "Buenas noches", "back": "Good evening / Good night", "example": "Buenas noches, hasta mañana." },
+        { "id": "f5", "front": "Adiós", "back": "Goodbye", "example": "Adiós, cuídate." },
+        { "id": "f6", "front": "Hasta luego", "back": "See you later", "example": "¡Hasta luego, Gerson!" },
+        { "id": "f7", "front": "Por favor", "back": "Please", "example": "Un café, por favor." },
+        { "id": "f8", "front": "Gracias", "back": "Thank you", "example": "¡Muchas gracias!" }
+      ]
+    },
+    {
+      "id": "es-01-act-2",
+      "type": "multiple_choice",
+      "title": "Elige el saludo correcto",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "¿Cómo dices 'Good morning' en español?",
+          "options": ["Buenas noches", "Buenos días", "Buenas tardes", "Adiós"],
+          "correctIndex": 1,
+          "explanation": "'Buenos días' se usa hasta el mediodía."
+        },
+        {
+          "id": "mc2",
+          "prompt": "¿Qué palabra significa 'Thank you'?",
+          "options": ["Por favor", "Lo siento", "Gracias", "Hola"],
+          "correctIndex": 2,
+          "explanation": "'Gracias' es la traducción directa de 'thank you'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Quieres decir 'Goodbye'. ¿Cuál usas?",
+          "options": ["Hasta luego", "Hola", "Buenos días", "Adiós"],
+          "correctIndex": 3,
+          "explanation": "'Adiós' es la despedida más directa. 'Hasta luego' es más informal."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Son las 4 de la tarde. ¿Qué saludo usas?",
+          "options": ["Buenos días", "Buenas noches", "Buenas tardes", "Adiós"],
+          "correctIndex": 2,
+          "explanation": "'Buenas tardes' se usa entre el mediodía y el anochecer."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Alguien te ayuda con una bolsa pesada. Dices:",
+          "options": ["Hola", "Adiós", "Por favor", "Gracias"],
+          "correctIndex": 3,
+          "explanation": "'Gracias' siempre es la respuesta cuando alguien te ayuda."
+        }
+      ]
+    },
+    {
+      "id": "es-01-act-3",
+      "type": "fill_blank",
+      "title": "Completa el saludo",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "___ días, ¿cómo estás?",
+          "blanks": [{ "answer": "Buenos", "alternatives": ["buenos"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Muchas ___, muy amable.",
+          "blanks": [{ "answer": "gracias", "alternatives": ["Gracias"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Buenas ___, clase.",
+          "blanks": [{ "answer": "tardes", "alternatives": ["Tardes"] }],
+          "hint": "Son las 2 de la tarde."
+        },
+        {
+          "id": "fb4",
+          "sentence": "¡Hasta ___, Gerson!",
+          "blanks": [{ "answer": "luego", "alternatives": ["Luego"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Agua, ___ favor.",
+          "blanks": [{ "answer": "por", "alternatives": ["Por"] }]
+        }
+      ]
+    }
+  ]
+}

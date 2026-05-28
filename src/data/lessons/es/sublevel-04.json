@@ -1,0 +1,108 @@
+{
+  "id": "es-sublevel-04",
+  "language": "spanish",
+  "number": 4,
+  "level": "basic",
+  "title": "Presentación Personal",
+  "description": "Aprende a presentarte en español: nombre, edad, origen y a qué te dedicas.",
+  "estimatedMinutes": 15,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-04-act-1",
+      "type": "flashcards",
+      "title": "Frases de presentación",
+      "items": [
+        { "id": "f1", "front": "Me llamo…", "back": "My name is…", "example": "Me llamo Ema." },
+        { "id": "f2", "front": "Soy de…", "back": "I am from…", "example": "Soy de España." },
+        { "id": "f3", "front": "Tengo ___ años", "back": "I am ___ years old", "example": "Tengo 25 años." },
+        { "id": "f4", "front": "Trabajo como…", "back": "I work as a…", "example": "Trabajo como diseñadora." },
+        { "id": "f5", "front": "Estudio…", "back": "I study…", "example": "Estudio español." },
+        { "id": "f6", "front": "Mucho gusto", "back": "Nice to meet you", "example": "Mucho gusto, Gerson." },
+        { "id": "f7", "front": "¿Cómo te llamas?", "back": "What is your name?", "example": "¿Cómo te llamas? — Me llamo Gerson." },
+        { "id": "f8", "front": "¿De dónde eres?", "back": "Where are you from?", "example": "¿De dónde eres? — Soy de Colombia." }
+      ]
+    },
+    {
+      "id": "es-04-act-2",
+      "type": "multiple_choice",
+      "title": "Quiz de presentación",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "¿Cómo preguntas el nombre de alguien?",
+          "options": ["¿De dónde eres?", "¿Cuántos años tienes?", "¿Cómo te llamas?", "¿A qué te dedicas?"],
+          "correctIndex": 2,
+          "explanation": "'¿Cómo te llamas?' = What is your name?"
+        },
+        {
+          "id": "mc2",
+          "prompt": "Quieres decir 'I am from Spain'. Dices:",
+          "options": ["Soy España", "Soy de España", "Mi soy de España", "Estoy de España"],
+          "correctIndex": 1,
+          "explanation": "Correcto: 'Soy de España.' Se usa 'ser' con el origen, nunca 'estar'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Alguien dice 'Mucho gusto'. Respondes:",
+          "options": ["¡Adiós!", "¿Cómo estás?", "¡Igualmente!", "Estoy bien."],
+          "correctIndex": 2,
+          "explanation": "La respuesta educada es '¡Igualmente!' o 'Mucho gusto también'."
+        },
+        {
+          "id": "mc4",
+          "prompt": "¿Cómo dices 'I am 30 years old' en español?",
+          "options": ["Tengo 30 años", "Soy 30 años", "Estoy 30 años", "Tengo 30 años viejo"],
+          "correctIndex": 0,
+          "explanation": "En español se usa 'tener' para la edad: 'Tengo 30 años'."
+        },
+        {
+          "id": "mc5",
+          "prompt": "¿Cuál es una introducción correcta?",
+          "options": [
+            "Me llamo Ema y soy de España.",
+            "Llamo Ema y estoy España.",
+            "Mi nombre Ema y soy de España.",
+            "Ema me llama y de España soy."
+          ],
+          "correctIndex": 0,
+          "explanation": "'Me llamo' + 'soy de' es el patrón correcto."
+        }
+      ]
+    },
+    {
+      "id": "es-04-act-3",
+      "type": "fill_blank",
+      "title": "Completa la presentación",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "___ llamo Ema.",
+          "blanks": [{ "answer": "Me", "alternatives": ["me"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Soy ___ España.",
+          "blanks": [{ "answer": "de", "alternatives": ["De"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Tengo 25 ___.",
+          "blanks": [{ "answer": "años", "alternatives": ["Años"] }],
+          "hint": "¿Cuántos tienes?"
+        },
+        {
+          "id": "fb4",
+          "sentence": "Mucho ___, Gerson.",
+          "blanks": [{ "answer": "gusto", "alternatives": ["Gusto"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "¿De ___ eres?",
+          "blanks": [{ "answer": "dónde", "alternatives": ["donde", "Dónde", "Donde"] }]
+        }
+      ]
+    }
+  ]
+}

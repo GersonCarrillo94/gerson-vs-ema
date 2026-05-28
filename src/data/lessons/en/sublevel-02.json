@@ -1,0 +1,86 @@
+{
+  "id": "en-sublevel-02",
+  "language": "english",
+  "number": 2,
+  "level": "basic",
+  "title": "Numbers & Colors",
+  "description": "Count from 1 to 20 and name the basic colors in English.",
+  "estimatedMinutes": 12,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-02-act-1",
+      "type": "flashcards",
+      "title": "Numbers 1–10",
+      "items": [
+        { "id": "f1", "front": "1", "back": "one", "example": "I have one cat." },
+        { "id": "f2", "front": "2", "back": "two", "example": "Two coffees, please." },
+        { "id": "f3", "front": "3", "back": "three", "example": "Three days left." },
+        { "id": "f4", "front": "4", "back": "four", "example": "Four seasons." },
+        { "id": "f5", "front": "5", "back": "five", "example": "High five!" },
+        { "id": "f6", "front": "6", "back": "six", "example": "Six o'clock." },
+        { "id": "f7", "front": "7", "back": "seven", "example": "Seven days a week." },
+        { "id": "f8", "front": "8", "back": "eight", "example": "Eight hours of sleep." },
+        { "id": "f9", "front": "9", "back": "nine", "example": "Cloud nine." },
+        { "id": "f10", "front": "10", "back": "ten", "example": "Ten out of ten!" }
+      ]
+    },
+    {
+      "id": "en-02-act-2",
+      "type": "flashcards",
+      "title": "Basic colors",
+      "items": [
+        { "id": "c1", "front": "red", "back": "rojo", "example": "The apple is red." },
+        { "id": "c2", "front": "blue", "back": "azul", "example": "The sky is blue." },
+        { "id": "c3", "front": "green", "back": "verde", "example": "Grass is green." },
+        { "id": "c4", "front": "yellow", "back": "amarillo", "example": "The sun is yellow." },
+        { "id": "c5", "front": "white", "back": "blanco", "example": "Snow is white." },
+        { "id": "c6", "front": "black", "back": "negro", "example": "The night is black." },
+        { "id": "c7", "front": "orange", "back": "naranja", "example": "An orange is orange." }
+      ]
+    },
+    {
+      "id": "en-02-act-3",
+      "type": "multiple_choice",
+      "title": "Numbers & Colors quiz",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "How do you write the number '7' in English?",
+          "options": ["six", "eight", "seven", "nine"],
+          "correctIndex": 2,
+          "explanation": "7 = seven. Recuerda: six (6), seven (7), eight (8), nine (9)."
+        },
+        {
+          "id": "mc2",
+          "prompt": "What color is the sky on a clear day?",
+          "options": ["green", "red", "blue", "yellow"],
+          "correctIndex": 2,
+          "explanation": "The sky is blue — el cielo es azul."
+        },
+        {
+          "id": "mc3",
+          "prompt": "How many days are in a week? Write it in English.",
+          "options": ["six", "seven", "eight", "five"],
+          "correctIndex": 1,
+          "explanation": "There are seven days in a week."
+        },
+        {
+          "id": "mc4",
+          "prompt": "What color is grass?",
+          "options": ["blue", "red", "yellow", "green"],
+          "correctIndex": 3,
+          "explanation": "Grass is green — el pasto es verde."
+        },
+        {
+          "id": "mc5",
+          "prompt": "5 + 5 = ___",
+          "options": ["nine", "eight", "ten", "six"],
+          "correctIndex": 2,
+          "explanation": "5 + 5 = 10 = ten."
+        }
+      ]
+    }
+  ]
+}

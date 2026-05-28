@@ -1,0 +1,106 @@
+{
+  "id": "en-sublevel-06",
+  "language": "english",
+  "number": 6,
+  "level": "basic",
+  "title": "The Verb 'To Be'",
+  "description": "Master the most important verb in English: am, is, are — and their negatives.",
+  "estimatedMinutes": 15,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-06-act-1",
+      "type": "flashcards",
+      "title": "To be — all forms",
+      "items": [
+        { "id": "f1", "front": "I am", "back": "Yo soy / estoy", "example": "I am happy." },
+        { "id": "f2", "front": "You are", "back": "Tú eres / estás", "example": "You are my friend." },
+        { "id": "f3", "front": "He is", "back": "Él es / está", "example": "He is a doctor." },
+        { "id": "f4", "front": "She is", "back": "Ella es / está", "example": "She is at home." },
+        { "id": "f5", "front": "It is", "back": "Es / Está (cosas/animales)", "example": "It is cold today." },
+        { "id": "f6", "front": "We are", "back": "Nosotros somos / estamos", "example": "We are friends." },
+        { "id": "f7", "front": "They are", "back": "Ellos son / están", "example": "They are students." },
+        { "id": "f8", "front": "I am not", "back": "No soy / no estoy", "example": "I am not tired." },
+        { "id": "f9", "front": "Is she…?", "back": "¿Ella es/está…?", "example": "Is she your sister?" }
+      ]
+    },
+    {
+      "id": "en-06-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the correct form of 'to be'",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "___ she a teacher?",
+          "options": ["Am", "Is", "Are", "Be"],
+          "correctIndex": 1,
+          "explanation": "Con 'she/he/it' usamos 'is'. ¿Is she a teacher?"
+        },
+        {
+          "id": "mc2",
+          "prompt": "We ___ very tired after work.",
+          "options": ["am", "is", "are", "be"],
+          "correctIndex": 2,
+          "explanation": "Con 'we/you/they' siempre usamos 'are'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "It ___ a beautiful day.",
+          "options": ["am", "is", "are", "be"],
+          "correctIndex": 1,
+          "explanation": "'It' siempre va con 'is'."
+        },
+        {
+          "id": "mc4",
+          "prompt": "I ___ not from here.",
+          "options": ["am", "is", "are", "be"],
+          "correctIndex": 0,
+          "explanation": "Negativa de 'I am' → 'I am not' (never 'I is' or 'I are')."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Gerson and Ema ___ partners.",
+          "options": ["am", "is", "are", "be"],
+          "correctIndex": 2,
+          "explanation": "Dos personas juntas = plural → 'are'."
+        }
+      ]
+    },
+    {
+      "id": "en-06-act-3",
+      "type": "fill_blank",
+      "title": "Complete with am / is / are",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "She ___ my best friend.",
+          "blanks": [{ "answer": "is", "alternatives": ["Is"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "I ___ a student of English.",
+          "blanks": [{ "answer": "am", "alternatives": ["Am"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "They ___ from Spain.",
+          "blanks": [{ "answer": "are", "alternatives": ["Are"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "It ___ raining outside.",
+          "blanks": [{ "answer": "is", "alternatives": ["Is"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "We ___ not late, we ___ early!",
+          "blanks": [
+            { "answer": "are", "alternatives": ["Are"] },
+            { "answer": "are", "alternatives": ["Are"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

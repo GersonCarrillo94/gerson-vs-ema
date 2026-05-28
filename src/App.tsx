@@ -7,6 +7,7 @@ import { LoginPage } from '@/pages/auth/LoginPage';
 import { RegisterPage } from '@/pages/auth/RegisterPage';
 import { DashboardPage } from '@/pages/dashboard/DashboardPage';
 import { LessonsMapPage } from '@/pages/lessons/LessonsMapPage';
+import { SublevelPage } from '@/pages/lessons/SublevelPage';
 import { ChatPage } from '@/pages/chat/ChatPage';
 import { MeetingsPage } from '@/pages/meetings/MeetingsPage';
 import { PartnerProgressPage } from '@/pages/partner/PartnerProgressPage';
@@ -48,6 +49,16 @@ export function App() {
               <AuthGuard>
                 <AppLayout>
                   <LessonsMapPage />
+                </AppLayout>
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/lessons/:id"
+            element={
+              <AuthGuard>
+                <AppLayout>
+                  <SublevelPage />
                 </AppLayout>
               </AuthGuard>
             }

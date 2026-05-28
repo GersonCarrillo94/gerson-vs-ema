@@ -31,10 +31,16 @@ export function AuthProvider() {
       }
 
       // Hay sesión → cargar el perfil de public.users
-      void fetchCurrentProfile().then((profile) => {
-        setUser(profile ?? null);
-        setLoading(false);
-      });
+      void fetchCurrentProfile()
+        .then((profile) => {
+          setUser(profile ?? null);
+        })
+        .catch(() => {
+          setUser(null);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     });
 
     return () => {

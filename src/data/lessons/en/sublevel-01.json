@@ -1,0 +1,103 @@
+{
+  "id": "en-sublevel-01",
+  "language": "english",
+  "number": 1,
+  "level": "basic",
+  "title": "The Alphabet & Greetings",
+  "description": "Learn the most important letters and how to say hello in English.",
+  "estimatedMinutes": 12,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-01-act-1",
+      "type": "flashcards",
+      "title": "Common greetings",
+      "items": [
+        { "id": "f1", "front": "Hello", "back": "Hola", "example": "Hello! How are you?" },
+        { "id": "f2", "front": "Good morning", "back": "Buenos días", "example": "Good morning, teacher!" },
+        { "id": "f3", "front": "Good afternoon", "back": "Buenas tardes", "example": "Good afternoon, everyone." },
+        { "id": "f4", "front": "Good night", "back": "Buenas noches", "example": "Good night! See you tomorrow." },
+        { "id": "f5", "front": "Goodbye", "back": "Adiós", "example": "Goodbye! Take care." },
+        { "id": "f6", "front": "See you later", "back": "Hasta luego", "example": "See you later, Gerson!" },
+        { "id": "f7", "front": "Please", "back": "Por favor", "example": "Water, please." },
+        { "id": "f8", "front": "Thank you", "back": "Gracias", "example": "Thank you very much!" }
+      ]
+    },
+    {
+      "id": "en-01-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the correct greeting",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "How do you say 'Buenos días' in English?",
+          "options": ["Good night", "Good morning", "Good afternoon", "Goodbye"],
+          "correctIndex": 1,
+          "explanation": "'Good morning' se usa hasta el mediodía."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Which word means 'Gracias'?",
+          "options": ["Please", "Sorry", "Thank you", "Hello"],
+          "correctIndex": 2,
+          "explanation": "'Thank you' es la forma estándar de agradecer en inglés."
+        },
+        {
+          "id": "mc3",
+          "prompt": "You want to say 'Adiós'. Which is correct?",
+          "options": ["See you later", "Hello", "Good morning", "Goodbye"],
+          "correctIndex": 3,
+          "explanation": "'Goodbye' es la despedida formal. 'See you later' es más casual."
+        },
+        {
+          "id": "mc4",
+          "prompt": "It is 3 PM. What is the correct greeting?",
+          "options": ["Good morning", "Good night", "Good afternoon", "Goodbye"],
+          "correctIndex": 2,
+          "explanation": "'Good afternoon' se usa entre el mediodía y las 6 PM."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Someone holds the door for you. You say:",
+          "options": ["Hello", "Goodbye", "Please", "Thank you"],
+          "correctIndex": 3,
+          "explanation": "'Thank you' or 'Thanks' is always the right response to someone's help."
+        }
+      ]
+    },
+    {
+      "id": "en-01-act-3",
+      "type": "fill_blank",
+      "title": "Complete the greeting",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "___ morning! How are you?",
+          "blanks": [{ "answer": "Good", "alternatives": ["good"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Thank ___ very much!",
+          "blanks": [{ "answer": "you", "alternatives": ["You"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Good ___, class!",
+          "blanks": [{ "answer": "afternoon", "alternatives": ["Afternoon"] }],
+          "hint": "It is 2 PM."
+        },
+        {
+          "id": "fb4",
+          "sentence": "See you ___, Ema!",
+          "blanks": [{ "answer": "later", "alternatives": ["Later"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Water, ___, waiter.",
+          "blanks": [{ "answer": "please", "alternatives": ["Please"] }]
+        }
+      ]
+    }
+  ]
+}

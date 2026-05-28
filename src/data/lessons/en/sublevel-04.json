@@ -1,0 +1,108 @@
+{
+  "id": "en-sublevel-04",
+  "language": "english",
+  "number": 4,
+  "level": "basic",
+  "title": "Personal Introduction",
+  "description": "Learn how to introduce yourself: name, age, origin and what you do.",
+  "estimatedMinutes": 15,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-04-act-1",
+      "type": "flashcards",
+      "title": "Introduction phrases",
+      "items": [
+        { "id": "f1", "front": "My name is…", "back": "Me llamo… / Mi nombre es…", "example": "My name is Gerson." },
+        { "id": "f2", "front": "I am from…", "back": "Soy de…", "example": "I am from Colombia." },
+        { "id": "f3", "front": "I am ___ years old", "back": "Tengo ___ años", "example": "I am 25 years old." },
+        { "id": "f4", "front": "I work as a…", "back": "Trabajo como…", "example": "I work as a teacher." },
+        { "id": "f5", "front": "I study…", "back": "Estudio…", "example": "I study English." },
+        { "id": "f6", "front": "Nice to meet you", "back": "Mucho gusto / Encantado(a)", "example": "Nice to meet you, Ema!" },
+        { "id": "f7", "front": "What is your name?", "back": "¿Cómo te llamas?", "example": "What is your name? — My name is Ema." },
+        { "id": "f8", "front": "Where are you from?", "back": "¿De dónde eres?", "example": "Where are you from? — I am from Spain." }
+      ]
+    },
+    {
+      "id": "en-04-act-2",
+      "type": "multiple_choice",
+      "title": "Introduction quiz",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "How do you ask for someone's name in English?",
+          "options": ["Where are you from?", "How old are you?", "What is your name?", "What do you do?"],
+          "correctIndex": 2,
+          "explanation": "'What is your name?' = ¿Cómo te llamas?"
+        },
+        {
+          "id": "mc2",
+          "prompt": "You want to say 'Soy de México'. You say:",
+          "options": ["I from Mexico", "I am from Mexico", "My is from Mexico", "I is Mexico"],
+          "correctIndex": 1,
+          "explanation": "Correct: 'I am from Mexico.' El verbo 'to be' es obligatorio aquí."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Someone says 'Nice to meet you'. You respond:",
+          "options": ["Goodbye!", "How are you?", "Nice to meet you too!", "I am fine."],
+          "correctIndex": 2,
+          "explanation": "La respuesta cortés es 'Nice to meet you too!'"
+        },
+        {
+          "id": "mc4",
+          "prompt": "How do you say 'Tengo 30 años'?",
+          "options": ["I have 30 years", "I am 30 years old", "My age is 30 years", "I years 30"],
+          "correctIndex": 1,
+          "explanation": "En inglés se dice 'I am 30 years old', no 'I have' (ese es el error típico del hispanohablante)."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Which sentence is a correct self-introduction?",
+          "options": [
+            "My name Gerson and I am from Colombia.",
+            "I name is Gerson. I from Colombia.",
+            "My name is Gerson and I am from Colombia.",
+            "Name me Gerson. From Colombia I am."
+          ],
+          "correctIndex": 2,
+          "explanation": "'My name is' + 'I am from' es el patrón correcto."
+        }
+      ]
+    },
+    {
+      "id": "en-04-act-3",
+      "type": "fill_blank",
+      "title": "Complete the introduction",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "My ___ is Gerson.",
+          "blanks": [{ "answer": "name", "alternatives": ["Name"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "I ___ from Colombia.",
+          "blanks": [{ "answer": "am", "alternatives": ["Am"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "I ___ 25 years old.",
+          "blanks": [{ "answer": "am", "alternatives": ["Am"] }],
+          "hint": "Use the verb 'to be'."
+        },
+        {
+          "id": "fb4",
+          "sentence": "Nice to ___ you, Ema!",
+          "blanks": [{ "answer": "meet", "alternatives": ["Meet"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "___ are you from?",
+          "blanks": [{ "answer": "Where", "alternatives": ["where"] }]
+        }
+      ]
+    }
+  ]
+}

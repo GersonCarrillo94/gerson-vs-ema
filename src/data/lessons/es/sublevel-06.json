@@ -1,0 +1,107 @@
+{
+  "id": "es-sublevel-06",
+  "language": "spanish",
+  "number": 6,
+  "level": "basic",
+  "title": "Ser y Estar",
+  "description": "El gran desafío del español: cuándo usar 'ser' y cuándo usar 'estar'.",
+  "estimatedMinutes": 18,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-06-act-1",
+      "type": "flashcards",
+      "title": "SER vs ESTAR",
+      "items": [
+        { "id": "f1", "front": "SER — identidad permanente", "back": "who/what you ARE", "example": "Soy colombiano. Eres médica." },
+        { "id": "f2", "front": "ESTAR — estado temporal/lugar", "back": "how you feel / where you are", "example": "Estoy cansada. Estamos en casa." },
+        { "id": "f3", "front": "Yo soy", "back": "I am (identity)", "example": "Soy estudiante." },
+        { "id": "f4", "front": "Yo estoy", "back": "I am (state/location)", "example": "Estoy feliz hoy." },
+        { "id": "f5", "front": "Él/Ella es", "back": "He/She is (identity)", "example": "Ella es profesora." },
+        { "id": "f6", "front": "Él/Ella está", "back": "He/She is (state/location)", "example": "Él está enfermo." },
+        { "id": "f7", "front": "Ellos son", "back": "They are (identity)", "example": "Son amigos." },
+        { "id": "f8", "front": "Ellos están", "back": "They are (state/location)", "example": "Están en el parque." }
+      ]
+    },
+    {
+      "id": "es-06-act-2",
+      "type": "multiple_choice",
+      "title": "¿Ser o estar?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Ella ___ médica.",
+          "options": ["está", "es", "son", "estás"],
+          "correctIndex": 1,
+          "explanation": "La profesión es identidad permanente → 'ser': 'Ella es médica'."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Hoy ___ muy cansado.",
+          "options": ["soy", "somos", "estoy", "estás"],
+          "correctIndex": 2,
+          "explanation": "El cansancio es un estado temporal → 'estar': 'Estoy cansado'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "La reunión ___ en la sala de conferencias.",
+          "options": ["es", "estás", "está", "son"],
+          "correctIndex": 2,
+          "explanation": "La ubicación usa 'estar': 'La reunión está en la sala'."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Nosotros ___ de España.",
+          "options": ["estamos", "somos", "son", "están"],
+          "correctIndex": 1,
+          "explanation": "El origen es permanente → 'ser': 'Somos de España'."
+        },
+        {
+          "id": "mc5",
+          "prompt": "La sopa ___ caliente.",
+          "options": ["es", "estás", "está", "son"],
+          "correctIndex": 2,
+          "explanation": "La temperatura es temporal → 'estar': 'La sopa está caliente'."
+        }
+      ]
+    },
+    {
+      "id": "es-06-act-3",
+      "type": "fill_blank",
+      "title": "Completa con ser o estar",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Ella ___ mi mejor amiga.",
+          "blanks": [{ "answer": "es", "alternatives": ["Es"] }],
+          "hint": "Relación permanente."
+        },
+        {
+          "id": "fb2",
+          "sentence": "Yo ___ estudiando español ahora.",
+          "blanks": [{ "answer": "estoy", "alternatives": ["Estoy"] }],
+          "hint": "Acción en progreso."
+        },
+        {
+          "id": "fb3",
+          "sentence": "Ellos ___ de Colombia.",
+          "blanks": [{ "answer": "son", "alternatives": ["Son"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "¿Dónde ___ el baño?",
+          "blanks": [{ "answer": "está", "alternatives": ["Está"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "No ___ enfadada, ___ feliz.",
+          "blanks": [
+            { "answer": "estoy", "alternatives": ["Estoy"] },
+            { "answer": "estoy", "alternatives": ["Estoy"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

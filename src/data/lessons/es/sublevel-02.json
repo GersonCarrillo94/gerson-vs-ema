@@ -1,0 +1,86 @@
+{
+  "id": "es-sublevel-02",
+  "language": "spanish",
+  "number": 2,
+  "level": "basic",
+  "title": "Números y Colores",
+  "description": "Aprende a contar del 1 al 10 y a nombrar los colores básicos en español.",
+  "estimatedMinutes": 12,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-02-act-1",
+      "type": "flashcards",
+      "title": "Números del 1 al 10",
+      "items": [
+        { "id": "f1", "front": "1", "back": "uno", "example": "Tengo un gato." },
+        { "id": "f2", "front": "2", "back": "dos", "example": "Dos cafés, por favor." },
+        { "id": "f3", "front": "3", "back": "tres", "example": "Tres días más." },
+        { "id": "f4", "front": "4", "back": "cuatro", "example": "Cuatro estaciones." },
+        { "id": "f5", "front": "5", "back": "cinco", "example": "Chócala (high five en español informal)." },
+        { "id": "f6", "front": "6", "back": "seis", "example": "Son las seis." },
+        { "id": "f7", "front": "7", "back": "siete", "example": "Siete días a la semana." },
+        { "id": "f8", "front": "8", "back": "ocho", "example": "Ocho horas de sueño." },
+        { "id": "f9", "front": "9", "back": "nueve", "example": "Nube nueve (cloud nine)." },
+        { "id": "f10", "front": "10", "back": "diez", "example": "¡Diez sobre diez!" }
+      ]
+    },
+    {
+      "id": "es-02-act-2",
+      "type": "flashcards",
+      "title": "Colores básicos",
+      "items": [
+        { "id": "c1", "front": "rojo", "back": "red", "example": "La manzana es roja." },
+        { "id": "c2", "front": "azul", "back": "blue", "example": "El cielo es azul." },
+        { "id": "c3", "front": "verde", "back": "green", "example": "El pasto es verde." },
+        { "id": "c4", "front": "amarillo", "back": "yellow", "example": "El sol es amarillo." },
+        { "id": "c5", "front": "blanco", "back": "white", "example": "La nieve es blanca." },
+        { "id": "c6", "front": "negro", "back": "black", "example": "La noche es negra." },
+        { "id": "c7", "front": "naranja", "back": "orange", "example": "La naranja es naranja." }
+      ]
+    },
+    {
+      "id": "es-02-act-3",
+      "type": "multiple_choice",
+      "title": "Quiz de números y colores",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "¿Cómo se escribe el número '7' en español?",
+          "options": ["seis", "ocho", "siete", "nueve"],
+          "correctIndex": 2,
+          "explanation": "7 = siete. Recuerda: seis (6), siete (7), ocho (8), nueve (9)."
+        },
+        {
+          "id": "mc2",
+          "prompt": "¿De qué color es el cielo en un día despejado?",
+          "options": ["verde", "rojo", "azul", "amarillo"],
+          "correctIndex": 2,
+          "explanation": "El cielo es azul (the sky is blue)."
+        },
+        {
+          "id": "mc3",
+          "prompt": "¿Cuántos días tiene una semana? Escríbelo en español.",
+          "options": ["seis", "siete", "ocho", "cinco"],
+          "correctIndex": 1,
+          "explanation": "Una semana tiene siete días."
+        },
+        {
+          "id": "mc4",
+          "prompt": "¿De qué color es el pasto?",
+          "options": ["azul", "rojo", "amarillo", "verde"],
+          "correctIndex": 3,
+          "explanation": "El pasto es verde (grass is green)."
+        },
+        {
+          "id": "mc5",
+          "prompt": "5 + 5 = ___",
+          "options": ["nueve", "ocho", "diez", "seis"],
+          "correctIndex": 2,
+          "explanation": "5 + 5 = 10 = diez."
+        }
+      ]
+    }
+  ]
+}

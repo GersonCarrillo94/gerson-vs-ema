@@ -1,0 +1,73 @@
+{
+  "id": "en-sublevel-03",
+  "language": "english",
+  "number": 3,
+  "level": "basic",
+  "title": "Family & Home Vocabulary",
+  "description": "Learn words for family members and rooms in the house.",
+  "estimatedMinutes": 15,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-03-act-1",
+      "type": "flashcards",
+      "title": "Family members",
+      "items": [
+        { "id": "f1", "front": "mother", "back": "madre", "example": "My mother is kind." },
+        { "id": "f2", "front": "father", "back": "padre", "example": "My father is tall." },
+        { "id": "f3", "front": "brother", "back": "hermano", "example": "I have one brother." },
+        { "id": "f4", "front": "sister", "back": "hermana", "example": "My sister is funny." },
+        { "id": "f5", "front": "grandmother", "back": "abuela", "example": "My grandmother cooks well." },
+        { "id": "f6", "front": "grandfather", "back": "abuelo", "example": "My grandfather is 80." },
+        { "id": "f7", "front": "son", "back": "hijo", "example": "He is my son." },
+        { "id": "f8", "front": "daughter", "back": "hija", "example": "She is my daughter." }
+      ]
+    },
+    {
+      "id": "en-03-act-2",
+      "type": "flashcards",
+      "title": "Rooms in the house",
+      "items": [
+        { "id": "h1", "front": "bedroom", "back": "habitación / cuarto", "example": "I sleep in the bedroom." },
+        { "id": "h2", "front": "kitchen", "back": "cocina", "example": "Mom is in the kitchen." },
+        { "id": "h3", "front": "bathroom", "back": "baño", "example": "The bathroom is clean." },
+        { "id": "h4", "front": "living room", "back": "sala / salón", "example": "We watch TV in the living room." },
+        { "id": "h5", "front": "garden", "back": "jardín", "example": "There is a tree in the garden." }
+      ]
+    },
+    {
+      "id": "en-03-act-3",
+      "type": "fill_blank",
+      "title": "Complete with the right word",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "My ___ is 75 years old. She bakes great cookies.",
+          "blanks": [{ "answer": "grandmother", "alternatives": ["grandma", "Grandmother"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "I brush my teeth in the ___.",
+          "blanks": [{ "answer": "bathroom", "alternatives": ["Bathroom"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "She is my ___, not my brother.",
+          "blanks": [{ "answer": "sister", "alternatives": ["Sister"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "We have dinner in the ___.",
+          "blanks": [{ "answer": "kitchen", "alternatives": ["Kitchen"] }],
+          "hint": "Food is prepared here."
+        },
+        {
+          "id": "fb5",
+          "sentence": "My ___ and mother are my parents.",
+          "blanks": [{ "answer": "father", "alternatives": ["Father", "dad", "Dad"] }]
+        }
+      ]
+    }
+  ]
+}

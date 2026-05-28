@@ -1,0 +1,102 @@
+{
+  "id": "en-sublevel-05",
+  "language": "english",
+  "number": 5,
+  "level": "basic",
+  "title": "Articles & Gender",
+  "description": "Master 'a', 'an', and 'the' — English has no gender, but articles still matter.",
+  "estimatedMinutes": 15,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-05-act-1",
+      "type": "flashcards",
+      "title": "Articles explained",
+      "items": [
+        { "id": "f1", "front": "a", "back": "un / una (consonant)", "example": "a cat, a book, a dog" },
+        { "id": "f2", "front": "an", "back": "un / una (vowel sound)", "example": "an apple, an hour, an egg" },
+        { "id": "f3", "front": "the", "back": "el / la / los / las", "example": "the sun, the cats, the idea" },
+        { "id": "f4", "front": "no article", "back": "(sin artículo)", "example": "I drink water. She likes music." },
+        { "id": "f5", "front": "a dog vs. the dog", "back": "un perro (cualquiera) vs. el perro (específico)", "example": "I saw a dog. The dog barked." }
+      ]
+    },
+    {
+      "id": "en-05-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the correct article",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "She is ___ engineer.",
+          "options": ["a", "an", "the", "(no article)"],
+          "correctIndex": 1,
+          "explanation": "'Engineer' empieza con sonido vocálico /ɛ/, por eso usamos 'an'."
+        },
+        {
+          "id": "mc2",
+          "prompt": "I live in ___ United States.",
+          "options": ["a", "an", "the", "(no article)"],
+          "correctIndex": 2,
+          "explanation": "Con nombres de países en plural o con 'United' se usa 'the'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Can I have ___ glass of water?",
+          "options": ["a", "an", "the", "(no article)"],
+          "correctIndex": 0,
+          "explanation": "'Glass' empieza con consonante → 'a glass'."
+        },
+        {
+          "id": "mc4",
+          "prompt": "___ sun is very hot today.",
+          "options": ["A", "An", "The", "(no article)"],
+          "correctIndex": 2,
+          "explanation": "Hay un solo sol — es específico → 'The sun'."
+        },
+        {
+          "id": "mc5",
+          "prompt": "I eat ___ breakfast every day.",
+          "options": ["a", "an", "the", "(no article)"],
+          "correctIndex": 3,
+          "explanation": "Con comidas habituales no se usa artículo: 'I eat breakfast'."
+        }
+      ]
+    },
+    {
+      "id": "en-05-act-3",
+      "type": "fill_blank",
+      "title": "Fill in the article",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "She has ___ umbrella in her bag.",
+          "blanks": [{ "answer": "an", "alternatives": ["An"] }],
+          "hint": "'Umbrella' starts with a vowel sound."
+        },
+        {
+          "id": "fb2",
+          "sentence": "I want to buy ___ new car.",
+          "blanks": [{ "answer": "a", "alternatives": ["A"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "___ moon looks beautiful tonight.",
+          "blanks": [{ "answer": "The", "alternatives": ["the"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "He is ___ honest man.",
+          "blanks": [{ "answer": "an", "alternatives": ["An"] }],
+          "hint": "'Honest' starts with a silent H — sounds like 'onest'."
+        },
+        {
+          "id": "fb5",
+          "sentence": "I drink ___ coffee every morning.",
+          "blanks": [{ "answer": "", "alternatives": ["no article", "-"] }],
+          "hint": "Habitual drinking of uncountable nouns needs no article."
+        }
+      ]
+    }
+  ]
+}

@@ -31,3 +31,16 @@
     scrollbar-color: theme('colors.gray.300') transparent;
   }
 }
+
+@layer utilities {
+  /* Utilidades 3D para el flip de flashcards */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}

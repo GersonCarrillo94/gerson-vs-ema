@@ -1,0 +1,73 @@
+{
+  "id": "es-sublevel-03",
+  "language": "spanish",
+  "number": 3,
+  "level": "basic",
+  "title": "Familia y Casa",
+  "description": "Aprende los nombres de los miembros de la familia y las habitaciones del hogar.",
+  "estimatedMinutes": 15,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-03-act-1",
+      "type": "flashcards",
+      "title": "Miembros de la familia",
+      "items": [
+        { "id": "f1", "front": "madre", "back": "mother", "example": "Mi madre es muy cariñosa." },
+        { "id": "f2", "front": "padre", "back": "father", "example": "Mi padre es alto." },
+        { "id": "f3", "front": "hermano", "back": "brother", "example": "Tengo un hermano." },
+        { "id": "f4", "front": "hermana", "back": "sister", "example": "Mi hermana es chistosa." },
+        { "id": "f5", "front": "abuela", "back": "grandmother", "example": "Mi abuela cocina muy bien." },
+        { "id": "f6", "front": "abuelo", "back": "grandfather", "example": "Mi abuelo tiene 80 años." },
+        { "id": "f7", "front": "hijo", "back": "son", "example": "Él es mi hijo." },
+        { "id": "f8", "front": "hija", "back": "daughter", "example": "Ella es mi hija." }
+      ]
+    },
+    {
+      "id": "es-03-act-2",
+      "type": "flashcards",
+      "title": "Habitaciones de la casa",
+      "items": [
+        { "id": "h1", "front": "habitación / cuarto", "back": "bedroom", "example": "Duermo en mi habitación." },
+        { "id": "h2", "front": "cocina", "back": "kitchen", "example": "Mamá está en la cocina." },
+        { "id": "h3", "front": "baño", "back": "bathroom", "example": "El baño está limpio." },
+        { "id": "h4", "front": "sala / salón", "back": "living room", "example": "Vemos la tele en la sala." },
+        { "id": "h5", "front": "jardín", "back": "garden", "example": "Hay un árbol en el jardín." }
+      ]
+    },
+    {
+      "id": "es-03-act-3",
+      "type": "fill_blank",
+      "title": "Completa con la palabra correcta",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Mi ___ tiene 75 años. Hace galletas deliciosas.",
+          "blanks": [{ "answer": "abuela", "alternatives": ["Abuela"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Me lavo los dientes en el ___.",
+          "blanks": [{ "answer": "baño", "alternatives": ["Baño"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Ella es mi ___, no mi hermano.",
+          "blanks": [{ "answer": "hermana", "alternatives": ["Hermana"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Cenamos en la ___.",
+          "blanks": [{ "answer": "cocina", "alternatives": ["Cocina"] }],
+          "hint": "Aquí se prepara la comida."
+        },
+        {
+          "id": "fb5",
+          "sentence": "Mi ___ y mi madre son mis padres.",
+          "blanks": [{ "answer": "padre", "alternatives": ["Padre", "papá", "Papá"] }]
+        }
+      ]
+    }
+  ]
+}
