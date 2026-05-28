@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AuthProvider } from '@/features/auth/components/AuthProvider';
 import { AuthGuard } from '@/components/auth/AuthGuard';
 import { AppLayout } from '@/components/layout/AppLayout';
+import { ToastProvider } from '@/features/scoring/components/ToastProvider';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { RegisterPage } from '@/pages/auth/RegisterPage';
 import { DashboardPage } from '@/pages/dashboard/DashboardPage';
@@ -24,6 +25,7 @@ const queryClient = new QueryClient({
 export function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <ToastProvider>
       {/* AuthProvider se monta una sola vez y gestiona toda la sesión */}
       <AuthProvider />
       <BrowserRouter>
@@ -98,6 +100,7 @@ export function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
+      </ToastProvider>
     </QueryClientProvider>
   );
 }

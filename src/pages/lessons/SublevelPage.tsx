@@ -6,6 +6,7 @@ import { MultipleChoice } from '@/features/lessons/components/activities/Multipl
 import { FillInBlank } from '@/features/lessons/components/activities/FillInBlank';
 import { Spinner } from '@/components/ui/Spinner';
 import { Button } from '@/components/ui/Button';
+import { useToast } from '@/features/scoring/components/ToastProvider';
 import type { ActivityResult, SublevelResult } from '@/features/lessons/types';
 
 export function SublevelPage() {
@@ -16,6 +17,7 @@ export function SublevelPage() {
   const { sublevel, status, isLoading, isError } = useSublevelDetail(sublevelNumber);
   const startMutation = useStartSublevel();
   const completeMutation = useCompleteSublevel();
+  const { showToast } = useToast();
 
   const [activityIndex, setActivityIndex] = useState(0);
   const [activityResults, setActivityResults] = useState<ActivityResult[]>([]);
@@ -77,6 +79,7 @@ export function SublevelPage() {
     async function handleFinish() {
       try {
         await completeMutation.mutateAsync(result);
+        showToast({ type: 'success', message: `¡+${sublevel.pointsReward} pts ganados!` });
         navigate('/lessons', { replace: true });
       } catch {
         // El error ya fue logueado en el servicio

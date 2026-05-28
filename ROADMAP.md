@@ -66,7 +66,7 @@ README.md
 ---
 
 ## 🎓 FASE 2 — Sistema de lecciones (core educativo)
-**Estado**: 🔴 · **Duración estimada**: 1 semana · **Dependencias**: Fase 1 ✅
+**Estado**: 🟢 · **Completada**: 2026-05-28 · **Duración estimada**: 1 semana · **Dependencias**: Fase 1 ✅
 **Agentes**: `lesson-designer`, `frontend-builder`, `backend-architect`
 
 ### Objetivo
@@ -113,7 +113,7 @@ src/pages/lessons/SublevelPage.tsx
 ---
 
 ## 📊 FASE 3 — Dashboard + gamificación
-**Estado**: 🔴 · **Duración estimada**: 1 semana · **Dependencias**: Fase 2
+**Estado**: 🟡 · **Iniciada**: 2026-05-28 · **Duración estimada**: 1 semana · **Dependencias**: Fase 2 ✅
 **Agentes**: `gamification-engineer`, `frontend-builder`
 
 ### Objetivo
