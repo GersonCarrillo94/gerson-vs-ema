@@ -4,6 +4,8 @@
  *   npx supabase gen types typescript --project-id <ID> > src/types/database.ts
  */
 
+type Json = string | number | boolean | null | { [key: string]: Json } | Json[];
+
 type LearningLanguage = 'english' | 'spanish';
 type SublevelStatus = 'locked' | 'active' | 'completed';
 type ScoreEventType =
@@ -197,7 +199,15 @@ export type Database = {
       };
     };
     Views: Record<string, never>;
-    Functions: Record<string, never>;
+    Functions: {
+      create_user_profile: {
+        Args: {
+          p_display_name: string;
+          p_language_learning: string;
+        };
+        Returns: Json;
+      };
+    };
     Enums: Record<string, never>;
     CompositeTypes: Record<string, never>;
   };
