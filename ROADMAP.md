@@ -113,7 +113,7 @@ src/pages/lessons/SublevelPage.tsx
 ---
 
 ## 📊 FASE 3 — Dashboard + gamificación
-**Estado**: 🟡 · **Iniciada**: 2026-05-28 · **Duración estimada**: 1 semana · **Dependencias**: Fase 2 ✅
+**Estado**: 🟢 · **Completada**: 2026-05-28 · **Duración estimada**: 1 semana · **Dependencias**: Fase 2 ✅
 **Agentes**: `gamification-engineer`, `frontend-builder`
 
 ### Objetivo
@@ -166,7 +166,7 @@ supabase/migrations/<timestamp>_score_system.sql
 ---
 
 ## 💬 FASE 4 — Chat en tiempo real
-**Estado**: 🔴 · **Duración estimada**: 1 semana · **Dependencias**: Fase 1
+**Estado**: 🟡 · **Iniciada**: 2026-05-28 · **Duración estimada**: 1 semana · **Dependencias**: Fase 1
 **Agentes**: `chat-realtime`, `frontend-builder`
 
 ### Objetivo

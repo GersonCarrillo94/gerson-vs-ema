@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/features/auth/hooks/useAuth';
 import { Button } from '@/components/ui/Button';
+import { useUnreadCount } from '@/features/chat/hooks/useMessages';
 
 interface NavItem {
   to: string;
@@ -61,6 +62,7 @@ const NAV_ITEMS: NavItem[] = [
 export function AppLayout({ children }: AppLayoutProps) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const { data: unreadCount = 0 } = useUnreadCount();
 
   const handleLogout = async () => {
     await logout();
@@ -76,7 +78,7 @@ export function AppLayout({ children }: AppLayoutProps) {
     ].join(' ');
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex h-screen overflow-hidden bg-gray-50">
       {/* Sidebar (desktop) */}
       <aside className="hidden w-64 flex-col border-r border-gray-200 bg-white md:flex">
         {/* Logo */}
@@ -93,7 +95,12 @@ export function AppLayout({ children }: AppLayoutProps) {
           {NAV_ITEMS.map((item) => (
             <NavLink key={item.to} to={item.to} end={item.to === '/'} className={navLinkClass}>
               {item.icon}
-              {item.label}
+              <span className="flex-1">{item.label}</span>
+              {item.to === '/chat' && unreadCount > 0 && (
+                <span className="ml-auto inline-flex items-center justify-center min-w-[1.25rem] h-5 rounded-full bg-red-500 text-white text-[10px] font-bold px-1">
+                  {unreadCount > 99 ? '99+' : unreadCount}
+                </span>
+              )}
             </NavLink>
           ))}
         </nav>
@@ -119,9 +126,9 @@ export function AppLayout({ children }: AppLayoutProps) {
       </aside>
 
       {/* Contenido principal */}
-      <div className="flex flex-1 flex-col">
+      <div className="flex flex-1 flex-col min-h-0 overflow-hidden">
         {/* Topbar (mobile) */}
-        <header className="flex h-14 items-center justify-between border-b border-gray-200 bg-white px-4 md:hidden">
+        <header className="flex h-14 items-center justify-between border-b border-gray-200 bg-white px-4 md:hidden shrink-0">
           <span className="text-lg font-bold">
             <span className="text-brand-gerson">G</span>
             <span className="text-gray-400">vs</span>
@@ -130,7 +137,7 @@ export function AppLayout({ children }: AppLayoutProps) {
           {/* TODO: menú hamburguesa para mobile nav */}
         </header>
 
-        <main className="flex-1 p-6">{children}</main>
+        <main className="flex-1 overflow-y-auto p-6 min-h-0">{children}</main>
       </div>
     </div>
   );

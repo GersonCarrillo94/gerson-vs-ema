@@ -7,6 +7,8 @@ import { FillInBlank } from '@/features/lessons/components/activities/FillInBlan
 import { Spinner } from '@/components/ui/Spinner';
 import { Button } from '@/components/ui/Button';
 import { useToast } from '@/features/scoring/components/ToastProvider';
+import { useMyScore } from '@/features/scoring/hooks/useScore';
+import { getLevelFromScore } from '@/features/scoring/utils/levelConfig';
 import type { ActivityResult, SublevelResult } from '@/features/lessons/types';
 
 export function SublevelPage() {
@@ -18,6 +20,7 @@ export function SublevelPage() {
   const startMutation = useStartSublevel();
   const completeMutation = useCompleteSublevel();
   const { showToast } = useToast();
+  const { data: myScore } = useMyScore();
 
   const [activityIndex, setActivityIndex] = useState(0);
   const [activityResults, setActivityResults] = useState<ActivityResult[]>([]);
@@ -78,8 +81,22 @@ export function SublevelPage() {
 
     async function handleFinish() {
       try {
+        const oldScore = myScore?.totalScore ?? 0;
+        const newScore = oldScore + sublevel.pointsReward;
+        const oldLevel = getLevelFromScore(oldScore);
+        const newLevel = getLevelFromScore(newScore);
+
         await completeMutation.mutateAsync(result);
-        showToast({ type: 'success', message: `¡+${sublevel.pointsReward} pts ganados!` });
+
+        if (newLevel.number > oldLevel.number) {
+          showToast({
+            type: 'success',
+            message: `¡Subiste al Nv. ${newLevel.number} ${newLevel.name}! ${newLevel.emoji}`,
+            duration: 5000,
+          });
+        } else {
+          showToast({ type: 'success', message: `¡+${sublevel.pointsReward} pts ganados!` });
+        }
         navigate('/lessons', { replace: true });
       } catch {
         // El error ya fue logueado en el servicio
