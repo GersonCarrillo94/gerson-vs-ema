@@ -1,5 +1,6 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/features/auth/hooks/useAuth';
 import {
   fetchMessages,
@@ -21,6 +22,7 @@ export function useMessages() {
     queryFn: () => fetchMessages(partnerId!),
     enabled: !!partnerId,
     staleTime: Infinity,
+    refetchOnMount: 'always', // ensures new messages are loaded when navigating back to chat
   });
 
   // Mark incoming messages as read immediately when the chat is open
@@ -36,7 +38,7 @@ export function useMessages() {
     }
   }, [query.data, myId, queryClient]);
 
-  // Append messages received via Realtime
+  // Append messages received via Realtime + update read receipts
   useRealtimeChat(
     myId,
     useCallback(
@@ -50,6 +52,15 @@ export function useMessages() {
         });
       },
       [queryClient, partnerId, myId],
+    ),
+    // When the other person reads one of my messages, update its read_at in cache
+    useCallback(
+      (msgId: string, readAt: string) => {
+        queryClient.setQueryData<Message[]>(['messages', partnerId], (prev) =>
+          prev?.map((m) => (m.id === msgId ? { ...m, read_at: readAt } : m)) ?? [],
+        );
+      },
+      [queryClient, partnerId],
     ),
   );
 
@@ -107,4 +118,41 @@ export function useUnreadCount() {
     staleTime: 30_000,
     refetchInterval: 60_000,
   });
+}
+
+/**
+ * Suscripción Realtime siempre activa (montada en AppLayout).
+ * Invalida el conteo de no leídos en tiempo real cuando llega
+ * un mensaje nuevo, sin depender de estar en la página de chat.
+ */
+export function useRealtimeUnreadBadge() {
+  const { user } = useAuth();
+  const queryClient = useQueryClient();
+  const myId = user?.id;
+  const invalidateRef = useRef<() => void>(() => {});
+
+  useEffect(() => {
+    invalidateRef.current = () => {
+      void queryClient.invalidateQueries({ queryKey: ['unread_count', myId] });
+    };
+  });
+
+  useEffect(() => {
+    if (!myId) return;
+
+    const channel = supabase
+      .channel(`unread_badge:${myId}`)
+      .on(
+        'postgres_changes',
+        { event: 'INSERT', schema: 'public', table: 'messages', filter: `receiver_id=eq.${myId}` },
+        () => {
+          invalidateRef.current();
+        },
+      )
+      .subscribe();
+
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, [myId]);
 }

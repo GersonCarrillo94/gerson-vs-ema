@@ -33,6 +33,7 @@ export type Database = {
           language_learning: LearningLanguage;
           partner_id: string | null;
           avatar_url: string | null;
+          phone: string | null;
           total_score: number;
           current_streak: number;
           longest_streak: number;
@@ -47,6 +48,7 @@ export type Database = {
           language_learning: LearningLanguage;
           partner_id?: string | null;
           avatar_url?: string | null;
+          phone?: string | null;
           total_score?: number;
           current_streak?: number;
           longest_streak?: number;
@@ -61,6 +63,7 @@ export type Database = {
           language_learning?: LearningLanguage;
           partner_id?: string | null;
           avatar_url?: string | null;
+          phone?: string | null;
           total_score?: number;
           current_streak?: number;
           longest_streak?: number;
@@ -206,6 +209,22 @@ export type Database = {
           p_language_learning: string;
         };
         Returns: Json;
+      };
+      search_potential_partner: {
+        Args: {
+          p_query: string;
+          p_method: string;
+        };
+        Returns: {
+          id: string;
+          display_name: string;
+          language_learning: string;
+          avatar_url: string | null;
+        }[];
+      };
+      link_partner: {
+        Args: { p_partner_id: string };
+        Returns: void;
       };
     };
     Enums: Record<string, never>;

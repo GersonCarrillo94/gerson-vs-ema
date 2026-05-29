@@ -30,5 +30,10 @@ export function AuthGuard({ children }: AuthGuardProps) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
+  // Usuario autenticado sin compañero → debe vincular primero
+  if (!user.partner_id && location.pathname !== '/link-partner') {
+    return <Navigate to="/link-partner" replace />;
+  }
+
   return <>{children}</>;
 }

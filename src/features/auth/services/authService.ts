@@ -114,6 +114,31 @@ export async function loginUser(payload: LoginPayload): Promise<UserProfile> {
   return profile;
 }
 
+/** Actualiza el perfil del usuario actual (display_name y/o phone). */
+export async function updateProfile(fields: {
+  display_name?: string;
+  phone?: string | null;
+}): Promise<UserProfile> {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) throw mapSupabaseError('No autenticado');
+
+  const { data, error } = await supabase
+    .from('users')
+    .update({ ...fields, updated_at: new Date().toISOString() })
+    .eq('id', user.id)
+    .select()
+    .single();
+
+  if (error) {
+    logger.error('authService.updateProfile', error.message);
+    throw mapSupabaseError(error.message);
+  }
+
+  return data as UserProfile;
+}
+
 /** Cierra sesión */
 export async function logoutUser(): Promise<void> {
   const { error } = await supabase.auth.signOut();

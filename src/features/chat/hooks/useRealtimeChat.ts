@@ -5,26 +5,36 @@ import type { Message } from '../types';
 export function useRealtimeChat(
   myId: string | undefined,
   onNewMessage: (msg: Message) => void,
+  onMessageRead?: (msgId: string, readAt: string) => void,
 ) {
-  // Keep callback in a ref so the effect doesn't re-run when the callback identity changes
-  const callbackRef = useRef(onNewMessage);
-  callbackRef.current = onNewMessage;
+  const newMsgRef = useRef(onNewMessage);
+  newMsgRef.current = onNewMessage;
+
+  const readRef = useRef(onMessageRead);
+  readRef.current = onMessageRead;
 
   useEffect(() => {
     if (!myId) return;
 
     const channel = supabase
       .channel(`chat:${myId}`)
+      // New messages sent TO me
       .on(
         'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'messages',
-          filter: `receiver_id=eq.${myId}`,
-        },
+        { event: 'INSERT', schema: 'public', table: 'messages', filter: `receiver_id=eq.${myId}` },
         (payload) => {
-          callbackRef.current(payload.new as Message);
+          newMsgRef.current(payload.new as Message);
+        },
+      )
+      // My sent messages being read by the other person
+      .on(
+        'postgres_changes',
+        { event: 'UPDATE', schema: 'public', table: 'messages', filter: `sender_id=eq.${myId}` },
+        (payload) => {
+          const updated = payload.new as Message;
+          if (updated.read_at) {
+            readRef.current?.(updated.id, updated.read_at);
+          }
         },
       )
       .subscribe();

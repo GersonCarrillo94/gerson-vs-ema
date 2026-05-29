@@ -6,12 +6,14 @@ import { AppLayout } from '@/components/layout/AppLayout';
 import { ToastProvider } from '@/features/scoring/components/ToastProvider';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { RegisterPage } from '@/pages/auth/RegisterPage';
+import { LinkPartnerPage } from '@/pages/auth/LinkPartnerPage';
 import { DashboardPage } from '@/pages/dashboard/DashboardPage';
 import { LessonsMapPage } from '@/pages/lessons/LessonsMapPage';
 import { SublevelPage } from '@/pages/lessons/SublevelPage';
 import { ChatPage } from '@/pages/chat/ChatPage';
 import { MeetingsPage } from '@/pages/meetings/MeetingsPage';
 import { PartnerProgressPage } from '@/pages/partner/PartnerProgressPage';
+import { SettingsPage } from '@/pages/settings/SettingsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,6 +35,16 @@ export function App() {
           {/* Rutas públicas */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+
+          {/* Ruta semi-protegida: requiere sesión pero no compañero */}
+          <Route
+            path="/link-partner"
+            element={
+              <AuthGuard>
+                <LinkPartnerPage />
+              </AuthGuard>
+            }
+          />
 
           {/* Rutas protegidas */}
           <Route
@@ -91,6 +103,17 @@ export function App() {
               <AuthGuard>
                 <AppLayout>
                   <PartnerProgressPage />
+                </AppLayout>
+              </AuthGuard>
+            }
+          />
+
+          <Route
+            path="/settings"
+            element={
+              <AuthGuard>
+                <AppLayout>
+                  <SettingsPage />
                 </AppLayout>
               </AuthGuard>
             }

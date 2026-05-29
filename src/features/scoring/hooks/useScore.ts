@@ -7,7 +7,7 @@ export function useMyScore() {
 
   return useQuery({
     queryKey: ['my_score', user?.id],
-    queryFn: fetchMyScoreData,
+    queryFn: () => fetchMyScoreData(user!.id),
     enabled: !!user?.id,
     staleTime: 30_000,
   });

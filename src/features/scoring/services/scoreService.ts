@@ -2,20 +2,23 @@ import { supabase } from '@/lib/supabase';
 import { getLevelFromScore, getProgressInLevel } from '../utils/levelConfig';
 import type { MyScoreData, PartnerScoreData } from '../types';
 
-export async function fetchMyScoreData(): Promise<MyScoreData> {
+export async function fetchMyScoreData(userId: string): Promise<MyScoreData> {
   const [userResult, eventsResult, progressResult] = await Promise.all([
     supabase
       .from('users')
       .select('total_score, current_streak, longest_streak, last_activity_at')
+      .eq('id', userId)
       .single(),
     supabase
       .from('score_events')
       .select('id, event_type, points, metadata, created_at')
+      .eq('user_id', userId)
       .order('created_at', { ascending: false })
       .limit(5),
     supabase
       .from('sublevel_progress')
       .select('sublevel_number, status')
+      .eq('user_id', userId)
       .order('sublevel_number'),
   ]);
 
