@@ -20,6 +20,8 @@ type ScoreEventType =
   | 'first_try_bonus';
 type MessageType = 'text' | 'image' | 'video' | 'file' | 'sticker' | 'emoji';
 type MeetingStatus = 'pending' | 'confirmed' | 'rejected' | 'completed' | 'missed' | 'cancelled';
+type TopicCategory = 'vocabulary' | 'grammar' | 'conversation' | 'pronunciation' | 'task' | 'other';
+type DurationEstimate = 15 | 30 | 45 | 60 | 90;
 
 /** Forma que espera supabase-js v2 para el genérico Database */
 export type Database = {
@@ -155,48 +157,79 @@ export type Database = {
       meetings: {
         Row: {
           id: string;
+          created_at: string;
+          updated_at: string;
           created_by: string;
           partner_id: string;
           scheduled_at: string;
+          duration_estimate_minutes: DurationEstimate;
+          actual_duration_minutes: number | null;
           location: string | null;
           is_video_call: boolean;
           video_room_url: string | null;
+          daily_room_name: string | null;
+          topic: string;
+          topic_category: TopicCategory;
           notes: string | null;
           status: MeetingStatus;
           confirmed_at: string | null;
           completed_at: string | null;
-          missed_by: string | null;
           attended_by_creator: boolean | null;
           attended_by_partner: boolean | null;
-          created_at: string;
-          updated_at: string;
         };
         Insert: {
           id?: string;
           created_by: string;
           partner_id: string;
           scheduled_at: string;
+          duration_estimate_minutes: DurationEstimate;
+          actual_duration_minutes?: number | null;
           location?: string | null;
           is_video_call?: boolean;
           video_room_url?: string | null;
+          daily_room_name?: string | null;
+          topic: string;
+          topic_category: TopicCategory;
           notes?: string | null;
           status?: MeetingStatus;
           confirmed_at?: string | null;
           completed_at?: string | null;
-          missed_by?: string | null;
           attended_by_creator?: boolean | null;
           attended_by_partner?: boolean | null;
-          created_at?: string;
-          updated_at?: string;
         };
         Update: {
           status?: MeetingStatus;
+          actual_duration_minutes?: number | null;
+          video_room_url?: string | null;
+          daily_room_name?: string | null;
           confirmed_at?: string | null;
           completed_at?: string | null;
-          missed_by?: string | null;
           attended_by_creator?: boolean | null;
           attended_by_partner?: boolean | null;
-          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      meeting_timer: {
+        Row: {
+          id: string;
+          created_at: string;
+          updated_at: string;
+          user1_id: string;
+          user2_id: string;
+          year_month: string;
+          minutes_budget: number;
+          minutes_used: number;
+        };
+        Insert: {
+          id?: string;
+          user1_id: string;
+          user2_id: string;
+          year_month: string;
+          minutes_budget?: number;
+          minutes_used?: number;
+        };
+        Update: {
+          minutes_used?: number;
         };
         Relationships: [];
       };
