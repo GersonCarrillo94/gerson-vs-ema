@@ -24,7 +24,7 @@ export function useTypingIndicator(
         if (payload.payload?.userId === partnerId) {
           setPartnerIsTyping(true);
           clearTimeout(expireTimer.current);
-          expireTimer.current = setTimeout(() => setPartnerIsTyping(false), TYPING_EXPIRE_MS);
+          expireTimer.current = setTimeout(() => { setPartnerIsTyping(false); }, TYPING_EXPIRE_MS);
         }
       })
       .subscribe();

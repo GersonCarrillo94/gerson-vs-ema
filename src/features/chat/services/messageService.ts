@@ -1,17 +1,26 @@
 import { supabase } from '@/lib/supabase';
 import type { Message, SendMessagePayload } from '../types';
 
-export async function fetchMessages(partnerId: string, limit = 60): Promise<Message[]> {
-  const { data, error } = await supabase
+export async function fetchMessages(
+  partnerId: string,
+  limit = 60,
+  before?: string,
+): Promise<Message[]> {
+  let q = supabase
     .from('messages')
     .select('*')
-    // RLS already scopes to me; this further filters to messages involving the partner
     .or(`sender_id.eq.${partnerId},receiver_id.eq.${partnerId}`)
-    .order('created_at', { ascending: true })
+    .order('created_at', { ascending: false })
     .limit(limit);
 
+  if (before) {
+    q = q.lt('created_at', before);
+  }
+
+  const { data, error } = await q;
   if (error) throw error;
-  return data ?? [];
+  // Reverse DESC result so each page is in ascending (oldest-first) order
+  return data.reverse();
 }
 
 export async function sendMessage(payload: SendMessagePayload): Promise<Message> {

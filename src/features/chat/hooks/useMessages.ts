@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef } from 'react';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import type { InfiniteData } from '@tanstack/react-query';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/features/auth/hooks/useAuth';
 import {
@@ -11,24 +12,40 @@ import {
 import { useRealtimeChat } from './useRealtimeChat';
 import type { Message, SendMessagePayload } from '../types';
 
+type MessagesInfiniteData = InfiniteData<Message[], string | undefined>;
+
 export function useMessages() {
   const { user } = useAuth();
   const queryClient = useQueryClient();
   const partnerId = user?.partner_id ?? null;
   const myId = user?.id;
 
-  const query = useQuery({
+  const query = useInfiniteQuery({
     queryKey: ['messages', partnerId],
-    queryFn: () => fetchMessages(partnerId!),
+    queryFn: ({ pageParam }) => fetchMessages(partnerId ?? '', 60, pageParam),
+    initialPageParam: undefined as string | undefined,
+    // Each page is ascending; [0] = oldest in that page = cursor for next (older) batch
+    getNextPageParam: (lastPage) =>
+      lastPage.length === 60 ? lastPage[0]?.created_at : undefined,
     enabled: !!partnerId,
     staleTime: Infinity,
-    refetchOnMount: 'always', // ensures new messages are loaded when navigating back to chat
+    refetchOnMount: 'always',
   });
+
+  // Flatten pages oldest-first: pages[0]=most recent, pages[n]=oldest → reduceRight
+  const messages = useMemo(
+    () =>
+      (query.data?.pages ?? []).reduceRight<Message[]>(
+        (acc, page) => [...acc, ...page],
+        [],
+      ),
+    [query.data],
+  );
 
   // Mark incoming messages as read immediately when the chat is open
   useEffect(() => {
-    if (!query.data) return;
-    const unread = query.data
+    if (!messages.length) return;
+    const unread = messages
       .filter((m) => m.receiver_id === myId && !m.read_at)
       .map((m) => m.id);
     if (unread.length > 0) {
@@ -36,29 +53,38 @@ export function useMessages() {
         void queryClient.invalidateQueries({ queryKey: ['unread_count', myId] });
       });
     }
-  }, [query.data, myId, queryClient]);
+  }, [messages, myId, queryClient]);
 
   // Append messages received via Realtime + update read receipts
   useRealtimeChat(
     myId,
     useCallback(
       (newMsg: Message) => {
-        queryClient.setQueryData<Message[]>(['messages', partnerId], (prev) =>
-          prev ? [...prev, newMsg] : [newMsg],
-        );
-        // Auto-mark as read since we're on the chat page
+        queryClient.setQueryData<MessagesInfiniteData>(['messages', partnerId], (prev) => {
+          if (!prev) return { pages: [[newMsg]], pageParams: [undefined] };
+          const pages: Message[][] = prev.pages;
+          const firstPage: Message[] = pages[0] ?? [];
+          const rest: Message[][] = pages.slice(1);
+          const newPages: Message[][] = [[...firstPage, newMsg], ...rest];
+          return { ...prev, pages: newPages };
+        });
         void markAsRead([newMsg.id]).then(() => {
           void queryClient.invalidateQueries({ queryKey: ['unread_count', myId] });
         });
       },
       [queryClient, partnerId, myId],
     ),
-    // When the other person reads one of my messages, update its read_at in cache
     useCallback(
       (msgId: string, readAt: string) => {
-        queryClient.setQueryData<Message[]>(['messages', partnerId], (prev) =>
-          prev?.map((m) => (m.id === msgId ? { ...m, read_at: readAt } : m)) ?? [],
-        );
+        queryClient.setQueryData<MessagesInfiniteData>(['messages', partnerId], (prev) => {
+          if (!prev) return prev;
+          return {
+            ...prev,
+            pages: prev.pages.map((page) =>
+              page.map((m) => (m.id === msgId ? { ...m, read_at: readAt } : m)),
+            ),
+          };
+        });
       },
       [queryClient, partnerId],
     ),
@@ -66,12 +92,12 @@ export function useMessages() {
 
   const sendMutation = useMutation({
     mutationFn: (payload: Omit<SendMessagePayload, 'receiverId'>) =>
-      sendMessage({ ...payload, receiverId: partnerId! }),
-    onMutate: async (payload) => {
+      sendMessage({ ...payload, receiverId: partnerId ?? '' }),
+    onMutate: (payload) => {
       const tempMsg: Message = {
-        id: `temp-${Date.now()}`,
-        sender_id: myId!,
-        receiver_id: partnerId!,
+        id: `temp-${String(Date.now())}`,
+        sender_id: myId ?? '',
+        receiver_id: partnerId ?? '',
         type: payload.type,
         content: payload.content,
         file_name: payload.fileName ?? null,
@@ -79,31 +105,49 @@ export function useMessages() {
         read_at: null,
         created_at: new Date().toISOString(),
       };
-      queryClient.setQueryData<Message[]>(['messages', partnerId], (prev) =>
-        prev ? [...prev, tempMsg] : [tempMsg],
-      );
+      queryClient.setQueryData<MessagesInfiniteData>(['messages', partnerId], (prev) => {
+        if (!prev) return { pages: [[tempMsg]], pageParams: [undefined] };
+        const pages: Message[][] = prev.pages;
+        const firstPage: Message[] = pages[0] ?? [];
+        const rest: Message[][] = pages.slice(1);
+        const newPages: Message[][] = [[...firstPage, tempMsg], ...rest];
+        return { ...prev, pages: newPages };
+      });
       return { tempId: tempMsg.id };
     },
     onSuccess: (realMsg, _, context) => {
-      // Replace optimistic message with real one
-      queryClient.setQueryData<Message[]>(['messages', partnerId], (prev) =>
-        prev?.map((m) => (m.id === context?.tempId ? realMsg : m)) ?? [],
-      );
+      queryClient.setQueryData<MessagesInfiniteData>(['messages', partnerId], (prev) => {
+        if (!prev) return prev;
+        return {
+          ...prev,
+          pages: prev.pages.map((page) =>
+            page.map((m) => (m.id === context.tempId ? realMsg : m)),
+          ),
+        };
+      });
     },
     onError: (_, __, context) => {
-      // Remove failed optimistic message
-      queryClient.setQueryData<Message[]>(['messages', partnerId], (prev) =>
-        prev?.filter((m) => m.id !== context?.tempId) ?? [],
-      );
+      queryClient.setQueryData<MessagesInfiniteData>(['messages', partnerId], (prev) => {
+        if (!prev) return prev;
+        return {
+          ...prev,
+          pages: prev.pages.map((page) =>
+            page.filter((m) => m.id !== context?.tempId),
+          ),
+        };
+      });
     },
   });
 
   return {
-    messages: query.data ?? [],
+    messages,
     isLoading: query.isLoading,
     isError: query.isError,
     send: sendMutation.mutateAsync,
     isSending: sendMutation.isPending,
+    loadMore: query.fetchNextPage,
+    hasMore: query.hasNextPage,
+    isFetchingMore: query.isFetchingNextPage,
     partnerId,
     myId,
   };

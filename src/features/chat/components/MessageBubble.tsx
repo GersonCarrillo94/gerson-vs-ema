@@ -24,7 +24,7 @@ export function MessageBubble({ message, isOwn }: Props) {
           </div>
         ) : isMedia ? (
           /* Media/file: minimal bubble wrapping */
-          <div className={`rounded-2xl overflow-hidden ${isOwn ? 'bg-brand-gerson' : 'bg-gray-100'} p-1.5`}>
+          <div className={`rounded-2xl overflow-hidden ${isOwn ? 'bg-brand-gerson' : 'bg-gray-100 dark:bg-gray-700'} p-1.5`}>
             <FileAttachment message={message} />
           </div>
         ) : (
@@ -33,7 +33,7 @@ export function MessageBubble({ message, isOwn }: Props) {
             className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap break-words ${
               isOwn
                 ? 'bg-brand-gerson text-white rounded-br-sm'
-                : 'bg-gray-100 text-gray-900 rounded-bl-sm'
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-bl-sm'
             }`}
           >
             {message.content}
@@ -42,7 +42,7 @@ export function MessageBubble({ message, isOwn }: Props) {
 
         {/* Timestamp + read receipt */}
         <div className={`flex items-center gap-1 ${isOwn ? 'flex-row-reverse' : 'flex-row'}`}>
-          <span className="text-[10px] text-gray-400">{formatTime(message.created_at)}</span>
+          <span className="text-[10px] text-gray-400 dark:text-gray-500">{formatTime(message.created_at)}</span>
           {isOwn && message.read_at && (
             <span className="text-[10px] text-brand-gerson" title="Visto">✓✓</span>
           )}

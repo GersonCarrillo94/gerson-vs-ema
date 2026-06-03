@@ -33,12 +33,12 @@ export async function uploadChatFile(
   if (file.size > maxSize) {
     const maxMB = maxSize / (1024 * 1024);
     throw new Error(
-      `El archivo es muy grande. Máximo ${maxMB} MB para ${category === 'image' ? 'imágenes' : category === 'video' ? 'videos' : 'archivos'}.`,
+      `El archivo es muy grande. Máximo ${String(maxMB)} MB para ${category === 'image' ? 'imágenes' : category === 'video' ? 'videos' : 'archivos'}.`,
     );
   }
 
   const ext = file.name.split('.').pop() ?? 'bin';
-  const uniqueName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+  const uniqueName = `${String(Date.now())}-${Math.random().toString(36).slice(2)}.${ext}`;
   const path = `${conversationId}/${uniqueName}`;
 
   const { error } = await supabase.storage.from(BUCKET).upload(path, file);

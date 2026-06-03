@@ -78,14 +78,14 @@ export function MessageInput({ onSend, onTyping, partnerId, myId, disabled }: Pr
         {/* Picker buttons */}
         <div className="relative flex items-center gap-1 pb-1 shrink-0">
           <button
-            onClick={() => togglePicker('emoji')}
+            onClick={() => { togglePicker('emoji'); }}
             className={`text-xl w-9 h-9 flex items-center justify-center rounded-full transition-colors ${activePicker === 'emoji' ? 'bg-blue-100 text-blue-600' : 'text-gray-400 hover:bg-gray-100 hover:text-gray-600'}`}
             title="Emoji"
           >
             😀
           </button>
           <button
-            onClick={() => togglePicker('sticker')}
+            onClick={() => { togglePicker('sticker'); }}
             className={`text-xl w-9 h-9 flex items-center justify-center rounded-full transition-colors ${activePicker === 'sticker' ? 'bg-blue-100 text-blue-600' : 'text-gray-400 hover:bg-gray-100 hover:text-gray-600'}`}
             title="Sticker"
           >
@@ -102,8 +102,8 @@ export function MessageInput({ onSend, onTyping, partnerId, myId, disabled }: Pr
 
           {activePicker === 'emoji' && (
             <EmojiPicker
-              onSelect={(emoji) => setText((t) => t + emoji)}
-              onClose={() => setActivePicker(null)}
+              onSelect={(emoji) => { setText((t) => t + emoji); }}
+              onClose={() => { setActivePicker(null); }}
             />
           )}
           {activePicker === 'sticker' && (
@@ -112,7 +112,7 @@ export function MessageInput({ onSend, onTyping, partnerId, myId, disabled }: Pr
                 void onSend({ type: 'sticker', content: emoji });
                 setActivePicker(null);
               }}
-              onClose={() => setActivePicker(null)}
+              onClose={() => { setActivePicker(null); }}
             />
           )}
         </div>
@@ -147,7 +147,7 @@ export function MessageInput({ onSend, onTyping, partnerId, myId, disabled }: Pr
         type="file"
         className="hidden"
         accept="image/*,video/*,.pdf,.doc,.docx,.xls,.xlsx,.zip"
-        onChange={handleFileSelect}
+        onChange={(e) => { void handleFileSelect(e); }}
       />
     </div>
   );
