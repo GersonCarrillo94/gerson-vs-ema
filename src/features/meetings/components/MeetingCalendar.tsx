@@ -20,7 +20,7 @@ function getFirstDayOfWeek(year: number, month: number): number {
 }
 
 function toDateStr(year: number, month: number, day: number): string {
-  return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  return `${String(year)}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 }
 
 function meetingsOnDay(meetings: Meeting[], dateStr: string): Meeting[] {
@@ -91,7 +91,7 @@ export function MeetingCalendar({ meetings, onDaySelect, selectedDate }: Props) 
         {/* Celdas de días */}
         <div className="grid grid-cols-7 gap-y-1">
           {cells.map((day, idx) => {
-            if (!day) return <div key={`empty-${idx}`} />;
+            if (!day) return <div key={`empty-${String(idx)}`} />;
 
             const dateStr = toDateStr(viewYear, viewMonth, day);
             const dayMeetings = meetingsOnDay(meetings, dateStr);
@@ -101,7 +101,7 @@ export function MeetingCalendar({ meetings, onDaySelect, selectedDate }: Props) 
             return (
               <button
                 key={dateStr}
-                onClick={() => onDaySelect(dateStr)}
+                onClick={() => { onDaySelect(dateStr); }}
                 className={[
                   'relative flex flex-col items-center justify-start py-1.5 rounded-xl transition-colors',
                   isSelected ? 'bg-indigo-600 text-white' : isToday ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'hover:bg-gray-50 text-gray-700',
@@ -123,7 +123,7 @@ export function MeetingCalendar({ meetings, onDaySelect, selectedDate }: Props) 
                     ))}
                     {dayMeetings.length > 3 && (
                       <span className={`text-[9px] leading-none ${isSelected ? 'text-white' : 'text-gray-400'}`}>
-                        +{dayMeetings.length - 3}
+                        +{String(dayMeetings.length - 3)}
                       </span>
                     )}
                   </div>

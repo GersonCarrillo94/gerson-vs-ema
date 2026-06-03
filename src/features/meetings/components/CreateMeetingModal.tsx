@@ -59,7 +59,7 @@ export function CreateMeetingModal({ onClose, onSubmit, minutesRemaining }: Prop
         ...data,
         duration_estimate_minutes: selectedDuration,
         topic_category: selectedCategory,
-      } as CreateMeetingInput);
+      });
       onClose();
     } catch (e) {
       console.error(e);
@@ -68,8 +68,9 @@ export function CreateMeetingModal({ onClose, onSubmit, minutesRemaining }: Prop
     }
   }
 
-  // Fecha mínima: hoy
-  const today = new Date().toISOString().split('T')[0];
+  // Fecha mínima: hoy en zona horaria local (no UTC)
+  const _d = new Date();
+  const today = `${String(_d.getFullYear())}-${String(_d.getMonth() + 1).padStart(2, '0')}-${String(_d.getDate()).padStart(2, '0')}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
@@ -92,7 +93,7 @@ export function CreateMeetingModal({ onClose, onSubmit, minutesRemaining }: Prop
           </button>
         </div>
 
-        <form onSubmit={handleSubmit(handleFormSubmit)} className="p-5 space-y-5">
+        <form onSubmit={(e) => { void handleSubmit(handleFormSubmit)(e); }} className="p-5 space-y-5">
           {/* Fecha y hora */}
           <div className="grid grid-cols-2 gap-3">
             <div>
@@ -147,8 +148,8 @@ export function CreateMeetingModal({ onClose, onSubmit, minutesRemaining }: Prop
             {isVideoCall && (
               <p className={`text-xs mt-1.5 ${wouldExceedBudget ? 'text-red-500' : 'text-gray-400'}`}>
                 {wouldExceedBudget
-                  ? `⚠️ Supera el presupuesto disponible (${minutesRemaining} min)`
-                  : `Usará ~${selectedDuration} min del cronómetro (${minutesRemaining} disponibles)`}
+                  ? `⚠️ Supera el presupuesto disponible (${String(minutesRemaining)} min)`
+                  : `Usará ~${String(selectedDuration)} min del cronómetro (${String(minutesRemaining)} disponibles)`}
               </p>
             )}
           </div>
