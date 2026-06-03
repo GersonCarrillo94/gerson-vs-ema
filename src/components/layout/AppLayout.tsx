@@ -1,8 +1,11 @@
+import { useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/features/auth/hooks/useAuth';
+import { useTheme } from '@/hooks/useTheme';
 import { Button } from '@/components/ui/Button';
 import { useUnreadCount, useRealtimeUnreadBadge } from '@/features/chat/hooks/useMessages';
+import { usePendingMeetingsCount, useRealtimePendingBadge } from '@/features/meetings/hooks/useMeetings';
 
 interface NavItem {
   to: string;
@@ -14,7 +17,6 @@ interface AppLayoutProps {
   children: ReactNode;
 }
 
-/** Icono SVG simple inline */
 function Icon({ d }: { d: string }) {
   return (
     <svg
@@ -28,6 +30,26 @@ function Icon({ d }: { d: string }) {
     >
       <path strokeLinecap="round" strokeLinejoin="round" d={d} />
     </svg>
+  );
+}
+
+function ThemeToggle({ isDark, onToggle }: { isDark: boolean; onToggle: () => void }) {
+  return (
+    <button
+      onClick={onToggle}
+      title={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+      className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors"
+    >
+      {isDark ? (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M18.364 18.364l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ) : (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      )}
+    </button>
   );
 }
 
@@ -64,83 +86,204 @@ const NAV_ITEMS: NavItem[] = [
   },
 ];
 
+function NavBadge({ to, unreadCount, pendingMeetings }: { to: string; unreadCount: number; pendingMeetings: number }) {
+  if (to === '/chat' && unreadCount > 0) {
+    return (
+      <span className="ml-auto inline-flex items-center justify-center min-w-[1.25rem] h-5 rounded-full bg-red-500 text-white text-[10px] font-bold px-1">
+        {unreadCount > 99 ? '99+' : unreadCount}
+      </span>
+    );
+  }
+  if (to === '/meetings' && pendingMeetings > 0) {
+    return <span className="ml-auto h-2.5 w-2.5 rounded-full bg-red-500" />;
+  }
+  return null;
+}
+
 export function AppLayout({ children }: AppLayoutProps) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const { data: unreadCount = 0 } = useUnreadCount();
+  const { data: pendingMeetings = 0 } = usePendingMeetingsCount();
+  const { isDark, toggleTheme } = useTheme();
   useRealtimeUnreadBadge();
+  useRealtimePendingBadge();
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
 
   const handleLogout = async () => {
     await logout();
-    void navigate('/login');
+    navigate('/login');
   };
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     [
       'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
       isActive
-        ? 'bg-brand-gerson/10 text-brand-gerson'
-        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900',
+        ? 'bg-brand-gerson/10 text-brand-gerson dark:bg-brand-gerson/20'
+        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white',
     ].join(' ');
 
+  const hasAnyBadge = unreadCount > 0 || pendingMeetings > 0;
+
   return (
-    <div className="flex h-screen overflow-hidden bg-gray-50">
-      {/* Sidebar (desktop) */}
-      <aside className="hidden w-64 flex-col border-r border-gray-200 bg-white md:flex">
-        {/* Logo */}
-        <div className="flex h-16 items-center border-b border-gray-200 px-6">
+    <div className="flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-900">
+      {/* ── Sidebar (desktop only) ── */}
+      <aside className="hidden w-64 flex-col border-r border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800 md:flex">
+        <div className="flex h-16 items-center border-b border-gray-200 dark:border-gray-700 px-6">
           <span className="text-xl font-bold">
             <span className="text-brand-gerson">Gerson</span>
-            <span className="mx-1 text-gray-400">vs</span>
+            <span className="mx-1 text-gray-400 dark:text-gray-500">vs</span>
             <span className="text-brand-ema">Ema</span>
           </span>
         </div>
 
-        {/* Nav */}
         <nav className="flex-1 space-y-1 p-4" aria-label="Navegación principal">
           {NAV_ITEMS.map((item) => (
             <NavLink key={item.to} to={item.to} end={item.to === '/'} className={navLinkClass}>
               {item.icon}
               <span className="flex-1">{item.label}</span>
-              {item.to === '/chat' && unreadCount > 0 && (
-                <span className="ml-auto inline-flex items-center justify-center min-w-[1.25rem] h-5 rounded-full bg-red-500 text-white text-[10px] font-bold px-1">
-                  {unreadCount > 99 ? '99+' : unreadCount}
-                </span>
-              )}
+              <NavBadge to={item.to} unreadCount={unreadCount} pendingMeetings={pendingMeetings} />
             </NavLink>
           ))}
         </nav>
 
-        {/* Footer: perfil + logout */}
-        <div className="border-t border-gray-200 p-4">
+        <div className="border-t border-gray-200 dark:border-gray-700 p-4">
           {user && (
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-gerson/20 text-sm font-semibold text-brand-gerson">
                 {user.display_name.charAt(0).toUpperCase()}
               </div>
               <div className="min-w-0">
-                <p className="truncate text-sm font-medium text-gray-900">{user.display_name}</p>
-                <p className="truncate text-xs text-gray-500">{user.email}</p>
+                <p className="truncate text-sm font-medium text-gray-900 dark:text-white">{user.display_name}</p>
+                <p className="truncate text-xs text-gray-500 dark:text-gray-400">{user.email}</p>
               </div>
             </div>
           )}
-          <Button variant="ghost" size="sm" className="w-full justify-start" onClick={() => void handleLogout()}>
-            <Icon d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-            Cerrar sesión
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="sm" className="flex-1 justify-start" onClick={() => { void handleLogout(); }}>
+              <Icon d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              Cerrar sesión
+            </Button>
+            <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
+          </div>
         </div>
       </aside>
 
-      {/* Contenido principal */}
+      {/* ── Mobile drawer + backdrop ── */}
+      <div className="md:hidden">
+        {/* Backdrop */}
+        <div
+          className={[
+            'fixed inset-0 z-40 bg-black/40 transition-opacity duration-300',
+            mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
+          ].join(' ')}
+          aria-hidden="true"
+          onClick={() => { setMobileOpen(false); }}
+        />
+
+        {/* Drawer panel */}
+        <aside
+          className={[
+            'fixed inset-y-0 left-0 z-50 flex w-72 flex-col bg-white dark:bg-gray-800 shadow-xl transition-transform duration-300',
+            mobileOpen ? 'translate-x-0' : '-translate-x-full',
+          ].join(' ')}
+          aria-label="Navegación móvil"
+          role="dialog"
+          aria-modal="true"
+        >
+          {/* Drawer header */}
+          <div className="flex h-14 items-center justify-between border-b border-gray-200 dark:border-gray-700 px-4">
+            <span className="text-lg font-bold">
+              <span className="text-brand-gerson">Gerson</span>
+              <span className="mx-1 text-gray-400 dark:text-gray-500">vs</span>
+              <span className="text-brand-ema">Ema</span>
+            </span>
+            <button
+              onClick={() => { setMobileOpen(false); }}
+              className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors"
+              aria-label="Cerrar menú"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Drawer nav */}
+          <nav className="flex-1 space-y-1 overflow-y-auto p-4" aria-label="Navegación principal">
+            {NAV_ITEMS.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.to === '/'}
+                className={navLinkClass}
+                onClick={() => { setMobileOpen(false); }}
+              >
+                {item.icon}
+                <span className="flex-1">{item.label}</span>
+                <NavBadge to={item.to} unreadCount={unreadCount} pendingMeetings={pendingMeetings} />
+              </NavLink>
+            ))}
+          </nav>
+
+          {/* Drawer footer */}
+          <div className="border-t border-gray-200 dark:border-gray-700 p-4">
+            {user && (
+              <div className="mb-3 flex items-center gap-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-gerson/20 text-sm font-semibold text-brand-gerson">
+                  {user.display_name.charAt(0).toUpperCase()}
+                </div>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-medium text-gray-900 dark:text-white">{user.display_name}</p>
+                  <p className="truncate text-xs text-gray-500 dark:text-gray-400">{user.email}</p>
+                </div>
+              </div>
+            )}
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="sm" className="flex-1 justify-start" onClick={() => { void handleLogout(); }}>
+                <Icon d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                Cerrar sesión
+              </Button>
+              <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      {/* ── Contenido principal ── */}
       <div className="flex flex-1 flex-col min-h-0 overflow-hidden">
-        {/* Topbar (mobile) */}
-        <header className="flex h-14 items-center justify-between border-b border-gray-200 bg-white px-4 md:hidden shrink-0">
+        {/* Topbar (mobile only) */}
+        <header className="flex h-14 items-center justify-between border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 md:hidden shrink-0">
           <span className="text-lg font-bold">
             <span className="text-brand-gerson">G</span>
-            <span className="text-gray-400">vs</span>
+            <span className="text-gray-400 dark:text-gray-500">vs</span>
             <span className="text-brand-ema">E</span>
           </span>
-          {/* TODO: menú hamburguesa para mobile nav */}
+
+          <div className="flex items-center gap-1">
+            <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
+
+            {/* Hamburger button */}
+            <button
+              onClick={() => { setMobileOpen(true); }}
+              className="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors"
+              aria-label="Abrir menú"
+              aria-expanded={mobileOpen}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              {hasAnyBadge && (
+                <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-red-500" />
+              )}
+            </button>
+          </div>
         </header>
 
         <main className="flex-1 overflow-y-auto p-6 min-h-0">{children}</main>

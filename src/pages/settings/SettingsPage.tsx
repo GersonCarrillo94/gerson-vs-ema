@@ -51,7 +51,7 @@ function ProfileSection() {
       });
       setUser(updated);
       setSaved(true);
-      setTimeout(() => setSaved(false), 2500);
+      setTimeout(() => { setSaved(false); }, 2500);
     } catch {
       setError('No se pudo guardar. Intenta de nuevo.');
     } finally {
@@ -75,7 +75,7 @@ function ProfileSection() {
           <input
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => { setName(e.target.value); }}
             className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:border-brand-gerson focus:outline-none focus:ring-2 focus:ring-brand-gerson/30 transition-colors"
           />
         </div>
@@ -90,7 +90,7 @@ function ProfileSection() {
           <input
             type="tel"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => { setPhone(e.target.value); }}
             placeholder="+521234567890"
             className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:border-brand-gerson focus:outline-none focus:ring-2 focus:ring-brand-gerson/30 transition-colors"
           />
@@ -168,7 +168,7 @@ function PartnerSearchSection() {
       await linkPartner(partner.id);
       const updated = await fetchCurrentProfile();
       setUser(updated);
-      void navigate('/', { replace: true });
+      navigate('/', { replace: true });
     } catch (err) {
       setLinkError(err instanceof Error ? err.message : 'Error al vincular. Intenta de nuevo.');
       setLinkingId(null);
@@ -206,7 +206,7 @@ function PartnerSearchSection() {
         {METHODS.map((m) => (
           <button
             key={m.key}
-            onClick={() => handleMethodChange(m.key)}
+            onClick={() => { handleMethodChange(m.key); }}
             className={[
               'flex-1 rounded-lg py-2 text-sm font-medium transition-colors',
               method === m.key
@@ -226,7 +226,7 @@ function PartnerSearchSection() {
           ref={inputRef}
           type={method === 'email' ? 'email' : method === 'phone' ? 'tel' : 'text'}
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => { setQuery(e.target.value); }}
           onKeyDown={(e) => { if (e.key === 'Enter') void handleSearch(); }}
           placeholder={METHODS.find((m) => m.key === method)?.placeholder}
           className="flex-1 rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-brand-gerson focus:outline-none focus:ring-2 focus:ring-brand-gerson/30 transition-colors"

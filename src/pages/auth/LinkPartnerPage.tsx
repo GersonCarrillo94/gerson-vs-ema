@@ -40,7 +40,7 @@ export function LinkPartnerPage() {
 
   // Si ya tiene compañero, redirigir al dashboard
   useEffect(() => {
-    if (user?.partner_id) void navigate('/', { replace: true });
+    if (user?.partner_id) navigate('/', { replace: true });
   }, [user, navigate]);
 
   // Limpiar búsqueda al cambiar de método
@@ -80,7 +80,7 @@ export function LinkPartnerPage() {
       // Refrescar perfil para que partner_id quede en el store
       const updated = await fetchCurrentProfile();
       setUser(updated);
-      void navigate('/', { replace: true });
+      navigate('/', { replace: true });
     } catch (err) {
       setLinkError(err instanceof Error ? err.message : 'Error al vincular. Intenta de nuevo.');
       setLinkingId(null);
@@ -113,7 +113,7 @@ export function LinkPartnerPage() {
             {METHODS.map((m) => (
               <button
                 key={m.key}
-                onClick={() => handleMethodChange(m.key)}
+                onClick={() => { handleMethodChange(m.key); }}
                 className={[
                   'flex-1 rounded-lg py-2 text-sm font-medium transition-colors',
                   method === m.key
@@ -133,7 +133,7 @@ export function LinkPartnerPage() {
               ref={inputRef}
               type={method === 'email' ? 'email' : method === 'phone' ? 'tel' : 'text'}
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => { setQuery(e.target.value); }}
               onKeyDown={(e) => { if (e.key === 'Enter') void handleSearch(); }}
               placeholder={METHODS.find((m) => m.key === method)?.placeholder}
               className="flex-1 rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-brand-gerson focus:outline-none focus:ring-2 focus:ring-brand-gerson/30 transition-colors"
@@ -216,7 +216,7 @@ export function LinkPartnerPage() {
           <span className="font-medium text-gray-600">{user?.display_name}</span>
           {' · '}
           <button
-            onClick={() => void navigate('/login')}
+            onClick={() => { navigate('/login'); }}
             className="text-brand-gerson hover:underline"
           >
             Cambiar cuenta

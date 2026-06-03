@@ -21,9 +21,9 @@ const EVENT_LABELS: Record<string, { icon: string; label: string }> = {
 function formatTimeAgo(dateStr: string): string {
   const seconds = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
   if (seconds < 60) return 'hace unos segundos';
-  if (seconds < 3600) return `hace ${Math.floor(seconds / 60)} min`;
-  if (seconds < 86400) return `hace ${Math.floor(seconds / 3600)} h`;
-  return `hace ${Math.floor(seconds / 86400)} días`;
+  if (seconds < 3600) return `hace ${String(Math.floor(seconds / 60))} min`;
+  if (seconds < 86400) return `hace ${String(Math.floor(seconds / 3600))} h`;
+  return `hace ${String(Math.floor(seconds / 86400))} días`;
 }
 
 function InitialsAvatar({ name, size = 'md' }: { name: string; size?: 'sm' | 'md' | 'lg' }) {
@@ -83,13 +83,13 @@ export function DashboardPage() {
             <div className="h-2 rounded-full bg-gray-100 overflow-hidden">
               <div
                 className="h-full rounded-full bg-brand-gerson transition-all duration-700"
-                style={{ width: `${score.progressInLevel}%` }}
+                style={{ width: `${String(score.progressInLevel)}%` }}
               />
             </div>
             <p className="mt-1 text-xs text-gray-500">
               {score.totalScore} pts
               {ptsToNext !== null
-                ? ` · faltan ${ptsToNext} para Nv. ${score.level.number + 1}`
+                ? ` · faltan ${String(ptsToNext)} para Nv. ${String(score.level.number + 1)}`
                 : ' · ¡nivel máximo!'}
             </p>
           </div>
@@ -114,7 +114,7 @@ export function DashboardPage() {
           <div className="h-2 rounded-full bg-gray-100 overflow-hidden">
             <div
               className="h-full rounded-full bg-emerald-500 transition-all duration-700"
-              style={{ width: `${(score.completedSublevels / 36) * 100}%` }}
+              style={{ width: `${String((score.completedSublevels / 36) * 100)}%` }}
             />
           </div>
           <p className="text-xs text-gray-400">subniveles completados</p>
@@ -124,7 +124,7 @@ export function DashboardPage() {
       {/* ── CTA: continuar aprendiendo ── */}
       {score.nextActiveSublevel !== null && (
         <Link
-          to={`/lessons/${score.nextActiveSublevel}`}
+          to={`/lessons/${String(score.nextActiveSublevel)}`}
           className="flex items-center justify-between rounded-2xl bg-brand-gerson text-white px-5 py-4 hover:bg-blue-600 transition-colors"
         >
           <div>

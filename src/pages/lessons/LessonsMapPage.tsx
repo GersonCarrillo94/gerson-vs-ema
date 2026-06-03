@@ -47,7 +47,7 @@ export function LessonsMapPage() {
         <div className="mt-3 h-2 bg-gray-200 rounded-full overflow-hidden">
           <div
             className="h-full bg-blue-500 rounded-full transition-all duration-700"
-            style={{ width: `${progressPct}%` }}
+            style={{ width: `${String(progressPct)}%` }}
             role="progressbar"
             aria-valuenow={progressPct}
             aria-valuemin={0}

@@ -57,7 +57,7 @@ export function RegisterPage() {
   const [selectedLanguage, setSelectedLanguage] = useState<LearningLanguage | null>(null);
 
   useEffect(() => {
-    if (isAuthenticated) void navigate('/', { replace: true });
+    if (isAuthenticated) navigate('/', { replace: true });
   }, [isAuthenticated, navigate]);
 
   const {
@@ -159,7 +159,7 @@ export function RegisterPage() {
                   <button
                     key={option.value}
                     type="button"
-                    onClick={() => handleLanguageSelect(option.value)}
+                    onClick={() => { handleLanguageSelect(option.value); }}
                     className={[
                       'flex flex-col items-center gap-2 rounded-xl border-2 p-4',
                       'transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gerson',

@@ -161,8 +161,8 @@ export function PartnerProgressPage() {
           <div className={`rounded-2xl border p-4 text-center ${ahead ? 'bg-blue-50 border-blue-200' : 'bg-amber-50 border-amber-200'}`}>
             <p className={`text-lg font-bold ${ahead ? 'text-blue-700' : 'text-amber-700'}`}>
               {ahead
-                ? `¡Vas ganando por ${diff} pts! 🏆`
-                : `${partner.displayName} va ganando por ${Math.abs(diff)} pts 🔥`}
+                ? `¡Vas ganando por ${String(diff)} pts! 🏆`
+                : `${partner.displayName} va ganando por ${String(Math.abs(diff))} pts 🔥`}
             </p>
           </div>
         );

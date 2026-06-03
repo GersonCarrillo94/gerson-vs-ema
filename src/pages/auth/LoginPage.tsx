@@ -23,7 +23,7 @@ export function LoginPage() {
   // Redirigir si ya está logueado
   const from = (location.state as { from?: { pathname: string } } | null)?.from?.pathname ?? '/';
   useEffect(() => {
-    if (isAuthenticated) void navigate(from, { replace: true });
+    if (isAuthenticated) navigate(from, { replace: true });
   }, [isAuthenticated, navigate, from]);
 
   const {

@@ -45,7 +45,7 @@ export function SublevelPage() {
     return (
       <div className="flex flex-col items-center justify-center h-64 gap-4 text-red-600">
         <p>No se pudo cargar la lección.</p>
-        <Button variant="secondary" onClick={() => navigate('/lessons')}>
+        <Button variant="secondary" onClick={() => { navigate('/lessons'); }}>
           Volver al mapa
         </Button>
       </div>
@@ -57,7 +57,7 @@ export function SublevelPage() {
       <div className="flex flex-col items-center justify-center h-64 gap-4 text-gray-600">
         <span className="text-4xl">🔒</span>
         <p className="font-medium">Este subnivel está bloqueado.</p>
-        <Button variant="secondary" onClick={() => navigate('/lessons')}>
+        <Button variant="secondary" onClick={() => { navigate('/lessons'); }}>
           Volver al mapa
         </Button>
       </div>
@@ -82,7 +82,7 @@ export function SublevelPage() {
     async function handleFinish() {
       try {
         const oldScore = myScore?.totalScore ?? 0;
-        const newScore = oldScore + sublevel.pointsReward;
+        const newScore = oldScore + sublevel!.pointsReward;
         const oldLevel = getLevelFromScore(oldScore);
         const newLevel = getLevelFromScore(newScore);
 
@@ -91,11 +91,11 @@ export function SublevelPage() {
         if (newLevel.number > oldLevel.number) {
           showToast({
             type: 'success',
-            message: `¡Subiste al Nv. ${newLevel.number} ${newLevel.name}! ${newLevel.emoji}`,
+            message: `¡Subiste al Nv. ${String(newLevel.number)} ${newLevel.name}! ${newLevel.emoji}`,
             duration: 5000,
           });
         } else {
-          showToast({ type: 'success', message: `¡+${sublevel.pointsReward} pts ganados!` });
+          showToast({ type: 'success', message: `¡+${String(sublevel!.pointsReward)} pts ganados!` });
         }
         navigate('/lessons', { replace: true });
       } catch {
@@ -122,7 +122,7 @@ export function SublevelPage() {
             <span className="text-gray-500">Puntos ganados</span>
             <span className="font-bold text-emerald-600">
               {passed
-                ? `+${sublevel.pointsReward} pts`
+                ? `+${String(sublevel.pointsReward)} pts`
                 : '0 pts'}
             </span>
           </div>
@@ -130,7 +130,7 @@ export function SublevelPage() {
 
         {passed ? (
           <Button
-            onClick={handleFinish}
+            onClick={() => { void handleFinish(); }}
             isLoading={completeMutation.isPending}
             className="w-full"
           >
@@ -141,7 +141,7 @@ export function SublevelPage() {
             <Button onClick={() => { setActivityIndex(0); setActivityResults([]); setPhase('intro'); }} className="w-full">
               Intentar de nuevo
             </Button>
-            <Button variant="secondary" onClick={() => navigate('/lessons')} className="w-full">
+            <Button variant="secondary" onClick={() => { navigate('/lessons'); }} className="w-full">
               Volver al mapa
             </Button>
           </div>
@@ -160,7 +160,7 @@ export function SublevelPage() {
     return (
       <div className="max-w-sm mx-auto px-4 py-10 flex flex-col gap-6 animate-slide-up">
         <button
-          onClick={() => navigate('/lessons')}
+          onClick={() => { navigate('/lessons'); }}
           className="flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
         >
           ← Volver al mapa
@@ -196,7 +196,7 @@ export function SublevelPage() {
           </div>
         )}
 
-        <Button onClick={() => setPhase('activity')} className="w-full" size="lg">
+        <Button onClick={() => { setPhase('activity'); }} className="w-full" size="lg">
           {status === 'completed' ? 'Practicar de nuevo' : 'Empezar'}
         </Button>
       </div>
@@ -205,7 +205,7 @@ export function SublevelPage() {
 
   // ─── Fase: actividad ──────────────────────────────────────────────────────
 
-  const currentActivity = sublevel.activities[activityIndex];
+  const currentActivity = sublevel!.activities[activityIndex]!;
 
   function handleActivityComplete(result: ActivityResult) {
     const updatedResults = [...activityResults, result];
@@ -224,7 +224,7 @@ export function SublevelPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <button
-          onClick={() => navigate('/lessons')}
+          onClick={() => { navigate('/lessons'); }}
           className="text-sm text-gray-500 hover:text-gray-700"
         >
           ✕
@@ -234,7 +234,7 @@ export function SublevelPage() {
             <div
               className="h-full bg-blue-500 transition-all duration-500"
               style={{
-                width: `${(activityIndex / sublevel.activities.length) * 100}%`,
+                width: `${String((activityIndex / sublevel.activities.length) * 100)}%`,
               }}
             />
           </div>
@@ -252,7 +252,7 @@ export function SublevelPage() {
       {/* Renderizar el tipo de actividad correcto */}
       {currentActivity.type === 'flashcards' && (
         <Flashcards
-          key={`${activityIndex}-${currentActivity.id}`}
+          key={`${String(activityIndex)}-${currentActivity.id}`}
           activity={currentActivity}
           onComplete={handleActivityComplete}
         />
@@ -260,7 +260,7 @@ export function SublevelPage() {
 
       {currentActivity.type === 'multiple_choice' && (
         <MultipleChoice
-          key={`${activityIndex}-${currentActivity.id}`}
+          key={`${String(activityIndex)}-${currentActivity.id}`}
           activity={currentActivity}
           onComplete={handleActivityComplete}
         />
@@ -268,7 +268,7 @@ export function SublevelPage() {
 
       {currentActivity.type === 'fill_blank' && (
         <FillInBlank
-          key={`${activityIndex}-${currentActivity.id}`}
+          key={`${String(activityIndex)}-${currentActivity.id}`}
           activity={currentActivity}
           onComplete={handleActivityComplete}
         />
@@ -276,21 +276,20 @@ export function SublevelPage() {
 
       {/* Tipo no soportado aún */}
       {currentActivity.type !== 'flashcards' &&
-        currentActivity.type !== 'multiple_choice' &&
-        currentActivity.type !== 'fill_blank' && (
+        currentActivity.type !== 'multiple_choice' && (
           <div className="text-center text-gray-400 py-12">
             <p>Actividad tipo "{currentActivity.type}" aún no implementada.</p>
             <Button
               variant="secondary"
               className="mt-4"
-              onClick={() =>
+              onClick={() => {
                 handleActivityComplete({
                   activityId: currentActivity.id,
                   correct: 1,
                   total: 1,
                   score: 100,
-                })
-              }
+                });
+              }}
             >
               Saltar actividad
             </Button>
