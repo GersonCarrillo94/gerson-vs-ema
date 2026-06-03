@@ -9,9 +9,9 @@ interface Props {
   onClose: () => void;
 }
 
-export function AttendanceModal({ meeting, iAmCreator, onSubmit, onClose }: Props) {
+export function AttendanceModal({ meeting, iAmCreator: _iAmCreator, onSubmit, onClose }: Props) {
   const [attended, setAttended] = useState<boolean | null>(null);
-  const [actualDuration, setActualDuration] = useState(meeting.duration_estimate_minutes);
+  const [actualDuration, setActualDuration] = useState<number>(meeting.duration_estimate_minutes);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const topicCfg = TOPIC_CATEGORIES[meeting.topic_category];
@@ -57,7 +57,7 @@ export function AttendanceModal({ meeting, iAmCreator, onSubmit, onClose }: Prop
         {/* Botones Sí / No */}
         <div className="grid grid-cols-2 gap-3 mb-4">
           <button
-            onClick={() => setAttended(true)}
+            onClick={() => { setAttended(true); }}
             className={[
               'py-4 rounded-2xl text-sm font-semibold border-2 transition-all',
               attended === true
@@ -68,7 +68,7 @@ export function AttendanceModal({ meeting, iAmCreator, onSubmit, onClose }: Prop
             ✅ Sí asistí
           </button>
           <button
-            onClick={() => setAttended(false)}
+            onClick={() => { setAttended(false); }}
             className={[
               'py-4 rounded-2xl text-sm font-semibold border-2 transition-all',
               attended === false
@@ -92,7 +92,7 @@ export function AttendanceModal({ meeting, iAmCreator, onSubmit, onClose }: Prop
                 min={1}
                 max={90}
                 value={actualDuration}
-                onChange={(e) => setActualDuration(Number(e.target.value))}
+                onChange={(e) => { setActualDuration(Number(e.target.value)); }}
                 className="w-20 rounded-xl border border-gray-200 px-3 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
               <span className="text-sm text-gray-500">minutos</span>
@@ -119,7 +119,7 @@ export function AttendanceModal({ meeting, iAmCreator, onSubmit, onClose }: Prop
             Después
           </button>
           <button
-            onClick={handleSubmit}
+            onClick={() => { void handleSubmit(); }}
             disabled={attended === null || isSubmitting}
             className="flex-1 py-3 rounded-xl bg-indigo-600 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >

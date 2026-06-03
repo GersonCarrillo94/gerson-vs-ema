@@ -71,13 +71,13 @@ export function MeetingTimerPanel({ stats }: Props) {
             <div className="flex justify-between text-sm">
               <span className="text-gray-500">Usados</span>
               <span className="font-semibold text-gray-800">
-                {hoursUsed > 0 ? `${hoursUsed}h ` : ''}{minsUsed}min
+                {hoursUsed > 0 ? `${String(hoursUsed)}h ` : ''}{minsUsed}min
               </span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-500">Disponibles</span>
               <span className={`font-semibold ${stats.isLow ? 'text-red-600' : 'text-gray-800'}`}>
-                {hoursRemaining > 0 ? `${hoursRemaining}h ` : ''}{minsRemaining}min
+                {hoursRemaining > 0 ? `${String(hoursRemaining)}h ` : ''}{minsRemaining}min
               </span>
             </div>
             <div className="flex justify-between text-sm">
@@ -90,7 +90,7 @@ export function MeetingTimerPanel({ stats }: Props) {
           <div className="mt-3 h-1.5 rounded-full bg-white overflow-hidden">
             <div
               className="h-full rounded-full transition-all duration-500"
-              style={{ width: `${stats.percentUsed}%`, backgroundColor: strokeColor }}
+              style={{ width: `${String(stats.percentUsed)}%`, backgroundColor: strokeColor }}
             />
           </div>
         </div>

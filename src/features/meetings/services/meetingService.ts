@@ -1,10 +1,24 @@
 import { supabase } from '@/lib/supabase';
 import { createDailyRoom } from '@/lib/daily';
-import type { Meeting, MeetingTimer, CreateMeetingInput, AttendanceInput } from '../types';
+import type { Database } from '@/types/database';
+import type { Meeting, MeetingTimer, CreateMeetingInput, CreateInstantMeetingInput, AttendanceInput } from '../types';
+
+type MeetingUpdate = Database['public']['Tables']['meetings']['Update'];
 
 // ─── Queries ────────────────────────────────────────────────────────────────
 
-export async function fetchMeetings(userId: string, partnerId: string): Promise<Meeting[]> {
+export async function fetchPendingMeetingsCount(userId: string): Promise<number> {
+  const { count, error } = await supabase
+    .from('meetings')
+    .select('*', { count: 'exact', head: true })
+    .eq('partner_id', userId)
+    .eq('status', 'pending');
+
+  if (error) throw error;
+  return count ?? 0;
+}
+
+export async function fetchMeetings(userId: string, _partnerId: string): Promise<Meeting[]> {
   const { data, error } = await supabase
     .from('meetings')
     .select('*')
@@ -12,7 +26,7 @@ export async function fetchMeetings(userId: string, partnerId: string): Promise<
     .order('scheduled_at', { ascending: false });
 
   if (error) throw error;
-  return (data ?? []) as Meeting[];
+  return data;
 }
 
 export async function fetchMeetingTimer(
@@ -32,7 +46,7 @@ export async function fetchMeetingTimer(
     .maybeSingle();
 
   if (error) throw error;
-  return data as MeetingTimer | null;
+  return data;
 }
 
 // ─── Mutations ───────────────────────────────────────────────────────────────
@@ -61,9 +75,52 @@ export async function createMeeting(
     .single();
 
   if (error) throw error;
-  const meeting = data as Meeting;
+  const meeting = data;
 
   // Crear sala Daily.co si es videollamada
+  if (input.is_video_call) {
+    try {
+      const room = await createDailyRoom(meeting.id);
+      const { error: updateErr } = await supabase
+        .from('meetings')
+        .update({ video_room_url: room.roomUrl, daily_room_name: room.roomName })
+        .eq('id', meeting.id);
+      if (updateErr) console.error('Error guardando sala Daily.co:', updateErr);
+      return { ...meeting, video_room_url: room.roomUrl, daily_room_name: room.roomName };
+    } catch (e) {
+      console.error('Error creando sala Daily.co:', e);
+    }
+  }
+
+  return meeting;
+}
+
+export async function createInstantMeeting(
+  input: CreateInstantMeetingInput,
+  createdBy: string,
+  partnerId: string,
+): Promise<Meeting> {
+  const scheduledAt = new Date().toISOString();
+
+  const { data, error } = await supabase
+    .from('meetings')
+    .insert({
+      created_by: createdBy,
+      partner_id: partnerId,
+      scheduled_at: scheduledAt,
+      duration_estimate_minutes: input.duration_estimate_minutes,
+      location: null,
+      is_video_call: input.is_video_call,
+      topic: input.topic,
+      topic_category: input.topic_category,
+      notes: input.notes || null,
+    })
+    .select()
+    .single();
+
+  if (error) throw error;
+  const meeting = data;
+
   if (input.is_video_call) {
     try {
       const room = await createDailyRoom(meeting.id);
@@ -116,11 +173,11 @@ export async function markAttendance(input: AttendanceInput): Promise<void> {
     .eq('id', input.meetingId)
     .single();
 
-  if (fetchErr || !meeting) throw fetchErr ?? new Error('Reunión no encontrada');
+  if (fetchErr) throw fetchErr;
 
-  const m = meeting as Meeting;
+  const m = meeting;
 
-  const updatePayload: Record<string, unknown> = input.iAmCreator
+  const updatePayload: MeetingUpdate = input.iAmCreator
     ? { attended_by_creator: input.iAttended }
     : { attended_by_partner: input.iAttended };
 

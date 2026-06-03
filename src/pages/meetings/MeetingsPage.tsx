@@ -1,15 +1,16 @@
 import { useState, useMemo } from 'react';
 import { useAuthStore } from '@/store/authStore';
-import { useMeetings, useConfirmMeeting, useRejectMeeting, useCancelMeeting, useMarkAttendance, useCreateMeeting } from '@/features/meetings/hooks/useMeetings';
+import { useMeetings, useConfirmMeeting, useRejectMeeting, useCancelMeeting, useMarkAttendance, useCreateMeeting, useCreateInstantMeeting } from '@/features/meetings/hooks/useMeetings';
 import { useRealtimeMeetings } from '@/features/meetings/hooks/useRealtimeMeetings';
 import { useMeetingTimer } from '@/features/meetings/hooks/useMeetingTimer';
 import { MeetingCalendar } from '@/features/meetings/components/MeetingCalendar';
 import { MeetingCard } from '@/features/meetings/components/MeetingCard';
 import { MeetingTimerPanel } from '@/features/meetings/components/MeetingTimerPanel';
 import { CreateMeetingModal } from '@/features/meetings/components/CreateMeetingModal';
+import { InstantMeetingModal } from '@/features/meetings/components/InstantMeetingModal';
 import { AttendanceModal } from '@/features/meetings/components/AttendanceModal';
 import { VideoCallRoom } from '@/features/meetings/components/VideoCallRoom';
-import type { Meeting, CreateMeetingInput } from '@/features/meetings/types';
+import type { Meeting, CreateMeetingInput, CreateInstantMeetingInput } from '@/features/meetings/types';
 
 type TabId = 'calendar' | 'list';
 
@@ -24,10 +25,12 @@ export function MeetingsPage() {
   const cancelMeeting = useCancelMeeting();
   const markAttendance = useMarkAttendance();
   const createMeeting = useCreateMeeting();
+  const createInstantMeeting = useCreateInstantMeeting();
 
   const [activeTab, setActiveTab] = useState<TabId>('calendar');
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [showCreateModal, setShowCreateModal] = useState(false);
+  const [showInstantModal, setShowInstantModal] = useState(false);
   const [attendanceMeeting, setAttendanceMeeting] = useState<Meeting | null>(null);
   const [videoMeeting, setVideoMeeting] = useState<Meeting | null>(null);
 
@@ -42,7 +45,7 @@ export function MeetingsPage() {
 
   // Meetings próximas (ordenadas por fecha ascendente, solo futuras o de hoy)
   const upcomingMeetings = useMemo(() => {
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date().toISOString().split('T')[0]!;
     return [...meetings]
       .filter((m) => m.scheduled_at >= today && !['cancelled', 'rejected'].includes(m.status))
       .sort((a, b) => a.scheduled_at.localeCompare(b.scheduled_at));
@@ -50,7 +53,7 @@ export function MeetingsPage() {
 
   // Meetings pasadas
   const pastMeetings = useMemo(() => {
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date().toISOString().split('T')[0]!;
     return [...meetings]
       .filter((m) => m.scheduled_at < today)
       .sort((a, b) => b.scheduled_at.localeCompare(a.scheduled_at));
@@ -74,6 +77,10 @@ export function MeetingsPage() {
 
   async function handleCreateMeeting(data: CreateMeetingInput) {
     await createMeeting.mutateAsync(data);
+  }
+
+  async function handleCreateInstantMeeting(data: CreateInstantMeetingInput) {
+    await createInstantMeeting.mutateAsync(data);
   }
 
   async function handleAttendance(attended: boolean, actualDuration?: number) {
@@ -122,8 +129,17 @@ export function MeetingsPage() {
       {/* Modal crear reunión */}
       {showCreateModal && (
         <CreateMeetingModal
-          onClose={() => setShowCreateModal(false)}
+          onClose={() => { setShowCreateModal(false); }}
           onSubmit={handleCreateMeeting}
+          minutesRemaining={timerStats?.minutesRemaining ?? 500}
+        />
+      )}
+
+      {/* Modal reunión instantánea */}
+      {showInstantModal && (
+        <InstantMeetingModal
+          onClose={() => { setShowInstantModal(false); }}
+          onSubmit={handleCreateInstantMeeting}
           minutesRemaining={timerStats?.minutesRemaining ?? 500}
         />
       )}
@@ -134,7 +150,7 @@ export function MeetingsPage() {
           meeting={attendanceMeeting}
           iAmCreator={attendanceMeeting.created_by === userId}
           onSubmit={handleAttendance}
-          onClose={() => setAttendanceMeeting(null)}
+          onClose={() => { setAttendanceMeeting(null); }}
         />
       )}
 
@@ -144,13 +160,22 @@ export function MeetingsPage() {
           <h1 className="text-2xl font-bold text-gray-900">Reuniones</h1>
           <p className="text-sm text-gray-500 mt-0.5">Agenda sesiones de estudio con tu compañero</p>
         </div>
-        <button
-          onClick={() => setShowCreateModal(true)}
-          className="flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 transition-colors"
-        >
-          <span className="text-base leading-none">+</span>
-          Proponer
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => { setShowInstantModal(true); }}
+            className="flex items-center gap-1.5 rounded-xl bg-violet-600 px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-violet-700 transition-colors"
+            title="Proponer reunión ahora mismo"
+          >
+            ⚡ Ahora
+          </button>
+          <button
+            onClick={() => { setShowCreateModal(true); }}
+            className="flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 transition-colors"
+          >
+            <span className="text-base leading-none">+</span>
+            Proponer
+          </button>
+        </div>
       </div>
 
       {/* Banner: asistencias pendientes */}
@@ -163,7 +188,7 @@ export function MeetingsPage() {
             </p>
           </div>
           <button
-            onClick={() => setAttendanceMeeting(pendingAttendance[0])}
+            onClick={() => { setAttendanceMeeting(pendingAttendance[0] ?? null); }}
             className="shrink-0 text-xs font-semibold text-amber-700 underline"
           >
             Marcar ahora
@@ -212,7 +237,7 @@ export function MeetingsPage() {
         {(['calendar', 'list'] as TabId[]).map((tab) => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab)}
+            onClick={() => { setActiveTab(tab); }}
             className={[
               'px-4 py-2 rounded-lg text-sm font-medium transition-all',
               activeTab === tab
@@ -254,7 +279,7 @@ export function MeetingsPage() {
                     <div className="rounded-2xl border-2 border-dashed border-gray-200 py-8 text-center text-gray-400">
                       <p className="text-sm">Sin reuniones este día</p>
                       <button
-                        onClick={() => setShowCreateModal(true)}
+                        onClick={() => { setShowCreateModal(true); }}
                         className="mt-2 text-xs text-indigo-500 underline"
                       >
                         Proponer una
@@ -267,9 +292,9 @@ export function MeetingsPage() {
                           key={m.id}
                           meeting={m}
                           currentUserId={userId}
-                          onConfirm={(id) => confirmMeeting.mutate(id)}
-                          onReject={(id) => rejectMeeting.mutate(id)}
-                          onCancel={(id) => cancelMeeting.mutate(id)}
+                          onConfirm={(id) => { confirmMeeting.mutate(id); }}
+                          onReject={(id) => { rejectMeeting.mutate(id); }}
+                          onCancel={(id) => { cancelMeeting.mutate(id); }}
                           onMarkAttendance={setAttendanceMeeting}
                           onJoinVideo={setVideoMeeting}
                         />
@@ -296,9 +321,9 @@ export function MeetingsPage() {
                         key={m.id}
                         meeting={m}
                         currentUserId={userId}
-                        onConfirm={(id) => confirmMeeting.mutate(id)}
-                        onReject={(id) => rejectMeeting.mutate(id)}
-                        onCancel={(id) => cancelMeeting.mutate(id)}
+                        onConfirm={(id) => { confirmMeeting.mutate(id); }}
+                        onReject={(id) => { rejectMeeting.mutate(id); }}
+                        onCancel={(id) => { cancelMeeting.mutate(id); }}
                         onMarkAttendance={setAttendanceMeeting}
                         onJoinVideo={setVideoMeeting}
                       />
@@ -334,7 +359,7 @@ export function MeetingsPage() {
                   <p className="text-sm font-medium">Sin reuniones aún</p>
                   <p className="text-xs mt-1">Propón la primera sesión de estudio</p>
                   <button
-                    onClick={() => setShowCreateModal(true)}
+                    onClick={() => { setShowCreateModal(true); }}
                     className="mt-4 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 transition-colors"
                   >
                     Proponer reunión

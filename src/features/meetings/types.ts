@@ -18,6 +18,14 @@ export interface CreateMeetingInput {
   notes: string;
 }
 
+export interface CreateInstantMeetingInput {
+  duration_estimate_minutes: DurationEstimate;
+  is_video_call: boolean;
+  topic: string;
+  topic_category: TopicCategory;
+  notes: string;
+}
+
 export interface AttendanceInput {
   meetingId: string;
   iAmCreator: boolean;

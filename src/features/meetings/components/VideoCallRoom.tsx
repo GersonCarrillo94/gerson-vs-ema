@@ -14,7 +14,7 @@ export function VideoCallRoom({ roomUrl, onLeave }: Props) {
     const interval = setInterval(() => {
       setElapsed(Math.floor((Date.now() - startTimeRef.current) / 1000));
     }, 1000);
-    return () => clearInterval(interval);
+    return () => { clearInterval(interval); };
   }, []);
 
   function formatElapsed(secs: number): string {

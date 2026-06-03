@@ -23,6 +23,13 @@ function isPast(iso: string): boolean {
   return new Date(iso) < new Date();
 }
 
+function isInstantMeeting(meeting: Meeting): boolean {
+  const diff = Math.abs(
+    new Date(meeting.scheduled_at).getTime() - new Date(meeting.created_at).getTime(),
+  );
+  return diff < 3 * 60 * 1000;
+}
+
 function canJoinVideo(meeting: Meeting): boolean {
   if (!meeting.is_video_call || !meeting.video_room_url) return false;
   if (meeting.status !== 'confirmed') return false;
@@ -56,6 +63,7 @@ export function MeetingCard({
   const past = isPast(meeting.scheduled_at);
   const joinable = canJoinVideo(meeting);
   const pendingAttendance = needsAttendance(meeting, currentUserId);
+  const instant = isInstantMeeting(meeting);
 
   return (
     <div
@@ -85,7 +93,7 @@ export function MeetingCard({
 
           {joinable && onJoinVideo && (
             <button
-              onClick={() => onJoinVideo(meeting)}
+              onClick={() => { onJoinVideo(meeting); }}
               className="flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-indigo-700 transition-colors"
             >
               📹 Unirse ahora
@@ -95,9 +103,11 @@ export function MeetingCard({
 
         {/* Fecha y hora */}
         <div className="flex items-center gap-2 text-gray-700 mb-1">
-          <span className="text-lg">📅</span>
+          <span className="text-lg">{instant ? '⚡' : '📅'}</span>
           <div>
-            <p className="text-sm font-semibold capitalize">{date}</p>
+            <p className="text-sm font-semibold capitalize">
+              {instant ? 'Reunión instantánea' : date}
+            </p>
             <p className="text-xs text-gray-500">{time} · {meeting.duration_estimate_minutes} min est.</p>
           </div>
         </div>
@@ -146,7 +156,7 @@ export function MeetingCard({
             <>
               {onConfirm && (
                 <button
-                  onClick={() => onConfirm(meeting.id)}
+                  onClick={() => { onConfirm(meeting.id); }}
                   className="flex-1 rounded-lg bg-green-600 px-3 py-2 text-xs font-semibold text-white hover:bg-green-700 transition-colors"
                 >
                   ✓ Confirmar
@@ -154,7 +164,7 @@ export function MeetingCard({
               )}
               {onReject && (
                 <button
-                  onClick={() => onReject(meeting.id)}
+                  onClick={() => { onReject(meeting.id); }}
                   className="flex-1 rounded-lg bg-white border border-red-300 px-3 py-2 text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors"
                 >
                   ✕ Rechazar
@@ -166,7 +176,7 @@ export function MeetingCard({
           {/* Creador puede cancelar reuniones pending o confirmed */}
           {['pending', 'confirmed'].includes(meeting.status) && isCreator && !past && onCancel && (
             <button
-              onClick={() => onCancel(meeting.id)}
+              onClick={() => { onCancel(meeting.id); }}
               className="rounded-lg bg-white border border-gray-200 px-3 py-2 text-xs text-gray-500 hover:bg-gray-50 transition-colors"
             >
               Cancelar
@@ -176,7 +186,7 @@ export function MeetingCard({
           {/* Marcar asistencia */}
           {pendingAttendance && onMarkAttendance && (
             <button
-              onClick={() => onMarkAttendance(meeting)}
+              onClick={() => { onMarkAttendance(meeting); }}
               className="flex-1 rounded-lg bg-amber-500 px-3 py-2 text-xs font-semibold text-white hover:bg-amber-600 transition-colors"
             >
               Marcar asistencia

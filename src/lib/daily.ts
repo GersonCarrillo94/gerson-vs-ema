@@ -15,12 +15,14 @@ export interface DailyRoom {
  *   npx supabase secrets set DAILY_API_KEY=<tu-api-key> --project-ref <id>
  */
 export async function createDailyRoom(meetingId: string): Promise<DailyRoom> {
-  const { data, error } = await supabase.functions.invoke<DailyRoom>('create-daily-room', {
+  const response = await supabase.functions.invoke<DailyRoom>('create-daily-room', {
     body: { meetingId },
   });
 
-  if (error || !data) {
-    throw new Error(error?.message ?? 'Error creando sala de video');
+  const data = response.data;
+  if (!data) {
+    const err = response.error as { message?: string } | null;
+    throw new Error(err?.message ?? 'Error creando sala de video');
   }
 
   return data;
