@@ -1,0 +1,102 @@
+{
+  "id": "en-sublevel-36",
+  "language": "english",
+  "number": 36,
+  "level": "advanced",
+  "title": "Advanced Conversation & Debate",
+  "description": "Express complex opinions, agree and disagree politely, and structure your thoughts in discussions — the final level!",
+  "estimatedMinutes": 18,
+  "pointsReward": 250,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-36-act-1",
+      "type": "flashcards",
+      "title": "Discussion and debate phrases",
+      "items": [
+        { "id": "f1", "front": "Giving your opinion", "back": "In my view… / From my perspective… / I strongly believe that…", "example": "In my view, education should be free for everyone." },
+        { "id": "f2", "front": "Agreeing strongly", "back": "Absolutely / Exactly / I couldn't agree more / That's a great point.", "example": "I couldn't agree more — that's exactly what needs to happen." },
+        { "id": "f3", "front": "Agreeing partially", "back": "I see your point, but… / You have a point, although…", "example": "I see your point, but I think the issue is more complex than that." },
+        { "id": "f4", "front": "Disagreeing politely", "back": "I beg to differ. / I'm not sure I agree. / With respect, I think…", "example": "With respect, I think that argument overlooks some important factors." },
+        { "id": "f5", "front": "Adding to a point", "back": "Furthermore… / What's more… / In addition… / Not only that…", "example": "It's more efficient. Furthermore, it saves money in the long run." },
+        { "id": "f6", "front": "Conceding a point", "back": "While it's true that… / I admit that… / Granted, but…", "example": "While it's true that costs are high, the long-term benefits outweigh them." },
+        { "id": "f7", "front": "Asking for clarification", "back": "Could you elaborate on that? / What do you mean by…? / Can you give an example?", "example": "Could you elaborate on what you mean by 'sustainable growth'?" },
+        { "id": "f8", "front": "Concluding / summarising", "back": "In conclusion… / To sum up… / All things considered… / Ultimately…", "example": "To sum up, the evidence strongly suggests that action is needed now." }
+      ]
+    },
+    {
+      "id": "en-36-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the best phrase for the situation",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "You want to share your opinion on climate change. How do you begin?",
+          "options": ["I think maybe…", "In my view, climate change is the most pressing issue of our time.", "Climate change is bad.", "Everyone knows that climate change…"],
+          "correctIndex": 1,
+          "explanation": "'In my view' is a clear, formal way to introduce a personal opinion. It sets up the argument well."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Your colleague makes a good point, but you think there's more to it. What do you say?",
+          "options": ["No, you're wrong.", "I see your point, but I think the issue is more nuanced.", "That's not right.", "Yes, but no."],
+          "correctIndex": 1,
+          "explanation": "'I see your point, but…' is the polite way to partially agree and then add your perspective."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Someone mentions the cost of your proposal. You admit it's expensive but defend it. How do you start?",
+          "options": ["It's not that expensive.", "Granted, the costs are high, but the long-term benefits are significant.", "You are wrong about costs.", "Cost doesn't matter."],
+          "correctIndex": 1,
+          "explanation": "'Granted' = I admit that. Used to concede a point before making a counter-argument."
+        },
+        {
+          "id": "mc4",
+          "prompt": "You don't understand what the speaker means by 'paradigm shift'. What do you ask?",
+          "options": ["What?", "I don't get it.", "Could you elaborate on what you mean by 'paradigm shift'?", "Explain please."],
+          "correctIndex": 2,
+          "explanation": "'Could you elaborate on…?' is a polite, formal way to ask someone to explain in more detail."
+        },
+        {
+          "id": "mc5",
+          "prompt": "You are finishing a presentation. How do you signal your conclusion?",
+          "options": ["That's all.", "OK done.", "To sum up, the data clearly supports our initial hypothesis.", "I'm finished now."],
+          "correctIndex": 2,
+          "explanation": "'To sum up' is a formal transition that signals you are about to summarise your main points."
+        }
+      ]
+    },
+    {
+      "id": "en-36-act-3",
+      "type": "fill_blank",
+      "title": "Complete the debate phrases",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "___ my view, access to clean water is a basic human right.",
+          "blanks": [{ "answer": "In", "alternatives": ["in"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "I couldn't ___ more — that is exactly the point we've been trying to make.",
+          "blanks": [{ "answer": "agree", "alternatives": ["Agree"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "___ it's true that the solution is costly, the alternative is far worse.",
+          "blanks": [{ "answer": "While", "alternatives": ["while", "Granted,", "granted,"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Could you ___ on what you mean by 'structural inequality'?",
+          "blanks": [{ "answer": "elaborate", "alternatives": ["Elaborate"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "___ sum up, the evidence strongly supports the need for immediate action.",
+          "blanks": [{ "answer": "To", "alternatives": ["to"] }]
+        }
+      ]
+    }
+  ]
+}

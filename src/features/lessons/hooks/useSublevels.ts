@@ -7,7 +7,7 @@ import {
   startSublevel,
   completeSublevel,
 } from '../services/lessonService';
-import type { SublevelWithProgress, SublevelResult } from '../types';
+import type { SublevelWithProgress } from '../types';
 
 const LEVELS = {
   basic: { min: 1, max: 12 },
@@ -55,7 +55,7 @@ export function useSublevelsMap() {
     return {
       // Campos estáticos mínimos para renderizar la tarjeta (sin cargar el JSON)
       id: `${language === 'english' ? 'en' : 'es'}-sublevel-${String(number).padStart(2, '0')}`,
-      language: language as 'english' | 'spanish',
+      language,
       number,
       level,
       title: '',         // se carga cuando el usuario abre el subnivel
@@ -90,7 +90,7 @@ export function useSublevelDetail(sublevelNumber: number) {
   // Cargar el contenido JSON
   const contentQuery = useQuery({
     queryKey: ['sublevel_content', language, sublevelNumber],
-    queryFn: () => fetchSublevelContent(language as 'english' | 'spanish', sublevelNumber),
+    queryFn: () => fetchSublevelContent(language, sublevelNumber),
     enabled: !!user && sublevelNumber >= 1 && sublevelNumber <= 36,
     staleTime: Infinity, // el contenido no cambia
   });
@@ -130,7 +130,7 @@ export function useCompleteSublevel() {
   return useMutation({
     mutationFn: completeSublevel,
     onSuccess: () => {
-      queryClient.invalidateQueries({
+      void queryClient.invalidateQueries({
         queryKey: ['sublevel_progress', user?.id],
       });
     },

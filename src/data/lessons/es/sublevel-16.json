@@ -1,0 +1,112 @@
+{
+  "id": "es-sublevel-16",
+  "language": "spanish",
+  "number": 16,
+  "level": "intermediate",
+  "title": "Pretérito Indefinido — Verbos Irregulares",
+  "description": "Domina los verbos irregulares más comunes en pasado: fui, tuve, vine, hice, dije.",
+  "estimatedMinutes": 16,
+  "pointsReward": 175,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-16-act-1",
+      "type": "flashcards",
+      "title": "Verbos irregulares frecuentes",
+      "items": [
+        { "id": "f1", "front": "ir / ser → fui, fuiste, fue…", "back": "go/be → went/was", "example": "Fui al mercado ayer. Fue un gran día." },
+        { "id": "f2", "front": "tener → tuve, tuviste, tuvo…", "back": "have → had", "example": "Tuve una reunión esta mañana." },
+        { "id": "f3", "front": "venir → vine, viniste, vino…", "back": "come → came", "example": "Vino a casa tarde." },
+        { "id": "f4", "front": "hacer → hice, hiciste, hizo…", "back": "do/make → did/made", "example": "Ella hizo el desayuno para todos." },
+        { "id": "f5", "front": "decir → dije, dijiste, dijo…", "back": "say → said", "example": "Él dijo que estaba cansado." },
+        { "id": "f6", "front": "poder → pude, pudiste, pudo…", "back": "can → could", "example": "No pude dormir anoche." },
+        { "id": "f7", "front": "saber → supe, supiste, supo…", "back": "know → knew (found out)", "example": "Supe la noticia ayer." },
+        { "id": "f8", "front": "ver → vi, viste, vio…", "back": "see → saw", "example": "Vi una película buenísima anoche." },
+        { "id": "f9", "front": "querer → quise, quisiste, quiso…", "back": "want → wanted (tried)", "example": "Quise llamarte pero no pude." }
+      ]
+    },
+    {
+      "id": "es-16-act-2",
+      "type": "multiple_choice",
+      "title": "Elige el irregular correcto",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "El verano pasado ___ a la playa. (nosotros, ir)",
+          "options": ["íbamos", "fuimos", "vamos", "iremos"],
+          "correctIndex": 1,
+          "explanation": "ir → irregular: fuimos (nosotros). No 'fuimos' no sigue la terminación regular -amos."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Ella ___ un pastel de chocolate para la fiesta. (hacer)",
+          "options": ["hací", "hacía", "hizo", "hice"],
+          "correctIndex": 2,
+          "explanation": "hacer → hizo (ella). Nota: hice (yo), hizo (él/ella)."
+        },
+        {
+          "id": "mc3",
+          "prompt": "___ a tu hermano en el supermercado ayer. (yo, ver)",
+          "options": ["Veí", "Vio", "Vi", "Viste"],
+          "correctIndex": 2,
+          "explanation": "ver → vi (yo). 'Veí' no existe."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Él ___ que no sabía nada. (decir)",
+          "options": ["decía", "dije", "dijo", "dice"],
+          "correctIndex": 2,
+          "explanation": "decir → dijo (él). 'Él dijo que no sabía nada.'"
+        },
+        {
+          "id": "mc5",
+          "prompt": "Ellos ___ una experiencia increíble en Europa. (tener)",
+          "options": ["tienen", "tenían", "tuvieron", "tendrán"],
+          "correctIndex": 2,
+          "explanation": "tener → tuvieron (ellos). Ellos tuvieron una experiencia increíble."
+        }
+      ]
+    },
+    {
+      "id": "es-16-act-3",
+      "type": "fill_blank",
+      "title": "Escribe el irregular correcto",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Ella ___ al gimnasio y luego ___ a casa. (ir, venir)",
+          "blanks": [
+            { "answer": "fue", "alternatives": ["Fue"] },
+            { "answer": "vino", "alternatives": ["Vino"] }
+          ]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Yo ___ que era mala idea, pero no dije nada. (saber→ supe)",
+          "blanks": [{ "answer": "supe", "alternatives": ["Supe"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Él ___ un mensaje pero yo lo ___ demasiado tarde. (decir, ver)",
+          "blanks": [
+            { "answer": "dijo", "alternatives": ["Dijo"] },
+            { "answer": "vi", "alternatives": ["Vi"] }
+          ]
+        },
+        {
+          "id": "fb4",
+          "sentence": "No ___ dormir anoche. Estaba muy nervioso. (poder, yo)",
+          "blanks": [{ "answer": "pude", "alternatives": ["Pude"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Ella ___ la cena y todos ___ una película juntos. (hacer, ver)",
+          "blanks": [
+            { "answer": "hizo", "alternatives": ["Hizo"] },
+            { "answer": "vimos", "alternatives": ["Vimos"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

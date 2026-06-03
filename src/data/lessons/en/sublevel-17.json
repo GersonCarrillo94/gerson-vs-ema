@@ -1,0 +1,102 @@
+{
+  "id": "en-sublevel-17",
+  "language": "english",
+  "number": 17,
+  "level": "intermediate",
+  "title": "Talking About the Future",
+  "description": "Use 'going to' for plans and 'will' for predictions and spontaneous decisions.",
+  "estimatedMinutes": 15,
+  "pointsReward": 175,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-17-act-1",
+      "type": "flashcards",
+      "title": "Going to vs will",
+      "items": [
+        { "id": "f1", "front": "be going to + verb", "back": "plan o intención ya decidida", "example": "I'm going to study tonight. (ya lo decidí)" },
+        { "id": "f2", "front": "will + verb", "back": "predicción o decisión espontánea", "example": "It will rain tomorrow. I'll help you!" },
+        { "id": "f3", "front": "I'm going to…", "back": "Voy a…", "example": "I'm going to visit my parents this weekend." },
+        { "id": "f4", "front": "She's going to…", "back": "Ella va a…", "example": "She's going to start a new job." },
+        { "id": "f5", "front": "I will / I'll…", "back": "Yo voy a… (espontáneo) / creo que…", "example": "Don't worry, I'll do it for you." },
+        { "id": "f6", "front": "It won't… / They won't…", "back": "No va a… (negativo de will)", "example": "It won't take long. They won't be late." },
+        { "id": "f7", "front": "Will you…? / Are you going to…?", "back": "¿Vas a…?", "example": "Will you help me? Are you going to come?" },
+        { "id": "f8", "front": "tomorrow / next week / soon", "back": "mañana / la próxima semana / pronto", "example": "I'll call you tomorrow." }
+      ]
+    },
+    {
+      "id": "en-17-act-2",
+      "type": "multiple_choice",
+      "title": "Going to or will?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "I already bought the tickets. We ___ see the concert on Friday.",
+          "options": ["will", "are going to", "go to", "won't"],
+          "correctIndex": 1,
+          "explanation": "Already bought tickets = a decided plan → 'going to'. We are going to see the concert."
+        },
+        {
+          "id": "mc2",
+          "prompt": "The phone is ringing! — Don't worry, I ___ answer it.",
+          "options": ["am going to", "will", "won't", "going to"],
+          "correctIndex": 1,
+          "explanation": "Spontaneous decision at the moment of speaking → 'will'. I'll answer it."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Look at those clouds. It ___ rain.",
+          "options": ["will going to", "is going to", "goes to", "wills"],
+          "correctIndex": 1,
+          "explanation": "Evidence visible now (dark clouds) = strong prediction with 'going to'."
+        },
+        {
+          "id": "mc4",
+          "prompt": "She ___ be late — she always arrives on time. (prediction)",
+          "options": ["isn't going to", "won't", "doesn't will", "not will"],
+          "correctIndex": 1,
+          "explanation": "General prediction without visible evidence → 'won't'. She won't be late."
+        },
+        {
+          "id": "mc5",
+          "prompt": "___ you help me move this table?",
+          "options": ["Are going to", "Going to", "Will", "Shall to"],
+          "correctIndex": 2,
+          "explanation": "Asking for a favour on the spot → 'Will you…?' Will you help me?"
+        }
+      ]
+    },
+    {
+      "id": "en-17-act-3",
+      "type": "fill_blank",
+      "title": "Complete with going to or will",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I ___ study Spanish tomorrow. I've already planned it.",
+          "blanks": [{ "answer": "am going to", "alternatives": ["'m going to", "going to"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "She's tired. She ___ go to the party tonight.",
+          "blanks": [{ "answer": "won't", "alternatives": ["will not"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "I ___ get you a coffee — I'm just going to the kitchen.",
+          "blanks": [{ "answer": "will", "alternatives": ["'ll"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Look at him run! He ___ win the race.",
+          "blanks": [{ "answer": "is going to", "alternatives": ["'s going to", "going to"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "___ you be at the meeting tomorrow?",
+          "blanks": [{ "answer": "Will", "alternatives": ["will"] }]
+        }
+      ]
+    }
+  ]
+}

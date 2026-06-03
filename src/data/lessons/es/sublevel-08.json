@@ -1,0 +1,106 @@
+{
+  "id": "es-sublevel-08",
+  "language": "spanish",
+  "number": 8,
+  "level": "basic",
+  "title": "Comida y Bebidas",
+  "description": "Pide comida y bebida en un restaurante, di lo que te gusta y lee un menú básico en español.",
+  "estimatedMinutes": 14,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-08-act-1",
+      "type": "flashcards",
+      "title": "Vocabulario de comida y bebida",
+      "items": [
+        { "id": "f1", "front": "el desayuno", "back": "breakfast", "example": "Tomo desayuno a las 7 AM." },
+        { "id": "f2", "front": "el almuerzo", "back": "lunch", "example": "Almorzamos juntos a las doce." },
+        { "id": "f3", "front": "la cena", "back": "dinner", "example": "La cena es a las siete de la noche." },
+        { "id": "f4", "front": "Tengo hambre.", "back": "I'm hungry.", "example": "Tengo hambre, ¿podemos comer pronto?" },
+        { "id": "f5", "front": "Tengo sed.", "back": "I'm thirsty.", "example": "Tengo sed. ¿Me das agua?" },
+        { "id": "f6", "front": "Quisiera… / Me gustaría…", "back": "I'd like…", "example": "Quisiera un café, por favor." },
+        { "id": "f7", "front": "Me gusta / No me gusta", "back": "I like / I don't like", "example": "Me gusta el arroz pero no me gusta el pescado." },
+        { "id": "f8", "front": "delicioso / rico", "back": "delicious / tasty", "example": "¡Esta sopa está deliciosa!" },
+        { "id": "f9", "front": "la cuenta", "back": "the bill / the check", "example": "¿Nos trae la cuenta, por favor?" }
+      ]
+    },
+    {
+      "id": "es-08-act-2",
+      "type": "multiple_choice",
+      "title": "En el restaurante",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Quieres pedir. Le dices al mesero: '___ un vaso de agua, por favor.'",
+          "options": ["Quiero", "Quisiera", "Me gusta", "Tengo"],
+          "correctIndex": 1,
+          "explanation": "'Quisiera' es más cortés que 'quiero'. Úsalo en restaurantes."
+        },
+        {
+          "id": "mc2",
+          "prompt": "¿Cómo se dice 'I'm hungry' en español?",
+          "options": ["Soy hambre.", "Estoy hambriento.", "Tengo hambre.", "Me gusta comer."],
+          "correctIndex": 2,
+          "explanation": "En español se usa 'tener' para sensaciones físicas: 'Tengo hambre', 'Tengo sed'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "La comida estuvo buenísima. Dices: '¡Está ___!'",
+          "options": ["deliciosa", "hambrienta", "la cuenta", "sediento"],
+          "correctIndex": 0,
+          "explanation": "'Deliciosa' describe comida que te encanta. También puedes decir '¡Está riquísima!'."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Quieres pagar y salir. Le pides al mesero:",
+          "options": ["el menú", "el almuerzo", "la cuenta", "el desayuno"],
+          "correctIndex": 2,
+          "explanation": "'¿Nos trae la cuenta, por favor?' es la forma correcta de pedir para pagar."
+        },
+        {
+          "id": "mc5",
+          "prompt": "La comida que comes en la noche se llama:",
+          "options": ["desayuno", "almuerzo", "merienda", "cena"],
+          "correctIndex": 3,
+          "explanation": "Desayuno = mañana, almuerzo = mediodía, cena = noche."
+        }
+      ]
+    },
+    {
+      "id": "es-08-act-3",
+      "type": "fill_blank",
+      "title": "Completa las oraciones",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Tengo ___. ¿Me das agua, por favor?",
+          "blanks": [{ "answer": "sed", "alternatives": ["Sed"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "___ un café y un sándwich, por favor.",
+          "blanks": [{ "answer": "Quisiera", "alternatives": ["quisiera", "Quiero", "quiero"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Me ___ la pizza pero no me ___ el pescado.",
+          "blanks": [
+            { "answer": "gusta", "alternatives": ["Gusta"] },
+            { "answer": "gusta", "alternatives": ["Gusta"] }
+          ]
+        },
+        {
+          "id": "fb4",
+          "sentence": "¿Nos trae la ___, por favor? Queremos pagar.",
+          "blanks": [{ "answer": "cuenta", "alternatives": ["Cuenta"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "¡Esta sopa está ___! Me encanta.",
+          "blanks": [{ "answer": "deliciosa", "alternatives": ["Deliciosa", "rica", "Rica", "riquísima", "Riquísima"] }]
+        }
+      ]
+    }
+  ]
+}

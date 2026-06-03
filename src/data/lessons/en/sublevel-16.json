@@ -1,0 +1,112 @@
+{
+  "id": "en-sublevel-16",
+  "language": "english",
+  "number": 16,
+  "level": "intermediate",
+  "title": "Past Simple — Irregular Verbs",
+  "description": "Master the most common irregular verbs: go→went, have→had, see→saw and more.",
+  "estimatedMinutes": 16,
+  "pointsReward": 175,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-16-act-1",
+      "type": "flashcards",
+      "title": "Common irregular verbs",
+      "items": [
+        { "id": "f1", "front": "go → went", "back": "ir → fui/fue", "example": "I went to the market yesterday." },
+        { "id": "f2", "front": "have → had", "back": "tener → tuve/tuvo", "example": "She had a great time at the party." },
+        { "id": "f3", "front": "see → saw", "back": "ver → vi/vio", "example": "We saw a good film last night." },
+        { "id": "f4", "front": "come → came", "back": "venir → vine/vino", "example": "He came home late." },
+        { "id": "f5", "front": "make → made", "back": "hacer → hice/hizo", "example": "She made breakfast for everyone." },
+        { "id": "f6", "front": "say → said", "back": "decir → dije/dijo", "example": "He said he was tired." },
+        { "id": "f7", "front": "get → got", "back": "obtener/llegar → obtuve/llegué", "example": "I got your message. She got home at 10." },
+        { "id": "f8", "front": "know → knew", "back": "saber/conocer → supe/sabía", "example": "I knew the answer." },
+        { "id": "f9", "front": "think → thought", "back": "pensar/creer → pensé", "example": "I thought it was a good idea." }
+      ]
+    },
+    {
+      "id": "en-16-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the correct irregular past",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "We ___ to the beach last summer.",
+          "options": ["goed", "go", "went", "gone"],
+          "correctIndex": 2,
+          "explanation": "go → went (irregular). 'Goed' does not exist."
+        },
+        {
+          "id": "mc2",
+          "prompt": "She ___ a wonderful birthday cake.",
+          "options": ["maked", "made", "makes", "maded"],
+          "correctIndex": 1,
+          "explanation": "make → made (irregular). Not 'maked'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "I ___ your brother at the supermarket yesterday.",
+          "options": ["seed", "seen", "saw", "see"],
+          "correctIndex": 2,
+          "explanation": "see → saw (past simple). 'Seen' is the past participle (used with 'have')."
+        },
+        {
+          "id": "mc4",
+          "prompt": "He ___ he didn't know anything.",
+          "options": ["says", "sayed", "said", "say"],
+          "correctIndex": 2,
+          "explanation": "say → said (irregular). He said he didn't know."
+        },
+        {
+          "id": "mc5",
+          "prompt": "They ___ a fantastic trip to Europe last year.",
+          "options": ["have", "haved", "had", "has"],
+          "correctIndex": 2,
+          "explanation": "have → had (irregular). They had a fantastic trip."
+        }
+      ]
+    },
+    {
+      "id": "en-16-act-3",
+      "type": "fill_blank",
+      "title": "Write the correct irregular past",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "She ___ to the gym and then ___ home. (go, come)",
+          "blanks": [
+            { "answer": "went", "alternatives": ["Went"] },
+            { "answer": "came", "alternatives": ["Came"] }
+          ]
+        },
+        {
+          "id": "fb2",
+          "sentence": "I ___ it was a bad idea, but I didn't say anything. (think)",
+          "blanks": [{ "answer": "thought", "alternatives": ["Thought"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "He ___ a message but I ___ it too late. (say, get)",
+          "blanks": [
+            { "answer": "said", "alternatives": ["Said"] },
+            { "answer": "got", "alternatives": ["Got"] }
+          ]
+        },
+        {
+          "id": "fb4",
+          "sentence": "We ___ each other for years before we became friends. (know)",
+          "blanks": [{ "answer": "knew", "alternatives": ["Knew"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "She ___ dinner and we all ___ a movie together. (make, see)",
+          "blanks": [
+            { "answer": "made", "alternatives": ["Made"] },
+            { "answer": "saw", "alternatives": ["Saw"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

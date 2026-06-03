@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-30",
+  "language": "spanish",
+  "number": 30,
+  "level": "advanced",
+  "title": "El Estilo Indirecto",
+  "description": "Reporta lo que dijeron otros con los cambios de tiempo, pronombres y expresiones temporales correctos.",
+  "estimatedMinutes": 17,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-30-act-1",
+      "type": "flashcards",
+      "title": "Reglas del estilo indirecto y cambios de tiempo",
+      "items": [
+        { "id": "f1", "front": "decir que vs decirme que / preguntar si", "back": "He dijo que… / Me dijo que… / Me preguntó si…", "example": "Ella dijo que estaba cansada. / Me dijo que tenía hambre." },
+        { "id": "f2", "front": "Cambio de tiempo: presente → imperfecto", "back": "'Estoy cansado.' → Dijo que estaba cansado.", "example": "'Trabajo aquí.' → Dijo que trabajaba allí." },
+        { "id": "f3", "front": "Cambio de tiempo: pretérito indefinido → pluscuamperfecto", "back": "'Lo vi.' → Dijo que lo había visto.", "example": "'Terminamos tarde.' → Dijeron que habían terminado tarde." },
+        { "id": "f4", "front": "Cambio de tiempo: futuro → condicional", "back": "'Te llamaré.' → Dijo que me llamaría.", "example": "'Iré mañana.' → Dijo que iría al día siguiente." },
+        { "id": "f5", "front": "Cambio de tiempo: perfecto → pluscuamperfecto", "back": "'He terminado.' → Dijo que había terminado.", "example": "'Hemos llegado.' → Dijeron que habían llegado." },
+        { "id": "f6", "front": "Preguntas indirectas (sin inversión, sin signo de interrogación)", "back": "'¿Dónde vives?' → Preguntó dónde vivía.", "example": "'¿Vienes?' → Preguntó si venía." },
+        { "id": "f7", "front": "Cambios de expresiones temporales", "back": "hoy→ese día, ahora→entonces, mañana→al día siguiente, ayer→el día anterior", "example": "Dijo que me llamaría al día siguiente. (original: 'Te llamo mañana.')" },
+        { "id": "f8", "front": "Verbos de reporte más allá de 'decir'", "back": "preguntar, pedir, explicar, prometer, advertir, sugerir, admitir", "example": "Me advirtió que no llegara tarde. Sugirió ir en tren." }
+      ]
+    },
+    {
+      "id": "es-30-act-2",
+      "type": "multiple_choice",
+      "title": "Reporta lo que dijeron",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Directo: 'Estoy muy contento.' → Indirecto: Dijo que ___ muy contento.",
+          "options": ["está", "estaba", "ha estado", "estará"],
+          "correctIndex": 1,
+          "explanation": "Presente 'estoy' → imperfecto 'estaba' en el estilo indirecto."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Directo: 'Te llamaré mañana.' → Indirecto: Dijo que me ___ al día siguiente.",
+          "options": ["llamará", "llamaría", "llama", "llamó"],
+          "correctIndex": 1,
+          "explanation": "Futuro 'llamaré' → condicional 'llamaría'. 'Mañana' → 'al día siguiente'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Directo: '¿Dónde trabajas?' → Indirecto: Preguntó dónde ___.",
+          "options": ["trabajo", "trabajaba", "trabajas", "trabajaré"],
+          "correctIndex": 1,
+          "explanation": "Pregunta indirecta: sin inversión, tiempo en imperfecto: preguntó dónde trabajaba."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Directo: '¡No llegues tarde!' → Indirecto: Le ___ que no llegara tarde.",
+          "options": ["dijo", "preguntó", "advirtió", "pidió"],
+          "correctIndex": 2,
+          "explanation": "'Advertir' es el verbo más adecuado para una advertencia fuerte de que no haga algo."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Directo: 'He terminado el informe.' → Indirecto: Dijo que ___ el informe.",
+          "options": ["terminó", "ha terminado", "había terminado", "terminaba"],
+          "correctIndex": 2,
+          "explanation": "Pretérito perfecto 'he terminado' → pluscuamperfecto 'había terminado' en el estilo indirecto."
+        }
+      ]
+    },
+    {
+      "id": "es-30-act-3",
+      "type": "fill_blank",
+      "title": "Convierte al estilo indirecto",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Directo: 'Tengo hambre.' → Ella dijo que ___ hambre.",
+          "blanks": [{ "answer": "tenía", "alternatives": ["Tenía"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Directo: 'Podemos quedar el viernes.' → Dijeron que ___ quedar el viernes.",
+          "blanks": [{ "answer": "podrían", "alternatives": ["Podrían"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Directo: '¿Vas a venir?' → Preguntó ___ iba a venir.",
+          "blanks": [{ "answer": "si", "alternatives": ["Si"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Directo: 'Lo vi ayer.' → Dijo que lo ___ el día anterior.",
+          "blanks": [{ "answer": "había visto", "alternatives": ["Había visto"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Directo: '¡No toques eso!' → Nos ___ que no tocáramos eso.",
+          "blanks": [{ "answer": "advirtió", "alternatives": ["Advirtió", "dijo", "Dijo", "pidió", "Pidió"] }]
+        }
+      ]
+    }
+  ]
+}

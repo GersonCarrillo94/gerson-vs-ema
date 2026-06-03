@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-20",
+  "language": "spanish",
+  "number": 20,
+  "level": "intermediate",
+  "title": "Verbos Modales — poder, deber, tener que",
+  "description": "Expresa habilidad, obligación, consejo y posibilidad con los verbos modales más frecuentes del español.",
+  "estimatedMinutes": 14,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-20-act-1",
+      "type": "flashcards",
+      "title": "Modales y sus significados",
+      "items": [
+        { "id": "f1", "front": "poder + infinitivo (habilidad / permiso)", "back": "can / be able to", "example": "Puedo nadar desde los cinco años. ¿Puedo abrir la ventana?" },
+        { "id": "f2", "front": "¿Podrías…? (petición cortés)", "back": "Could you…?", "example": "¿Podrías ayudarme con esto, por favor?" },
+        { "id": "f3", "front": "deber + infinitivo (obligación / consejo fuerte)", "back": "must / should", "example": "Debes entregar el informe hoy." },
+        { "id": "f4", "front": "debería + infinitivo (consejo suave)", "back": "should (softer)", "example": "Deberías descansar un poco — estás muy cansado." },
+        { "id": "f5", "front": "deber de + infinitivo (deducción)", "back": "must (logical deduction)", "example": "Debe de estar en casa — la luz está encendida." },
+        { "id": "f6", "front": "tener que + infinitivo (obligación externa)", "back": "have to", "example": "Tengo que trabajar el sábado. No es opcional." },
+        { "id": "f7", "front": "hay que + infinitivo (obligación impersonal)", "back": "one must / you have to (general)", "example": "Hay que llegar puntual a las reuniones." },
+        { "id": "f8", "front": "no tener que + infinitivo (sin obligación)", "back": "don't have to", "example": "No tienes que venir si estás ocupado." },
+        { "id": "f9", "front": "quizás / tal vez (posibilidad)", "back": "maybe / perhaps", "example": "Quizás llueva esta tarde. Tal vez lleguemos tarde." }
+      ]
+    },
+    {
+      "id": "es-20-act-2",
+      "type": "multiple_choice",
+      "title": "Elige el modal correcto",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Ella habla tres idiomas. ___ comunicarse con personas de todo el mundo.",
+          "options": ["Debe", "Puede", "Tiene que", "Hay que"],
+          "correctIndex": 1,
+          "explanation": "'Poder' expresa habilidad: puede comunicarse = she can communicate."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Estás muy pálido. ___ ir al médico cuanto antes.",
+          "options": ["Puedes", "Deberías", "Tienes que poder", "Hay"],
+          "correctIndex": 1,
+          "explanation": "'Deberías' da un consejo suave: you should see a doctor."
+        },
+        {
+          "id": "mc3",
+          "prompt": "No ___ aparcar aquí. Hay una señal muy clara.",
+          "options": ["tienes que", "puedes", "debes de", "hay de"],
+          "correctIndex": 1,
+          "explanation": "'No puedes' o 'no se puede' = prohibition. You can't park here."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Es festivo — no ___ ir al trabajo hoy.",
+          "options": ["puedes", "debes", "tienes que", "hay que"],
+          "correctIndex": 2,
+          "explanation": "'No tienes que' = don't have to. There's no obligation today."
+        },
+        {
+          "id": "mc5",
+          "prompt": "La puerta está cerrada pero la luz encendida. ___ estar alguien dentro.",
+          "options": ["Quizás", "Tiene que", "Debe de", "Hay que"],
+          "correctIndex": 2,
+          "explanation": "'Deber de + infinitivo' expresa deducción lógica: must be."
+        }
+      ]
+    },
+    {
+      "id": "es-20-act-3",
+      "type": "fill_blank",
+      "title": "Completa con el modal adecuado",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "No ___ conducir cuando era joven — aún no tenía carné.",
+          "blanks": [{ "answer": "podía", "alternatives": ["Podía"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "___ comer bien y dormir suficiente para mantenerse sano.",
+          "blanks": [{ "answer": "Hay que", "alternatives": ["hay que"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "No ___ preocuparte — todo está bajo control.",
+          "blanks": [{ "answer": "tienes que", "alternatives": ["debes", "Tienes que", "Debes"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "¿___ decirme dónde está la estación de metro más cercana?",
+          "blanks": [{ "answer": "Podrías", "alternatives": ["Podría", "Puedes", "Puede"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "___ llover esta tarde — el cielo está muy gris.",
+          "blanks": [{ "answer": "Quizás", "alternatives": ["Tal vez", "quizás", "tal vez"] }]
+        }
+      ]
+    }
+  ]
+}

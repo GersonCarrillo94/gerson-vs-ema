@@ -1,0 +1,108 @@
+{
+  "id": "es-sublevel-09",
+  "language": "spanish",
+  "number": 9,
+  "level": "basic",
+  "title": "Días, Meses y Estaciones",
+  "description": "Habla del calendario en español: los días de la semana, los meses del año y las cuatro estaciones.",
+  "estimatedMinutes": 13,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-09-act-1",
+      "type": "flashcards",
+      "title": "El calendario",
+      "items": [
+        { "id": "f1", "front": "lunes / martes / miércoles", "back": "Monday / Tuesday / Wednesday", "example": "La reunión es el lunes." },
+        { "id": "f2", "front": "jueves / viernes", "back": "Thursday / Friday", "example": "¡Nos vemos el viernes!" },
+        { "id": "f3", "front": "sábado / domingo", "back": "Saturday / Sunday", "example": "Descansamos el sábado y el domingo." },
+        { "id": "f4", "front": "el fin de semana", "back": "the weekend", "example": "¡Me encanta el fin de semana!" },
+        { "id": "f5", "front": "enero … junio", "back": "January … June", "example": "Mi cumpleaños es en marzo." },
+        { "id": "f6", "front": "julio … diciembre", "back": "July … December", "example": "La Navidad es en diciembre." },
+        { "id": "f7", "front": "la primavera / el verano", "back": "spring / summer", "example": "El verano es mi estación favorita." },
+        { "id": "f8", "front": "el otoño / el invierno", "back": "autumn (fall) / winter", "example": "En invierno nieva en las montañas." },
+        { "id": "f9", "front": "hoy / mañana / ayer", "back": "today / tomorrow / yesterday", "example": "Ayer fue lunes, hoy es martes." }
+      ]
+    },
+    {
+      "id": "es-09-act-2",
+      "type": "multiple_choice",
+      "title": "Días y meses",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "¿Qué día viene después del miércoles?",
+          "options": ["martes", "viernes", "jueves", "lunes"],
+          "correctIndex": 2,
+          "explanation": "Lun → Mar → Mié → Jue → Vie → Sáb → Dom."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Diciembre es el ___ mes del año.",
+          "options": ["décimo", "undécimo", "duodécimo", "noveno"],
+          "correctIndex": 2,
+          "explanation": "Diciembre es el mes número 12, el último del año."
+        },
+        {
+          "id": "mc3",
+          "prompt": "El sábado y el domingo son el ___.",
+          "options": ["día laboral", "día hábil", "fin de semana", "feriado"],
+          "correctIndex": 2,
+          "explanation": "'Fin de semana' = sábado y domingo."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Hace mucho frío y hay nieve. ¿Qué estación es?",
+          "options": ["primavera", "verano", "otoño", "invierno"],
+          "correctIndex": 3,
+          "explanation": "El frío y la nieve son características del invierno."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Hoy es miércoles. Ayer fue ___.",
+          "options": ["jueves", "martes", "lunes", "viernes"],
+          "correctIndex": 1,
+          "explanation": "Ayer = el día anterior a hoy. Miércoles − 1 = martes."
+        }
+      ]
+    },
+    {
+      "id": "es-09-act-3",
+      "type": "fill_blank",
+      "title": "Completa las oraciones",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Mi día favorito es el ___. No trabajo.",
+          "blanks": [{ "answer": "domingo", "alternatives": ["Domingo", "sábado", "Sábado"] }],
+          "hint": "Un día del fin de semana."
+        },
+        {
+          "id": "fb2",
+          "sentence": "La Navidad es en ___ y el Año Nuevo es en ___.",
+          "blanks": [
+            { "answer": "diciembre", "alternatives": ["Diciembre"] },
+            { "answer": "enero", "alternatives": ["Enero"] }
+          ]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Nací en ___. En mi cumpleaños hace calor.",
+          "blanks": [{ "answer": "julio", "alternatives": ["Julio", "junio", "Junio", "agosto", "Agosto"] }],
+          "hint": "Cualquier mes de verano."
+        },
+        {
+          "id": "fb4",
+          "sentence": "___ estuvo genial, ¡pero hoy es mejor todavía!",
+          "blanks": [{ "answer": "Ayer", "alternatives": ["ayer"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "¡Hasta ___! (el día siguiente a hoy)",
+          "blanks": [{ "answer": "mañana", "alternatives": ["Mañana"] }]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-27",
+  "language": "spanish",
+  "number": 27,
+  "level": "advanced",
+  "title": "El Condicional — Posibilidades Reales",
+  "description": "Expresa posibilidades reales y sus consecuencias probables con si + presente + futuro.",
+  "estimatedMinutes": 15,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-27-act-1",
+      "type": "flashcards",
+      "title": "Condicional real: estructura y variaciones",
+      "items": [
+        { "id": "f1", "front": "Si + presente de indicativo, futuro simple", "back": "posibilidad real → consecuencia probable", "example": "Si llueve mañana, me llevaré el paraguas." },
+        { "id": "f2", "front": "La cláusula de futuro puede ir primero", "back": "Me llevaré el paraguas si llueve. (sin coma)", "example": "Llegará tarde si no sale ahora mismo." },
+        { "id": "f3", "front": "a menos que = si no", "back": "unless", "example": "No lo conseguiremos a menos que trabajemos juntos." },
+        { "id": "f4", "front": "cuando / en cuanto (certeza en vez de si)", "back": "when / as soon as (certainty)", "example": "Cuando llegue a casa, te llamaré. / En cuanto salgan los resultados, te aviso." },
+        { "id": "f5", "front": "Otros modales en la consecuencia: poder / deber", "back": "Si llueve, podríamos cancelar. / Si tienes tiempo, puedes venir.", "example": "Si estudias, deberías aprobar el examen." },
+        { "id": "f6", "front": "Condiciones negativas: Si no + presente", "back": "Si ella no se da prisa, llegará tarde.", "example": "Si no me llamas, me preocuparé." },
+        { "id": "f7", "front": "NO usar futuro en la cláusula con 'si'", "back": "Si LLOVERÁ → MAL. Si llueve → BIEN.", "example": "Si el tiempo está bien, haremos un picnic. (NOT: si el tiempo estará bien)" },
+        { "id": "f8", "front": "Advertencias y consejos con condicional real", "back": "Si comes demasiado, te pondrás malo.", "example": "Si no guardas el archivo, perderás todo el trabajo." }
+      ]
+    },
+    {
+      "id": "es-27-act-2",
+      "type": "multiple_choice",
+      "title": "Condicional real en contexto",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Si ella ___ al trabajo, probablemente lo consiga.",
+          "options": ["se postulará", "se postula", "se postuló", "se estaba postulando"],
+          "correctIndex": 1,
+          "explanation": "En la cláusula con 'si', se usa presente de indicativo (no futuro): si se postula."
+        },
+        {
+          "id": "mc2",
+          "prompt": "___ no estudias, ___ suspender el examen.",
+          "options": ["Si / vas a", "A menos que / podrías", "Cuando / irás a", "Si / irías a"],
+          "correctIndex": 0,
+          "explanation": "'Si no estudias, vas a suspender.' Condicional real con condición negativa."
+        },
+        {
+          "id": "mc3",
+          "prompt": "No ganaremos el partido ___ el jugador estrella no se recupere a tiempo.",
+          "options": ["si", "cuando", "a menos que", "en cuanto"],
+          "correctIndex": 2,
+          "explanation": "'A menos que' = unless. No ganaremos a menos que… = We won't win unless…"
+        },
+        {
+          "id": "mc4",
+          "prompt": "En cuanto ___ a casa, empezaré a preparar la cena.",
+          "options": ["llegaré", "llego", "llegué", "llegara"],
+          "correctIndex": 1,
+          "explanation": "Después de 'en cuanto' (y 'cuando'), se usa presente de indicativo: en cuanto llego / llegue (subjuntivo es más formal, pero presente es común en habla cotidiana)."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Si comes todo ese pastel, luego ___ sentirte mal.",
+          "options": ["podrías", "pudiste", "podrías haber", "has podido"],
+          "correctIndex": 0,
+          "explanation": "'Podrías' expresa posibilidad en el resultado: you might feel sick. Alternativa válida: te sentirás."
+        }
+      ]
+    },
+    {
+      "id": "es-27-act-3",
+      "type": "fill_blank",
+      "title": "Completa el condicional real",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Si ___ mañana, cancelaremos el evento al aire libre. (llover)",
+          "blanks": [{ "answer": "llueve", "alternatives": ["Llueve"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Llegará tarde a menos que ___ ahora mismo.",
+          "blanks": [{ "answer": "salga", "alternatives": ["Salga", "salga ya", "Salga ya"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Si te ___ suficiente, seguro que apruebas. (esforzar)",
+          "blanks": [{ "answer": "esfuerzas", "alternatives": ["Esfuerzas"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "En cuanto termine la reunión, te ___ enseguida. (llamar)",
+          "blanks": [{ "answer": "llamaré", "alternatives": ["Llamaré", "llamo", "Llamo"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Si no ___ el trabajo con regularidad, perderás todo. (guardar)",
+          "blanks": [{ "answer": "guardas", "alternatives": ["Guardas"] }]
+        }
+      ]
+    }
+  ]
+}

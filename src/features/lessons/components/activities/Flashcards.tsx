@@ -12,7 +12,7 @@ export function Flashcards({ activity, onComplete }: FlashcardsProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [seen, setSeen] = useState<Set<number>>(new Set());
 
-  const item = activity.items[currentIndex];
+  const item = activity.items[currentIndex]!;
   const isLast = currentIndex === activity.items.length - 1;
 
   function handleFlip() {
@@ -46,7 +46,7 @@ export function Flashcards({ activity, onComplete }: FlashcardsProps) {
         <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
           <div
             className="h-full bg-blue-500 transition-all duration-300"
-            style={{ width: `${((currentIndex + 1) / activity.items.length) * 100}%` }}
+            style={{ width: `${String(((currentIndex + 1) / activity.items.length) * 100)}%` }}
           />
         </div>
       </div>

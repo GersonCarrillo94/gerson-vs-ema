@@ -1,0 +1,104 @@
+{
+  "id": "es-sublevel-12",
+  "language": "spanish",
+  "number": 12,
+  "level": "basic",
+  "title": "Describir Personas",
+  "description": "Describe el aspecto físico y la personalidad de alguien: altura, cabello, ojos y carácter.",
+  "estimatedMinutes": 15,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-12-act-1",
+      "type": "flashcards",
+      "title": "Adjetivos para personas",
+      "items": [
+        { "id": "f1", "front": "alto / bajo", "back": "tall / short", "example": "Gerson es alto. Ema no es baja." },
+        { "id": "f2", "front": "joven / mayor (viejo)", "back": "young / old", "example": "Parece joven para su edad." },
+        { "id": "f3", "front": "cabello largo / corto", "back": "long hair / short hair", "example": "Ella tiene el cabello largo y rizado." },
+        { "id": "f4", "front": "liso / rizado / ondulado", "back": "straight / curly / wavy", "example": "Él tiene el cabello negro y liso." },
+        { "id": "f5", "front": "ojos azules / cafés / verdes", "back": "blue / brown / green eyes", "example": "Ella tiene unos ojos verdes preciosos." },
+        { "id": "f6", "front": "amable / gracioso", "back": "friendly / funny", "example": "Es muy amable y gracioso." },
+        { "id": "f7", "front": "trabajador / perezoso", "back": "hardworking / lazy", "example": "Ella es muy trabajadora y siempre llega puntual." },
+        { "id": "f8", "front": "tímido / extrovertido", "back": "shy / outgoing", "example": "Al principio era tímido, pero ahora es extrovertido." },
+        { "id": "f9", "front": "Se parece a…", "back": "He / She looks like…", "example": "Se parece mucho a su madre." }
+      ]
+    },
+    {
+      "id": "es-12-act-2",
+      "type": "multiple_choice",
+      "title": "Describe a la persona",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Alguien que trabaja mucho y nunca se queja es ___.",
+          "options": ["perezoso", "tímido", "trabajador", "extrovertido"],
+          "correctIndex": 2,
+          "explanation": "'Trabajador' = hardworking. Lo contrario es 'perezoso' (lazy)."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Ella no habla mucho en grupo. Es ___.",
+          "options": ["extrovertida", "alta", "graciosa", "tímida"],
+          "correctIndex": 3,
+          "explanation": "'Tímida' = shy. Alguien callado o nervioso en situaciones sociales."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Su cabello no es liso — tiene rizos. Su cabello es ___.",
+          "options": ["ondulado", "rizado", "largo", "corto"],
+          "correctIndex": 1,
+          "explanation": "'Rizado' = curly. 'Ondulado' = wavy (ondas más suaves)."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Ella mide 1.70 m. Él mide 1.60 m. Ella es ___ que él.",
+          "options": ["más baja", "más joven", "más alta", "más mayor"],
+          "correctIndex": 2,
+          "explanation": "1.70 > 1.60, entonces ella es más alta."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Para describir el color de ojos dices: 'Ella ___ ojos cafés.'",
+          "options": ["es", "tiene", "hay", "parece"],
+          "correctIndex": 1,
+          "explanation": "Las características físicas usan 'tener': 'Ella tiene ojos cafés'."
+        }
+      ]
+    },
+    {
+      "id": "es-12-act-3",
+      "type": "fill_blank",
+      "title": "Describe a la persona",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Mi amiga es muy ___. Siempre me hace reír.",
+          "blanks": [{ "answer": "graciosa", "alternatives": ["Graciosa", "gracioso", "Gracioso"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Él tiene el cabello ___ y ojos azules.",
+          "blanks": [{ "answer": "negro", "alternatives": ["Negro", "corto", "Corto", "largo", "Largo", "rizado", "Rizado", "liso", "Liso"] }],
+          "hint": "Un color o estilo de cabello."
+        },
+        {
+          "id": "fb3",
+          "sentence": "Es muy ___. Conoce a todos en la fiesta.",
+          "blanks": [{ "answer": "extrovertida", "alternatives": ["Extrovertida", "extrovertido", "Extrovertido", "amable", "Amable"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Se ___ a su padre — misma nariz y ojos.",
+          "blanks": [{ "answer": "parece", "alternatives": ["Parece"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Es muy ___. Estudia 8 horas al día.",
+          "blanks": [{ "answer": "trabajadora", "alternatives": ["Trabajadora", "trabajador", "Trabajador"] }]
+        }
+      ]
+    }
+  ]
+}

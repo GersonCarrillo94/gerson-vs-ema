@@ -1,0 +1,103 @@
+{
+  "id": "en-sublevel-32",
+  "language": "english",
+  "number": 32,
+  "level": "advanced",
+  "title": "Common Phrasal Verbs",
+  "description": "Master the most essential phrasal verbs to sound natural and understand native English speakers.",
+  "estimatedMinutes": 15,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-32-act-1",
+      "type": "flashcards",
+      "title": "High-frequency phrasal verbs",
+      "items": [
+        { "id": "f1", "front": "give up (stop trying / quit)", "back": "rendirse / dejar de", "example": "Don't give up — you're almost there!" },
+        { "id": "f2", "front": "look for (search for)", "back": "buscar", "example": "I've been looking for my keys for half an hour." },
+        { "id": "f3", "front": "find out (discover / learn)", "back": "descubrir / enterarse", "example": "I found out the truth by reading her diary." },
+        { "id": "f4", "front": "run out of (use all / have none left)", "back": "quedarse sin", "example": "We've run out of coffee — can you pick some up?" },
+        { "id": "f5", "front": "take off (remove / depart)", "back": "quitarse / despegar", "example": "Please take off your shoes at the door. The plane took off on time." },
+        { "id": "f6", "front": "come across (find unexpectedly)", "back": "encontrarse con (por casualidad)", "example": "I came across this old photo while cleaning the attic." },
+        { "id": "f7", "front": "turn up / turn down", "back": "aparecer / subir volumen vs rechazar / bajar volumen", "example": "He turned up two hours late. Turn down the music — it's too loud!" },
+        { "id": "f8", "front": "get on with (proceed / have a relationship)", "back": "llevarse bien con / continuar con", "example": "I get on really well with my colleagues. Just get on with your work!" },
+        { "id": "f9", "front": "bring up (raise a child / mention a topic)", "back": "criar / sacar a colación", "example": "She was brought up in a small town. Don't bring up the argument at dinner." }
+      ]
+    },
+    {
+      "id": "en-32-act-2",
+      "type": "multiple_choice",
+      "title": "Phrasal verbs in context",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "She ___ trying after failing the test three times — she kept going.",
+          "options": ["gave up", "didn't give up", "gave back", "took up"],
+          "correctIndex": 1,
+          "explanation": "'Didn't give up' = didn't stop trying. She kept going despite failures."
+        },
+        {
+          "id": "mc2",
+          "prompt": "We ___ milk — can someone go to the shop?",
+          "options": ["ran out of", "looked for", "came across", "ran off with"],
+          "correctIndex": 0,
+          "explanation": "'Run out of' = have none left. We've run out of milk."
+        },
+        {
+          "id": "mc3",
+          "prompt": "I ___ an old school friend while shopping yesterday — what a coincidence!",
+          "options": ["found out", "came across", "gave up", "turned up"],
+          "correctIndex": 1,
+          "explanation": "'Come across' = meet or find unexpectedly. I came across an old friend."
+        },
+        {
+          "id": "mc4",
+          "prompt": "He was ___ by his grandparents after his parents moved abroad.",
+          "options": ["found out", "turned up", "brought up", "taken off"],
+          "correctIndex": 2,
+          "explanation": "'Brought up' = raised (a child). He was brought up by his grandparents."
+        },
+        {
+          "id": "mc5",
+          "prompt": "She was late to the interview because the bus ___ 30 minutes late.",
+          "options": ["turned up", "took off", "ran out", "gave up"],
+          "correctIndex": 0,
+          "explanation": "'Turned up' = arrived. The bus turned up 30 minutes late."
+        }
+      ]
+    },
+    {
+      "id": "en-32-act-3",
+      "type": "fill_blank",
+      "title": "Complete with the correct phrasal verb",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Don't ___ up — you're nearly at the finish line!",
+          "blanks": [{ "answer": "give", "alternatives": ["Give"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "I've been ___ for my passport everywhere. I can't find it.",
+          "blanks": [{ "answer": "looking", "alternatives": ["Looking"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "We ___ out of fuel in the middle of nowhere. It was a nightmare.",
+          "blanks": [{ "answer": "ran", "alternatives": ["Ran"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "I ___ across a beautiful old bookshop while wandering the streets.",
+          "blanks": [{ "answer": "came", "alternatives": ["Came"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "How did you ___ out that she was planning a surprise party?",
+          "blanks": [{ "answer": "find", "alternatives": ["Find"] }]
+        }
+      ]
+    }
+  ]
+}

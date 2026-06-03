@@ -1,0 +1,102 @@
+{
+  "id": "en-sublevel-34",
+  "language": "english",
+  "number": 34,
+  "level": "advanced",
+  "title": "Formal vs Informal Language",
+  "description": "Adapt your language to different contexts — from casual texts to professional emails and formal writing.",
+  "estimatedMinutes": 17,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-34-act-1",
+      "type": "flashcards",
+      "title": "Formal and informal registers",
+      "items": [
+        { "id": "f1", "front": "Contractions: informal only", "back": "Formal: I am writing. / Informal: I'm writing.", "example": "Dear Mr Johnson, I am writing to… (NOT: I'm writing to…)" },
+        { "id": "f2", "front": "Phrasal verbs (informal) → Latin verbs (formal)", "back": "find out → discover / go up → increase / put off → postpone", "example": "The deadline has been postponed. (formal) / We've put the deadline off. (informal)" },
+        { "id": "f3", "front": "Greetings and sign-offs", "back": "Dear Sir/Madam → Yours faithfully / Dear Ms Lee → Yours sincerely / Hi → Take care / Cheers", "example": "Dear Mr Smith, … Yours sincerely, Anna. / Hey Tom, … Cheers, Anna." },
+        { "id": "f4", "front": "Formal linking words", "back": "Furthermore / Nevertheless / However / Therefore / Consequently", "example": "The project is on schedule. Furthermore, we are under budget." },
+        { "id": "f5", "front": "Informal linking words", "back": "Also / But / So / Because / And", "example": "The project is on schedule. Also, we're under budget!" },
+        { "id": "f6", "front": "Hedging in formal writing", "back": "I would suggest… / It may be advisable… / One could argue…", "example": "I would suggest reviewing the contract before signing. (NOT: You should check it)" },
+        { "id": "f7", "front": "Vocabulary: informal → formal", "back": "get → obtain / tell → inform / think → consider / need → require", "example": "We require further information. (formal) / We need more info. (informal)" },
+        { "id": "f8", "front": "Passive voice is more common in formal writing", "back": "Active: We have reviewed your application. / Passive: Your application has been reviewed.", "example": "The report was submitted on time. (formal report) / We sent the report on time. (informal)" }
+      ]
+    },
+    {
+      "id": "en-34-act-2",
+      "type": "multiple_choice",
+      "title": "Formal or informal?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "You are writing a formal email to a client. Which greeting is most appropriate?",
+          "options": ["Hey Sarah,", "Hi there,", "Dear Ms Thompson,", "Yo, Sarah!"],
+          "correctIndex": 2,
+          "explanation": "'Dear Ms Thompson,' is the correct formal salutation for a business email."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Which sentence is more appropriate in a formal report?",
+          "options": ["We found out the product has a fault.", "It was discovered that the product contains a defect.", "The product's got a problem.", "So, the product is broken."],
+          "correctIndex": 1,
+          "explanation": "Passive voice, formal vocabulary (discovered, defect, contains) → formal. 'Found out' and 'got a problem' are informal."
+        },
+        {
+          "id": "mc3",
+          "prompt": "What is the formal equivalent of 'We need to put off the meeting'?",
+          "options": ["We need to delay the meeting", "The meeting must be postponed", "Let's push the meeting back", "Can we reschedule?"],
+          "correctIndex": 1,
+          "explanation": "Passive + Latin verb (postponed) makes this the most formal option."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Which linking word is most appropriate in a formal essay?",
+          "options": ["Also", "Plus", "Furthermore", "And also"],
+          "correctIndex": 2,
+          "explanation": "'Furthermore' is a formal connector. 'Also', 'plus', and 'and also' are informal/neutral."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Which sign-off is correct when you know the name of the recipient?",
+          "options": ["Yours faithfully", "Yours sincerely", "Best wishes always", "Take care"],
+          "correctIndex": 1,
+          "explanation": "'Yours sincerely' when you know the name. 'Yours faithfully' when you DON'T know the name (Dear Sir/Madam)."
+        }
+      ]
+    },
+    {
+      "id": "en-34-act-3",
+      "type": "fill_blank",
+      "title": "Rewrite in formal language",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Informal: 'We need more info.' → Formal: 'We ___ further information.'",
+          "blanks": [{ "answer": "require", "alternatives": ["Require", "need"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Informal: 'We found out there's a problem.' → Formal: 'It was ___ that an issue exists.'",
+          "blanks": [{ "answer": "discovered", "alternatives": ["Discovered", "established", "Established"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Informal: 'We put off the deadline.' → Formal: 'The deadline has been ___.'",
+          "blanks": [{ "answer": "postponed", "alternatives": ["Postponed", "delayed", "Delayed"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Formal email sign-off when you know the person's name: 'Yours ___,'",
+          "blanks": [{ "answer": "sincerely", "alternatives": ["Sincerely"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Informal: 'Also, we're under budget.' → Formal: '___, we are within budget.'",
+          "blanks": [{ "answer": "Furthermore", "alternatives": ["Moreover", "Additionally"] }]
+        }
+      ]
+    }
+  ]
+}

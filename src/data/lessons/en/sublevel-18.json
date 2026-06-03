@@ -1,0 +1,103 @@
+{
+  "id": "en-sublevel-18",
+  "language": "english",
+  "number": 18,
+  "level": "intermediate",
+  "title": "Shopping & Money",
+  "description": "Buy things, ask for prices, compare options and handle money in English.",
+  "estimatedMinutes": 14,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-18-act-1",
+      "type": "flashcards",
+      "title": "Shopping vocabulary",
+      "items": [
+        { "id": "f1", "front": "How much is it? / How much does it cost?", "back": "¿Cuánto cuesta?", "example": "Excuse me, how much is this jacket?" },
+        { "id": "f2", "front": "It costs… / It's…", "back": "Cuesta… / Son…", "example": "It costs twenty dollars. It's on sale." },
+        { "id": "f3", "front": "cheap / expensive", "back": "barato / caro", "example": "This one is cheap but that one is too expensive." },
+        { "id": "f4", "front": "on sale / discount", "back": "en oferta / descuento", "example": "These shoes are on sale — 30% discount!" },
+        { "id": "f5", "front": "Can I try it on?", "back": "¿Me lo puedo probar?", "example": "Can I try on this shirt, please?" },
+        { "id": "f6", "front": "I'll take it. / I'll leave it.", "back": "Me lo llevo. / Lo dejo.", "example": "It fits perfectly. I'll take it!" },
+        { "id": "f7", "front": "cash / card / change", "back": "efectivo / tarjeta / cambio (vuelto)", "example": "Do you accept card? Here's your change." },
+        { "id": "f8", "front": "receipt", "back": "recibo / tiquete", "example": "Can I have a receipt, please?" },
+        { "id": "f9", "front": "window shopping", "back": "mirar tiendas sin comprar", "example": "We didn't buy anything — just window shopping." }
+      ]
+    },
+    {
+      "id": "en-18-act-2",
+      "type": "multiple_choice",
+      "title": "At the shop",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "You want to know the price. You ask:",
+          "options": ["How many does it cost?", "How much is it?", "What is the price of it?", "How expensive?"],
+          "correctIndex": 1,
+          "explanation": "'How much is it?' or 'How much does it cost?' are the standard ways to ask about price."
+        },
+        {
+          "id": "mc2",
+          "prompt": "The jacket is $200. You say: 'That's too ___.'",
+          "options": ["cheap", "discount", "expensive", "sale"],
+          "correctIndex": 2,
+          "explanation": "'Expensive' = caro. $200 for a jacket might feel too expensive."
+        },
+        {
+          "id": "mc3",
+          "prompt": "You want to try the dress before buying. You say:",
+          "options": ["Can I buy it?", "Can I try it on?", "Can I have it?", "Can I see it?"],
+          "correctIndex": 1,
+          "explanation": "'Can I try it on?' = ¿Me lo puedo probar? You say this in a fitting room."
+        },
+        {
+          "id": "mc4",
+          "prompt": "You like the shirt and decide to buy it. You say:",
+          "options": ["I'll leave it.", "I won't take it.", "I'll take it.", "I want leave it."],
+          "correctIndex": 2,
+          "explanation": "'I'll take it.' = Me lo llevo. A spontaneous decision — perfect use of 'will'."
+        },
+        {
+          "id": "mc5",
+          "prompt": "You pay and the cashier gives you back some money. That money is called:",
+          "options": ["discount", "receipt", "cash", "change"],
+          "correctIndex": 3,
+          "explanation": "'Change' = vuelto/cambio. The money you get back after paying."
+        }
+      ]
+    },
+    {
+      "id": "en-18-act-3",
+      "type": "fill_blank",
+      "title": "Complete the shopping dialogue",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Excuse me, ___ much is this bag?",
+          "blanks": [{ "answer": "how", "alternatives": ["How"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "It's on ___. Was $80, now only $50!",
+          "blanks": [{ "answer": "sale", "alternatives": ["Sale"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Can I try it ___? I want to see if it fits.",
+          "blanks": [{ "answer": "on", "alternatives": ["On"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "It fits perfectly. I'll ___ it!",
+          "blanks": [{ "answer": "take", "alternatives": ["Take"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Do you have a ___? I need it for my expenses.",
+          "blanks": [{ "answer": "receipt", "alternatives": ["Receipt"] }]
+        }
+      ]
+    }
+  ]
+}

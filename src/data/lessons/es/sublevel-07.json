@@ -1,0 +1,104 @@
+{
+  "id": "es-sublevel-07",
+  "language": "spanish",
+  "number": 7,
+  "level": "basic",
+  "title": "La Hora",
+  "description": "Aprende a preguntar y decir la hora en español: en punto, y media, y cuarto, menos cuarto.",
+  "estimatedMinutes": 14,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-07-act-1",
+      "type": "flashcards",
+      "title": "Expresiones de tiempo",
+      "items": [
+        { "id": "f1", "front": "¿Qué hora es?", "back": "What time is it?", "example": "Perdona, ¿qué hora es?" },
+        { "id": "f2", "front": "Es la una.", "back": "It's one o'clock.", "example": "Es la una de la mañana." },
+        { "id": "f3", "front": "Son las tres.", "back": "It's three o'clock.", "example": "La reunión es a las tres." },
+        { "id": "f4", "front": "Son las dos y media.", "back": "It's half past two.", "example": "Quedamos a las dos y media." },
+        { "id": "f5", "front": "Son las cuatro y cuarto.", "back": "It's quarter past four.", "example": "La clase empieza a las cuatro y cuarto." },
+        { "id": "f6", "front": "Son las seis menos cuarto.", "back": "It's quarter to six.", "example": "¡Apúrate! Son las seis menos cuarto." },
+        { "id": "f7", "front": "de la mañana", "back": "in the morning / AM", "example": "Me levanto a las siete de la mañana." },
+        { "id": "f8", "front": "de la tarde / de la noche", "back": "in the afternoon / evening / PM", "example": "Estudiamos a las tres de la tarde." },
+        { "id": "f9", "front": "al mediodía / a medianoche", "back": "at noon / at midnight", "example": "Almorzamos al mediodía." }
+      ]
+    },
+    {
+      "id": "es-07-act-2",
+      "type": "multiple_choice",
+      "title": "¿Qué hora es?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "El reloj marca las 3:00. ¿Qué dices?",
+          "options": ["Son las tres menos.", "Es la tres en punto.", "Son las tres en punto.", "Son las tres y media."],
+          "correctIndex": 2,
+          "explanation": "'Son las…' para 2 en adelante. 'En punto' = exact hour. Excepción: 'Es la una'."
+        },
+        {
+          "id": "mc2",
+          "prompt": "El reloj marca las 7:30. ¿Cómo lo dices?",
+          "options": ["Son las siete y cuarto.", "Son las ocho menos media.", "Son las siete y media.", "Es la siete y media."],
+          "correctIndex": 2,
+          "explanation": "'Y media' = 30 minutos. 'Son las siete y media' = 7:30."
+        },
+        {
+          "id": "mc3",
+          "prompt": "El reloj marca las 9:15. ¿Cómo lo dices?",
+          "options": ["Son las nueve menos cuarto.", "Son las nueve y cuarto.", "Son las diez menos cuarto.", "Son las nueve y media."],
+          "correctIndex": 1,
+          "explanation": "'Y cuarto' = 15 minutos después de la hora. 9:15 = 'las nueve y cuarto'."
+        },
+        {
+          "id": "mc4",
+          "prompt": "El reloj marca las 5:45. ¿Cómo lo dices?",
+          "options": ["Son las cinco y cuarto.", "Son las seis y cuarto.", "Son las seis menos cuarto.", "Son las cinco menos cuarto."],
+          "correctIndex": 2,
+          "explanation": "'Menos cuarto' = 15 minutos antes de la siguiente hora. 5:45 = 'las seis menos cuarto'."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Tu clase empieza a las 8:00 AM. ¿Cómo lo dices?",
+          "options": ["Mi clase empieza a las ocho de la tarde.", "Mi clase empieza a las ocho de la mañana.", "Mi clase empieza a las ocho y media.", "Mi clase empieza al mediodía."],
+          "correctIndex": 1,
+          "explanation": "AM = de la mañana. 8:00 AM = ocho de la mañana."
+        }
+      ]
+    },
+    {
+      "id": "es-07-act-3",
+      "type": "fill_blank",
+      "title": "Completa las expresiones de tiempo",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Son las diez y ___. (10:30)",
+          "blanks": [{ "answer": "media", "alternatives": ["Media"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Son las ocho ___ cuarto. (7:45)",
+          "blanks": [{ "answer": "menos", "alternatives": ["Menos"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "La tienda abre a las nueve en ___.",
+          "blanks": [{ "answer": "punto", "alternatives": ["Punto"] }],
+          "hint": "Hora exacta."
+        },
+        {
+          "id": "fb4",
+          "sentence": "Son las tres y ___. (3:15)",
+          "blanks": [{ "answer": "cuarto", "alternatives": ["Cuarto"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "¿___ hora es? — Son las seis en punto.",
+          "blanks": [{ "answer": "Qué", "alternatives": ["qué", "que", "Que"] }]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-26",
+  "language": "spanish",
+  "number": 26,
+  "level": "advanced",
+  "title": "Pretérito Perfecto vs Indefinido",
+  "description": "Domina cuándo usar 'he hecho' frente a 'hice' — una de las distinciones más importantes del español.",
+  "estimatedMinutes": 16,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-26-act-1",
+      "type": "flashcards",
+      "title": "Contrastes clave y marcadores temporales",
+      "items": [
+        { "id": "f1", "front": "Pretérito Perfecto: tiempo no especificado / relevante ahora", "back": "He visto esa película. (en algún momento)", "example": "He comido paella. (no dice cuándo — sigue siendo relevante)" },
+        { "id": "f2", "front": "Pretérito Indefinido: tiempo específico y completado", "back": "Vi esa película el martes.", "example": "Comí paella el viernes pasado. (tiempo específico = acción terminada)" },
+        { "id": "f3", "front": "Marcadores del Perfecto: hoy, esta semana, este mes/año (España)", "back": "He llamado hoy. Esta semana he trabajado mucho.", "example": "Hoy he comido en casa. (el día aún no ha terminado)" },
+        { "id": "f4", "front": "Marcadores del Indefinido: ayer, la semana pasada, en 2020, hace X años", "back": "Llamé ayer. Hace tres años vivía allí.", "example": "La semana pasada trabajé mucho. (semana ya cerrada)" },
+        { "id": "f5", "front": "Perfecto con 'desde hace / desde' (estado continuo)", "back": "He trabajado aquí desde hace cinco años.", "example": "Ha vivido en Madrid desde 2018. (sigue viviendo allí)" },
+        { "id": "f6", "front": "Indefinido con 'durante' (estado completado)", "back": "Trabajé allí durante dos años. (y me fui)", "example": "Vivió en Japón un año. (ya no vive allí)" },
+        { "id": "f7", "front": "Latinoamérica: mayor uso del Indefinido para todo", "back": "Hoy comí paella. / Esta mañana fui al gym.", "example": "En muchos países de América: 'Lo hice hoy' en vez de 'Lo he hecho hoy'." },
+        { "id": "f8", "front": "¿Alguna vez? → Perfecto / ¿Cuándo? → Indefinido", "back": "¿Has visto esa peli? / ¿Cuándo la viste?", "example": "¿Has estado alguna vez en Roma? — Sí, fui en 2019." }
+      ]
+    },
+    {
+      "id": "es-26-act-2",
+      "type": "multiple_choice",
+      "title": "¿Perfecto o indefinido?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "___ a Roma alguna vez? — Sí, fui allí en 2019. Fue genial.",
+          "options": ["Fuiste", "Has ido", "Ibas", "Habías ido"],
+          "correctIndex": 1,
+          "explanation": "Pregunta de experiencia vital (sin tiempo específico) → perfecto: ¿Has ido? La respuesta da un año específico → indefinido: fui."
+        },
+        {
+          "id": "mc2",
+          "prompt": "___ esa película el viernes pasado con mi hermana. Nos encantó.",
+          "options": ["He visto", "Vi", "Veo", "Había visto"],
+          "correctIndex": 1,
+          "explanation": "'El viernes pasado' es un tiempo específico → pretérito indefinido: Vi."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Ella ___ en esta empresa desde enero. Le está yendo muy bien.",
+          "options": ["trabajó", "trabajaba", "ha trabajado", "trabaja"],
+          "correctIndex": 2,
+          "explanation": "'Desde enero' con relevancia presente → pretérito perfecto: ha trabajado. Sigue trabajando allí."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Esta semana ___ tres libros — ¡y solo es miércoles!",
+          "options": ["leí", "leo", "he leído", "iba a leer"],
+          "correctIndex": 2,
+          "explanation": "'Esta semana' (período no cerrado) → pretérito perfecto (en España): he leído."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Él ___ en Berlín dos años y luego se mudó a Viena.",
+          "options": ["ha vivido", "vivía", "vivió", "vive"],
+          "correctIndex": 2,
+          "explanation": "Ya no vive en Berlín (se mudó) → acción completa del pasado → indefinido: vivió."
+        }
+      ]
+    },
+    {
+      "id": "es-26-act-3",
+      "type": "fill_blank",
+      "title": "¿Perfecto o indefinido? Completa",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Nunca ___ sushi, pero quiero probarlo pronto. (comer)",
+          "blanks": [{ "answer": "he comido", "alternatives": ["He comido"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Ella ___ el proyecto el jueves pasado. ¡Qué alivio! (terminar)",
+          "blanks": [{ "answer": "terminó", "alternatives": ["Terminó"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Estudio español ___ que era adolescente. Practico cada día. (desde)",
+          "blanks": [{ "answer": "desde", "alternatives": ["Desde"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "___ esta ciudad hace dos años y nos enamoramos de ella. (visitar)",
+          "blanks": [{ "answer": "Visitamos", "alternatives": ["visitamos"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "¿___ ya el informe? El jefe lo necesita antes de la reunión. (enviar)",
+          "blanks": [{ "answer": "Has enviado", "alternatives": ["has enviado"] }]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "en-sublevel-22",
+  "language": "english",
+  "number": 22,
+  "level": "intermediate",
+  "title": "Travel & Transportation",
+  "description": "Book trips, navigate airports and stations, and handle travel situations with confidence.",
+  "estimatedMinutes": 14,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-22-act-1",
+      "type": "flashcards",
+      "title": "Travel vocabulary",
+      "items": [
+        { "id": "f1", "front": "to book / reserve a ticket", "back": "reservar un billete", "example": "I booked my flight three months in advance." },
+        { "id": "f2", "front": "one-way / round-trip ticket", "back": "billete de ida / ida y vuelta", "example": "A round-trip ticket is cheaper if you stay over a Saturday." },
+        { "id": "f3", "front": "departure / arrival", "back": "salida / llegada", "example": "Departure is at 08:00 and arrival is at 11:30." },
+        { "id": "f4", "front": "platform / gate / terminal", "back": "andén / puerta / terminal", "example": "Your flight leaves from gate 22 in terminal B." },
+        { "id": "f5", "front": "to miss the bus / train / flight", "back": "perder el autobús / tren / vuelo", "example": "We missed our flight because of the traffic jam." },
+        { "id": "f6", "front": "to check in / to board", "back": "hacer el check-in / embarcar", "example": "Please check in online at least 24 hours before boarding." },
+        { "id": "f7", "front": "customs / passport control", "back": "aduana / control de pasaportes", "example": "We waited 45 minutes at passport control." },
+        { "id": "f8", "front": "direct flight / connecting flight / layover", "back": "vuelo directo / con escala / escala", "example": "There are no direct flights — you'll have a 2-hour layover in Madrid." },
+        { "id": "f9", "front": "delay / on time / cancelled", "back": "retraso / a tiempo / cancelado", "example": "The flight is delayed by two hours due to bad weather." }
+      ]
+    },
+    {
+      "id": "en-22-act-2",
+      "type": "multiple_choice",
+      "title": "At the airport and station",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "I'd like a ___ ticket to London, please. I'm coming back on Sunday.",
+          "options": ["one-way", "return", "direct", "single"],
+          "correctIndex": 1,
+          "explanation": "A 'return' ticket (UK English) = round-trip. Coming back confirms you need both directions."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Hurry! If we don't run, we'll ___ the last train.",
+          "options": ["lose", "forget", "miss", "take"],
+          "correctIndex": 2,
+          "explanation": "'Miss' is the correct verb for transport: miss the bus, miss the flight."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Please have your passport ready for ___ before entering the country.",
+          "options": ["customs", "check-in", "boarding", "passport control"],
+          "correctIndex": 3,
+          "explanation": "'Passport control' = the official check of passports at borders. Customs deals with goods."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Flight BA472 has been ___. All passengers will be rebooked.",
+          "options": ["delayed", "late", "cancelled", "missed"],
+          "correctIndex": 2,
+          "explanation": "'Cancelled' = the flight will not operate at all. 'Delayed' just means it's late."
+        },
+        {
+          "id": "mc5",
+          "prompt": "The train to Manchester departs from ___ 7.",
+          "options": ["gate", "terminal", "platform", "bay"],
+          "correctIndex": 2,
+          "explanation": "Trains depart from 'platforms'. Gates are used in airports."
+        }
+      ]
+    },
+    {
+      "id": "en-22-act-3",
+      "type": "fill_blank",
+      "title": "Complete the travel sentences",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I ___ my flight because the taxi was late. I had to book a new one.",
+          "blanks": [{ "answer": "missed", "alternatives": ["Missed"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Your flight ___ from gate 14B. Please board 30 minutes before departure.",
+          "blanks": [{ "answer": "departs", "alternatives": ["leaves", "Departs", "Leaves"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Is this a ___ flight or do I have a stopover somewhere?",
+          "blanks": [{ "answer": "direct", "alternatives": ["Direct", "non-stop", "Non-stop"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Please ___ in at least two hours before your international flight.",
+          "blanks": [{ "answer": "check", "alternatives": ["Check"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "The flight is ___ by one hour due to a technical issue.",
+          "blanks": [{ "answer": "delayed", "alternatives": ["Delayed"] }]
+        }
+      ]
+    }
+  ]
+}

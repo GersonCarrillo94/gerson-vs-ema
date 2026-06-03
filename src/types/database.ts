@@ -257,7 +257,19 @@ export type Database = {
       };
       link_partner: {
         Args: { p_partner_id: string };
-        Returns: void;
+        Returns: undefined;
+      };
+      initialize_user_progress: {
+        Args: Record<string, never>;
+        Returns: undefined;
+      };
+      start_sublevel: {
+        Args: { p_sublevel_number: number };
+        Returns: undefined;
+      };
+      complete_sublevel: {
+        Args: { p_sublevel_number: number; p_score_earned: number };
+        Returns: Json;
       };
     };
     Enums: Record<string, never>;

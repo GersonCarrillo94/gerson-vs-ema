@@ -1,0 +1,104 @@
+{
+  "id": "en-sublevel-12",
+  "language": "english",
+  "number": 12,
+  "level": "basic",
+  "title": "Describing People",
+  "description": "Describe how people look and what their personality is like — height, hair, eyes, and character.",
+  "estimatedMinutes": 15,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-12-act-1",
+      "type": "flashcards",
+      "title": "Adjectives for people",
+      "items": [
+        { "id": "f1", "front": "tall / short", "back": "alto / bajo", "example": "Gerson is tall. Ema is not short." },
+        { "id": "f2", "front": "young / old", "back": "joven / mayor (viejo)", "example": "She looks young for her age." },
+        { "id": "f3", "front": "long hair / short hair", "back": "cabello largo / corto", "example": "She has long, curly hair." },
+        { "id": "f4", "front": "straight / curly / wavy", "back": "liso / rizado / ondulado", "example": "He has straight black hair." },
+        { "id": "f5", "front": "blue / brown / green eyes", "back": "ojos azules / cafés / verdes", "example": "She has beautiful green eyes." },
+        { "id": "f6", "front": "friendly / funny", "back": "amable / gracioso", "example": "He is very friendly and funny." },
+        { "id": "f7", "front": "hardworking / lazy", "back": "trabajador / perezoso", "example": "She is hardworking and always on time." },
+        { "id": "f8", "front": "shy / outgoing", "back": "tímido / extrovertido", "example": "At first he was shy, but now he is outgoing." },
+        { "id": "f9", "front": "He / She looks like…", "back": "Él / Ella se parece a…", "example": "She looks like her mother." }
+      ]
+    },
+    {
+      "id": "en-12-act-2",
+      "type": "multiple_choice",
+      "title": "Describe the person",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Someone who works a lot and never complains is ___.",
+          "options": ["lazy", "shy", "hardworking", "outgoing"],
+          "correctIndex": 2,
+          "explanation": "'Hardworking' = trabajador. The opposite is 'lazy' (perezoso)."
+        },
+        {
+          "id": "mc2",
+          "prompt": "She doesn't talk much in a group — she is ___.",
+          "options": ["outgoing", "tall", "funny", "shy"],
+          "correctIndex": 3,
+          "explanation": "'Shy' (tímido) = someone who is quiet or nervous in social situations."
+        },
+        {
+          "id": "mc3",
+          "prompt": "His hair is not straight — it has curls. His hair is ___.",
+          "options": ["wavy", "curly", "long", "short"],
+          "correctIndex": 1,
+          "explanation": "'Curly' = rizado. 'Wavy' = ondulado (a softer wave)."
+        },
+        {
+          "id": "mc4",
+          "prompt": "She is 1.70 m. He is 1.60 m. She is ___ than him.",
+          "options": ["shorter", "younger", "taller", "older"],
+          "correctIndex": 2,
+          "explanation": "1.70 > 1.60, so she is taller. 'Taller' = más alta."
+        },
+        {
+          "id": "mc5",
+          "prompt": "To describe eye colour you say: 'She ___ brown eyes.'",
+          "options": ["is", "has", "have", "looks"],
+          "correctIndex": 1,
+          "explanation": "Physical features use 'have/has': 'She has brown eyes.'"
+        }
+      ]
+    },
+    {
+      "id": "en-12-act-3",
+      "type": "fill_blank",
+      "title": "Describe the person",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "My friend is very ___. She always makes me laugh.",
+          "blanks": [{ "answer": "funny", "alternatives": ["Funny"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "He has ___ black hair and blue eyes.",
+          "blanks": [{ "answer": "short", "alternatives": ["Short", "long", "Long", "curly", "Curly", "straight", "Straight"] }],
+          "hint": "Any hair length or style."
+        },
+        {
+          "id": "fb3",
+          "sentence": "She is very ___. She knows everyone at the party.",
+          "blanks": [{ "answer": "outgoing", "alternatives": ["Outgoing", "friendly", "Friendly"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "He ___ like his father — same nose and eyes.",
+          "blanks": [{ "answer": "looks", "alternatives": ["Looks"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "She is very ___. She studies 8 hours a day.",
+          "blanks": [{ "answer": "hardworking", "alternatives": ["Hardworking"] }]
+        }
+      ]
+    }
+  ]
+}

@@ -12,7 +12,7 @@ export const LEVELS: readonly Level[] = [
 
 export function getLevelFromScore(score: number): Level {
   return (
-    [...LEVELS].reverse().find((l) => score >= l.minScore) ?? LEVELS[0]
+    [...LEVELS].reverse().find((l) => score >= l.minScore) ?? LEVELS[0]!
   );
 }
 

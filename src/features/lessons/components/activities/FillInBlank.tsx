@@ -16,12 +16,12 @@ export function FillInBlank({ activity, onComplete }: FillInBlankProps) {
   const [correctCount, setCorrectCount] = useState(0);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  const item = activity.items[currentIndex];
+  const item = activity.items[currentIndex]!;
   const isLast = currentIndex === activity.items.length - 1;
 
   // Inicializar array de inputs para los huecos del ítem actual
   const blankCount = item.blanks.length;
-  const currentInputs = inputs.length === blankCount ? inputs : Array(blankCount).fill('');
+  const currentInputs: string[] = inputs.length === blankCount ? inputs : Array<string>(blankCount).fill('');
 
   function handleChange(blankIndex: number, value: string) {
     const updated = [...currentInputs];
@@ -72,7 +72,7 @@ export function FillInBlank({ activity, onComplete }: FillInBlankProps) {
             ref={(el) => { inputRefs.current[i] = el; }}
             type="text"
             value={currentInputs[i] ?? ''}
-            onChange={(e) => handleChange(i, e.target.value)}
+            onChange={(e) => { handleChange(i, e.target.value); }}
             disabled={itemState !== 'idle'}
             placeholder="___"
             className={[
@@ -102,7 +102,7 @@ export function FillInBlank({ activity, onComplete }: FillInBlankProps) {
         <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
           <div
             className="h-full bg-blue-500 transition-all duration-300"
-            style={{ width: `${((currentIndex + 1) / activity.items.length) * 100}%` }}
+            style={{ width: `${String(((currentIndex + 1) / activity.items.length) * 100)}%` }}
           />
         </div>
       </div>

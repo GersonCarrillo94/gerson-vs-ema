@@ -1,0 +1,104 @@
+{
+  "id": "en-sublevel-10",
+  "language": "english",
+  "number": 10,
+  "level": "basic",
+  "title": "Common Action Verbs",
+  "description": "Learn the most useful verbs: have, go, do, want, like, need — and how to use them.",
+  "estimatedMinutes": 15,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-10-act-1",
+      "type": "flashcards",
+      "title": "Essential action verbs",
+      "items": [
+        { "id": "f1", "front": "to have", "back": "tener", "example": "I have a question." },
+        { "id": "f2", "front": "to go", "back": "ir", "example": "I go to work every day." },
+        { "id": "f3", "front": "to do / to make", "back": "hacer", "example": "What do you do? / I make coffee." },
+        { "id": "f4", "front": "to want", "back": "querer", "example": "I want to learn English." },
+        { "id": "f5", "front": "to need", "back": "necesitar", "example": "I need help, please." },
+        { "id": "f6", "front": "to like", "back": "gustar / agradar", "example": "I like music." },
+        { "id": "f7", "front": "to know", "back": "saber / conocer", "example": "Do you know this word?" },
+        { "id": "f8", "front": "to come", "back": "venir", "example": "Can you come here?" },
+        { "id": "f9", "front": "to see", "back": "ver", "example": "I see you every day at school." }
+      ]
+    },
+    {
+      "id": "en-10-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the correct verb",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "I ___ two sisters and one brother.",
+          "options": ["go", "have", "do", "want"],
+          "correctIndex": 1,
+          "explanation": "'Have' is used to talk about things you possess or relationships."
+        },
+        {
+          "id": "mc2",
+          "prompt": "She ___ to the gym every Monday.",
+          "options": ["does", "goes", "haves", "likes"],
+          "correctIndex": 1,
+          "explanation": "'Go' = ir. With 'she/he/it' add -es: 'she goes'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "I ___ a coffee. Can you make one?",
+          "options": ["go", "see", "need", "come"],
+          "correctIndex": 2,
+          "explanation": "'Need' = necesitar. 'I need a coffee' = Necesito un café."
+        },
+        {
+          "id": "mc4",
+          "prompt": "'___ you know her name?' — 'No, I don't.'",
+          "options": ["Have", "Do", "Are", "Go"],
+          "correctIndex": 1,
+          "explanation": "To make questions with most verbs, use 'do/does'. Do you know?"
+        },
+        {
+          "id": "mc5",
+          "prompt": "I ___ English because it opens doors.",
+          "options": ["need", "have", "want", "like"],
+          "correctIndex": 3,
+          "explanation": "'Like' = gustar. 'I like English' = Me gusta el inglés."
+        }
+      ]
+    },
+    {
+      "id": "en-10-act-3",
+      "type": "fill_blank",
+      "title": "Complete with the right verb",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I ___ a dog. His name is Max.",
+          "blanks": [{ "answer": "have", "alternatives": ["Have"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "She ___ to work by bus every day.",
+          "blanks": [{ "answer": "goes", "alternatives": ["Goes"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Do you ___ where the school is?",
+          "blanks": [{ "answer": "know", "alternatives": ["Know"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "I ___ to practise English every day.",
+          "blanks": [{ "answer": "want", "alternatives": ["Want", "need", "Need"] }],
+          "hint": "querer or necesitar"
+        },
+        {
+          "id": "fb5",
+          "sentence": "Can you ___ here? I need to talk to you.",
+          "blanks": [{ "answer": "come", "alternatives": ["Come"] }]
+        }
+      ]
+    }
+  ]
+}

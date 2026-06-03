@@ -1,0 +1,102 @@
+{
+  "id": "en-sublevel-30",
+  "language": "english",
+  "number": 30,
+  "level": "advanced",
+  "title": "Reported Speech",
+  "description": "Report what people said using tense backshift, reporting verbs, and changes in time expressions.",
+  "estimatedMinutes": 17,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-30-act-1",
+      "type": "flashcards",
+      "title": "Reported speech rules and tense shifts",
+      "items": [
+        { "id": "f1", "front": "say vs tell", "back": "He said (that)… / He told me (that)…", "example": "She said she was tired. / She told me she was tired." },
+        { "id": "f2", "front": "Tense shift: present simple → past simple", "back": "'I'm tired.' → She said she was tired.", "example": "'I work here.' → He said he worked there." },
+        { "id": "f3", "front": "Tense shift: present continuous → past continuous", "back": "'I'm studying.' → She said she was studying.", "example": "'They're waiting outside.' → He said they were waiting outside." },
+        { "id": "f4", "front": "Tense shift: past simple → past perfect", "back": "'I saw him.' → She said she had seen him.", "example": "'We finished late.' → They said they had finished late." },
+        { "id": "f5", "front": "Tense shift: will → would / can → could", "back": "'I'll call you.' → He said he would call me.", "example": "'I can help.' → She said she could help." },
+        { "id": "f6", "front": "Reported questions (no inversion, no question mark)", "back": "'Where do you live?' → She asked where I lived.", "example": "'Are you coming?' → He asked if I was coming." },
+        { "id": "f7", "front": "Time expression changes", "back": "today→that day, now→then, tomorrow→the next day, yesterday→the day before", "example": "He said he'd call me the next day. (originally: 'I'll call you tomorrow.')" },
+        { "id": "f8", "front": "Reporting verbs beyond 'said'", "back": "asked, told, explained, promised, warned, suggested, admitted", "example": "She warned me not to be late. He suggested going by train." }
+      ]
+    },
+    {
+      "id": "en-30-act-2",
+      "type": "multiple_choice",
+      "title": "Report what they said",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Direct: 'I'm really happy.' → Reported: She said she ___ really happy.",
+          "options": ["is", "was", "has been", "will be"],
+          "correctIndex": 1,
+          "explanation": "Present simple 'am' → past simple 'was' in reported speech."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Direct: 'I'll call you tomorrow.' → He said he ___ call me the next day.",
+          "options": ["will", "would", "can", "could"],
+          "correctIndex": 1,
+          "explanation": "'Will' → 'would' in reported speech. 'Tomorrow' → 'the next day'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Direct: 'Where do you work?' → She asked me where I ___.",
+          "options": ["work", "worked", "do work", "working"],
+          "correctIndex": 1,
+          "explanation": "Reported question: no inversion, past simple: she asked where I worked."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Direct: 'Don't be late!' → He ___ me not to be late.",
+          "options": ["said", "told", "asked", "warned"],
+          "correctIndex": 3,
+          "explanation": "'Warned' is the most appropriate reporting verb for a strong warning not to do something."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Direct: 'I have finished the report.' → She said she ___ the report.",
+          "options": ["finished", "had finished", "has finished", "finishes"],
+          "correctIndex": 1,
+          "explanation": "Present perfect 'have finished' → past perfect 'had finished' in reported speech."
+        }
+      ]
+    },
+    {
+      "id": "en-30-act-3",
+      "type": "fill_blank",
+      "title": "Convert to reported speech",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Direct: 'I'm hungry.' → She said she ___ hungry.",
+          "blanks": [{ "answer": "was", "alternatives": ["Was"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Direct: 'We can meet on Friday.' → They said they ___ meet on Friday.",
+          "blanks": [{ "answer": "could", "alternatives": ["Could"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Direct: 'Are you coming?' → He asked ___ I was coming.",
+          "blanks": [{ "answer": "if", "alternatives": ["whether", "If", "Whether"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Direct: 'I saw him yesterday.' → She said she ___ him the day before.",
+          "blanks": [{ "answer": "had seen", "alternatives": ["Had seen"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Direct: 'Don't touch that!' → He ___ us not to touch it.",
+          "blanks": [{ "answer": "warned", "alternatives": ["Warned", "told", "Told"] }]
+        }
+      ]
+    }
+  ]
+}

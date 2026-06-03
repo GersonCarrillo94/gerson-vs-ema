@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-35",
+  "language": "spanish",
+  "number": 35,
+  "level": "advanced",
+  "title": "Noticias y Actualidad",
+  "description": "Entiende y habla sobre las noticias, los medios de comunicación y la actualidad con vocabulario crítico.",
+  "estimatedMinutes": 15,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-35-act-1",
+      "type": "flashcards",
+      "title": "Vocabulario de medios y noticias",
+      "items": [
+        { "id": "f1", "front": "titular / artículo / editorial", "back": "headline / article / editorial", "example": "El titular decía: 'Científicos descubren un nuevo planeta'." },
+        { "id": "f2", "front": "periodista / reportero / corresponsal", "back": "journalist / reporter / correspondent", "example": "El corresponsal extranjero informó en directo desde la zona de conflicto." },
+        { "id": "f3", "front": "informar / cubrir / investigar", "back": "to report / to cover / to investigate", "example": "La periodista cubrió la historia durante tres meses antes de publicarla." },
+        { "id": "f4", "front": "según / fuentes afirman / supuestamente", "back": "according to / sources claim / allegedly", "example": "Según fuentes oficiales, la situación está bajo control." },
+        { "id": "f5", "front": "noticias de última hora / en directo", "back": "breaking news / live updates", "example": "Última hora: un terremoto ha sacudido la costa." },
+        { "id": "f6", "front": "hecho vs opinión", "back": "fact vs opinion", "example": "Hecho: La temperatura subió 2°C. Opinión: Esto será catastrófico." },
+        { "id": "f7", "front": "sesgo / neutral / verificar", "back": "bias / neutral / to verify", "example": "Siempre verifica la información antes de compartirla en redes sociales." },
+        { "id": "f8", "front": "bulo / desinformación / cebo de clics", "back": "fake news / misinformation / clickbait", "example": "Este titular es un cebo — el artículo dice algo completamente diferente." },
+        { "id": "f9", "front": "fuente / fiable / creíble", "back": "source / reliable / credible", "example": "Solo comparte noticias de fuentes fiables y acreditadas." }
+      ]
+    },
+    {
+      "id": "es-35-act-2",
+      "type": "multiple_choice",
+      "title": "Alfabetización mediática",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "El ___ del artículo decía: 'Economía al borde del colapso — expertos alertan'.",
+          "options": ["editorial", "titular", "fuente", "sesgo"],
+          "correctIndex": 1,
+          "explanation": "El 'titular' es el título de un artículo periodístico, diseñado para captar la atención del lector."
+        },
+        {
+          "id": "mc2",
+          "prompt": "La periodista pasó seis meses ___ el escándalo de corrupción antes de publicar.",
+          "options": ["cubriendo", "informando", "investigando", "verificando"],
+          "correctIndex": 2,
+          "explanation": "'Investigar' = profundizar en una historia para encontrar la verdad. Requiere meses de trabajo."
+        },
+        {
+          "id": "mc3",
+          "prompt": "___ fuentes oficiales, la situación está completamente bajo control.",
+          "options": ["Supuestamente", "Según", "Informando", "Fuentes"],
+          "correctIndex": 1,
+          "explanation": "'Según + fuente' = una forma de atribuir información sin confirmarla personalmente."
+        },
+        {
+          "id": "mc4",
+          "prompt": "El titular prometía una historia impactante pero el artículo era completamente distinto. Esto es un ___.",
+          "options": ["última hora", "sesgo", "cebo de clics", "editorial"],
+          "correctIndex": 2,
+          "explanation": "'Cebo de clics' (clickbait) = contenido diseñado para atraer clics con un titular engañoso."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Antes de compartir una noticia, siempre debes ___ la información con varias fuentes.",
+          "options": ["cubrir", "informar", "verificar", "investigar"],
+          "correctIndex": 2,
+          "explanation": "'Verificar' = comprobar que algo es verdad. Fundamental antes de difundir noticias."
+        }
+      ]
+    },
+    {
+      "id": "es-35-act-3",
+      "type": "fill_blank",
+      "title": "Completa las frases sobre medios",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "La periodista ___ la noticia en directo desde la zona del desastre durante tres días.",
+          "blanks": [{ "answer": "cubrió", "alternatives": ["Cubrió", "informó sobre", "Informó sobre"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Este artículo no tiene ___ acreditadas — no sé de dónde viene la información.",
+          "blanks": [{ "answer": "fuentes", "alternatives": ["Fuentes"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "___ testigos presenciales, el accidente ocurrió a eso de las tres de la tarde.",
+          "blanks": [{ "answer": "Según", "alternatives": ["según"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "¡Última ___! Acaban de firmar un acuerdo histórico.",
+          "blanks": [{ "answer": "hora", "alternatives": ["Hora"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Nunca compartas contenido sin antes ___ que la información es exacta.",
+          "blanks": [{ "answer": "verificar", "alternatives": ["Verificar", "comprobar", "Comprobar"] }]
+        }
+      ]
+    }
+  ]
+}

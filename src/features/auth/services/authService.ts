@@ -1,10 +1,11 @@
 import { supabase } from '@/lib/supabase';
 import { logger } from '@/lib/logger';
-import type { AuthError, AuthErrorCode, LoginPayload, RegisterPayload } from '../types';
+import { AuthAppError } from '../types';
+import type { AuthErrorCode, LoginPayload, RegisterPayload } from '../types';
 import type { UserProfile } from '@/types/user';
 
-/** Convierte errores de Supabase a nuestro tipo AuthError */
-function mapSupabaseError(message: string): AuthError {
+/** Convierte errores de Supabase a nuestro tipo AuthAppError */
+function mapSupabaseError(message: string): AuthAppError {
   const msg = message.toLowerCase();
 
   let code: AuthErrorCode = 'UNKNOWN';
@@ -19,7 +20,7 @@ function mapSupabaseError(message: string): AuthError {
     code = 'NETWORK_ERROR';
   }
 
-  return { code, message };
+  return new AuthAppError(code, message);
 }
 
 /**
@@ -50,20 +51,16 @@ export async function registerUser(payload: RegisterPayload): Promise<UserProfil
   }
 
   if (!authData.user) {
-    throw {
-      code: 'UNKNOWN',
-      message: 'No se pudo obtener el ID del usuario creado.',
-    } satisfies AuthError;
+    throw new AuthAppError('UNKNOWN', 'No se pudo obtener el ID del usuario creado.');
   }
 
   // Si session es null → "Confirm email" está activo en Supabase
   if (!authData.session) {
-    throw {
-      code: 'UNKNOWN',
-      message:
-        'Debes confirmar tu email antes de continuar. ' +
-        'Para desarrollo desactiva "Confirm email" en Supabase → Authentication → Providers → Email.',
-    } satisfies AuthError;
+    throw new AuthAppError(
+      'UNKNOWN',
+      'Debes confirmar tu email antes de continuar. ' +
+      'Para desarrollo desactiva "Confirm email" en Supabase → Authentication → Providers → Email.',
+    );
   }
 
   // Forzar que el cliente aplique la sesión antes de hacer queries a la DB.
@@ -80,10 +77,7 @@ export async function registerUser(payload: RegisterPayload): Promise<UserProfil
   if (!profile) {
     logger.error('authService.registerUser', 'Profile not readable after 3 attempts');
     await supabase.auth.signOut();
-    throw {
-      code: 'UNKNOWN',
-      message: 'No se pudo cargar el perfil recién creado. Por favor intenta de nuevo.',
-    } satisfies AuthError;
+    throw new AuthAppError('UNKNOWN', 'No se pudo cargar el perfil recién creado. Por favor intenta de nuevo.');
   }
 
   return profile;
@@ -105,10 +99,7 @@ export async function loginUser(payload: LoginPayload): Promise<UserProfile> {
 
   if (!profile) {
     await supabase.auth.signOut();
-    throw {
-      code: 'UNKNOWN',
-      message: 'Tu cuenta existe pero no tiene perfil. Por favor regístrate de nuevo.',
-    } satisfies AuthError;
+    throw new AuthAppError('UNKNOWN', 'Tu cuenta existe pero no tiene perfil. Por favor regístrate de nuevo.');
   }
 
   return profile;
@@ -136,7 +127,7 @@ export async function updateProfile(fields: {
     throw mapSupabaseError(error.message);
   }
 
-  return data as UserProfile;
+  return data;
 }
 
 /** Cierra sesión */

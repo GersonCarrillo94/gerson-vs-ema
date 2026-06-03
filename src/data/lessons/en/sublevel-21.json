@@ -1,0 +1,103 @@
+{
+  "id": "en-sublevel-21",
+  "language": "english",
+  "number": 21,
+  "level": "intermediate",
+  "title": "Health & the Body",
+  "description": "Talk about illness, symptoms, and medical visits — essential vocabulary for real-life situations.",
+  "estimatedMinutes": 13,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-21-act-1",
+      "type": "flashcards",
+      "title": "Symptoms and medical vocabulary",
+      "items": [
+        { "id": "f1", "front": "headache / stomachache / backache", "back": "dolor de cabeza / estómago / espalda", "example": "I have a terrible headache — do you have any painkillers?" },
+        { "id": "f2", "front": "to have a cold / the flu", "back": "estar resfriado / tener gripe", "example": "She has a cold and can't stop sneezing." },
+        { "id": "f3", "front": "fever / temperature", "back": "fiebre / temperatura", "example": "His temperature is 39°C — he has a high fever." },
+        { "id": "f4", "front": "cough / sneeze / runny nose", "back": "tos / estornudo / moqueo", "example": "I've been coughing all day. I think I'm getting sick." },
+        { "id": "f5", "front": "to see a doctor / go to hospital", "back": "ir al médico / ir al hospital", "example": "If it gets worse, you should see a doctor." },
+        { "id": "f6", "front": "prescription / medicine / pills", "back": "receta / medicamento / pastillas", "example": "The doctor gave me a prescription for antibiotics." },
+        { "id": "f7", "front": "to recover / to feel better", "back": "recuperarse / sentirse mejor", "example": "It took me a week to fully recover from the flu." },
+        { "id": "f8", "front": "to be allergic to", "back": "ser alérgico a", "example": "I'm allergic to nuts — they make me break out in hives." },
+        { "id": "f9", "front": "to sprain an ankle / break a bone", "back": "torcerse el tobillo / romperse un hueso", "example": "She sprained her ankle during the game and had to leave." }
+      ]
+    },
+    {
+      "id": "en-21-act-2",
+      "type": "multiple_choice",
+      "title": "At the doctor's",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "I have a terrible ___. My head is pounding and I can't concentrate.",
+          "options": ["stomachache", "headache", "backache", "toothache"],
+          "correctIndex": 1,
+          "explanation": "'Headache' = pain in the head. 'My head is pounding' confirms this symptom."
+        },
+        {
+          "id": "mc2",
+          "prompt": "The doctor examined me and wrote me a ___ for antibiotics.",
+          "options": ["receipt", "prescription", "permission", "medicine"],
+          "correctIndex": 1,
+          "explanation": "A 'prescription' is the written note from a doctor authorising medication."
+        },
+        {
+          "id": "mc3",
+          "prompt": "She has a high ___. Her forehead is really hot.",
+          "options": ["cold", "cough", "fever", "sneeze"],
+          "correctIndex": 2,
+          "explanation": "'Fever' = elevated body temperature. A hot forehead is a classic symptom."
+        },
+        {
+          "id": "mc4",
+          "prompt": "He fell off his bike and ___ his wrist. He's in a cast now.",
+          "options": ["sprained", "broke", "scratched", "twisted"],
+          "correctIndex": 1,
+          "explanation": "'Broke' = fractured a bone. A cast confirms the bone was broken."
+        },
+        {
+          "id": "mc5",
+          "prompt": "What's the matter? — I don't ___ very well. I think I'm coming down with something.",
+          "options": ["look", "sound", "feel", "seem"],
+          "correctIndex": 2,
+          "explanation": "'Feel' is the standard verb for describing how you physically or emotionally feel."
+        }
+      ]
+    },
+    {
+      "id": "en-21-act-3",
+      "type": "fill_blank",
+      "title": "Complete the health conversation",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I have a terrible ___. Can I have some painkillers?",
+          "blanks": [{ "answer": "headache", "alternatives": ["Headache"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "She has a high ___. She should stay in bed.",
+          "blanks": [{ "answer": "fever", "alternatives": ["Fever", "temperature", "Temperature"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "The doctor told me to ___ plenty of water and get some rest.",
+          "blanks": [{ "answer": "drink", "alternatives": ["Drink"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "I'm ___ to penicillin — the doctor has to prescribe something else.",
+          "blanks": [{ "answer": "allergic", "alternatives": ["Allergic"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "He ___ his ankle playing football and had to go to A&E.",
+          "blanks": [{ "answer": "sprained", "alternatives": ["Sprained", "twisted", "Twisted"] }]
+        }
+      ]
+    }
+  ]
+}

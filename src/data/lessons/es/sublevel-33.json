@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-33",
+  "language": "spanish",
+  "number": 33,
+  "level": "advanced",
+  "title": "Modismos y Expresiones Idiomáticas",
+  "description": "Entiende y usa modismos frecuentes del español para sonar más natural y entender a los hablantes nativos.",
+  "estimatedMinutes": 14,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-33-act-1",
+      "type": "flashcards",
+      "title": "Modismos comunes y su significado",
+      "items": [
+        { "id": "f1", "front": "no hay mal que por bien no venga", "back": "every cloud has a silver lining", "example": "Perdí ese trabajo, pero encontré uno mejor. No hay mal que por bien no venga." },
+        { "id": "f2", "front": "costar un ojo de la cara", "back": "to cost an arm and a leg (very expensive)", "example": "Ese abrigo me costó un ojo de la cara, pero dura para siempre." },
+        { "id": "f3", "front": "dar en el clavo", "back": "to hit the nail on the head (be exactly right)", "example": "Has dado en el clavo — eso es exactamente el problema." },
+        { "id": "f4", "front": "estar en las nubes", "back": "to have one's head in the clouds / to daydream", "example": "Siempre está en las nubes. No se entera de nada." },
+        { "id": "f5", "front": "ponerse las pilas", "back": "to get one's act together / buckle down", "example": "Tienes que ponerte las pilas si quieres aprobar el examen." },
+        { "id": "f6", "front": "meter la pata", "back": "to put one's foot in it / make a blunder", "example": "Metí la pata al mencionar su ex delante de todos." },
+        { "id": "f7", "front": "echar una mano", "back": "to lend a hand / to help", "example": "¿Te echo una mano con las maletas? Parecen muy pesadas." },
+        { "id": "f8", "front": "llevarse el gato al agua", "back": "to win / to pull it off (get the best deal)", "example": "Al final nos llevamos el gato al agua en la negociación." },
+        { "id": "f9", "front": "no hay dos sin tres", "back": "things come in threes (bad luck repeats)", "example": "Se me cayó el café, se me pinchó la rueda… no hay dos sin tres." }
+      ]
+    },
+    {
+      "id": "es-33-act-2",
+      "type": "multiple_choice",
+      "title": "¿Qué significa el modismo?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Hoy está en las nubes. ¿Qué significa esto?",
+          "options": ["Trabaja en aviación", "Está distraído / soñando despierto", "Está muy alto", "Tiene la cabeza fría"],
+          "correctIndex": 1,
+          "explanation": "'Estar en las nubes' = estar distraído, no prestar atención a la realidad."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Ese viaje me costó un ojo de la cara. ¿Qué significa?",
+          "options": ["El viaje fue doloroso", "El viaje fue muy caro", "El viaje fue muy largo", "Tuve un accidente"],
+          "correctIndex": 1,
+          "explanation": "'Costar un ojo de la cara' = ser muy caro. Equivale al inglés 'cost an arm and a leg'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Metió la pata al mencionar el accidente. ¿Qué hizo?",
+          "options": ["Dio información correcta", "Cometió un error social embarazoso", "Se lesionó el pie", "Llegó tarde"],
+          "correctIndex": 1,
+          "explanation": "'Meter la pata' = decir o hacer algo inadecuado en el momento equivocado, causando un mal momento."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Tienes que ponerte las pilas si quieres terminar a tiempo. ¿Qué significa?",
+          "options": ["Debes descansar más", "Debes organizarte y esforzarte más", "Debes comprar pilas nuevas", "Debes pedir ayuda"],
+          "correctIndex": 1,
+          "explanation": "'Ponerse las pilas' = activarse, esforzarse. Como recargar las pilas de un aparato."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Tu amigo actúa en una obra esta noche. ¿Qué le dices para desearle suerte con un modismo?",
+          "options": ["¡Mucha mierda!", "¡Echar una mano!", "¡Meter la pata!", "¡No hay dos sin tres!"],
+          "correctIndex": 0,
+          "explanation": "En el mundo del teatro en español, se dice '¡Mucha mierda!' para desear suerte — equivale al inglés 'break a leg'."
+        }
+      ]
+    },
+    {
+      "id": "es-33-act-3",
+      "type": "fill_blank",
+      "title": "Completa el modismo",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Has dado ___ el clavo. ¡Es exactamente lo que queríamos decir!",
+          "blanks": [{ "answer": "en", "alternatives": ["En"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "¿Te ___ una mano con las cajas? Parecen muy pesadas.",
+          "blanks": [{ "answer": "echo", "alternatives": ["Echo"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Perdí el trabajo, pero encontré uno mejor. No hay ___ que por bien no venga.",
+          "blanks": [{ "answer": "mal", "alternatives": ["Mal"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Metí la ___ al preguntar por su ex delante de todos. Fue muy incómodo.",
+          "blanks": [{ "answer": "pata", "alternatives": ["Pata"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Tienes que ponerte las ___ si quieres aprobar este examen.",
+          "blanks": [{ "answer": "pilas", "alternatives": ["Pilas"] }]
+        }
+      ]
+    }
+  ]
+}

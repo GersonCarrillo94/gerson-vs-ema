@@ -1,0 +1,103 @@
+{
+  "id": "en-sublevel-23",
+  "language": "english",
+  "number": 23,
+  "level": "intermediate",
+  "title": "Work & Jobs",
+  "description": "Talk about careers, workplace situations, and professional life with practical English vocabulary.",
+  "estimatedMinutes": 13,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-23-act-1",
+      "type": "flashcards",
+      "title": "Workplace vocabulary",
+      "items": [
+        { "id": "f1", "front": "to apply for a job / to interview", "back": "postularse / entrevistarse", "example": "I applied for five jobs and got two interviews." },
+        { "id": "f2", "front": "full-time / part-time / freelance", "back": "tiempo completo / parcial / autónomo", "example": "She works part-time so she can study in the mornings." },
+        { "id": "f3", "front": "salary / wage / bonus", "back": "salario / jornal / bonificación", "example": "He got a 10% bonus at the end of the year." },
+        { "id": "f4", "front": "to be promoted / to get a promotion", "back": "ser ascendido", "example": "She worked hard and was promoted to team leader." },
+        { "id": "f5", "front": "to resign / to quit / to retire", "back": "dimitir / renunciar / jubilarse", "example": "He resigned because he found a better opportunity." },
+        { "id": "f6", "front": "remote work / work from home", "back": "trabajo remoto / desde casa", "example": "Since the pandemic, many companies allow remote work." },
+        { "id": "f7", "front": "colleague / boss / employee", "back": "compañero / jefe / empleado", "example": "My colleagues are very supportive — I love my team." },
+        { "id": "f8", "front": "deadline / meeting / presentation", "back": "fecha límite / reunión / presentación", "example": "The deadline is Friday — we need to finish by Thursday." },
+        { "id": "f9", "front": "to work overtime / to take time off", "back": "hacer horas extra / tomarse un tiempo libre", "example": "She took two weeks off after finishing the big project." }
+      ]
+    },
+    {
+      "id": "en-23-act-2",
+      "type": "multiple_choice",
+      "title": "At work",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "She sent her CV and cover letter to ___ for the marketing position.",
+          "options": ["resign", "apply", "promote", "retire"],
+          "correctIndex": 1,
+          "explanation": "'Apply for' a job = submit your application. She applied for the marketing position."
+        },
+        {
+          "id": "mc2",
+          "prompt": "He's been with the company for 30 years. He's planning to ___ next spring.",
+          "options": ["resign", "quit", "retire", "dismiss"],
+          "correctIndex": 2,
+          "explanation": "'Retire' = to stop working after a long career, usually at an older age."
+        },
+        {
+          "id": "mc3",
+          "prompt": "We need to submit the report by Friday — that's the ___.",
+          "options": ["schedule", "meeting", "deadline", "appointment"],
+          "correctIndex": 2,
+          "explanation": "'Deadline' = the latest date/time by which something must be done."
+        },
+        {
+          "id": "mc4",
+          "prompt": "After three years of excellent work, she was ___ to senior manager.",
+          "options": ["hired", "promoted", "resigned", "employed"],
+          "correctIndex": 1,
+          "explanation": "'Promoted' = moved to a higher position. She was promoted to senior manager."
+        },
+        {
+          "id": "mc5",
+          "prompt": "He works ___ — he logs on from home and never comes into the office.",
+          "options": ["overtime", "part-time", "remotely", "freelance"],
+          "correctIndex": 2,
+          "explanation": "'Remotely' = working from a location other than the office, usually from home."
+        }
+      ]
+    },
+    {
+      "id": "en-23-act-3",
+      "type": "fill_blank",
+      "title": "Complete the workplace sentences",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I'm going to ___ for that job — the salary looks great.",
+          "blanks": [{ "answer": "apply", "alternatives": ["Apply"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "The ___ is Friday at noon — we're racing against time!",
+          "blanks": [{ "answer": "deadline", "alternatives": ["Deadline"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "She got a great ___ at the end of the year for hitting all her targets.",
+          "blanks": [{ "answer": "bonus", "alternatives": ["Bonus"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "He decided to ___ because he was offered a better position elsewhere.",
+          "blanks": [{ "answer": "resign", "alternatives": ["Resign", "quit", "Quit"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "I had to work ___ last week — I was in the office until 10 pm every night.",
+          "blanks": [{ "answer": "overtime", "alternatives": ["Overtime"] }]
+        }
+      ]
+    }
+  ]
+}

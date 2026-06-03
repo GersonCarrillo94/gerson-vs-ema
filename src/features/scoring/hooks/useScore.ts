@@ -7,7 +7,7 @@ export function useMyScore() {
 
   return useQuery({
     queryKey: ['my_score', user?.id],
-    queryFn: () => fetchMyScoreData(user!.id),
+    queryFn: () => fetchMyScoreData(user?.id ?? ''),
     enabled: !!user?.id,
     staleTime: 30_000,
   });
@@ -19,7 +19,7 @@ export function usePartnerScore() {
 
   return useQuery({
     queryKey: ['partner_score', partnerId],
-    queryFn: () => fetchPartnerScoreData(partnerId!),
+    queryFn: () => fetchPartnerScoreData(partnerId ?? ''),
     enabled: !!partnerId,
     staleTime: 60_000,
   });

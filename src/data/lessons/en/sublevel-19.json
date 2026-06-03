@@ -1,0 +1,106 @@
+{
+  "id": "en-sublevel-19",
+  "language": "english",
+  "number": 19,
+  "level": "intermediate",
+  "title": "Comparatives & Superlatives",
+  "description": "Compare people, places, and things using -er/-est, more/most, and irregular forms like better/best.",
+  "estimatedMinutes": 13,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-19-act-1",
+      "type": "flashcards",
+      "title": "Comparative & superlative forms",
+      "items": [
+        { "id": "f1", "front": "Short adj + -er (comparative)", "back": "big → bigger, fast → faster", "example": "She runs faster than me." },
+        { "id": "f2", "front": "Short adj + the -est (superlative)", "back": "big → the biggest, fast → the fastest", "example": "He's the tallest in the class." },
+        { "id": "f3", "front": "Long adj: more / less (comparative)", "back": "more interesting, less expensive", "example": "This book is more interesting than the last one." },
+        { "id": "f4", "front": "Long adj: the most / the least (superlative)", "back": "the most exciting, the least difficult", "example": "It's the most beautiful city I've visited." },
+        { "id": "f5", "front": "Irregular: good → better → the best", "back": "These improve quality", "example": "This coffee is better. It's the best in town!" },
+        { "id": "f6", "front": "Irregular: bad → worse → the worst", "back": "These describe getting worse", "example": "Today was worse than yesterday. The worst day ever." },
+        { "id": "f7", "front": "as … as (same degree)", "back": "She's as tall as her sister.", "example": "This hotel is as comfortable as the last one." },
+        { "id": "f8", "front": "much / a lot / far + comparative", "back": "much bigger, far more expensive", "example": "A house is much more expensive than an apartment." },
+        { "id": "f9", "front": "than (used with comparatives)", "back": "taller than, better than", "example": "The results were better than expected." }
+      ]
+    },
+    {
+      "id": "en-19-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the correct form",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "This film is ___ than the book. (boring)",
+          "options": ["more boring", "boringer", "most boring", "boringly"],
+          "correctIndex": 0,
+          "explanation": "Long adjectives use 'more' for comparatives: more boring than."
+        },
+        {
+          "id": "mc2",
+          "prompt": "She is ___ student in the school. (good)",
+          "options": ["the most good", "the better", "the best", "the gooder"],
+          "correctIndex": 2,
+          "explanation": "good → better → the best. 'The best' is the irregular superlative."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Mount Everest is ___ mountain in the world. (high)",
+          "options": ["higher", "the higher", "the highest", "most high"],
+          "correctIndex": 2,
+          "explanation": "Short adjective: high → the highest. Superlatives always use 'the'."
+        },
+        {
+          "id": "mc4",
+          "prompt": "A train ticket is not ___ a plane ticket. (cheap)",
+          "options": ["so cheap as", "as cheap as", "cheaper as", "the cheapest"],
+          "correctIndex": 1,
+          "explanation": "'Not as cheap as' = less cheap. Used to show two things are not equal."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Today is ___ hotter than yesterday. I'm sweating!",
+          "options": ["much", "very", "more", "most"],
+          "correctIndex": 0,
+          "explanation": "'Much' intensifies comparatives: much hotter, much more expensive."
+        }
+      ]
+    },
+    {
+      "id": "en-19-act-3",
+      "type": "fill_blank",
+      "title": "Complete with the correct form",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Dogs are usually ___ than cats. (friendly)",
+          "blanks": [{ "answer": "friendlier", "alternatives": ["more friendly", "More friendly", "Friendlier"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "It's the ___ restaurant in town — everyone loves it. (good)",
+          "blanks": [{ "answer": "best", "alternatives": ["Best"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "This exercise is ___ than the previous one. (difficult)",
+          "blanks": [{ "answer": "more difficult", "alternatives": ["More difficult"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "She sings ___ beautifully ___ a professional.",
+          "blanks": [
+            { "answer": "as", "alternatives": ["As"] },
+            { "answer": "as", "alternatives": ["As"] }
+          ]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Today is ___ than yesterday — I need a jacket! (cold)",
+          "blanks": [{ "answer": "colder", "alternatives": ["Colder", "more cold", "More cold"] }]
+        }
+      ]
+    }
+  ]
+}

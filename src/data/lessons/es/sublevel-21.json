@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-21",
+  "language": "spanish",
+  "number": 21,
+  "level": "intermediate",
+  "title": "La Salud y el Cuerpo",
+  "description": "Habla de enfermedades, síntomas y visitas al médico — vocabulario esencial para situaciones de la vida real.",
+  "estimatedMinutes": 13,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-21-act-1",
+      "type": "flashcards",
+      "title": "Síntomas y vocabulario médico",
+      "items": [
+        { "id": "f1", "front": "dolor de cabeza / estómago / espalda", "back": "headache / stomachache / backache", "example": "Tengo un terrible dolor de cabeza. ¿Tienes ibuprofeno?" },
+        { "id": "f2", "front": "estar resfriado / tener gripe", "back": "to have a cold / the flu", "example": "Está resfriada y no para de estornudar." },
+        { "id": "f3", "front": "fiebre / temperatura", "back": "fever / temperature", "example": "Tiene 39 de fiebre — debe quedarse en cama." },
+        { "id": "f4", "front": "tos / estornudar / moqueo", "back": "cough / to sneeze / runny nose", "example": "Lleva tosiendo todo el día. Creo que está enfermo." },
+        { "id": "f5", "front": "ir al médico / a urgencias", "back": "to see a doctor / go to A&E", "example": "Si empeora, deberías ir al médico cuanto antes." },
+        { "id": "f6", "front": "receta / medicamento / pastillas", "back": "prescription / medicine / pills", "example": "El médico me dio una receta para los antibióticos." },
+        { "id": "f7", "front": "recuperarse / sentirse mejor", "back": "to recover / to feel better", "example": "Tardé una semana en recuperarme de la gripe." },
+        { "id": "f8", "front": "ser alérgico/a a", "back": "to be allergic to", "example": "Soy alérgico a los frutos secos — me producen urticaria." },
+        { "id": "f9", "front": "torcerse el tobillo / romperse un hueso", "back": "to sprain an ankle / break a bone", "example": "Se torció el tobillo jugando al fútbol y tuvo que retirarse." }
+      ]
+    },
+    {
+      "id": "es-21-act-2",
+      "type": "multiple_choice",
+      "title": "En la consulta del médico",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Me duele ___ terriblemente. No puedo concentrarme en nada.",
+          "options": ["el estómago", "la cabeza", "la espalda", "el tobillo"],
+          "correctIndex": 1,
+          "explanation": "'La cabeza' = head. 'No puedo concentrarme' es un síntoma típico del dolor de cabeza."
+        },
+        {
+          "id": "mc2",
+          "prompt": "El médico me examinó y me escribió una ___ para los antibióticos.",
+          "options": ["factura", "receta", "nota", "prescripción"],
+          "correctIndex": 1,
+          "explanation": "'Receta' = prescription. Es el documento que el médico escribe para que puedas comprar el medicamento."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Tiene 39 grados. Tiene mucha ___.",
+          "options": ["tos", "alergia", "fiebre", "gripe"],
+          "correctIndex": 2,
+          "explanation": "'Fiebre' = fever. 39 grados de temperatura es fiebre alta."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Se cayó de la bici y ___ la muñeca. Ahora lleva escayola.",
+          "options": ["torció", "rompió", "rozó", "dobló"],
+          "correctIndex": 1,
+          "explanation": "'Romperse' = to break a bone. La escayola confirma que el hueso se fracturó."
+        },
+        {
+          "id": "mc5",
+          "prompt": "¿Qué te pasa? — No me ___ muy bien. Creo que estoy cogiendo algo.",
+          "options": ["veo", "oigo", "siento", "noto"],
+          "correctIndex": 2,
+          "explanation": "'Sentirse' es el verbo estándar para describir cómo te encuentras físicamente."
+        }
+      ]
+    },
+    {
+      "id": "es-21-act-3",
+      "type": "fill_blank",
+      "title": "Completa la conversación médica",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Tengo un horrible ___ de cabeza. ¿Tienes algún analgésico?",
+          "blanks": [{ "answer": "dolor", "alternatives": ["Dolor"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Está ___. Tiene que guardar cama y descansar.",
+          "blanks": [{ "answer": "enfermo", "alternatives": ["enferma", "Enfermo", "Enferma"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "El médico me dijo que ___ mucha agua y tomara el antibiótico.",
+          "blanks": [{ "answer": "bebiera", "alternatives": ["tomara", "bebera", "Bebiera", "Tomara"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Soy ___ al gluten — no puedo comer pan normal.",
+          "blanks": [{ "answer": "alérgico", "alternatives": ["alérgica", "Alérgico", "Alérgica"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Se ___ el tobillo jugando al tenis y tuvo que parar.",
+          "blanks": [{ "answer": "torció", "alternatives": ["Torció"] }]
+        }
+      ]
+    }
+  ]
+}

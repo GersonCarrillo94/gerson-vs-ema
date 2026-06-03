@@ -1,0 +1,106 @@
+{
+  "id": "en-sublevel-08",
+  "language": "english",
+  "number": 8,
+  "level": "basic",
+  "title": "Food & Drinks",
+  "description": "Order food and drinks, say what you like and don't like, and read a basic menu.",
+  "estimatedMinutes": 14,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-08-act-1",
+      "type": "flashcards",
+      "title": "Food and drink vocabulary",
+      "items": [
+        { "id": "f1", "front": "breakfast", "back": "desayuno", "example": "I have breakfast at 7 AM." },
+        { "id": "f2", "front": "lunch", "back": "almuerzo", "example": "Let's have lunch together." },
+        { "id": "f3", "front": "dinner", "back": "cena", "example": "Dinner is at 7 PM." },
+        { "id": "f4", "front": "I'm hungry.", "back": "Tengo hambre.", "example": "I'm hungry — can we eat soon?" },
+        { "id": "f5", "front": "I'm thirsty.", "back": "Tengo sed.", "example": "I'm thirsty. Can I have some water?" },
+        { "id": "f6", "front": "I'd like…", "back": "Quisiera… / Me gustaría…", "example": "I'd like a coffee, please." },
+        { "id": "f7", "front": "I like / I don't like", "back": "Me gusta / No me gusta", "example": "I like rice but I don't like fish." },
+        { "id": "f8", "front": "delicious", "back": "delicioso", "example": "This soup is delicious!" },
+        { "id": "f9", "front": "the bill / the check", "back": "la cuenta", "example": "Can we have the bill, please?" }
+      ]
+    },
+    {
+      "id": "en-08-act-2",
+      "type": "multiple_choice",
+      "title": "At the restaurant",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "You want to order. You say: '___ a glass of water, please.'",
+          "options": ["I want", "I'd like", "I am like", "Give me"],
+          "correctIndex": 1,
+          "explanation": "'I'd like' is polite. 'I want' sounds direct; 'I'd like' is better in a restaurant."
+        },
+        {
+          "id": "mc2",
+          "prompt": "How do you say 'Tengo hambre'?",
+          "options": ["I am hunger.", "I have hungry.", "I'm hungry.", "I want food."],
+          "correctIndex": 2,
+          "explanation": "In English: 'I'm hungry' (NOT 'I have hungry' — a common mistake)."
+        },
+        {
+          "id": "mc3",
+          "prompt": "The meal was great. You say: 'This is ___!'",
+          "options": ["delicious", "hungry", "thirsty", "the bill"],
+          "correctIndex": 0,
+          "explanation": "'Delicious' describes food you really enjoy."
+        },
+        {
+          "id": "mc4",
+          "prompt": "You want to pay and leave. You ask for:",
+          "options": ["the menu", "the lunch", "the bill", "the breakfast"],
+          "correctIndex": 2,
+          "explanation": "'Can we have the bill?' or 'Can we have the check?' (American English)."
+        },
+        {
+          "id": "mc5",
+          "prompt": "The meal you eat in the evening is called:",
+          "options": ["breakfast", "lunch", "brunch", "dinner"],
+          "correctIndex": 3,
+          "explanation": "Breakfast = morning, lunch = midday, dinner = evening."
+        }
+      ]
+    },
+    {
+      "id": "en-08-act-3",
+      "type": "fill_blank",
+      "title": "Complete the sentences",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I'm ___. Can I have some water?",
+          "blanks": [{ "answer": "thirsty", "alternatives": ["Thirsty"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "I'd ___ a coffee and a sandwich, please.",
+          "blanks": [{ "answer": "like", "alternatives": ["Like"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "I ___ pizza but I don't ___ fish.",
+          "blanks": [
+            { "answer": "like", "alternatives": ["Like"] },
+            { "answer": "like", "alternatives": ["Like"] }
+          ]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Can we have the ___, please? We want to pay.",
+          "blanks": [{ "answer": "bill", "alternatives": ["check", "Bill", "Check"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "This soup is ___! I love it.",
+          "blanks": [{ "answer": "delicious", "alternatives": ["Delicious"] }]
+        }
+      ]
+    }
+  ]
+}

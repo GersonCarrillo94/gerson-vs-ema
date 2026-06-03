@@ -34,3 +34,12 @@ export interface AuthError {
   code: AuthErrorCode;
   message: string;
 }
+
+export class AuthAppError extends Error implements AuthError {
+  code: AuthErrorCode;
+  constructor(code: AuthErrorCode, message: string) {
+    super(message);
+    this.name = 'AuthAppError';
+    this.code = code;
+  }
+}

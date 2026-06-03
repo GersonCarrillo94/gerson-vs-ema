@@ -72,7 +72,7 @@ export async function fetchPartnerScoreData(
     id: partner.id,
     displayName: partner.display_name,
     avatarUrl: partner.avatar_url,
-    languageLearning: partner.language_learning as 'english' | 'spanish',
+    languageLearning: partner.language_learning,
     totalScore: partner.total_score,
     currentStreak: partner.current_streak,
     longestStreak: partner.longest_streak,

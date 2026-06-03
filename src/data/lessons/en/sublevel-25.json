@@ -1,0 +1,109 @@
+{
+  "id": "en-sublevel-25",
+  "language": "english",
+  "number": 25,
+  "level": "advanced",
+  "title": "Present Perfect — Actions with Present Relevance",
+  "description": "Use 'have/has + past participle' to connect past experiences and recent events to the present moment.",
+  "estimatedMinutes": 16,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-25-act-1",
+      "type": "flashcards",
+      "title": "Present perfect structure and uses",
+      "items": [
+        { "id": "f1", "front": "have / has + past participle", "back": "I have seen / She has gone", "example": "I have visited Paris twice. He has just left." },
+        { "id": "f2", "front": "ever / never (experience)", "back": "at any time / not at any time", "example": "Have you ever been to Japan? I've never tried sushi." },
+        { "id": "f3", "front": "already (sooner than expected)", "back": "ya (antes de lo previsto)", "example": "I've already finished the report — it wasn't that hard!" },
+        { "id": "f4", "front": "yet (expected but not happened)", "back": "todavía no / ya (en preguntas)", "example": "Have you eaten yet? — No, not yet." },
+        { "id": "f5", "front": "just (very recently)", "back": "acabar de", "example": "She's just arrived. The coffee is still hot." },
+        { "id": "f6", "front": "for (duration) vs since (start point)", "back": "por (duración) vs desde (inicio)", "example": "I've lived here for five years / since 2019." },
+        { "id": "f7", "front": "recently / lately (recent past)", "back": "recientemente / últimamente", "example": "I haven't seen her recently. Have you spoken to him lately?" },
+        { "id": "f8", "front": "Irregular past participles", "back": "go→gone, see→seen, eat→eaten, do→done", "example": "Have you done your homework? I've never eaten durian." },
+        { "id": "f9", "front": "Contraction: I've / He's / They've", "back": "I have / He has / They have", "example": "She's lived abroad for two years. We've known each other forever." }
+      ]
+    },
+    {
+      "id": "en-25-act-2",
+      "type": "multiple_choice",
+      "title": "Present perfect in context",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "I ___ that film three times — it's my favourite!",
+          "options": ["see", "saw", "have seen", "have saw"],
+          "correctIndex": 2,
+          "explanation": "Unspecified number of times with present relevance → present perfect: have seen."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Have you eaten ___? — No, not yet. I'm still waiting for my order.",
+          "options": ["already", "just", "yet", "ever"],
+          "correctIndex": 2,
+          "explanation": "'Yet' is used in questions and negatives for things expected to happen. 'Not yet' = no todavía."
+        },
+        {
+          "id": "mc3",
+          "prompt": "She ___ just ___ from her trip to Colombia. She looks so happy!",
+          "options": ["has / returned", "have / returned", "is / return", "did / return"],
+          "correctIndex": 0,
+          "explanation": "She has just returned = she returned very recently. 'She's just returned.'"
+        },
+        {
+          "id": "mc4",
+          "prompt": "I've known Marco ___ we were children. We grew up in the same street.",
+          "options": ["for", "since", "during", "ago"],
+          "correctIndex": 1,
+          "explanation": "'Since' introduces the starting point of an ongoing state: since we were children."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Have you ___ tried bungee jumping?",
+          "options": ["never", "already", "yet", "ever"],
+          "correctIndex": 3,
+          "explanation": "'Ever' in questions = at any time in your life. 'Have you ever…?' asks about experience."
+        }
+      ]
+    },
+    {
+      "id": "en-25-act-3",
+      "type": "fill_blank",
+      "title": "Complete with present perfect",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I ___ never ___ sushi. Is it good? (eat)",
+          "blanks": [
+            { "answer": "have", "alternatives": ["Have"] },
+            { "answer": "eaten", "alternatives": ["Eaten"] }
+          ]
+        },
+        {
+          "id": "fb2",
+          "sentence": "She ___ already ___ the report — she's very efficient. (finish)",
+          "blanks": [
+            { "answer": "has", "alternatives": ["Has"] },
+            { "answer": "finished", "alternatives": ["Finished"] }
+          ]
+        },
+        {
+          "id": "fb3",
+          "sentence": "I've lived in this city ___ ten years. I love it here.",
+          "blanks": [{ "answer": "for", "alternatives": ["For"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Have you ___ your homework yet? The deadline is tomorrow.",
+          "blanks": [{ "answer": "done", "alternatives": ["Done", "finished", "Finished"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "He ___ just sent the email. Check your inbox now.",
+          "blanks": [{ "answer": "has", "alternatives": ["Has"] }]
+        }
+      ]
+    }
+  ]
+}

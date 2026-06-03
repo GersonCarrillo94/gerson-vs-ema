@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-18",
+  "language": "spanish",
+  "number": 18,
+  "level": "intermediate",
+  "title": "De Compras y El Dinero",
+  "description": "Compra cosas, pregunta precios, compara opciones y maneja el dinero en español.",
+  "estimatedMinutes": 14,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-18-act-1",
+      "type": "flashcards",
+      "title": "Vocabulario de compras",
+      "items": [
+        { "id": "f1", "front": "¿Cuánto cuesta? / ¿Cuánto vale?", "back": "How much is it?", "example": "Perdona, ¿cuánto cuesta esta chaqueta?" },
+        { "id": "f2", "front": "Cuesta… / Vale… / Son…", "back": "It costs… / It's…", "example": "Cuesta veinte dólares. Está en oferta." },
+        { "id": "f3", "front": "barato / caro", "back": "cheap / expensive", "example": "Este es barato pero ese es demasiado caro." },
+        { "id": "f4", "front": "en oferta / descuento", "back": "on sale / discount", "example": "¡Estos zapatos están en oferta — 30% de descuento!" },
+        { "id": "f5", "front": "¿Me lo puedo probar?", "back": "Can I try it on?", "example": "¿Me puedo probar esta camisa, por favor?" },
+        { "id": "f6", "front": "Me lo llevo. / Lo dejo.", "back": "I'll take it. / I'll leave it.", "example": "Me queda perfecto. ¡Me lo llevo!" },
+        { "id": "f7", "front": "efectivo / tarjeta / vuelto (cambio)", "back": "cash / card / change", "example": "¿Aceptan tarjeta? Aquí tiene el vuelto." },
+        { "id": "f8", "front": "el recibo / el tiquete", "back": "receipt", "example": "¿Me puede dar el recibo, por favor?" },
+        { "id": "f9", "front": "ir de compras / vitrinear", "back": "to go shopping / window shopping", "example": "Fuimos de compras pero no compramos nada — solo vitrinear." }
+      ]
+    },
+    {
+      "id": "es-18-act-2",
+      "type": "multiple_choice",
+      "title": "En la tienda",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Quieres saber el precio. Preguntas:",
+          "options": ["¿Cuántos cuesta?", "¿Cuánto cuesta?", "¿Qué precio tiene ello?", "¿Qué tan caro?"],
+          "correctIndex": 1,
+          "explanation": "'¿Cuánto cuesta?' o '¿Cuánto vale?' son las formas estándar de preguntar el precio."
+        },
+        {
+          "id": "mc2",
+          "prompt": "La chaqueta cuesta $200. Dices: 'Eso es demasiado ___.'",
+          "options": ["barato", "descuento", "caro", "oferta"],
+          "correctIndex": 2,
+          "explanation": "'Caro' = expensive. $200 por una chaqueta puede parecer demasiado caro."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Quieres probarte el vestido antes de comprarlo. Dices:",
+          "options": ["¿Lo puedo comprar?", "¿Me lo puedo probar?", "¿Me lo puedo quedar?", "¿Lo puedo ver?"],
+          "correctIndex": 1,
+          "explanation": "'¿Me lo puedo probar?' = Can I try it on? Lo dices antes de ir al probador."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Te gusta la camisa y decides comprarla. Dices:",
+          "options": ["Lo dejo.", "No me lo llevo.", "Me lo llevo.", "Quiero dejarlo."],
+          "correctIndex": 2,
+          "explanation": "'Me lo llevo.' = I'll take it. Una decisión espontánea — ¡perfecto uso del presente!"
+        },
+        {
+          "id": "mc5",
+          "prompt": "Pagas y el cajero te devuelve dinero. Ese dinero se llama:",
+          "options": ["descuento", "recibo", "efectivo", "vuelto"],
+          "correctIndex": 3,
+          "explanation": "'Vuelto' o 'cambio' = el dinero que te devuelven al pagar."
+        }
+      ]
+    },
+    {
+      "id": "es-18-act-3",
+      "type": "fill_blank",
+      "title": "Completa el diálogo de compras",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Perdona, ¿___ cuesta este bolso?",
+          "blanks": [{ "answer": "cuánto", "alternatives": ["Cuánto"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Está en ___. ¡Era $80 y ahora solo $50!",
+          "blanks": [{ "answer": "oferta", "alternatives": ["Oferta"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "¿Me lo puedo ___? Quiero ver si me queda bien.",
+          "blanks": [{ "answer": "probar", "alternatives": ["Probar"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Me queda perfecto. ¡Me lo ___!",
+          "blanks": [{ "answer": "llevo", "alternatives": ["Llevo"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "¿Me puede dar el ___? Lo necesito para mis gastos.",
+          "blanks": [{ "answer": "recibo", "alternatives": ["Recibo", "tiquete", "Tiquete"] }]
+        }
+      ]
+    }
+  ]
+}

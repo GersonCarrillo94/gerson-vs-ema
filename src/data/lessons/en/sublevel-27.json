@@ -1,0 +1,102 @@
+{
+  "id": "en-sublevel-27",
+  "language": "english",
+  "number": 27,
+  "level": "advanced",
+  "title": "First Conditional — Real Possibilities",
+  "description": "Express real future possibilities and their likely consequences using if + present simple + will.",
+  "estimatedMinutes": 15,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-27-act-1",
+      "type": "flashcards",
+      "title": "First conditional structure and variations",
+      "items": [
+        { "id": "f1", "front": "If + present simple, will + infinitive", "back": "real possibility → likely result", "example": "If it rains tomorrow, I'll take an umbrella." },
+        { "id": "f2", "front": "Will clause can come first", "back": "I'll take an umbrella if it rains.", "example": "She'll be late if she doesn't leave now. (no comma needed)" },
+        { "id": "f3", "front": "unless = if … not", "back": "Unless you hurry, you'll miss the bus.", "example": "We won't succeed unless we work together." },
+        { "id": "f4", "front": "when / as soon as (certainty instead of if)", "back": "When I get home, I'll call you.", "example": "As soon as the results come out, I'll let you know." },
+        { "id": "f5", "front": "Other modal results: might / can / should", "back": "If it rains, we might cancel. / If you're free, you can join us.", "example": "If you study hard, you should pass the exam." },
+        { "id": "f6", "front": "Negative conditions: If … don't/doesn't", "back": "If she doesn't hurry, she'll be late.", "example": "If he doesn't apologise, I won't forgive him." },
+        { "id": "f7", "front": "DO NOT use 'will' in the if-clause", "back": "If it WILL rain → WRONG. If it rains → CORRECT.", "example": "If the weather is good, we'll have a picnic. (NOT: if the weather will be good)" },
+        { "id": "f8", "front": "Warnings and advice with first conditional", "back": "If you eat too much, you'll feel sick.", "example": "If you don't save your work, you'll lose everything." }
+      ]
+    },
+    {
+      "id": "en-27-act-2",
+      "type": "multiple_choice",
+      "title": "First conditional in context",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "If she ___ for the job, she'll probably get it.",
+          "options": ["will apply", "applies", "applied", "is applying"],
+          "correctIndex": 1,
+          "explanation": "In the if-clause, use present simple (not will): 'If she applies…'"
+        },
+        {
+          "id": "mc2",
+          "prompt": "___ you don't study, you ___ fail the exam.",
+          "options": ["If / will", "Unless / won't", "When / will", "If / would"],
+          "correctIndex": 0,
+          "explanation": "'If you don't study, you will fail.' First conditional with negative condition."
+        },
+        {
+          "id": "mc3",
+          "prompt": "We ___ the match unless the star player recovers in time.",
+          "options": ["win", "will win", "won't win", "would win"],
+          "correctIndex": 2,
+          "explanation": "'Unless' = if not. 'We won't win unless he recovers' = if he doesn't recover, we'll lose."
+        },
+        {
+          "id": "mc4",
+          "prompt": "As soon as I ___ home, I'll start cooking dinner.",
+          "options": ["will get", "got", "get", "getting"],
+          "correctIndex": 2,
+          "explanation": "After 'as soon as', use present simple (like the if-clause): 'as soon as I get home'."
+        },
+        {
+          "id": "mc5",
+          "prompt": "If you eat all that cake, you ___ feel sick later.",
+          "options": ["would", "might", "should", "can"],
+          "correctIndex": 1,
+          "explanation": "'Might' is used when the result is possible but not 100% certain: you might feel sick."
+        }
+      ]
+    },
+    {
+      "id": "en-27-act-3",
+      "type": "fill_blank",
+      "title": "Complete the first conditional",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "If it ___ tomorrow, we'll cancel the outdoor event. (rain)",
+          "blanks": [{ "answer": "rains", "alternatives": ["Rains"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "She ___ be late unless she leaves right now.",
+          "blanks": [{ "answer": "will", "alternatives": ["Will"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "If you ___ hard enough, you'll definitely pass. (try)",
+          "blanks": [{ "answer": "try", "alternatives": ["Try"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "As soon as the meeting ___, I'll call you straight away. (end)",
+          "blanks": [{ "answer": "ends", "alternatives": ["Ends", "is over", "Is over"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "If you ___ save your work regularly, you'll lose everything. (not)",
+          "blanks": [{ "answer": "don't", "alternatives": ["Don't"] }]
+        }
+      ]
+    }
+  ]
+}

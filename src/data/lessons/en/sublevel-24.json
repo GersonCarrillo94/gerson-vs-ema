@@ -1,0 +1,103 @@
+{
+  "id": "en-sublevel-24",
+  "language": "english",
+  "number": 24,
+  "level": "intermediate",
+  "title": "Feelings & Emotions",
+  "description": "Describe how you and others feel, react to situations, and talk about emotional states fluently.",
+  "estimatedMinutes": 15,
+  "pointsReward": 175,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-24-act-1",
+      "type": "flashcards",
+      "title": "Emotions and how to express them",
+      "items": [
+        { "id": "f1", "front": "happy / excited / proud", "back": "feliz / emocionado / orgulloso", "example": "I'm so excited about the trip — I can't wait!" },
+        { "id": "f2", "front": "sad / disappointed / lonely", "back": "triste / decepcionado / solo", "example": "She felt lonely after moving to a new city." },
+        { "id": "f3", "front": "angry / frustrated / annoyed", "back": "enojado / frustrado / molesto", "example": "I'm really frustrated — nothing seems to work today." },
+        { "id": "f4", "front": "nervous / anxious / stressed", "back": "nervioso / ansioso / estresado", "example": "He was anxious about the job interview all week." },
+        { "id": "f5", "front": "surprised / shocked / amazed", "back": "sorprendido / impactado / asombrado", "example": "I was amazed by the view from the top of the mountain." },
+        { "id": "f6", "front": "bored / tired / exhausted", "back": "aburrido / cansado / agotado", "example": "After the marathon, she was completely exhausted." },
+        { "id": "f7", "front": "I feel … / I'm feeling … / I'm …-ed", "back": "Me siento… / Estoy…", "example": "I feel nervous about the presentation. I'm feeling a bit overwhelmed." },
+        { "id": "f8", "front": "to cheer up / to calm down", "back": "animarse / calmarse", "example": "Don't worry — cheer up! It'll all work out. Just calm down." },
+        { "id": "f9", "front": "Expressing emotions: burst into tears / burst out laughing", "back": "romper a llorar / estallar en carcajadas", "example": "She burst into tears when she heard the news." }
+      ]
+    },
+    {
+      "id": "en-24-act-2",
+      "type": "multiple_choice",
+      "title": "How are they feeling?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "He trained for months and finally won the race. He felt ___ of himself.",
+          "options": ["happy", "proud", "excited", "satisfied"],
+          "correctIndex": 1,
+          "explanation": "'Proud' = the feeling you have when you achieve something significant or do well."
+        },
+        {
+          "id": "mc2",
+          "prompt": "She studied hard for the exam but failed. She was really ___.",
+          "options": ["excited", "surprised", "disappointed", "frustrated"],
+          "correctIndex": 2,
+          "explanation": "'Disappointed' = feeling let down when something doesn't meet your expectations."
+        },
+        {
+          "id": "mc3",
+          "prompt": "He's been working 14-hour days for two weeks. He's completely ___.",
+          "options": ["bored", "annoyed", "lonely", "exhausted"],
+          "correctIndex": 3,
+          "explanation": "'Exhausted' = extremely tired. Two weeks of 14-hour days is extremely draining."
+        },
+        {
+          "id": "mc4",
+          "prompt": "The magician pulled a rabbit from the hat. The audience was ___.",
+          "options": ["nervous", "amazed", "bored", "frustrated"],
+          "correctIndex": 1,
+          "explanation": "'Amazed' = very surprised and impressed. A magic trick produces amazement."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Stop shouting — just ___ and let's talk calmly.",
+          "options": ["cheer up", "calm down", "give up", "wake up"],
+          "correctIndex": 1,
+          "explanation": "'Calm down' = to become less upset or angry. Used when someone is emotionally heightened."
+        }
+      ]
+    },
+    {
+      "id": "en-24-act-3",
+      "type": "fill_blank",
+      "title": "Describe the emotions",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I'm so ___ about the concert tonight — I've been waiting for months!",
+          "blanks": [{ "answer": "excited", "alternatives": ["Excited", "happy", "Happy"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "She ___ into tears when she heard the sad news.",
+          "blanks": [{ "answer": "burst", "alternatives": ["Burst"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Don't worry so much — just ___ up! Everything will be fine.",
+          "blanks": [{ "answer": "cheer", "alternatives": ["Cheer"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "He feels very ___ since his friends moved away. He has nobody to talk to.",
+          "blanks": [{ "answer": "lonely", "alternatives": ["Lonely", "sad", "Sad"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "I'm really ___ — I've tried to fix this bug for three hours and nothing works.",
+          "blanks": [{ "answer": "frustrated", "alternatives": ["Frustrated", "annoyed", "Annoyed"] }]
+        }
+      ]
+    }
+  ]
+}

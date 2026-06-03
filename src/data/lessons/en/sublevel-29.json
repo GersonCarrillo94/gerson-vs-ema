@@ -1,0 +1,105 @@
+{
+  "id": "en-sublevel-29",
+  "language": "english",
+  "number": 29,
+  "level": "advanced",
+  "title": "Passive Voice",
+  "description": "Focus on actions rather than who does them using be + past participle across different tenses.",
+  "estimatedMinutes": 17,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-29-act-1",
+      "type": "flashcards",
+      "title": "Passive voice structure and uses",
+      "items": [
+        { "id": "f1", "front": "Passive: be + past participle", "back": "is/was/will be + verb3", "example": "The letter is written. The cake was eaten. It will be delivered." },
+        { "id": "f2", "front": "Present passive: is/are + past participle", "back": "Coffee is grown in Colombia.", "example": "These cars are made in Germany. Spanish is spoken here." },
+        { "id": "f3", "front": "Past passive: was/were + past participle", "back": "The book was written in 1984.", "example": "The pyramids were built thousands of years ago." },
+        { "id": "f4", "front": "Future passive: will be + past participle", "back": "The report will be sent tomorrow.", "example": "Your order will be delivered by Friday." },
+        { "id": "f5", "front": "By + agent (who does the action)", "back": "It was designed by a famous architect.", "example": "The novel was written by Gabriel García Márquez." },
+        { "id": "f6", "front": "When to use passive: agent unknown / unimportant / obvious", "back": "My car was stolen. (we don't know who)", "example": "The window was broken. Oil was discovered in the region." },
+        { "id": "f7", "front": "Perfect passive: have/has been + past participle", "back": "The work has been finished.", "example": "The problem has been solved. Three new species have been discovered." },
+        { "id": "f8", "front": "Modal passive: modal + be + past participle", "back": "It should be done. / It must be checked.", "example": "All forms must be completed before the deadline." }
+      ]
+    },
+    {
+      "id": "en-29-act-2",
+      "type": "multiple_choice",
+      "title": "Active vs passive",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "This famous building ___ by a renowned Spanish architect in 1882.",
+          "options": ["designed", "was designed", "has designed", "is designing"],
+          "correctIndex": 1,
+          "explanation": "Past action with the agent mentioned → past passive: was designed by…"
+        },
+        {
+          "id": "mc2",
+          "prompt": "English ___ in many countries around the world.",
+          "options": ["speaks", "is spoken", "spoken", "is speak"],
+          "correctIndex": 1,
+          "explanation": "General present fact → present passive: is spoken. English is spoken = people speak English."
+        },
+        {
+          "id": "mc3",
+          "prompt": "The package ___ by Friday, according to the tracking information.",
+          "options": ["delivers", "delivered", "will be delivered", "has delivered"],
+          "correctIndex": 2,
+          "explanation": "Future passive: will be delivered. The package is the subject receiving the action."
+        },
+        {
+          "id": "mc4",
+          "prompt": "My phone ___ at the café yesterday. I have no idea who took it.",
+          "options": ["was stolen", "has stolen", "stole", "is stolen"],
+          "correctIndex": 0,
+          "explanation": "Past event, agent unknown → past passive: was stolen. Classic passive use."
+        },
+        {
+          "id": "mc5",
+          "prompt": "The new policy ___ already ___ by the board of directors.",
+          "options": ["is / approved", "has / been approved", "was / approved", "will / be approved"],
+          "correctIndex": 1,
+          "explanation": "Perfect passive: has been approved. The policy was approved and is now relevant."
+        }
+      ]
+    },
+    {
+      "id": "en-29-act-3",
+      "type": "fill_blank",
+      "title": "Complete with passive voice",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Coffee ___ in Brazil, Colombia, and Ethiopia. (grow)",
+          "blanks": [{ "answer": "is grown", "alternatives": ["Is grown"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "The Eiffel Tower ___ in 1889 by Gustave Eiffel. (build)",
+          "blanks": [{ "answer": "was built", "alternatives": ["Was built"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Your application ___ within five working days. (process)",
+          "blanks": [{ "answer": "will be processed", "alternatives": ["Will be processed"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "All safety checks ___ before the plane takes off. (must / complete)",
+          "blanks": [{ "answer": "must be completed", "alternatives": ["Must be completed"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Three new planets ___ recently ___ by astronomers. (discover)",
+          "blanks": [
+            { "answer": "have", "alternatives": ["Have"] },
+            { "answer": "been discovered", "alternatives": ["Been discovered"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-25",
+  "language": "spanish",
+  "number": 25,
+  "level": "advanced",
+  "title": "El Pretérito Perfecto",
+  "description": "Usa haber + participio para conectar acciones pasadas con el presente. El tiempo más vivo del español.",
+  "estimatedMinutes": 16,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-25-act-1",
+      "type": "flashcards",
+      "title": "Estructura y usos del pretérito perfecto",
+      "items": [
+        { "id": "f1", "front": "haber + participio", "back": "he, has, ha, hemos, habéis, han + -ado/-ido", "example": "He comido. Has llegado. Han salido." },
+        { "id": "f2", "front": "Participios regulares: -AR → -ado / -ER/-IR → -ido", "back": "hablar→hablado, comer→comido, vivir→vivido", "example": "He hablado con ella. ¿Has comido ya?" },
+        { "id": "f3", "front": "Participios irregulares frecuentes", "back": "hacer→hecho, ver→visto, abrir→abierto, volver→vuelto, decir→dicho", "example": "¿Has visto esa película? Ya he hecho la compra." },
+        { "id": "f4", "front": "ya (acción ya completada)", "back": "already", "example": "Ya he terminado el informe — ¡fue más fácil de lo esperado!" },
+        { "id": "f5", "front": "todavía no / aún no (no ocurrido todavía)", "back": "not yet", "example": "Todavía no he comido. ¿Has llamado ya? — No, aún no." },
+        { "id": "f6", "front": "alguna vez / nunca (experiencias)", "back": "ever / never", "example": "¿Has probado alguna vez el sushi? Nunca he estado en Asia." },
+        { "id": "f7", "front": "hace un momento / acaba de (muy reciente)", "back": "just (very recently)", "example": "Acaba de llegar. El café todavía está caliente." },
+        { "id": "f8", "front": "desde hace / desde (duración o inicio)", "back": "for / since", "example": "He vivido aquí desde hace cinco años. / desde 2019." },
+        { "id": "f9", "front": "Uso en España vs Latinoamérica", "back": "España: perfecto para hoy/esta semana. LATAM: más uso del indefinido", "example": "ESP: Hoy he comido paella. / LAT: Hoy comí paella." }
+      ]
+    },
+    {
+      "id": "es-25-act-2",
+      "type": "multiple_choice",
+      "title": "El pretérito perfecto en contexto",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "___ esa película tres veces — ¡es mi favorita!",
+          "options": ["Vi", "Veo", "He visto", "Había visto"],
+          "correctIndex": 2,
+          "explanation": "Número de veces no especificado en el tiempo con relevancia presente → pretérito perfecto: He visto."
+        },
+        {
+          "id": "mc2",
+          "prompt": "¿Has comido ___? — No, todavía no. Estoy esperando el pedido.",
+          "options": ["ya", "alguna vez", "nunca", "siempre"],
+          "correctIndex": 0,
+          "explanation": "'¿Has comido ya?' = Have you eaten yet? 'Ya' en preguntas equivale a 'yet'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Ella ___ de su viaje a Colombia. Parece muy feliz.",
+          "options": ["acaba volver", "acaba de volver", "ha acabado de volver", "volvió ya"],
+          "correctIndex": 1,
+          "explanation": "'Acabar de + infinitivo' = just + past participle. Acaba de volver = she has just returned."
+        },
+        {
+          "id": "mc4",
+          "prompt": "He vivido en esta ciudad ___ diez años.",
+          "options": ["por", "desde hace", "hace", "en"],
+          "correctIndex": 1,
+          "explanation": "'Desde hace' + período de tiempo = for + duration. He vivido aquí desde hace diez años."
+        },
+        {
+          "id": "mc5",
+          "prompt": "¿Has ___ alguna vez el sushi japonés auténtico?",
+          "options": ["comido", "comido nunca", "comer", "comiste"],
+          "correctIndex": 0,
+          "explanation": "Participio de 'comer' = comido. ¿Has comido alguna vez…? = Have you ever eaten…?"
+        }
+      ]
+    },
+    {
+      "id": "es-25-act-3",
+      "type": "fill_blank",
+      "title": "Completa con pretérito perfecto",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Yo nunca ___ sushi. ¿Está bueno? (comer)",
+          "blanks": [{ "answer": "he comido", "alternatives": ["He comido"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Ella ya ___ el informe — es muy eficiente. (terminar)",
+          "blanks": [{ "answer": "ha terminado", "alternatives": ["Ha terminado"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "He vivido en esta ciudad ___ diez años. Me encanta.",
+          "blanks": [{ "answer": "desde hace", "alternatives": ["Desde hace"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "¿___ los deberes ya? Mañana es el plazo.",
+          "blanks": [{ "answer": "Has hecho", "alternatives": ["has hecho"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Él ___ de enviar el correo. Revisa tu bandeja ahora.",
+          "blanks": [{ "answer": "acaba", "alternatives": ["Acaba"] }]
+        }
+      ]
+    }
+  ]
+}

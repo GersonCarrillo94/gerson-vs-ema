@@ -1,0 +1,102 @@
+{
+  "id": "en-sublevel-13",
+  "language": "english",
+  "number": 13,
+  "level": "intermediate",
+  "title": "Present Simple — Habits & Routines",
+  "description": "Use the present simple to talk about what you do every day: work, study, sleep and more.",
+  "estimatedMinutes": 15,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-13-act-1",
+      "type": "flashcards",
+      "title": "Present simple key rules",
+      "items": [
+        { "id": "f1", "front": "I / you / we / they + verb", "back": "base form (no change)", "example": "I work. You study. They live here." },
+        { "id": "f2", "front": "he / she / it + verb", "back": "add -s or -es", "example": "She works. He watches TV. It runs fast." },
+        { "id": "f3", "front": "Negative: don't / doesn't", "back": "I don't. She doesn't.", "example": "I don't eat meat. He doesn't drive." },
+        { "id": "f4", "front": "Question: Do / Does…?", "back": "Do you…? Does she…?", "example": "Do you speak English? Does he work here?" },
+        { "id": "f5", "front": "always / usually / often", "back": "siempre / normalmente / a menudo", "example": "I always have breakfast. She usually walks." },
+        { "id": "f6", "front": "sometimes / rarely / never", "back": "a veces / raramente / nunca", "example": "I sometimes watch films. He never drinks coffee." },
+        { "id": "f7", "front": "every day / once a week", "back": "todos los días / una vez a la semana", "example": "I study English every day." },
+        { "id": "f8", "front": "What do you do?", "back": "¿A qué te dedicas? / ¿Qué haces?", "example": "What do you do for a living? I'm a teacher." }
+      ]
+    },
+    {
+      "id": "en-13-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the correct form",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "She ___ English every morning.",
+          "options": ["study", "studies", "is study", "studys"],
+          "correctIndex": 1,
+          "explanation": "With he/she/it, add -s or change -y to -ies: study → studies."
+        },
+        {
+          "id": "mc2",
+          "prompt": "They ___ coffee. (negative)",
+          "options": ["doesn't drink", "don't drinks", "don't drink", "not drink"],
+          "correctIndex": 2,
+          "explanation": "With I/you/we/they: 'don't + base verb'. Don't drink."
+        },
+        {
+          "id": "mc3",
+          "prompt": "___ your brother play football?",
+          "options": ["Do", "Does", "Is", "Have"],
+          "correctIndex": 1,
+          "explanation": "With he/she/it: 'Does + subject + base verb?' Does your brother play?"
+        },
+        {
+          "id": "mc4",
+          "prompt": "I ___ go to the gym. (negative)",
+          "options": ["doesn't", "amn't", "don't", "not"],
+          "correctIndex": 2,
+          "explanation": "With I: 'I don't + base verb'. I don't go to the gym."
+        },
+        {
+          "id": "mc5",
+          "prompt": "She ___ works late — it's her normal schedule.",
+          "options": ["never", "sometimes", "always", "rarely"],
+          "correctIndex": 2,
+          "explanation": "'Always' = siempre. It goes before the main verb: She always works late."
+        }
+      ]
+    },
+    {
+      "id": "en-13-act-3",
+      "type": "fill_blank",
+      "title": "Complete with the correct present simple form",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Gerson ___ English every day. (study)",
+          "blanks": [{ "answer": "studies", "alternatives": ["Studies"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "We ___ go to the office on weekends. (negative)",
+          "blanks": [{ "answer": "don't", "alternatives": ["do not", "dont"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "___ Ema speak Spanish? — Yes, she does.",
+          "blanks": [{ "answer": "Does", "alternatives": ["does"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "He ___ eat breakfast. He's never hungry in the morning. (negative)",
+          "blanks": [{ "answer": "doesn't", "alternatives": ["does not", "doesnt"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "I ___ check my phone — it's the first thing I do.",
+          "blanks": [{ "answer": "always", "alternatives": ["Always"] }]
+        }
+      ]
+    }
+  ]
+}

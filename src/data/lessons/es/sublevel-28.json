@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-28",
+  "language": "spanish",
+  "number": 28,
+  "level": "advanced",
+  "title": "El Condicional — Situaciones Hipotéticas",
+  "description": "Habla de situaciones irreales o poco probables con si + imperfecto de subjuntivo + condicional simple.",
+  "estimatedMinutes": 16,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-28-act-1",
+      "type": "flashcards",
+      "title": "Condicional hipotético: estructura y usos",
+      "items": [
+        { "id": "f1", "front": "Si + imperfecto de subjuntivo, condicional simple", "back": "situación hipotética → resultado imaginado", "example": "Si ganara la lotería, viajaría por el mundo." },
+        { "id": "f2", "front": "Imperfecto de subjuntivo: -ara/-iera (-ase/-iese formal)", "back": "tuviera/tuviese, pudiera/pudiese, fuera/fuese", "example": "Si tuviera más tiempo, aprendería a tocar la guitarra." },
+        { "id": "f3", "front": "Si yo fuera tú… (consejo hipotético)", "back": "If I were you… — forma estándar de dar consejos", "example": "Si yo fuera tú, hablaría con ella directamente." },
+        { "id": "f4", "front": "podría / debería en lugar de… (posibilidad/deber)", "back": "If she practised, she could become professional.", "example": "Si saliéramos ahora, podríamos coger el último tren." },
+        { "id": "f5", "front": "Ojalá + imperfecto de subjuntivo (deseo irreal presente)", "back": "I wish (but it's not possible/likely)", "example": "Ojalá tuviera más tiempo. / Ojalá pudiera ayudarte." },
+        { "id": "f6", "front": "Contracción: yo + condicional = …ría", "back": "hablaría, comería, viviría", "example": "Si pudiera, iría contigo. Te ayudaría si supiera cómo." },
+        { "id": "f7", "front": "1er condicional vs 2o condicional", "back": "1o: posibilidad real. 2o: hipotético o imposible.", "example": "Si llueve, me quedo. (probable) / Si fuera un pájaro, volaría hasta ti. (imposible)" },
+        { "id": "f8", "front": "NO usar condicional en la cláusula con 'si'", "back": "Si tendría → MAL. Si tuviera → BIEN.", "example": "Si tuviera coche, te llevaría. (NOT: si tendría un coche)" }
+      ]
+    },
+    {
+      "id": "es-28-act-2",
+      "type": "multiple_choice",
+      "title": "Condicional hipotético en contexto",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Si ___ un millón de euros, donaría la mitad a obras de caridad.",
+          "options": ["tengo", "tuviera", "tendría", "he tenido"],
+          "correctIndex": 1,
+          "explanation": "Condicional hipotético: si + imperfecto de subjuntivo. 'Si tuviera un millón…' (imaginario)."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Si yo ___ tú, me disculparía enseguida.",
+          "options": ["soy", "era", "fuera", "sería"],
+          "correctIndex": 2,
+          "explanation": "'Si yo fuera tú…' es la forma estándar. Se usa el imperfecto de subjuntivo 'fuera'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Ella ___ el trabajo si hablara mejor inglés. Pero no es su caso.",
+          "options": ["conseguirá", "conseguiría", "consiguió", "ha conseguido"],
+          "correctIndex": 1,
+          "explanation": "Resultado hipotético → condicional simple: 'conseguiría'. Ella no habla bien inglés, es una hipótesis."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Ojalá ___ más tiempo. Hay tanto que quiero hacer.",
+          "options": ["tengo", "tuviera", "tendré", "he tenido"],
+          "correctIndex": 1,
+          "explanation": "'Ojalá + imperfecto de subjuntivo' expresa un deseo irreal en el presente: ojalá tuviera."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Si saliéramos ahora, ___ coger el último autobús.",
+          "options": ["podemos", "podríamos", "podríamos haber", "pudiéramos"],
+          "correctIndex": 1,
+          "explanation": "'Podríamos' = could / might. Posibilidad en un resultado hipotético."
+        }
+      ]
+    },
+    {
+      "id": "es-28-act-3",
+      "type": "fill_blank",
+      "title": "Completa el condicional hipotético",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Si ___ un superpoder, elegiría poder volar. (tener)",
+          "blanks": [{ "answer": "tuviera", "alternatives": ["Tuviera"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Si yo fuera tú, le ___ la verdad cuanto antes.",
+          "blanks": [{ "answer": "diría", "alternatives": ["Diría"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Ojalá ___ más cerca del trabajo — el trayecto dura dos horas. (vivir)",
+          "blanks": [{ "answer": "viviera", "alternatives": ["Viviera"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Si tuvieras más ahorros, ___ comprarte un piso. (poder)",
+          "blanks": [{ "answer": "podrías", "alternatives": ["Podrías"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Si él ___ más, obtendría resultados mucho mejores. (trabajar)",
+          "blanks": [{ "answer": "trabajara", "alternatives": ["Trabajara"] }]
+        }
+      ]
+    }
+  ]
+}

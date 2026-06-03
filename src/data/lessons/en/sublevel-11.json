@@ -1,0 +1,105 @@
+{
+  "id": "en-sublevel-11",
+  "language": "english",
+  "number": 11,
+  "level": "basic",
+  "title": "Places in the City",
+  "description": "Name places around town and ask for directions in simple English.",
+  "estimatedMinutes": 14,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-11-act-1",
+      "type": "flashcards",
+      "title": "Places in the city",
+      "items": [
+        { "id": "f1", "front": "bank", "back": "banco", "example": "I need to go to the bank." },
+        { "id": "f2", "front": "hospital / clinic", "back": "hospital / clínica", "example": "Take her to the hospital!" },
+        { "id": "f3", "front": "school / university", "back": "colegio / universidad", "example": "I study at the university." },
+        { "id": "f4", "front": "supermarket / shop", "back": "supermercado / tienda", "example": "Let's go to the supermarket." },
+        { "id": "f5", "front": "park", "back": "parque", "example": "We walk in the park on Sundays." },
+        { "id": "f6", "front": "restaurant / café", "back": "restaurante / café", "example": "There's a nice café near here." },
+        { "id": "f7", "front": "Where is…?", "back": "¿Dónde está…?", "example": "Where is the nearest bank?" },
+        { "id": "f8", "front": "Turn left / Turn right", "back": "Gira a la izquierda / derecha", "example": "Turn left at the traffic lights." },
+        { "id": "f9", "front": "Go straight ahead", "back": "Sigue recto / derecho", "example": "Go straight ahead for two blocks." }
+      ]
+    },
+    {
+      "id": "en-11-act-2",
+      "type": "multiple_choice",
+      "title": "Where do you go?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "You are sick and need a doctor. Where do you go?",
+          "options": ["bank", "park", "hospital", "school"],
+          "correctIndex": 2,
+          "explanation": "When you are sick you go to the hospital or clinic."
+        },
+        {
+          "id": "mc2",
+          "prompt": "You need to withdraw money. Where do you go?",
+          "options": ["restaurant", "park", "supermarket", "bank"],
+          "correctIndex": 3,
+          "explanation": "You go to the bank to withdraw or deposit money."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Someone asks for directions: 'Excuse me, ___ is the supermarket?'",
+          "options": ["what", "who", "where", "when"],
+          "correctIndex": 2,
+          "explanation": "'Where' is used to ask for a location."
+        },
+        {
+          "id": "mc4",
+          "prompt": "'Turn ___ at the corner and you'll see it on your right.'",
+          "options": ["straight", "ahead", "left", "near"],
+          "correctIndex": 2,
+          "explanation": "'Turn left' or 'turn right' are the direction commands."
+        },
+        {
+          "id": "mc5",
+          "prompt": "To go to the park you should 'go straight ___'.",
+          "options": ["behind", "ahead", "left", "near"],
+          "correctIndex": 1,
+          "explanation": "'Go straight ahead' = sigue recto. No turning."
+        }
+      ]
+    },
+    {
+      "id": "en-11-act-3",
+      "type": "fill_blank",
+      "title": "Asking and giving directions",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Excuse me, ___ is the nearest bank?",
+          "blanks": [{ "answer": "where", "alternatives": ["Where"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Go ___ ahead for two blocks, then turn right.",
+          "blanks": [{ "answer": "straight", "alternatives": ["Straight"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Turn ___ at the traffic lights.",
+          "blanks": [{ "answer": "left", "alternatives": ["Left", "right", "Right"] }],
+          "hint": "A direction."
+        },
+        {
+          "id": "fb4",
+          "sentence": "The ___ is near the school. You can walk.",
+          "blanks": [{ "answer": "park", "alternatives": ["Park"] }],
+          "hint": "A place outside in nature."
+        },
+        {
+          "id": "fb5",
+          "sentence": "I need to buy food. Let's go to the ___.",
+          "blanks": [{ "answer": "supermarket", "alternatives": ["Supermarket", "shop", "Shop"] }]
+        }
+      ]
+    }
+  ]
+}

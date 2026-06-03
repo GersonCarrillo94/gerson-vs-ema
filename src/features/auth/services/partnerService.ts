@@ -20,14 +20,13 @@ export async function searchPartner(
   });
 
   if (error) throw new Error(error.message);
-  return (data ?? []) as PartnerSearchResult[];
+  return data;
 }
 
 /** Vincula mutuamente al usuario actual con p_partner_id. */
 export async function linkPartner(partnerId: string): Promise<void> {
   const { error } = await supabase.rpc('link_partner', { p_partner_id: partnerId });
   if (error) {
-    const hint = error.hint ?? error.message;
-    throw new Error(hint);
+    throw new Error(error.message);
   }
 }

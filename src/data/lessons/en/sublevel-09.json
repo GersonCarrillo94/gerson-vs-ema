@@ -1,0 +1,108 @@
+{
+  "id": "en-sublevel-09",
+  "language": "english",
+  "number": 9,
+  "level": "basic",
+  "title": "Days, Months & Seasons",
+  "description": "Talk about the calendar: days of the week, months of the year, and the four seasons.",
+  "estimatedMinutes": 13,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-09-act-1",
+      "type": "flashcards",
+      "title": "Calendar vocabulary",
+      "items": [
+        { "id": "f1", "front": "Monday / Tuesday / Wednesday", "back": "lunes / martes / miércoles", "example": "The meeting is on Monday." },
+        { "id": "f2", "front": "Thursday / Friday", "back": "jueves / viernes", "example": "See you on Friday!" },
+        { "id": "f3", "front": "Saturday / Sunday", "back": "sábado / domingo", "example": "We rest on Saturday and Sunday." },
+        { "id": "f4", "front": "weekend", "back": "fin de semana", "example": "I love the weekend!" },
+        { "id": "f5", "front": "January … June", "back": "enero … junio", "example": "My birthday is in March." },
+        { "id": "f6", "front": "July … December", "back": "julio … diciembre", "example": "Christmas is in December." },
+        { "id": "f7", "front": "spring / summer", "back": "primavera / verano", "example": "Summer is my favourite season." },
+        { "id": "f8", "front": "autumn (fall) / winter", "back": "otoño / invierno", "example": "It snows in winter." },
+        { "id": "f9", "front": "today / tomorrow / yesterday", "back": "hoy / mañana / ayer", "example": "Yesterday was Monday, today is Tuesday." }
+      ]
+    },
+    {
+      "id": "en-09-act-2",
+      "type": "multiple_choice",
+      "title": "Days and months",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Which day comes after Wednesday?",
+          "options": ["Tuesday", "Friday", "Thursday", "Monday"],
+          "correctIndex": 2,
+          "explanation": "Mon → Tue → Wed → Thu → Fri → Sat → Sun."
+        },
+        {
+          "id": "mc2",
+          "prompt": "December is the ___ month of the year.",
+          "options": ["tenth", "eleventh", "twelfth", "ninth"],
+          "correctIndex": 2,
+          "explanation": "December is the 12th and last month of the year."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Saturday and Sunday are the ___.",
+          "options": ["workdays", "weekdays", "weekend", "holidays"],
+          "correctIndex": 2,
+          "explanation": "'Weekend' refers to Saturday and Sunday."
+        },
+        {
+          "id": "mc4",
+          "prompt": "It's very cold and it snows. What season is it?",
+          "options": ["spring", "summer", "autumn", "winter"],
+          "correctIndex": 3,
+          "explanation": "Snow and cold temperatures are typical of winter."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Today is Wednesday. Yesterday was ___.",
+          "options": ["Thursday", "Tuesday", "Monday", "Friday"],
+          "correctIndex": 1,
+          "explanation": "Yesterday = the day before today. Wednesday − 1 = Tuesday."
+        }
+      ]
+    },
+    {
+      "id": "en-09-act-3",
+      "type": "fill_blank",
+      "title": "Complete the sentences",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "My favourite day is ___. I don't work.",
+          "blanks": [{ "answer": "Sunday", "alternatives": ["sunday", "Saturday", "saturday"] }],
+          "hint": "A weekend day."
+        },
+        {
+          "id": "fb2",
+          "sentence": "Christmas is in ___, and New Year is in ___.",
+          "blanks": [
+            { "answer": "December", "alternatives": ["december"] },
+            { "answer": "January", "alternatives": ["january"] }
+          ]
+        },
+        {
+          "id": "fb3",
+          "sentence": "I was born in ___, so it's warm on my birthday.",
+          "blanks": [{ "answer": "June", "alternatives": ["june", "July", "july", "August", "august"] }],
+          "hint": "Any summer month."
+        },
+        {
+          "id": "fb4",
+          "sentence": "___ was great, but today is even better!",
+          "blanks": [{ "answer": "Yesterday", "alternatives": ["yesterday"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "See you ___! (the day after today)",
+          "blanks": [{ "answer": "tomorrow", "alternatives": ["Tomorrow"] }]
+        }
+      ]
+    }
+  ]
+}

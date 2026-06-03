@@ -1,0 +1,108 @@
+{
+  "id": "en-sublevel-15",
+  "language": "english",
+  "number": 15,
+  "level": "intermediate",
+  "title": "Past Simple — Regular Verbs",
+  "description": "Talk about finished actions in the past using -ed verbs: worked, studied, lived.",
+  "estimatedMinutes": 15,
+  "pointsReward": 175,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-15-act-1",
+      "type": "flashcards",
+      "title": "Regular past simple rules",
+      "items": [
+        { "id": "f1", "front": "verb + -ed (regular past)", "back": "work → worked, play → played", "example": "I worked yesterday. She played tennis." },
+        { "id": "f2", "front": "verb ending -e → add -d", "back": "live → lived, love → loved", "example": "They lived in Madrid for two years." },
+        { "id": "f3", "front": "verb ending consonant+y → -ied", "back": "study → studied, try → tried", "example": "He studied all night." },
+        { "id": "f4", "front": "Negative: didn't + base verb", "back": "no past -ed in negative!", "example": "I didn't work. She didn't study." },
+        { "id": "f5", "front": "Question: Did + subject + base verb?", "back": "no past -ed in questions!", "example": "Did you call? Did she arrive?" },
+        { "id": "f6", "front": "yesterday / last week / last year", "back": "ayer / la semana pasada / el año pasado", "example": "I visited my family last week." },
+        { "id": "f7", "front": "ago", "back": "hace (tiempo)", "example": "We moved here three years ago." },
+        { "id": "f8", "front": "Short answer: Yes, I did. / No, I didn't.", "back": "Sí / No con 'did'", "example": "Did you eat? Yes, I did. / No, I didn't." }
+      ]
+    },
+    {
+      "id": "en-15-act-2",
+      "type": "multiple_choice",
+      "title": "Regular past simple",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "She ___ English for two hours yesterday. (study)",
+          "options": ["study", "studyed", "studied", "studies"],
+          "correctIndex": 2,
+          "explanation": "study → studied (consonant + y → ied). She studied English."
+        },
+        {
+          "id": "mc2",
+          "prompt": "I ___ call her — I forgot. (negative)",
+          "options": ["didn't called", "doesn't call", "didn't call", "not called"],
+          "correctIndex": 2,
+          "explanation": "Negative past: didn't + base verb (no -ed). I didn't call."
+        },
+        {
+          "id": "mc3",
+          "prompt": "___ you finish the report?",
+          "options": ["Did", "Do", "Does", "Were"],
+          "correctIndex": 0,
+          "explanation": "Past questions: Did + subject + base verb? Did you finish?"
+        },
+        {
+          "id": "mc4",
+          "prompt": "They ___ in London ten years ___.",
+          "options": ["lived / before", "live / ago", "lived / ago", "lives / last"],
+          "correctIndex": 2,
+          "explanation": "Past tense (lived) + time marker 'ago'. They lived in London ten years ago."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Did she pass the exam? — Yes, she ___.",
+          "options": ["did", "does", "passed", "was"],
+          "correctIndex": 0,
+          "explanation": "Short answer to 'Did…?' is 'Yes, she did.' / 'No, she didn't.'"
+        }
+      ]
+    },
+    {
+      "id": "en-15-act-3",
+      "type": "fill_blank",
+      "title": "Put the verb in past simple",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "We ___ a great film last night. (watch)",
+          "blanks": [{ "answer": "watched", "alternatives": ["Watched"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "He ___ arrive on time. The meeting started without him. (negative)",
+          "blanks": [{ "answer": "didn't arrive", "alternatives": ["did not arrive"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "___ you ___ the homework? (finish)",
+          "blanks": [
+            { "answer": "Did", "alternatives": ["did"] },
+            { "answer": "finish", "alternatives": ["Finish"] }
+          ]
+        },
+        {
+          "id": "fb4",
+          "sentence": "She ___ for the test all weekend. (study)",
+          "blanks": [{ "answer": "studied", "alternatives": ["Studied"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "They ___ in Colombia two years ___.",
+          "blanks": [
+            { "answer": "lived", "alternatives": ["Lived"] },
+            { "answer": "ago", "alternatives": ["Ago"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

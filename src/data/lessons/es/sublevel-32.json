@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-32",
+  "language": "spanish",
+  "number": 32,
+  "level": "advanced",
+  "title": "Verbos con Preposición",
+  "description": "Domina los verbos que van con preposición fija en español — indispensable para sonar natural.",
+  "estimatedMinutes": 15,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-32-act-1",
+      "type": "flashcards",
+      "title": "Verbos con preposición frecuentes",
+      "items": [
+        { "id": "f1", "front": "acordarse DE / olvidarse DE", "back": "to remember / to forget", "example": "Me acordé de llamarla. Se olvidó de la reunión." },
+        { "id": "f2", "front": "depender DE / tratarse DE", "back": "to depend on / to be about", "example": "Depende de ti. Esta película se trata de la amistad." },
+        { "id": "f3", "front": "pensar EN / soñar CON", "back": "to think about / to dream about", "example": "Siempre pienso en mis viajes. Soñé con ella anoche." },
+        { "id": "f4", "front": "insistir EN / consistir EN", "back": "to insist on / to consist of", "example": "Insistió en pagar la cena. El plan consiste en tres etapas." },
+        { "id": "f5", "front": "aprender A + infinitivo / enseñar A", "back": "to learn to / to teach to", "example": "Aprendí a nadar a los seis años." },
+        { "id": "f6", "front": "dejar DE + infinitivo / terminar DE", "back": "to stop -ing / to finish -ing", "example": "Dejó de fumar el año pasado. Terminé de leer el libro." },
+        { "id": "f7", "front": "empezar A / comenzar A / ponerse A + infinitivo", "back": "to start -ing", "example": "Empezó a llover. Se puso a llorar de repente." },
+        { "id": "f8", "front": "acostumbrarse A / atreverse A", "back": "to get used to / to dare to", "example": "Me acostumbré a madrugar. No se atrevió a hablar en público." },
+        { "id": "f9", "front": "quejarse DE / enterarse DE / arrepentirse DE", "back": "to complain about / to find out about / to regret", "example": "Siempre se queja del trabajo. Me enteré de la noticia tarde." }
+      ]
+    },
+    {
+      "id": "es-32-act-2",
+      "type": "multiple_choice",
+      "title": "Elige la preposición correcta",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "¿Te acordaste ___ llamar a tu madre para su cumpleaños?",
+          "options": ["a", "en", "de", "con"],
+          "correctIndex": 2,
+          "explanation": "'Acordarse DE' = to remember. Me acordé de llamarla."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Siempre pienso ___ los veranos de mi infancia. Qué buenos tiempos.",
+          "options": ["de", "a", "en", "con"],
+          "correctIndex": 2,
+          "explanation": "'Pensar EN' = to think about. Siempre pienso en aquellos días."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Insistió ___ pagar la cena aunque yo quería dividir la cuenta.",
+          "options": ["a", "en", "con", "de"],
+          "correctIndex": 1,
+          "explanation": "'Insistir EN' = to insist on. Insistió en pagar."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Por fin dejó ___ fumar después de diez años. ¡Está muy orgulloso!",
+          "options": ["a", "con", "en", "de"],
+          "correctIndex": 3,
+          "explanation": "'Dejar DE + infinitivo' = to stop -ing. Dejó de fumar."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Ella no se atrevió ___ hablar en público. Le da mucha vergüenza.",
+          "options": ["de", "en", "a", "con"],
+          "correctIndex": 2,
+          "explanation": "'Atreverse A + infinitivo' = to dare to. No se atrevió a hablar."
+        }
+      ]
+    },
+    {
+      "id": "es-32-act-3",
+      "type": "fill_blank",
+      "title": "Completa con la preposición correcta",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "No te olvides ___ traer el pasaporte. Lo necesitarás.",
+          "blanks": [{ "answer": "de", "alternatives": ["De"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "¿Cuándo aprendiste ___ conducir? ¿Fue difícil?",
+          "blanks": [{ "answer": "a", "alternatives": ["A"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Empezó ___ llover justo cuando salíamos del trabajo.",
+          "blanks": [{ "answer": "a", "alternatives": ["A"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Soñé ___ que vivía en una isla desierta. Fue muy raro.",
+          "blanks": [{ "answer": "con", "alternatives": ["Con"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Me arrepiento ___ no haber viajado más cuando era joven.",
+          "blanks": [{ "answer": "de", "alternatives": ["De"] }]
+        }
+      ]
+    }
+  ]
+}

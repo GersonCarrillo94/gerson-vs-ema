@@ -1,0 +1,104 @@
+{
+  "id": "es-sublevel-10",
+  "language": "spanish",
+  "number": 10,
+  "level": "basic",
+  "title": "Verbos de Acción Comunes",
+  "description": "Aprende los verbos más útiles del español: tener, ir, hacer, querer, gustar, necesitar.",
+  "estimatedMinutes": 15,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-10-act-1",
+      "type": "flashcards",
+      "title": "Verbos esenciales",
+      "items": [
+        { "id": "f1", "front": "tener", "back": "to have", "example": "Tengo una pregunta." },
+        { "id": "f2", "front": "ir", "back": "to go", "example": "Voy al trabajo todos los días." },
+        { "id": "f3", "front": "hacer", "back": "to do / to make", "example": "¿Qué haces? / Hago café." },
+        { "id": "f4", "front": "querer", "back": "to want", "example": "Quiero aprender español." },
+        { "id": "f5", "front": "necesitar", "back": "to need", "example": "Necesito ayuda, por favor." },
+        { "id": "f6", "front": "gustar", "back": "to like (pleaser)", "example": "Me gusta la música." },
+        { "id": "f7", "front": "saber / conocer", "back": "to know", "example": "¿Sabes esta palabra? / Conozco a Gerson." },
+        { "id": "f8", "front": "venir", "back": "to come", "example": "¿Puedes venir aquí?" },
+        { "id": "f9", "front": "ver", "back": "to see / to watch", "example": "Te veo todos los días en la escuela." }
+      ]
+    },
+    {
+      "id": "es-10-act-2",
+      "type": "multiple_choice",
+      "title": "Elige el verbo correcto",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Yo ___ dos hermanas y un hermano.",
+          "options": ["voy", "tengo", "hago", "quiero"],
+          "correctIndex": 1,
+          "explanation": "'Tener' se usa para hablar de posesiones y relaciones familiares."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Ella ___ al gimnasio todos los lunes.",
+          "options": ["hace", "va", "tiene", "gusta"],
+          "correctIndex": 1,
+          "explanation": "'Ir' = to go. Con 'ella' usamos 'va'. 'Ella va al gimnasio'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Yo ___ un café. ¿Puedes preparar uno?",
+          "options": ["voy", "veo", "necesito", "vengo"],
+          "correctIndex": 2,
+          "explanation": "'Necesitar' = to need. 'Necesito un café' = I need a coffee."
+        },
+        {
+          "id": "mc4",
+          "prompt": "'¿___ su nombre?' — 'No, no lo sé.'",
+          "options": ["Tienes", "Sabes", "Eres", "Vas"],
+          "correctIndex": 1,
+          "explanation": "'Saber' se usa para conocer datos o información. '¿Sabes su nombre?'"
+        },
+        {
+          "id": "mc5",
+          "prompt": "A mí me ___ el español porque abre puertas.",
+          "options": ["necesita", "tengo", "gusta", "quiero"],
+          "correctIndex": 2,
+          "explanation": "'Gustar' funciona diferente: 'Me gusta el español' (no 'yo gusto el español')."
+        }
+      ]
+    },
+    {
+      "id": "es-10-act-3",
+      "type": "fill_blank",
+      "title": "Completa con el verbo correcto",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Yo ___ un perro. Se llama Max.",
+          "blanks": [{ "answer": "tengo", "alternatives": ["Tengo"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Ella ___ al trabajo en bus todos los días.",
+          "blanks": [{ "answer": "va", "alternatives": ["Va"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "¿___ dónde está la escuela?",
+          "blanks": [{ "answer": "Sabes", "alternatives": ["sabes"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Yo ___ practicar español todos los días.",
+          "blanks": [{ "answer": "quiero", "alternatives": ["Quiero", "necesito", "Necesito"] }],
+          "hint": "querer o necesitar"
+        },
+        {
+          "id": "fb5",
+          "sentence": "¿Puedes ___ aquí? Necesito hablar contigo.",
+          "blanks": [{ "answer": "venir", "alternatives": ["Venir"] }]
+        }
+      ]
+    }
+  ]
+}

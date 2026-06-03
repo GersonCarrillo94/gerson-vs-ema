@@ -1,0 +1,102 @@
+{
+  "id": "en-sublevel-28",
+  "language": "english",
+  "number": 28,
+  "level": "advanced",
+  "title": "Second Conditional — Hypothetical Situations",
+  "description": "Talk about unreal or unlikely present and future situations using if + past simple + would.",
+  "estimatedMinutes": 16,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-28-act-1",
+      "type": "flashcards",
+      "title": "Second conditional structure and uses",
+      "items": [
+        { "id": "f1", "front": "If + past simple, would + infinitive", "back": "hypothetical / unreal situation → imagined result", "example": "If I won the lottery, I would travel the world." },
+        { "id": "f2", "front": "'Were' instead of 'was' (formal / all persons)", "back": "If I were you, … (not 'was' in formal English)", "example": "If she were here, she would know what to do." },
+        { "id": "f3", "front": "If I were you, I would… (advice)", "back": "the classic way to give advice with second conditional", "example": "If I were you, I'd talk to her directly." },
+        { "id": "f4", "front": "could / might instead of would (possibility)", "back": "If she practised more, she could become a professional.", "example": "If we left now, we might catch the last train." },
+        { "id": "f5", "front": "Wish + past simple (unreal present wish)", "back": "I wish I had more time. / She wishes she spoke better English.", "example": "I wish I lived closer to work — the commute is exhausting." },
+        { "id": "f6", "front": "Contraction: I'd / she'd / they'd", "back": "I would / she would / they would", "example": "I'd love to help if I could. They'd come if they were free." },
+        { "id": "f7", "front": "First vs Second Conditional", "back": "1st: real possibility. 2nd: unlikely or impossible.", "example": "If it rains, I'll stay. (likely) / If I were a bird, I'd fly to you. (impossible)" },
+        { "id": "f8", "front": "Would NOT use 'would' in the if-clause", "back": "If I would have → WRONG. If I had → CORRECT.", "example": "If I had a car, I'd give you a lift. (NOT: if I would have a car)" }
+      ]
+    },
+    {
+      "id": "en-28-act-2",
+      "type": "multiple_choice",
+      "title": "Second conditional in context",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "If I ___ a million dollars, I'd donate half to charity.",
+          "options": ["have", "had", "would have", "having"],
+          "correctIndex": 1,
+          "explanation": "Second conditional: If + past simple. 'If I had a million dollars…' (imaginary)."
+        },
+        {
+          "id": "mc2",
+          "prompt": "If I ___ you, I would apologise immediately.",
+          "options": ["am", "was", "were", "would be"],
+          "correctIndex": 2,
+          "explanation": "'If I were you…' is the standard phrasing. 'Were' is used for all persons in second conditional."
+        },
+        {
+          "id": "mc3",
+          "prompt": "She ___ the job if she spoke better English. Unfortunately she doesn't.",
+          "options": ["will get", "would get", "gets", "had got"],
+          "correctIndex": 1,
+          "explanation": "Unlikely present situation → second conditional: 'would get'. She doesn't speak good enough English."
+        },
+        {
+          "id": "mc4",
+          "prompt": "I wish I ___ more time. There's so much I want to do.",
+          "options": ["have", "had", "would have", "will have"],
+          "correctIndex": 1,
+          "explanation": "'Wish + past simple' expresses an unreal present wish: I wish I had. (but I don't)"
+        },
+        {
+          "id": "mc5",
+          "prompt": "If we left now, we ___ catch the last bus.",
+          "options": ["would", "will", "might", "should"],
+          "correctIndex": 2,
+          "explanation": "'Might' in a second conditional = possible but not certain result: we might catch it."
+        }
+      ]
+    },
+    {
+      "id": "en-28-act-3",
+      "type": "fill_blank",
+      "title": "Complete the second conditional",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "If I ___ a superpower, I'd choose the ability to fly. (have)",
+          "blanks": [{ "answer": "had", "alternatives": ["Had"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "If I were you, I ___ tell her the truth as soon as possible.",
+          "blanks": [{ "answer": "would", "alternatives": ["Would", "'d"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "I wish I ___ closer to work — the commute takes two hours. (live)",
+          "blanks": [{ "answer": "lived", "alternatives": ["Lived"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "She ___ buy a flat if she had enough savings. (could)",
+          "blanks": [{ "answer": "could", "alternatives": ["Could", "would", "Would"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "If he ___ harder, he'd get much better results. (work)",
+          "blanks": [{ "answer": "worked", "alternatives": ["Worked"] }]
+        }
+      ]
+    }
+  ]
+}

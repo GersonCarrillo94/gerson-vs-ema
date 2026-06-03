@@ -1,0 +1,104 @@
+{
+  "id": "en-sublevel-07",
+  "language": "english",
+  "number": 7,
+  "level": "basic",
+  "title": "Telling the Time",
+  "description": "Ask and answer 'What time is it?' — hours, half past, quarter past and quarter to.",
+  "estimatedMinutes": 14,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-07-act-1",
+      "type": "flashcards",
+      "title": "Time expressions",
+      "items": [
+        { "id": "f1", "front": "What time is it?", "back": "¿Qué hora es?", "example": "Excuse me, what time is it?" },
+        { "id": "f2", "front": "It's one o'clock.", "back": "Es la una.", "example": "It's one o'clock in the morning." },
+        { "id": "f3", "front": "It's three o'clock.", "back": "Son las tres.", "example": "The meeting is at three o'clock." },
+        { "id": "f4", "front": "It's half past two.", "back": "Son las dos y media.", "example": "Let's meet at half past two." },
+        { "id": "f5", "front": "It's quarter past four.", "back": "Son las cuatro y cuarto.", "example": "The class starts at quarter past four." },
+        { "id": "f6", "front": "It's quarter to six.", "back": "Son las seis menos cuarto.", "example": "Hurry! It's quarter to six." },
+        { "id": "f7", "front": "in the morning / AM", "back": "de la mañana", "example": "I wake up at seven in the morning." },
+        { "id": "f8", "front": "in the afternoon / PM", "back": "de la tarde", "example": "We study at three in the afternoon." },
+        { "id": "f9", "front": "at noon / at midnight", "back": "al mediodía / a medianoche", "example": "We eat lunch at noon." }
+      ]
+    },
+    {
+      "id": "en-07-act-2",
+      "type": "multiple_choice",
+      "title": "What time is it?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "The clock shows 3:00. What do you say?",
+          "options": ["It's three past.", "It's three o'clock.", "It's half three.", "It's quarter three."],
+          "correctIndex": 1,
+          "explanation": "For exact hours we say 'It's [number] o'clock'."
+        },
+        {
+          "id": "mc2",
+          "prompt": "The clock shows 7:30. What do you say?",
+          "options": ["It's seven thirty past.", "It's half past eight.", "It's half past seven.", "It's quarter past seven."],
+          "correctIndex": 2,
+          "explanation": "'Half past seven' = 7:30. 'Half past' always means 30 minutes after."
+        },
+        {
+          "id": "mc3",
+          "prompt": "The clock shows 9:15. What do you say?",
+          "options": ["It's nine fifteen past.", "It's quarter past nine.", "It's quarter to nine.", "It's half past nine."],
+          "correctIndex": 1,
+          "explanation": "'Quarter past' = 15 minutes after the hour."
+        },
+        {
+          "id": "mc4",
+          "prompt": "The clock shows 5:45. What do you say?",
+          "options": ["It's quarter past six.", "It's quarter past five.", "It's quarter to six.", "It's half past five."],
+          "correctIndex": 2,
+          "explanation": "'Quarter to six' = 15 minutes before 6 = 5:45."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Your class starts at 8:00 AM. How do you say this?",
+          "options": ["My class starts at eight in the afternoon.", "My class starts at eight in the morning.", "My class starts at half past eight.", "My class starts at midnight."],
+          "correctIndex": 1,
+          "explanation": "AM = in the morning. 8:00 AM = eight in the morning."
+        }
+      ]
+    },
+    {
+      "id": "en-07-act-3",
+      "type": "fill_blank",
+      "title": "Complete the time expressions",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "It's ___ past ten. (10:30)",
+          "blanks": [{ "answer": "half", "alternatives": ["Half"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "It's quarter ___ eight. (7:45)",
+          "blanks": [{ "answer": "to", "alternatives": ["To"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "The shop opens at nine ___.",
+          "blanks": [{ "answer": "o'clock", "alternatives": ["o clock", "oclock"] }],
+          "hint": "Exact hour."
+        },
+        {
+          "id": "fb4",
+          "sentence": "It's quarter ___ three. (3:15)",
+          "blanks": [{ "answer": "past", "alternatives": ["Past"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "___ time is it? — It's six o'clock.",
+          "blanks": [{ "answer": "What", "alternatives": ["what"] }]
+        }
+      ]
+    }
+  ]
+}

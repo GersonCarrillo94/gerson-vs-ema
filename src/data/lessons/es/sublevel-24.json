@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-24",
+  "language": "spanish",
+  "number": 24,
+  "level": "intermediate",
+  "title": "Sentimientos y Emociones",
+  "description": "Describe cómo te sientes, reacciona a situaciones y habla de estados emocionales con naturalidad.",
+  "estimatedMinutes": 15,
+  "pointsReward": 175,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-24-act-1",
+      "type": "flashcards",
+      "title": "Emociones y cómo expresarlas",
+      "items": [
+        { "id": "f1", "front": "feliz / emocionado / orgulloso", "back": "happy / excited / proud", "example": "Estoy muy emocionado por el viaje — ¡no puedo esperar!" },
+        { "id": "f2", "front": "triste / decepcionado / solo", "back": "sad / disappointed / lonely", "example": "Se sintió muy sola después de mudarse a la nueva ciudad." },
+        { "id": "f3", "front": "enojado / frustrado / molesto", "back": "angry / frustrated / annoyed", "example": "Estoy frustrado — hoy nada parece funcionar." },
+        { "id": "f4", "front": "nervioso / ansioso / estresado", "back": "nervous / anxious / stressed", "example": "Estuvo ansioso toda la semana antes de la entrevista." },
+        { "id": "f5", "front": "sorprendido / impactado / asombrado", "back": "surprised / shocked / amazed", "example": "Me quedé asombrado con la vista desde la cima de la montaña." },
+        { "id": "f6", "front": "aburrido / cansado / agotado", "back": "bored / tired / exhausted", "example": "Después del maratón, estaba completamente agotada." },
+        { "id": "f7", "front": "Me siento… / Estoy… / Me encuentro…", "back": "I feel… / I am…", "example": "Me siento nervioso por la presentación. Estoy un poco abrumado." },
+        { "id": "f8", "front": "animarse / calmarse", "back": "to cheer up / to calm down", "example": "¡Anímate! Todo saldrá bien. Tranquilízate y hablemos." },
+        { "id": "f9", "front": "romper a llorar / estallar en carcajadas", "back": "burst into tears / burst out laughing", "example": "Rompió a llorar cuando escuchó la noticia. Nos habló y estallamos en carcajadas." }
+      ]
+    },
+    {
+      "id": "es-24-act-2",
+      "type": "multiple_choice",
+      "title": "¿Cómo se sienten?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Entrenó durante meses y finalmente ganó la carrera. Se sintió muy ___ de sí mismo.",
+          "options": ["feliz", "orgulloso", "emocionado", "satisfecho"],
+          "correctIndex": 1,
+          "explanation": "'Orgulloso' = proud. Es la emoción que sientes cuando logras algo importante."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Estudió mucho para el examen pero lo suspendió. Estaba muy ___.",
+          "options": ["emocionada", "sorprendida", "decepcionada", "frustrada"],
+          "correctIndex": 2,
+          "explanation": "'Decepcionada' = disappointed. La emoción cuando algo no cumple tus expectativas."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Ha trabajado 14 horas diarias durante dos semanas. Está completamente ___.",
+          "options": ["aburrido", "molesto", "solo", "agotado"],
+          "correctIndex": 3,
+          "explanation": "'Agotado' = exhausted. Dos semanas de jornadas larguísimas agotan a cualquiera."
+        },
+        {
+          "id": "mc4",
+          "prompt": "El mago sacó un conejo de la chistera. El público estaba ___.",
+          "options": ["nervioso", "asombrado", "aburrido", "frustrado"],
+          "correctIndex": 1,
+          "explanation": "'Asombrado' = amazed. Un truco de magia produce asombro en el público."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Para de gritar — ___ y hablemos con calma.",
+          "options": ["anímate", "cálmate", "ríete", "descansa"],
+          "correctIndex": 1,
+          "explanation": "'Cálmate' = calm down. Se usa cuando alguien está alterado o enojado."
+        }
+      ]
+    },
+    {
+      "id": "es-24-act-3",
+      "type": "fill_blank",
+      "title": "Describe las emociones",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Estoy muy ___ por el concierto de esta noche — llevo meses esperando.",
+          "blanks": [{ "answer": "emocionado", "alternatives": ["emocionada", "Emocionado", "Emocionada"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Rompió a ___ cuando escuchó la triste noticia.",
+          "blanks": [{ "answer": "llorar", "alternatives": ["Llorar"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "No te preocupes tanto — ¡___! Todo va a salir bien.",
+          "blanks": [{ "answer": "Anímate", "alternatives": ["anímate"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Se siente muy ___ desde que sus amigos se mudaron. No tiene con quién hablar.",
+          "blanks": [{ "answer": "solo", "alternatives": ["sola", "Solo", "Sola"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Estoy muy ___ — llevo tres horas intentando arreglar este error y nada funciona.",
+          "blanks": [{ "answer": "frustrado", "alternatives": ["frustrada", "Frustrado", "Frustrada", "molesto", "Molesto"] }]
+        }
+      ]
+    }
+  ]
+}

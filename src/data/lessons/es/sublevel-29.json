@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-29",
+  "language": "spanish",
+  "number": 29,
+  "level": "advanced",
+  "title": "La Voz Pasiva",
+  "description": "Centra el foco en la acción en lugar de en quién la realiza usando ser + participio en distintos tiempos.",
+  "estimatedMinutes": 17,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-29-act-1",
+      "type": "flashcards",
+      "title": "Estructura y usos de la voz pasiva",
+      "items": [
+        { "id": "f1", "front": "Voz pasiva: ser + participio (concuerda con el sujeto)", "back": "es/fue/será + participio", "example": "La carta es escrita. El pastel fue comido. El paquete será entregado." },
+        { "id": "f2", "front": "Presente pasiva: es/son + participio", "back": "El café se produce en Colombia. / Es producido en Colombia.", "example": "Estos coches son fabricados en Alemania." },
+        { "id": "f3", "front": "Pasado pasiva: fue/fueron + participio", "back": "El libro fue escrito en 1984.", "example": "Las pirámides fueron construidas hace miles de años." },
+        { "id": "f4", "front": "Futuro pasiva: será/serán + participio", "back": "El informe será enviado mañana.", "example": "Tu pedido será entregado el viernes." },
+        { "id": "f5", "front": "por + agente (quién realiza la acción)", "back": "Fue diseñado por un arquitecto famoso.", "example": "La novela fue escrita por Gabriel García Márquez." },
+        { "id": "f6", "front": "Se pasivo (muy común en español)", "back": "Se venden pisos aquí. / Aquí se habla español.", "example": "Se han descubierto tres nuevas especies." },
+        { "id": "f7", "front": "Cuándo usar la pasiva: agente desconocido / irrelevante", "back": "Me robaron el coche. / Mi coche fue robado.", "example": "La ventana fue rota. Se descubrió petróleo en la región." },
+        { "id": "f8", "front": "Pasiva con modal: debe ser / puede ser + participio", "back": "Debe hacerse antes del plazo.", "example": "Todos los formularios deben ser rellenados antes del plazo." }
+      ]
+    },
+    {
+      "id": "es-29-act-2",
+      "type": "multiple_choice",
+      "title": "Activa vs pasiva",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Este famoso edificio ___ por un reconocido arquitecto español en 1882.",
+          "options": ["diseñó", "fue diseñado", "ha diseñado", "está diseñando"],
+          "correctIndex": 1,
+          "explanation": "Acción pasada con el agente mencionado → pasado pasiva: fue diseñado por…"
+        },
+        {
+          "id": "mc2",
+          "prompt": "El español ___ en muchos países del mundo.",
+          "options": ["habla", "es hablado", "hablado", "se habla"],
+          "correctIndex": 3,
+          "explanation": "Hecho general presente → se pasivo: 'se habla'. También válido: 'es hablado'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "El paquete ___ antes del viernes, según el seguimiento.",
+          "options": ["entrega", "entregó", "será entregado", "ha entregado"],
+          "correctIndex": 2,
+          "explanation": "Futuro pasiva: será entregado. El paquete es el sujeto que recibe la acción."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Mi teléfono ___ en el café ayer. No sé quién lo cogió.",
+          "options": ["fue robado", "ha robado", "robó", "es robado"],
+          "correctIndex": 0,
+          "explanation": "Hecho pasado, agente desconocido → pasado pasiva: fue robado. Uso clásico de la pasiva."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Tres nuevas especies ___ recientemente por los científicos.",
+          "options": ["descubrieron", "han sido descubiertas", "se descubrieron", "descubren"],
+          "correctIndex": 1,
+          "explanation": "Pasiva perfecta: han sido descubiertas. 'Se descubrieron' también es válido."
+        }
+      ]
+    },
+    {
+      "id": "es-29-act-3",
+      "type": "fill_blank",
+      "title": "Completa con la voz pasiva",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "El café ___ en Brasil, Colombia y Etiopía. (cultivar)",
+          "blanks": [{ "answer": "se cultiva", "alternatives": ["Se cultiva", "es cultivado", "Es cultivado"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "La Torre Eiffel ___ en 1889 por Gustave Eiffel. (construir)",
+          "blanks": [{ "answer": "fue construida", "alternatives": ["Fue construida"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Tu solicitud ___ en un plazo de cinco días hábiles. (procesar)",
+          "blanks": [{ "answer": "será procesada", "alternatives": ["Será procesada"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Todos los controles de seguridad ___ antes del despegue. (deber / completar)",
+          "blanks": [{ "answer": "deben completarse", "alternatives": ["Deben completarse", "deben ser completados", "Deben ser completados"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Recientemente ___ tres nuevos planetas por los astrónomos. (descubrir)",
+          "blanks": [{ "answer": "han sido descubiertos", "alternatives": ["Han sido descubiertos", "se han descubierto", "Se han descubierto"] }]
+        }
+      ]
+    }
+  ]
+}

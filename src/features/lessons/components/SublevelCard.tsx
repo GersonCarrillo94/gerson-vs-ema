@@ -5,12 +5,6 @@ interface SublevelCardProps {
   sublevel: SublevelWithProgress;
 }
 
-const levelColor: Record<string, string> = {
-  basic: 'level-basic',
-  intermediate: 'level-intermediate',
-  advanced: 'level-advanced',
-};
-
 export function SublevelCard({ sublevel }: SublevelCardProps) {
   const navigate = useNavigate();
   const { number, level, status, score_earned, pointsReward } = sublevel;
@@ -20,7 +14,7 @@ export function SublevelCard({ sublevel }: SublevelCardProps) {
   const isActive = status === 'active';
 
   function handleClick() {
-    if (!isLocked) navigate(`/lessons/${number}`);
+    if (!isLocked) navigate(`/lessons/${String(number)}`);
   }
 
   return (
@@ -29,10 +23,10 @@ export function SublevelCard({ sublevel }: SublevelCardProps) {
       disabled={isLocked}
       aria-label={
         isLocked
-          ? `Subnivel ${number} — bloqueado`
+          ? `Subnivel ${String(number)} — bloqueado`
           : isCompleted
-            ? `Subnivel ${number} — completado con ${score_earned} pts`
-            : `Subnivel ${number} — disponible`
+            ? `Subnivel ${String(number)} — completado con ${String(score_earned)} pts`
+            : `Subnivel ${String(number)} — disponible`
       }
       className={[
         'relative flex flex-col items-center justify-center rounded-2xl',

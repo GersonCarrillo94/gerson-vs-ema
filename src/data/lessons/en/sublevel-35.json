@@ -1,0 +1,103 @@
+{
+  "id": "en-sublevel-35",
+  "language": "english",
+  "number": 35,
+  "level": "advanced",
+  "title": "News & Current Events Vocabulary",
+  "description": "Understand and talk about news, media, and current events with critical vocabulary.",
+  "estimatedMinutes": 15,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-35-act-1",
+      "type": "flashcards",
+      "title": "Media and news vocabulary",
+      "items": [
+        { "id": "f1", "front": "headline / article / editorial", "back": "titular / artículo / editorial", "example": "The headline read: 'Scientists Discover New Planet'." },
+        { "id": "f2", "front": "journalist / reporter / correspondent", "back": "periodista / reportero / corresponsal", "example": "The foreign correspondent reported live from the conflict zone." },
+        { "id": "f3", "front": "to report / to cover / to investigate", "back": "informar / cubrir / investigar", "example": "The journalist covered the story for three months before publishing." },
+        { "id": "f4", "front": "according to / sources claim / allegedly", "back": "según / fuentes afirman / supuestamente", "example": "According to officials, the situation is under control." },
+        { "id": "f5", "front": "breaking news / live updates", "back": "noticias de última hora / actualizaciones en directo", "example": "Breaking news: a major earthquake has struck the coast." },
+        { "id": "f6", "front": "fact vs opinion", "back": "hecho vs opinión", "example": "Fact: The temperature rose 2°C. Opinion: This will be catastrophic." },
+        { "id": "f7", "front": "bias / neutral / to verify", "back": "sesgo / neutral / verificar", "example": "Always verify information before sharing it online." },
+        { "id": "f8", "front": "fake news / misinformation / clickbait", "back": "noticias falsas / desinformación / anzuelo", "example": "This headline is clickbait — the article says something completely different." },
+        { "id": "f9", "front": "source / reliable / credible", "back": "fuente / fiable / creíble", "example": "Only share news from reliable, credible sources." }
+      ]
+    },
+    {
+      "id": "en-35-act-2",
+      "type": "multiple_choice",
+      "title": "Media literacy",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "The ___ of the article read: 'Economy Set to Crash — Experts Warn.'",
+          "options": ["editorial", "headline", "source", "bias"],
+          "correctIndex": 1,
+          "explanation": "A 'headline' is the title of a news article, designed to grab the reader's attention."
+        },
+        {
+          "id": "mc2",
+          "prompt": "The journalist spent six months ___ the corruption scandal before publishing.",
+          "options": ["covering", "reporting", "investigating", "verifying"],
+          "correctIndex": 2,
+          "explanation": "'Investigating' = digging into a story to find the truth. This took six months of deep research."
+        },
+        {
+          "id": "mc3",
+          "prompt": "___ to government officials, the situation is under control.",
+          "options": ["Reportedly", "According", "Allegedly", "Sources"],
+          "correctIndex": 1,
+          "explanation": "'According to + source' = a way of attributing information without confirming it yourself."
+        },
+        {
+          "id": "mc4",
+          "prompt": "The headline promised a shocking story but the article was totally different. This is called ___.",
+          "options": ["breaking news", "bias", "clickbait", "editorial"],
+          "correctIndex": 2,
+          "explanation": "'Clickbait' = content designed to attract clicks with a misleading or exaggerated headline."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Before sharing a story, you should always ___ the information with multiple sources.",
+          "options": ["cover", "report", "verify", "investigate"],
+          "correctIndex": 2,
+          "explanation": "'Verify' = check that something is true. Always verify before sharing news online."
+        }
+      ]
+    },
+    {
+      "id": "en-35-act-3",
+      "type": "fill_blank",
+      "title": "Complete the media sentences",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "The journalist ___ the story live from the disaster zone for three days.",
+          "blanks": [{ "answer": "covered", "alternatives": ["Covered", "reported", "Reported"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "This article lacks any credible ___ — I can't tell where the information comes from.",
+          "blanks": [{ "answer": "sources", "alternatives": ["Sources", "source", "Source"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "___ to witnesses, the accident happened at approximately 3 pm.",
+          "blanks": [{ "answer": "According", "alternatives": ["according"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "This is breaking ___! An agreement has just been signed.",
+          "blanks": [{ "answer": "news", "alternatives": ["News"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Never share content without first ___ that the information is accurate.",
+          "blanks": [{ "answer": "verifying", "alternatives": ["Verifying", "checking", "Checking"] }]
+        }
+      ]
+    }
+  ]
+}

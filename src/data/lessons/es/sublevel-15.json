@@ -1,0 +1,105 @@
+{
+  "id": "es-sublevel-15",
+  "language": "spanish",
+  "number": 15,
+  "level": "intermediate",
+  "title": "Pretérito Indefinido — Verbos Regulares",
+  "description": "Habla de acciones terminadas en el pasado con verbos regulares: hablé, comí, viví.",
+  "estimatedMinutes": 15,
+  "pointsReward": 175,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-15-act-1",
+      "type": "flashcards",
+      "title": "Reglas del pretérito indefinido",
+      "items": [
+        { "id": "f1", "front": "Verbos -AR: hablar", "back": "hablé, hablaste, habló, hablamos, hablasteis, hablaron", "example": "Hablé con ella ayer." },
+        { "id": "f2", "front": "Verbos -ER: comer", "back": "comí, comiste, comió, comimos, comisteis, comieron", "example": "Comimos paella el viernes." },
+        { "id": "f3", "front": "Verbos -IR: vivir", "back": "viví, viviste, vivió, vivimos, vivisteis, vivieron", "example": "Vivió en Madrid dos años." },
+        { "id": "f4", "front": "Negación: no + pretérito", "back": "No hablé. No comió.", "example": "No llamé ayer. No comió en casa." },
+        { "id": "f5", "front": "Pregunta: ¿verbo?", "back": "¿Hablaste? ¿Llegó ella?", "example": "¿Terminaste el informe? ¿Llegó a tiempo?" },
+        { "id": "f6", "front": "ayer / la semana pasada / el año pasado", "back": "yesterday / last week / last year", "example": "Viajé a México el año pasado." },
+        { "id": "f7", "front": "hace (tiempo)", "back": "ago", "example": "Llegaron hace tres años." },
+        { "id": "f8", "front": "Respuesta corta: Sí, hablé. / No, no hablé.", "back": "Yes, I did. / No, I didn't.", "example": "¿Llamaste? Sí, llamé. / No, no llamé." }
+      ]
+    },
+    {
+      "id": "es-15-act-2",
+      "type": "multiple_choice",
+      "title": "Pretérito indefinido regular",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Ella ___ español dos horas ayer. (estudiar)",
+          "options": ["estudia", "estudió", "estudiaba", "estudiará"],
+          "correctIndex": 1,
+          "explanation": "Ella + pretérito indefinido de -AR: estudió. Ella estudió español ayer."
+        },
+        {
+          "id": "mc2",
+          "prompt": "No ___ llamarla — se me olvidó. (yo)",
+          "options": ["llamaste", "llamó", "llamé", "llaman"],
+          "correctIndex": 2,
+          "explanation": "Yo + pretérito de -AR: llamé. No llamé = I didn't call."
+        },
+        {
+          "id": "mc3",
+          "prompt": "¿___ el informe? (terminar, tú)",
+          "options": ["Terminé", "Terminaste", "Terminó", "Terminaron"],
+          "correctIndex": 1,
+          "explanation": "Tú + pretérito de -AR: terminaste. ¿Terminaste el informe?"
+        },
+        {
+          "id": "mc4",
+          "prompt": "Ellos ___ en Colombia hace dos años. (vivir)",
+          "options": ["vivían", "viven", "vivieron", "vivirán"],
+          "correctIndex": 2,
+          "explanation": "Ellos + pretérito de -IR: vivieron. Vivieron en Colombia hace dos años."
+        },
+        {
+          "id": "mc5",
+          "prompt": "¿Aprobaste el examen? — Sí, ___.",
+          "options": ["sí aprobaste", "aprobé", "apruebo", "aprobé sí"],
+          "correctIndex": 1,
+          "explanation": "Respuesta corta en pretérito: 'Sí, aprobé.' (1ª persona singular)."
+        }
+      ]
+    },
+    {
+      "id": "es-15-act-3",
+      "type": "fill_blank",
+      "title": "Pon el verbo en pretérito indefinido",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Nosotros ___ una película genial anoche. (ver)",
+          "blanks": [{ "answer": "vimos", "alternatives": ["Vimos"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Él no ___ llegar a tiempo. La reunión empezó sin él. (conseguir → lograr)",
+          "blanks": [{ "answer": "logró", "alternatives": ["Logró", "consiguió", "Consiguió"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "¿___ los deberes? (terminar, tú)",
+          "blanks": [{ "answer": "Terminaste", "alternatives": ["terminaste"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Ella ___ para el examen todo el fin de semana. (estudiar)",
+          "blanks": [{ "answer": "estudió", "alternatives": ["Estudió"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Ellos ___ en Colombia dos años ___.",
+          "blanks": [
+            { "answer": "vivieron", "alternatives": ["Vivieron"] },
+            { "answer": "atrás", "alternatives": ["Atrás", "antes", "Antes"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

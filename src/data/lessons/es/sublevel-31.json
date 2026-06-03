@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-31",
+  "language": "spanish",
+  "number": 31,
+  "level": "advanced",
+  "title": "Oraciones de Relativo",
+  "description": "Añade información a tus frases usando que, quien, donde, cuyo y el cual para crear oraciones complejas y naturales.",
+  "estimatedMinutes": 16,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-31-act-1",
+      "type": "flashcards",
+      "title": "Pronombres relativos y tipos de oraciones",
+      "items": [
+        { "id": "f1", "front": "que (personas y cosas — el más frecuente)", "back": "who / which / that", "example": "El libro que leí era fascinante. La mujer que llamó era muy amable." },
+        { "id": "f2", "front": "quien / quienes (personas, con preposición)", "back": "who / whom (after prepositions)", "example": "La persona con quien hablé era el director." },
+        { "id": "f3", "front": "donde (lugar)", "back": "where", "example": "La ciudad donde nací ha cambiado mucho." },
+        { "id": "f4", "front": "cuyo / cuya / cuyos / cuyas (posesión)", "back": "whose — concuerda con el sustantivo poseído", "example": "El estudiante cuyo ensayo ganó está en mi clase." },
+        { "id": "f5", "front": "el que / la que / los que / las que / lo que", "back": "the one who/which / what", "example": "El que llegue primero elige. Lo que dices es muy interesante." },
+        { "id": "f6", "front": "Oraciones especificativas (sin comas)", "back": "información esencial — si la quitas, cambia el significado", "example": "El hombre que vive al lado es médico. (especifica cuál hombre)" },
+        { "id": "f7", "front": "Oraciones explicativas (con comas)", "back": "información adicional, no esencial — puedes suprimirla", "example": "Mi hermana, que vive en Madrid, viene la próxima semana." },
+        { "id": "f8", "front": "el cual / la cual (formal, con preposición)", "back": "which / who (formal written)", "example": "El edificio en el cual trabajamos es muy antiguo." }
+      ]
+    },
+    {
+      "id": "es-31-act-2",
+      "type": "multiple_choice",
+      "title": "Elige el pronombre relativo correcto",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "El profesor ___ imparte este curso ha publicado tres libros.",
+          "options": ["cual", "cuyo", "que", "donde"],
+          "correctIndex": 2,
+          "explanation": "'Que' es el relativo más común para personas y cosas: 'el profesor que imparte'."
+        },
+        {
+          "id": "mc2",
+          "prompt": "El hotel ___ nos alojamos tenía una piscina en la azotea increíble.",
+          "options": ["que", "quien", "donde", "cuyo"],
+          "correctIndex": 2,
+          "explanation": "'Donde' se refiere a lugares: 'el hotel donde nos alojamos'."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Tiene una compañera ___ hermana es actriz famosa.",
+          "options": ["que", "quien", "cuya", "la que"],
+          "correctIndex": 2,
+          "explanation": "'Cuya' = whose + sustantivo femenino (hermana). Cuya hermana = whose sister."
+        },
+        {
+          "id": "mc4",
+          "prompt": "El portátil ___ pedí por internet llegó estropeado.",
+          "options": ["quien", "cuyo", "donde", "que"],
+          "correctIndex": 3,
+          "explanation": "'Que' para cosas en oraciones especificativas: 'el portátil que pedí'."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Mi hermano, ___ trabaja como ingeniero, vive en Singapur.",
+          "options": ["que", "el que", "quien", "cuyo"],
+          "correctIndex": 0,
+          "explanation": "Oración explicativa con comas → 'que' es válido para personas. También 'quien': 'mi hermano, quien trabaja…'"
+        }
+      ]
+    },
+    {
+      "id": "es-31-act-3",
+      "type": "fill_blank",
+      "title": "Completa con el pronombre relativo correcto",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "La mujer ___ me ayudó a encontrar mi bolso era muy amable.",
+          "blanks": [{ "answer": "que", "alternatives": ["Que", "quien", "Quien"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "La ciudad ___ nací ha crecido mucho en la última década.",
+          "blanks": [{ "answer": "donde", "alternatives": ["Donde", "en la que", "En la que"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Tiene un amigo ___ padre es el alcalde del pueblo.",
+          "blanks": [{ "answer": "cuyo", "alternatives": ["Cuyo"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "El documental ___ vimos anoche fue increíblemente emocionante.",
+          "blanks": [{ "answer": "que", "alternatives": ["Que"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Su gata, ___ tiene 15 años, sigue siendo muy activa y juguetona.",
+          "blanks": [{ "answer": "que", "alternatives": ["Que", "la cual", "La cual"] }]
+        }
+      ]
+    }
+  ]
+}

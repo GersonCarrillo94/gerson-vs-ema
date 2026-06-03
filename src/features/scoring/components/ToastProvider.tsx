@@ -21,7 +21,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     ({ type, message, duration = 3500 }: { type: ToastItem['type']; message: string; duration?: number }) => {
       const id = String(++counterRef.current);
       setToasts((prev) => [...prev, { id, type, message }]);
-      setTimeout(() => setToasts((prev) => prev.filter((t) => t.id !== id)), duration);
+      setTimeout(() => { setToasts((prev) => prev.filter((t) => t.id !== id)); }, duration);
     },
     [],
   );
@@ -49,6 +49,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useToast(): ToastContextValue {
   const ctx = useContext(ToastContext);
   if (!ctx) throw new Error('useToast must be used inside <ToastProvider>');

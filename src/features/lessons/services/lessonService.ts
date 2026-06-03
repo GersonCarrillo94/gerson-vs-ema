@@ -24,7 +24,7 @@ export async function fetchSublevelContent(
 
   const loader = glob[key];
   if (!loader) {
-    throw new Error(`No se encontró el subnivel ${sublevelNumber} para ${language}`);
+    throw new Error(`No se encontró el subnivel ${String(sublevelNumber)} para ${language}`);
   }
   return loader();
 }
@@ -109,5 +109,5 @@ export async function completeSublevel(result: SublevelResult): Promise<Complete
     throw error;
   }
 
-  return data as CompleteSublevelResult;
+  return data as unknown as CompleteSublevelResult;
 }

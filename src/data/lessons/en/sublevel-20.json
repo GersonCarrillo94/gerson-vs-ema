@@ -1,0 +1,103 @@
+{
+  "id": "en-sublevel-20",
+  "language": "english",
+  "number": 20,
+  "level": "intermediate",
+  "title": "Modal Verbs — can, could, should, must",
+  "description": "Express ability, advice, obligation, and possibility using modal verbs in everyday situations.",
+  "estimatedMinutes": 14,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-20-act-1",
+      "type": "flashcards",
+      "title": "Modal verbs and their meanings",
+      "items": [
+        { "id": "f1", "front": "can (ability / permission)", "back": "I can swim. Can I help you?", "example": "She can speak three languages fluently." },
+        { "id": "f2", "front": "could (past ability / polite request)", "back": "I could run fast as a kid. Could you help me?", "example": "Could you pass the salt, please?" },
+        { "id": "f3", "front": "should (advice / recommendation)", "back": "You should rest. You shouldn't smoke.", "example": "You look tired — you should get some sleep." },
+        { "id": "f4", "front": "must (strong obligation / necessity)", "back": "You must wear a seatbelt.", "example": "You must be 18 to enter this venue." },
+        { "id": "f5", "front": "have to (external obligation)", "back": "I have to work tomorrow.", "example": "She has to wear a uniform at work." },
+        { "id": "f6", "front": "must not / mustn't (prohibition)", "back": "You mustn't smoke here.", "example": "Students must not use phones during the exam." },
+        { "id": "f7", "front": "don't have to (no obligation)", "back": "You don't have to come if you're busy.", "example": "It's optional — you don't have to attend." },
+        { "id": "f8", "front": "might / may (possibility)", "back": "It might rain. He may be late.", "example": "She might call later — I'm not sure." },
+        { "id": "f9", "front": "would (conditional / polite offer)", "back": "I would love to. Would you like some coffee?", "example": "Would you like me to help?" }
+      ]
+    },
+    {
+      "id": "en-20-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the correct modal verb",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "She ___ speak French, Spanish, and English — she grew up in three countries.",
+          "options": ["must", "can", "should", "would"],
+          "correctIndex": 1,
+          "explanation": "'Can' expresses current ability: she can speak three languages."
+        },
+        {
+          "id": "mc2",
+          "prompt": "You look really tired. You ___ get some rest tonight.",
+          "options": ["must not", "could", "should", "would"],
+          "correctIndex": 2,
+          "explanation": "'Should' gives advice or a recommendation: you should rest."
+        },
+        {
+          "id": "mc3",
+          "prompt": "You ___ park here — it's a fire lane. You'll get a fine.",
+          "options": ["don't have to", "should not", "must not", "might not"],
+          "correctIndex": 2,
+          "explanation": "'Must not' is a strong prohibition: parking here is not allowed."
+        },
+        {
+          "id": "mc4",
+          "prompt": "It's a public holiday — you ___ go to work today.",
+          "options": ["must not", "should not", "mustn't", "don't have to"],
+          "correctIndex": 3,
+          "explanation": "'Don't have to' = no obligation. The day off means work isn't required."
+        },
+        {
+          "id": "mc5",
+          "prompt": "___ you open the window? It's quite warm in here.",
+          "options": ["Should", "Must", "Could", "Will"],
+          "correctIndex": 2,
+          "explanation": "'Could you…?' is a polite request. 'Can you…?' is also correct but less formal."
+        }
+      ]
+    },
+    {
+      "id": "en-20-act-3",
+      "type": "fill_blank",
+      "title": "Complete with the correct modal verb",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "You ___ eat more vegetables. It's good for your health.",
+          "blanks": [{ "answer": "should", "alternatives": ["Should"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "I ___ drive when I was twelve — I was too young.",
+          "blanks": [{ "answer": "couldn't", "alternatives": ["could not", "Couldn't", "Could not"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "You ___ use your phone during the exam — it's strictly forbidden.",
+          "blanks": [{ "answer": "must not", "alternatives": ["mustn't", "Mustn't", "Must not"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "___ I use your charger for a moment?",
+          "blanks": [{ "answer": "Can", "alternatives": ["Could"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "She ___ be home — her lights are off and the car is gone.",
+          "blanks": [{ "answer": "might not", "alternatives": ["may not", "Might not", "May not"] }]
+        }
+      ]
+    }
+  ]
+}

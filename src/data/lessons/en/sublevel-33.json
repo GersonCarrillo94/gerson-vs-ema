@@ -1,0 +1,112 @@
+{
+  "id": "en-sublevel-33",
+  "language": "english",
+  "number": 33,
+  "level": "advanced",
+  "title": "Idioms & Fixed Expressions",
+  "description": "Understand and use common English idioms to sound more natural and grasp native-speaker humour.",
+  "estimatedMinutes": 14,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-33-act-1",
+      "type": "flashcards",
+      "title": "Common idioms and their meanings",
+      "items": [
+        { "id": "f1", "front": "break a leg", "back": "good luck (especially before a performance)", "example": "Break a leg tonight — I know you'll be amazing!" },
+        { "id": "f2", "front": "cost an arm and a leg", "back": "be very expensive", "example": "That designer bag costs an arm and a leg — I could never afford it." },
+        { "id": "f3", "front": "hit the nail on the head", "back": "say or do exactly the right thing", "example": "You hit the nail on the head — that's exactly the problem." },
+        { "id": "f4", "front": "under the weather", "back": "feeling slightly ill or unwell", "example": "I'm feeling a bit under the weather today — I think I'm getting a cold." },
+        { "id": "f5", "front": "once in a blue moon", "back": "very rarely", "example": "She only visits once in a blue moon — we barely see her." },
+        { "id": "f6", "front": "let the cat out of the bag", "back": "accidentally reveal a secret", "example": "He let the cat out of the bag about the surprise party." },
+        { "id": "f7", "front": "bite the bullet", "back": "endure a painful situation / do something difficult", "example": "I'd been avoiding the dentist, but finally I bit the bullet and made an appointment." },
+        { "id": "f8", "front": "the ball is in your court", "back": "it is your turn to take action / your decision now", "example": "I've done everything I can. The ball is in your court now." },
+        { "id": "f9", "front": "better late than never", "back": "it's better to do something late than not at all", "example": "He finally learned to drive at 50 — better late than never!" }
+      ]
+    },
+    {
+      "id": "en-33-act-2",
+      "type": "multiple_choice",
+      "title": "What does the idiom mean?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "She's feeling under the weather today. What does this mean?",
+          "options": ["She's outside in the rain", "She's feeling a bit unwell", "She doesn't like the weather", "She's confused"],
+          "correctIndex": 1,
+          "explanation": "'Under the weather' = slightly ill. She's not seriously sick, just a bit off."
+        },
+        {
+          "id": "mc2",
+          "prompt": "That restaurant costs an arm and a leg. What does this mean?",
+          "options": ["It's very painful to eat there", "It's very far away", "It's extremely expensive", "It has a good menu"],
+          "correctIndex": 2,
+          "explanation": "'Costs an arm and a leg' = very expensive. You'd practically give your limbs to pay for it."
+        },
+        {
+          "id": "mc3",
+          "prompt": "He let the cat out of the bag about the promotion. What happened?",
+          "options": ["He told everyone a secret", "He resigned", "He was promoted", "He found a stray cat"],
+          "correctIndex": 0,
+          "explanation": "'Let the cat out of the bag' = reveal a secret by mistake. He accidentally told people about it."
+        },
+        {
+          "id": "mc4",
+          "prompt": "I've sent my application. The ball is in their court now. What does this mean?",
+          "options": ["They will play tennis", "It's now their turn to act", "I need to wait outside", "They rejected my application"],
+          "correctIndex": 1,
+          "explanation": "'The ball is in your court' = it's your turn to act / your decision. I've done my part."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Your friend is performing in a play tonight. What do you say to wish them luck?",
+          "options": ["Good luck!", "Break a leg!", "Bite the bullet!", "Hit the nail!"],
+          "correctIndex": 1,
+          "explanation": "'Break a leg' is the traditional way to wish someone luck before a performance — saying 'good luck' is considered bad luck in theatre!"
+        }
+      ]
+    },
+    {
+      "id": "en-33-act-3",
+      "type": "fill_blank",
+      "title": "Complete the idiom",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "She only calls ___ in a ___ moon — I haven't heard from her in months.",
+          "blanks": [
+            { "answer": "once", "alternatives": ["Once"] },
+            { "answer": "blue", "alternatives": ["Blue"] }
+          ]
+        },
+        {
+          "id": "fb2",
+          "sentence": "You hit the ___ on the ___. That's exactly what the problem is!",
+          "blanks": [
+            { "answer": "nail", "alternatives": ["Nail"] },
+            { "answer": "head", "alternatives": ["Head"] }
+          ]
+        },
+        {
+          "id": "fb3",
+          "sentence": "I've been avoiding telling him the truth, but I need to bite the ___ and do it.",
+          "blanks": [{ "answer": "bullet", "alternatives": ["Bullet"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "He accidentally let the cat out of the ___ about the surprise party.",
+          "blanks": [{ "answer": "bag", "alternatives": ["Bag"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "She finally got her driving licence at age 45. Better ___ than ___!",
+          "blanks": [
+            { "answer": "late", "alternatives": ["Late"] },
+            { "answer": "never", "alternatives": ["Never"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-36",
+  "language": "spanish",
+  "number": 36,
+  "level": "advanced",
+  "title": "Conversación y Debate Avanzado",
+  "description": "Expresa opiniones complejas, debate con elegancia y estructura tus ideas con claridad — ¡el último nivel!",
+  "estimatedMinutes": 18,
+  "pointsReward": 250,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-36-act-1",
+      "type": "flashcards",
+      "title": "Frases para debate y conversación avanzada",
+      "items": [
+        { "id": "f1", "front": "Dar una opinión", "back": "En mi opinión… / A mi juicio… / Considero que… / Creo firmemente que…", "example": "En mi opinión, la educación debería ser gratuita para todos." },
+        { "id": "f2", "front": "Estar de acuerdo", "back": "Totalmente de acuerdo. / Comparto tu punto de vista. / Llevas toda la razón.", "example": "Llevas toda la razón — eso es exactamente lo que hay que hacer." },
+        { "id": "f3", "front": "Estar de acuerdo en parte", "back": "Entiendo tu punto, pero… / Tienes razón en que…, aunque…", "example": "Entiendo tu punto, pero creo que el asunto es más complejo." },
+        { "id": "f4", "front": "Discrepar con cortesía", "back": "No estoy del todo de acuerdo. / Con todo el respeto, creo que… / Me temo que difiero.", "example": "Con todo el respeto, creo que ese argumento pasa por alto factores importantes." },
+        { "id": "f5", "front": "Añadir un punto", "back": "Además… / Es más… / Cabe añadir que… / No solo eso, sino que…", "example": "Es más eficiente. Además, a largo plazo ahorra dinero." },
+        { "id": "f6", "front": "Conceder un punto", "back": "Si bien es cierto que… / Reconozco que… / Aunque es verdad que…, creo que…", "example": "Si bien es cierto que los costes son elevados, los beneficios a largo plazo los compensan." },
+        { "id": "f7", "front": "Pedir aclaración", "back": "¿Podría aclarar…? / ¿A qué se refiere con…? / ¿Podría poner un ejemplo?", "example": "¿Podría aclarar qué entiende por 'crecimiento sostenible'?" },
+        { "id": "f8", "front": "Concluir / resumir", "back": "En conclusión… / En definitiva… / En resumen… / Todo ello nos lleva a…", "example": "En definitiva, la evidencia apunta claramente a la necesidad de actuar ya." }
+      ]
+    },
+    {
+      "id": "es-36-act-2",
+      "type": "multiple_choice",
+      "title": "Elige la frase más adecuada para cada situación",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Quieres dar tu opinión sobre el cambio climático. ¿Cómo empiezas?",
+          "options": ["Yo creo que a lo mejor…", "En mi opinión, el cambio climático es el reto más urgente de nuestro tiempo.", "El cambio climático está mal.", "Todo el mundo sabe que el clima cambia."],
+          "correctIndex": 1,
+          "explanation": "'En mi opinión' introduce una opinión personal de forma clara y formal, adecuada para un debate."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Tu compañero hace un buen punto, pero crees que es más complejo. ¿Qué dices?",
+          "options": ["No, estás equivocado.", "Entiendo tu punto, pero creo que el asunto es más matizado.", "Eso no es verdad.", "Sí, pero no."],
+          "correctIndex": 1,
+          "explanation": "'Entiendo tu punto, pero…' es la forma educada de estar parcialmente de acuerdo y añadir perspectiva."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Alguien menciona el coste de tu propuesta. Reconoces que es caro pero lo defiendes. ¿Cómo empiezas?",
+          "options": ["No es tan caro.", "Si bien es cierto que los costes son elevados, los beneficios son muy significativos.", "El coste no importa.", "Estáis equivocados sobre los costes."],
+          "correctIndex": 1,
+          "explanation": "'Si bien es cierto que…' concede el punto antes de hacer el contraargumento — técnica clave en el debate."
+        },
+        {
+          "id": "mc4",
+          "prompt": "No entiendes qué quiere decir el ponente con 'cambio de paradigma'. ¿Qué preguntas?",
+          "options": ["¿Qué?", "No entiendo.", "¿Podría aclarar qué entiende por 'cambio de paradigma'?", "Explíquese."],
+          "correctIndex": 2,
+          "explanation": "'¿Podría aclarar…?' es la forma educada y formal de pedir que alguien explique algo con más detalle."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Estás terminando una presentación. ¿Cómo señalas tu conclusión?",
+          "options": ["Ya está.", "Bueno, se acabó.", "En definitiva, los datos respaldan claramente nuestra hipótesis inicial.", "Me he terminado ya."],
+          "correctIndex": 2,
+          "explanation": "'En definitiva' es una transición formal que señala que vas a resumir tus puntos principales."
+        }
+      ]
+    },
+    {
+      "id": "es-36-act-3",
+      "type": "fill_blank",
+      "title": "Completa las frases del debate",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "___ mi opinión, el acceso al agua limpia es un derecho humano básico.",
+          "blanks": [{ "answer": "En", "alternatives": ["en"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Llevas toda la ___. Es exactamente el punto que hemos intentado defender.",
+          "blanks": [{ "answer": "razón", "alternatives": ["Razón"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "___ bien es cierto que la solución es costosa, la alternativa es mucho peor.",
+          "blanks": [{ "answer": "Si", "alternatives": ["si", "Aunque", "aunque"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "¿Podría ___ qué entiende usted por 'desigualdad estructural'?",
+          "blanks": [{ "answer": "aclarar", "alternatives": ["Aclarar", "explicar", "Explicar"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "En ___, la evidencia apunta firmemente a la necesidad de tomar medidas inmediatas.",
+          "blanks": [{ "answer": "definitiva", "alternatives": ["Definitiva", "conclusión", "Conclusión", "resumen", "Resumen"] }]
+        }
+      ]
+    }
+  ]
+}

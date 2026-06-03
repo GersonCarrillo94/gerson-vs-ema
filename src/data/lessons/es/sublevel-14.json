@@ -1,0 +1,105 @@
+{
+  "id": "es-sublevel-14",
+  "language": "spanish",
+  "number": 14,
+  "level": "intermediate",
+  "title": "Estar + Gerundio",
+  "description": "Describe lo que está pasando ahora mismo usando estar + gerundio: estoy estudiando.",
+  "estimatedMinutes": 14,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-14-act-1",
+      "type": "flashcards",
+      "title": "Estructura del presente continuo",
+      "items": [
+        { "id": "f1", "front": "Yo estoy + gerundio", "back": "I am + -ing", "example": "Estoy estudiando ahora mismo." },
+        { "id": "f2", "front": "Él / Ella está + gerundio", "back": "He/She is + -ing", "example": "Ella está trabajando desde casa hoy." },
+        { "id": "f3", "front": "Nosotros estamos + gerundio", "back": "We are + -ing", "example": "Estamos viendo una película." },
+        { "id": "f4", "front": "Negación: no está / no estoy", "back": "isn't / aren't + -ing", "example": "No está durmiendo. No estamos comiendo." },
+        { "id": "f5", "front": "Pregunta: ¿Está…? ¿Estás…?", "back": "Is she…? Are you…?", "example": "¿Está comiendo? ¿Estás escuchando?" },
+        { "id": "f6", "front": "ahora mismo / en este momento", "back": "right now / at the moment", "example": "No puedo hablar — estoy conduciendo ahora mismo." },
+        { "id": "f7", "front": "Gerundio -AR: hablar → hablando", "back": "speak → speaking", "example": "Estoy hablando con mi madre." },
+        { "id": "f8", "front": "Gerundio -ER/-IR: comer → comiendo, vivir → viviendo", "back": "eat → eating, live → living", "example": "Ella está comiendo. Están viviendo juntos." }
+      ]
+    },
+    {
+      "id": "es-14-act-2",
+      "type": "multiple_choice",
+      "title": "Presente simple vs continuo",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Ella ___ ahora mismo. No la molestes.",
+          "options": ["estudia", "está estudiando", "estudió", "estudiará"],
+          "correctIndex": 1,
+          "explanation": "'Ahora mismo' indica el presente continuo: está + estudiando."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Ellos ___ la cena en este momento.",
+          "options": ["preparan", "están preparando", "está preparando", "preparaban"],
+          "correctIndex": 1,
+          "explanation": "Ellos → están + preparando. 'En este momento' confirma la acción en curso."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Él ___ música. Tiene los auriculares puestos.",
+          "options": ["escucha", "escuchó", "está escuchando", "están escuchando"],
+          "correctIndex": 2,
+          "explanation": "Él → está + escuchando. Los auriculares confirman que ocurre ahora."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Normalmente voy caminando al trabajo, pero hoy ___ el autobús.",
+          "options": ["tomo", "estoy tomando", "toma", "tomé"],
+          "correctIndex": 1,
+          "explanation": "'Hoy' + situación inusual → presente continuo: estoy tomando."
+        },
+        {
+          "id": "mc5",
+          "prompt": "¿___ viniendo a la fiesta esta noche?",
+          "options": ["Vienes", "Vendrás", "Estás", "Eres"],
+          "correctIndex": 2,
+          "explanation": "Para preguntar con continuo: ¿Estás + gerundio? ¿Estás viniendo…?"
+        }
+      ]
+    },
+    {
+      "id": "es-14-act-3",
+      "type": "fill_blank",
+      "title": "Completa con el presente continuo",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Yo ___ un libro ahora mismo. (leer)",
+          "blanks": [{ "answer": "estoy leyendo", "alternatives": ["Estoy leyendo"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Ella ___ al gimnasio hoy. (no ir)",
+          "blanks": [{ "answer": "no está yendo", "alternatives": ["no está vendo"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "¿___ ellos ___ la cena? — Sí, están. (preparar)",
+          "blanks": [
+            { "answer": "Están", "alternatives": ["están"] },
+            { "answer": "preparando", "alternatives": ["Preparando"] }
+          ]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Él ___ en el parque. Lo veo desde aquí. (correr)",
+          "blanks": [{ "answer": "está corriendo", "alternatives": ["Está corriendo"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Nosotros ___ a que empiece la reunión. (esperar)",
+          "blanks": [{ "answer": "estamos esperando", "alternatives": ["Estamos esperando"] }]
+        }
+      ]
+    }
+  ]
+}

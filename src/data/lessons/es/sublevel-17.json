@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-17",
+  "language": "spanish",
+  "number": 17,
+  "level": "intermediate",
+  "title": "Hablar del Futuro",
+  "description": "Usa 'ir a + infinitivo' para planes y el futuro simple para predicciones y promesas.",
+  "estimatedMinutes": 15,
+  "pointsReward": 175,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-17-act-1",
+      "type": "flashcards",
+      "title": "Ir a vs futuro simple",
+      "items": [
+        { "id": "f1", "front": "ir a + infinitivo", "back": "going to: plan ya decidido", "example": "Voy a estudiar esta noche. (ya lo decidí)" },
+        { "id": "f2", "front": "Futuro simple: -é, -ás, -á…", "back": "will: predicción o decisión espontánea", "example": "Mañana lloverá. ¡Te ayudaré!" },
+        { "id": "f3", "front": "Voy a… / Vas a… / Va a…", "back": "I'm going to… / You're going to…", "example": "Voy a visitar a mis padres este fin de semana." },
+        { "id": "f4", "front": "Futuro -AR: hablar → hablaré", "back": "I will speak", "example": "Hablaré con ella mañana." },
+        { "id": "f5", "front": "Futuro -ER/-IR: comer → comeré, vivir → viviré", "back": "I will eat / I will live", "example": "Comeré sano esta semana. Viviremos allí un año." },
+        { "id": "f6", "front": "Irregulares: tener→tendrá, poder→podrá, hacer→hará", "back": "will have / will be able to / will do", "example": "Tendrá tiempo mañana. Podremos ir." },
+        { "id": "f7", "front": "Negativo: no va a / no + futuro", "back": "isn't going to / won't", "example": "No va a llover. No llegarás tarde." },
+        { "id": "f8", "front": "mañana / la próxima semana / pronto", "back": "tomorrow / next week / soon", "example": "Te llamaré mañana." }
+      ]
+    },
+    {
+      "id": "es-17-act-2",
+      "type": "multiple_choice",
+      "title": "¿Ir a o futuro simple?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Ya compré las entradas. ___ ver el concierto el viernes.",
+          "options": ["Vamos a", "Veremos", "Iremos a", "Veamos"],
+          "correctIndex": 0,
+          "explanation": "Entradas ya compradas = plan decidido → 'ir a'. Vamos a ver el concierto."
+        },
+        {
+          "id": "mc2",
+          "prompt": "El teléfono suena. — Tranquilo, yo lo ___.",
+          "options": ["voy a contestar", "contestaré", "contesto", "contestaba"],
+          "correctIndex": 1,
+          "explanation": "Decisión espontánea en el momento → futuro simple: contestaré."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Mira esas nubes. ___ llover.",
+          "options": ["Va a", "Irá a", "Llueve", "Llovería"],
+          "correctIndex": 0,
+          "explanation": "Evidencia visible ahora (nubes) = predicción fuerte con 'ir a'. Va a llover."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Ella siempre llega puntual, así que no ___ tarde.",
+          "options": ["va a llegar", "llegará", "irá a llegar", "llegó"],
+          "correctIndex": 1,
+          "explanation": "Predicción general sin evidencia visible → futuro simple: no llegará tarde."
+        },
+        {
+          "id": "mc5",
+          "prompt": "¿Me ___ ayudar con esto? (favor espontáneo)",
+          "options": ["vas a", "irás a", "ayudarás", "puedes"],
+          "correctIndex": 2,
+          "explanation": "Para pedir un favor con futuro: ¿Me ayudarás? o ¿Me puedes ayudar?"
+        }
+      ]
+    },
+    {
+      "id": "es-17-act-3",
+      "type": "fill_blank",
+      "title": "Completa con ir a o futuro simple",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Yo ___ estudiar español mañana. Ya lo tengo planificado.",
+          "blanks": [{ "answer": "voy a", "alternatives": ["Voy a"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Ella está cansada. No ___ ir a la fiesta esta noche.",
+          "blanks": [{ "answer": "va a", "alternatives": ["Va a"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Voy a la cocina. Te ___ un café. (traer → traeré)",
+          "blanks": [{ "answer": "traeré", "alternatives": ["Traeré"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "¡Míralo correr! ___ ganar la carrera.",
+          "blanks": [{ "answer": "Va a", "alternatives": ["va a"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "¿___ en la reunión mañana? (estar, tú - futuro)",
+          "blanks": [{ "answer": "Estarás", "alternatives": ["estarás"] }]
+        }
+      ]
+    }
+  ]
+}

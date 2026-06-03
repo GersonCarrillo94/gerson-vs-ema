@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-22",
+  "language": "spanish",
+  "number": 22,
+  "level": "intermediate",
+  "title": "Viajes y Transporte",
+  "description": "Reserva viajes, navega por aeropuertos y estaciones, y afronta situaciones de viaje con confianza.",
+  "estimatedMinutes": 14,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-22-act-1",
+      "type": "flashcards",
+      "title": "Vocabulario de viajes",
+      "items": [
+        { "id": "f1", "front": "reservar un billete / boleto", "back": "to book a ticket", "example": "Reservé el vuelo con tres meses de antelación." },
+        { "id": "f2", "front": "billete de ida / de ida y vuelta", "back": "one-way / round-trip ticket", "example": "Un billete de ida y vuelta suele ser más barato." },
+        { "id": "f3", "front": "salida / llegada", "back": "departure / arrival", "example": "La salida es a las 08:00 y la llegada a las 11:30." },
+        { "id": "f4", "front": "andén / puerta de embarque / terminal", "back": "platform / gate / terminal", "example": "Tu vuelo sale por la puerta 22 en la terminal B." },
+        { "id": "f5", "front": "perder el autobús / tren / vuelo", "back": "to miss the bus / train / flight", "example": "Perdimos el vuelo por el atasco de tráfico." },
+        { "id": "f6", "front": "hacer el check-in / embarcar", "back": "to check in / to board", "example": "Haz el check-in en línea al menos 24 horas antes de embarcar." },
+        { "id": "f7", "front": "aduana / control de pasaportes", "back": "customs / passport control", "example": "Esperamos 45 minutos en el control de pasaportes." },
+        { "id": "f8", "front": "vuelo directo / con escala / escala", "back": "direct flight / connecting flight / layover", "example": "No hay vuelos directos — tendrás una escala de dos horas en Madrid." },
+        { "id": "f9", "front": "retraso / a tiempo / cancelado", "back": "delay / on time / cancelled", "example": "El vuelo lleva dos horas de retraso por el mal tiempo." }
+      ]
+    },
+    {
+      "id": "es-22-act-2",
+      "type": "multiple_choice",
+      "title": "En el aeropuerto y la estación",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Quiero un billete ___ a Barcelona, por favor. Regreso el domingo.",
+          "options": ["de ida", "de ida y vuelta", "directo", "sencillo"],
+          "correctIndex": 1,
+          "explanation": "Como regresas el domingo, necesitas un billete de ida Y vuelta."
+        },
+        {
+          "id": "mc2",
+          "prompt": "¡Date prisa! Si no corremos, vamos a ___ el último tren.",
+          "options": ["perder", "olvidar", "dejar", "fallar"],
+          "correctIndex": 0,
+          "explanation": "'Perder' es el verbo correcto para transporte: perder el bus, el tren, el vuelo."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Por favor, tenga el pasaporte listo para el ___ al entrar al país.",
+          "options": ["check-in", "embarque", "control de pasaportes", "aduana"],
+          "correctIndex": 2,
+          "explanation": "'Control de pasaportes' = revisión de documentos al cruzar la frontera."
+        },
+        {
+          "id": "mc4",
+          "prompt": "El vuelo IB472 ha sido ___. Todos los pasajeros serán reubicados.",
+          "options": ["retrasado", "tarde", "cancelado", "perdido"],
+          "correctIndex": 2,
+          "explanation": "'Cancelado' = el vuelo no va a operar. 'Retrasado' solo significa que llega tarde."
+        },
+        {
+          "id": "mc5",
+          "prompt": "El tren a Madrid sale del ___ número 7.",
+          "options": ["puerta", "terminal", "andén", "carril"],
+          "correctIndex": 2,
+          "explanation": "Los trenes salen desde 'andenes'. Las 'puertas de embarque' son de aeropuertos."
+        }
+      ]
+    },
+    {
+      "id": "es-22-act-3",
+      "type": "fill_blank",
+      "title": "Completa las frases de viaje",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "___ el vuelo porque el taxi llegó tarde. Tuve que reservar otro.",
+          "blanks": [{ "answer": "Perdí", "alternatives": ["perdí"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Tu vuelo ___ por la puerta 14B. Embarca 30 minutos antes.",
+          "blanks": [{ "answer": "sale", "alternatives": ["Sale", "parte", "Parte"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "¿Es este un vuelo ___ o tengo alguna escala?",
+          "blanks": [{ "answer": "directo", "alternatives": ["Directo"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Por favor, haga el ___ al menos dos horas antes del vuelo internacional.",
+          "blanks": [{ "answer": "check-in", "alternatives": ["Check-in", "checkin", "Checkin"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "El vuelo lleva una hora de ___ por un problema técnico.",
+          "blanks": [{ "answer": "retraso", "alternatives": ["Retraso"] }]
+        }
+      ]
+    }
+  ]
+}

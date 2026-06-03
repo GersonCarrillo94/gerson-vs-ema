@@ -1,0 +1,105 @@
+{
+  "id": "en-sublevel-14",
+  "language": "english",
+  "number": 14,
+  "level": "intermediate",
+  "title": "Present Continuous",
+  "description": "Describe what is happening right now using am/is/are + verb-ing.",
+  "estimatedMinutes": 14,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-14-act-1",
+      "type": "flashcards",
+      "title": "Present continuous structure",
+      "items": [
+        { "id": "f1", "front": "I am + verb-ing", "back": "Estoy + gerundio", "example": "I am studying right now." },
+        { "id": "f2", "front": "He / She / It is + verb-ing", "back": "Él/Ella está + gerundio", "example": "She is working from home today." },
+        { "id": "f3", "front": "We / You / They are + verb-ing", "back": "Estamos/Están + gerundio", "example": "They are watching a film." },
+        { "id": "f4", "front": "Negative: isn't / aren't", "back": "no está / no están", "example": "He isn't sleeping. They aren't eating." },
+        { "id": "f5", "front": "Question: Is she…? Are you…?", "back": "¿Está ella…? ¿Estás tú…?", "example": "Is she coming? Are you listening?" },
+        { "id": "f6", "front": "right now / at the moment", "back": "ahora mismo / en este momento", "example": "I can't talk — I'm driving right now." },
+        { "id": "f7", "front": "Spelling: drop -e before -ing", "back": "come → coming, make → making", "example": "She is making coffee." },
+        { "id": "f8", "front": "Spelling: double consonant", "back": "run → running, sit → sitting", "example": "He is running in the park." }
+      ]
+    },
+    {
+      "id": "en-14-act-2",
+      "type": "multiple_choice",
+      "title": "Present simple vs continuous",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "She ___ right now. Don't disturb her.",
+          "options": ["study", "studies", "is studying", "studied"],
+          "correctIndex": 2,
+          "explanation": "'Right now' signals the present continuous: is + studying."
+        },
+        {
+          "id": "mc2",
+          "prompt": "They ___ dinner at the moment.",
+          "options": ["have", "are having", "is having", "haves"],
+          "correctIndex": 1,
+          "explanation": "They → 'are having'. 'Have' becomes 'having' (drop nothing, just add -ing)."
+        },
+        {
+          "id": "mc3",
+          "prompt": "He ___ to music. He has headphones on.",
+          "options": ["listen", "listens", "is listening", "are listening"],
+          "correctIndex": 2,
+          "explanation": "He → 'is listening'. The headphones confirm it's happening now."
+        },
+        {
+          "id": "mc4",
+          "prompt": "I usually walk to work, but today I ___ the bus.",
+          "options": ["take", "am taking", "takes", "took"],
+          "correctIndex": 1,
+          "explanation": "'Today' + unusual situation → present continuous: am taking."
+        },
+        {
+          "id": "mc5",
+          "prompt": "___ you coming to the party tonight?",
+          "options": ["Do", "Does", "Is", "Are"],
+          "correctIndex": 3,
+          "explanation": "Question with 'you': Are you…? Are you coming?"
+        }
+      ]
+    },
+    {
+      "id": "en-14-act-3",
+      "type": "fill_blank",
+      "title": "Complete with the present continuous",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I ___ a book right now. (read)",
+          "blanks": [{ "answer": "am reading", "alternatives": ["'m reading"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "She ___ to the gym today. (not go)",
+          "blanks": [{ "answer": "isn't going", "alternatives": ["is not going", "isnt going"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "___ they ___ dinner? — Yes, they are. (have)",
+          "blanks": [
+            { "answer": "Are", "alternatives": ["are"] },
+            { "answer": "having", "alternatives": ["Having"] }
+          ]
+        },
+        {
+          "id": "fb4",
+          "sentence": "He ___ in the park. I can see him from here. (run)",
+          "blanks": [{ "answer": "is running", "alternatives": ["'s running"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "We ___ for the meeting to start. (wait)",
+          "blanks": [{ "answer": "are waiting", "alternatives": ["'re waiting"] }]
+        }
+      ]
+    }
+  ]
+}

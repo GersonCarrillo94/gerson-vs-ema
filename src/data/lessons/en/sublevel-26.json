@@ -1,0 +1,108 @@
+{
+  "id": "en-sublevel-26",
+  "language": "english",
+  "number": 26,
+  "level": "advanced",
+  "title": "Present Perfect vs Past Simple",
+  "description": "Master when to use 'have done' versus 'did' — one of the most important distinctions in English grammar.",
+  "estimatedMinutes": 16,
+  "pointsReward": 200,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-26-act-1",
+      "type": "flashcards",
+      "title": "Key contrasts and signal words",
+      "items": [
+        { "id": "f1", "front": "Present Perfect: unspecified time / relevance now", "back": "I've been to Rome. (at some point)", "example": "She has read that book. (no specific time = still relevant)" },
+        { "id": "f2", "front": "Past Simple: specific completed time", "back": "I went to Rome last year.", "example": "She read that book in 2020. (specific year = clearly finished)" },
+        { "id": "f3", "front": "PP signal words: ever, never, already, yet, just, recently", "back": "Have you ever…? I've just…", "example": "I've already seen this film. She hasn't called yet." },
+        { "id": "f4", "front": "PS signal words: yesterday, ago, last week/year, in 2020, when I was…", "back": "I went yesterday. Three years ago…", "example": "I started this job three years ago. We met when we were students." },
+        { "id": "f5", "front": "PP with 'for/since' (ongoing state)", "back": "I've worked here for five years.", "example": "She has lived in Madrid since 2018. (still lives there)" },
+        { "id": "f6", "front": "PS with 'for' (completed state)", "back": "I worked there for two years. (and left)", "example": "He lived in Japan for a year. (he no longer lives there)" },
+        { "id": "f7", "front": "Biographical questions: Have you ever vs Did you ever", "back": "Have you ever = at any point (still possible) / Did you ever = in a completed period", "example": "Have you ever visited Rome? / Did you ever visit Rome when you lived in Italy?" },
+        { "id": "f8", "front": "Today / this week / this year → PP in British English", "back": "I've been busy today. / She's called twice this morning.", "example": "I've eaten twice today. (the day isn't over yet)" }
+      ]
+    },
+    {
+      "id": "en-26-act-2",
+      "type": "multiple_choice",
+      "title": "Choose: present perfect or past simple",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "___ to Paris? — Yes, I went there in 2019. It was beautiful.",
+          "options": ["Did you ever go", "Have you been", "Did you go", "Have you gone"],
+          "correctIndex": 1,
+          "explanation": "The question asks about life experience → present perfect: Have you been. The answer gives a specific past time (2019) → past simple: I went."
+        },
+        {
+          "id": "mc2",
+          "prompt": "I ___ that film last Friday with my sister. We loved it.",
+          "options": ["have seen", "saw", "have saw", "seen"],
+          "correctIndex": 1,
+          "explanation": "'Last Friday' is a specific past time → past simple: I saw."
+        },
+        {
+          "id": "mc3",
+          "prompt": "She ___ for this company since January. She's doing really well.",
+          "options": ["worked", "was working", "has worked", "is working"],
+          "correctIndex": 2,
+          "explanation": "'Since January' with ongoing relevance → present perfect: has worked. She still works there."
+        },
+        {
+          "id": "mc4",
+          "prompt": "I've read three books this week — and it's only Wednesday!",
+          "options": ["Past simple is better here", "Correct — the week isn't over", "Should use 'I read'", "Should use 'I was reading'"],
+          "correctIndex": 1,
+          "explanation": "'This week' is an incomplete time period (still Wednesday) → present perfect is correct."
+        },
+        {
+          "id": "mc5",
+          "prompt": "He ___ in Berlin for two years and then moved to Vienna.",
+          "options": ["has lived", "lived", "has been living", "is living"],
+          "correctIndex": 1,
+          "explanation": "He no longer lives in Berlin (he moved away) → completed past state → past simple: lived."
+        }
+      ]
+    },
+    {
+      "id": "en-26-act-3",
+      "type": "fill_blank",
+      "title": "PP or PS? Complete the gaps",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "I ___ never ___ sushi, but I want to try it soon. (eat)",
+          "blanks": [
+            { "answer": "have", "alternatives": ["Have"] },
+            { "answer": "eaten", "alternatives": ["Eaten"] }
+          ]
+        },
+        {
+          "id": "fb2",
+          "sentence": "She ___ the project last Thursday. She was so relieved! (finish)",
+          "blanks": [{ "answer": "finished", "alternatives": ["Finished"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "I ___ Spanish since I was a teenager. I still practise every day. (study)",
+          "blanks": [{ "answer": "have studied", "alternatives": ["Have studied", "have been studying", "Have been studying"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "We ___ this city two years ago and immediately fell in love with it. (visit)",
+          "blanks": [{ "answer": "visited", "alternatives": ["Visited"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "___ you ___ the report yet? The boss needs it before the meeting. (send)",
+          "blanks": [
+            { "answer": "Have", "alternatives": ["have"] },
+            { "answer": "sent", "alternatives": ["Sent"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

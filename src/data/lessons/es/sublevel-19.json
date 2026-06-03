@@ -1,0 +1,106 @@
+{
+  "id": "es-sublevel-19",
+  "language": "spanish",
+  "number": 19,
+  "level": "intermediate",
+  "title": "Comparativos y Superlativos",
+  "description": "Compara personas, lugares y cosas con más/menos que, el más/menos, y formas irregulares como mejor/peor.",
+  "estimatedMinutes": 13,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-19-act-1",
+      "type": "flashcards",
+      "title": "Formas comparativas y superlativas",
+      "items": [
+        { "id": "f1", "front": "más + adj + que (comparativo superioridad)", "back": "more … than", "example": "Este libro es más interesante que el anterior." },
+        { "id": "f2", "front": "menos + adj + que (comparativo inferioridad)", "back": "less … than", "example": "El autobús es menos cómodo que el tren." },
+        { "id": "f3", "front": "el/la + más + adj (superlativo relativo)", "back": "the most …", "example": "Es el restaurante más famoso de la ciudad." },
+        { "id": "f4", "front": "el/la + menos + adj", "back": "the least …", "example": "Es la opción menos cara del menú." },
+        { "id": "f5", "front": "Irregulares: bueno → mejor / malo → peor", "back": "good → better/best / bad → worse/worst", "example": "Este café es mejor. Es el mejor de la ciudad." },
+        { "id": "f6", "front": "Irregulares: grande → mayor / pequeño → menor", "back": "bigger (in age/importance) / smaller/younger", "example": "Mi hermano mayor tiene 30 años." },
+        { "id": "f7", "front": "tan … como (igualdad)", "back": "as … as", "example": "Ella es tan inteligente como su hermana." },
+        { "id": "f8", "front": "mucho más / mucho menos + adj", "back": "much more / much less", "example": "Un coche es mucho más caro que una bicicleta." },
+        { "id": "f9", "front": "que (después de comparativo)", "back": "than", "example": "Los resultados fueron mejores que lo esperado." }
+      ]
+    },
+    {
+      "id": "es-19-act-2",
+      "type": "multiple_choice",
+      "title": "Elige la forma correcta",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Este edificio es ___ de la ciudad. (alto)",
+          "options": ["el más alto", "el mayor alto", "el mejor", "más alto"],
+          "correctIndex": 0,
+          "explanation": "Superlativo relativo: el más + adjetivo + de. 'El más alto de la ciudad.'"
+        },
+        {
+          "id": "mc2",
+          "prompt": "Ella habla español ___ que yo. No para de practicar. (rápido)",
+          "options": ["el más rápido", "más rápidamente", "más rápido", "tan rápido"],
+          "correctIndex": 2,
+          "explanation": "Comparativo de superioridad: más rápido que. Comparamos adjetivos/adverbios."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Miguel es ___ estudiante de la clase — siempre saca diez. (bueno)",
+          "options": ["el más bueno", "el mejor", "el buenísimo", "el más mejor"],
+          "correctIndex": 1,
+          "explanation": "bueno → mejor → el mejor. Es el superlativo irregular de 'bueno'."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Ese error es ___ que el anterior. Me preocupa más. (malo)",
+          "options": ["más malo", "peor", "el peor", "menos bueno"],
+          "correctIndex": 1,
+          "explanation": "malo → peor (comparativo irregular). No se usa 'más malo' en este contexto."
+        },
+        {
+          "id": "mc5",
+          "prompt": "¿Es ___ difícil ___ crees?",
+          "options": ["tan / que", "más / como", "tan / como", "tanto / que"],
+          "correctIndex": 2,
+          "explanation": "Igualdad: tan + adjetivo + como. ¿Es tan difícil como crees?"
+        }
+      ]
+    },
+    {
+      "id": "es-19-act-3",
+      "type": "fill_blank",
+      "title": "Completa con la forma correcta",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Este café es ___ que el de ayer. ¡Está buenísimo! (bueno)",
+          "blanks": [{ "answer": "mejor", "alternatives": ["Mejor"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Es el ___ hotel de la ciudad — cuesta una fortuna. (caro)",
+          "blanks": [{ "answer": "más caro", "alternatives": ["Más caro"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Ella habla español ___ bien ___ una nativa.",
+          "blanks": [
+            { "answer": "tan", "alternatives": ["Tan"] },
+            { "answer": "como", "alternatives": ["Como"] }
+          ]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Hoy es ___ que ayer. Necesito el abrigo. (frío)",
+          "blanks": [{ "answer": "más frío", "alternatives": ["Más frío"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Un coche es ___ más caro que una bicicleta.",
+          "blanks": [{ "answer": "mucho", "alternatives": ["Mucho"] }]
+        }
+      ]
+    }
+  ]
+}

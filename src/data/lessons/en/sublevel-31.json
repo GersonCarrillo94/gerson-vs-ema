@@ -1,0 +1,102 @@
+{
+  "id": "en-sublevel-31",
+  "language": "english",
+  "number": 31,
+  "level": "advanced",
+  "title": "Relative Clauses",
+  "description": "Add information to sentences using who, which, that, where, and whose to create natural, complex sentences.",
+  "estimatedMinutes": 16,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "en-31-act-1",
+      "type": "flashcards",
+      "title": "Relative pronouns and clause types",
+      "items": [
+        { "id": "f1", "front": "who (people)", "back": "refers to a person or people", "example": "The man who called me was very polite." },
+        { "id": "f2", "front": "which (things / animals)", "back": "refers to a thing or animal", "example": "The book which she recommended was excellent." },
+        { "id": "f3", "front": "that (people or things — defining only)", "back": "replaces who/which in defining clauses", "example": "The film that won the award was incredible." },
+        { "id": "f4", "front": "where (places)", "back": "refers to a location", "example": "The city where I grew up has changed a lot." },
+        { "id": "f5", "front": "whose (possession)", "back": "shows belonging — replaces his/her/their", "example": "The student whose essay won the prize is in my class." },
+        { "id": "f6", "front": "Defining relative clauses (no commas)", "back": "essential information — removes it and meaning changes", "example": "The woman who lives next door is a doctor. (defines which woman)" },
+        { "id": "f7", "front": "Non-defining relative clauses (with commas)", "back": "extra, non-essential information — can remove it", "example": "My sister, who lives in Madrid, is visiting next week." },
+        { "id": "f8", "front": "Omitting the relative pronoun (object clauses)", "back": "When the relative pronoun is the object, it can be dropped", "example": "The film (that) I watched last night was brilliant." }
+      ]
+    },
+    {
+      "id": "en-31-act-2",
+      "type": "multiple_choice",
+      "title": "Choose the correct relative pronoun",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "The professor ___ teaches this course has published three books.",
+          "options": ["which", "whose", "who", "where"],
+          "correctIndex": 2,
+          "explanation": "'Who' is used for people: 'the professor who teaches…'"
+        },
+        {
+          "id": "mc2",
+          "prompt": "The hotel ___ we stayed had an amazing rooftop pool.",
+          "options": ["who", "which", "where", "whose"],
+          "correctIndex": 2,
+          "explanation": "'Where' refers to places: 'the hotel where we stayed.' Alternative: the hotel that/which we stayed in."
+        },
+        {
+          "id": "mc3",
+          "prompt": "She has a colleague ___ sister is a famous actress.",
+          "options": ["who", "that", "whose", "which"],
+          "correctIndex": 2,
+          "explanation": "'Whose' shows possession: 'a colleague whose sister…' = the colleague's sister."
+        },
+        {
+          "id": "mc4",
+          "prompt": "The laptop ___ I ordered online arrived damaged.",
+          "options": ["who", "whose", "where", "that"],
+          "correctIndex": 3,
+          "explanation": "'That' or 'which' for things in defining clauses. 'That I ordered' defines which laptop."
+        },
+        {
+          "id": "mc5",
+          "prompt": "My brother, ___ works as an engineer, lives in Singapore.",
+          "options": ["that", "which", "who", "whose"],
+          "correctIndex": 2,
+          "explanation": "Non-defining clause with commas → only 'who' (not 'that') for people in non-defining clauses."
+        }
+      ]
+    },
+    {
+      "id": "en-31-act-3",
+      "type": "fill_blank",
+      "title": "Complete with the correct relative pronoun",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "The woman ___ helped me find my lost bag was very kind.",
+          "blanks": [{ "answer": "who", "alternatives": ["Who", "that", "That"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "The city ___ I was born has grown enormously in the last decade.",
+          "blanks": [{ "answer": "where", "alternatives": ["Where", "in which", "In which"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "He has a friend ___ father is the mayor of the town.",
+          "blanks": [{ "answer": "whose", "alternatives": ["Whose"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "The documentary ___ we watched last night was incredibly moving.",
+          "blanks": [{ "answer": "that", "alternatives": ["That", "which", "Which"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Her cat, ___ is 15 years old, is still very active and playful.",
+          "blanks": [{ "answer": "which", "alternatives": ["Which"] }]
+        }
+      ]
+    }
+  ]
+}

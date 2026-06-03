@@ -1,0 +1,105 @@
+{
+  "id": "es-sublevel-11",
+  "language": "spanish",
+  "number": 11,
+  "level": "basic",
+  "title": "Lugares en la Ciudad",
+  "description": "Nombra los lugares del barrio y pide indicaciones en español sencillo.",
+  "estimatedMinutes": 14,
+  "pointsReward": 100,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-11-act-1",
+      "type": "flashcards",
+      "title": "Lugares de la ciudad",
+      "items": [
+        { "id": "f1", "front": "el banco", "back": "bank", "example": "Necesito ir al banco." },
+        { "id": "f2", "front": "el hospital / la clínica", "back": "hospital / clinic", "example": "¡Llévala al hospital!" },
+        { "id": "f3", "front": "el colegio / la universidad", "back": "school / university", "example": "Estudio en la universidad." },
+        { "id": "f4", "front": "el supermercado / la tienda", "back": "supermarket / shop", "example": "Vamos al supermercado." },
+        { "id": "f5", "front": "el parque", "back": "park", "example": "Caminamos en el parque los domingos." },
+        { "id": "f6", "front": "el restaurante / el café", "back": "restaurant / café", "example": "Hay un café muy bueno cerca." },
+        { "id": "f7", "front": "¿Dónde está…?", "back": "Where is…?", "example": "¿Dónde está el banco más cercano?" },
+        { "id": "f8", "front": "Gira a la izquierda / derecha", "back": "Turn left / right", "example": "Gira a la derecha en el semáforo." },
+        { "id": "f9", "front": "Sigue recto / derecho", "back": "Go straight ahead", "example": "Sigue recto dos cuadras." }
+      ]
+    },
+    {
+      "id": "es-11-act-2",
+      "type": "multiple_choice",
+      "title": "¿A dónde vas?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Estás enfermo y necesitas un médico. ¿A dónde vas?",
+          "options": ["al banco", "al parque", "al hospital", "al colegio"],
+          "correctIndex": 2,
+          "explanation": "Cuando estás enfermo vas al hospital o a la clínica."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Necesitas sacar dinero. ¿A dónde vas?",
+          "options": ["al restaurante", "al parque", "al supermercado", "al banco"],
+          "correctIndex": 3,
+          "explanation": "Vas al banco para retirar o depositar dinero."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Alguien te pide indicaciones: 'Perdona, ¿___ está el supermercado?'",
+          "options": ["qué", "quién", "dónde", "cuándo"],
+          "correctIndex": 2,
+          "explanation": "'Dónde' se usa para preguntar por ubicaciones."
+        },
+        {
+          "id": "mc4",
+          "prompt": "'___ a la izquierda en la esquina y lo verás a tu derecha.'",
+          "options": ["Sigue", "Ve", "Gira", "Está"],
+          "correctIndex": 2,
+          "explanation": "'Gira a la izquierda' o 'gira a la derecha' son los comandos para indicar dirección."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Para ir al parque debes '___ recto ___'.",
+          "options": ["ir detrás", "seguir adelante", "girar izquierda", "estar cerca"],
+          "correctIndex": 1,
+          "explanation": "'Sigue recto' o 'sigue adelante' = go straight ahead. Sin girar."
+        }
+      ]
+    },
+    {
+      "id": "es-11-act-3",
+      "type": "fill_blank",
+      "title": "Pedir y dar indicaciones",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Perdona, ¿___ está el banco más cercano?",
+          "blanks": [{ "answer": "dónde", "alternatives": ["Dónde", "donde", "Donde"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Sigue ___ dos cuadras y luego gira a la derecha.",
+          "blanks": [{ "answer": "recto", "alternatives": ["Recto", "adelante", "Adelante"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Gira a la ___ en el semáforo.",
+          "blanks": [{ "answer": "izquierda", "alternatives": ["Izquierda", "derecha", "Derecha"] }],
+          "hint": "Una dirección."
+        },
+        {
+          "id": "fb4",
+          "sentence": "El ___ está cerca del colegio. Puedes ir caminando.",
+          "blanks": [{ "answer": "parque", "alternatives": ["Parque"] }],
+          "hint": "Un lugar al aire libre."
+        },
+        {
+          "id": "fb5",
+          "sentence": "Necesito comprar comida. Vamos al ___.",
+          "blanks": [{ "answer": "supermercado", "alternatives": ["Supermercado", "tienda", "Tienda"] }]
+        }
+      ]
+    }
+  ]
+}

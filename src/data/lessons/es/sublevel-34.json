@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-34",
+  "language": "spanish",
+  "number": 34,
+  "level": "advanced",
+  "title": "Registro Formal e Informal",
+  "description": "Adapta tu lenguaje al contexto — desde mensajes casuales hasta correos profesionales y escritura formal.",
+  "estimatedMinutes": 17,
+  "pointsReward": 225,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-34-act-1",
+      "type": "flashcards",
+      "title": "Registro formal e informal en español",
+      "items": [
+        { "id": "f1", "front": "Tú (informal) vs Usted (formal)", "back": "Informal: ¿Qué quieres? / Formal: ¿Qué desea usted?", "example": "Estimado señor, ¿en qué puedo ayudarle? vs ¿En qué te ayudo, Marcos?" },
+        { "id": "f2", "front": "Saludos y despedidas formales", "back": "Estimado/a + apellido / Atentamente / Un cordial saludo", "example": "Estimada señora López, … Atentamente, Ana García." },
+        { "id": "f3", "front": "Saludos y despedidas informales", "back": "Hola / ¡Ey! / Un abrazo / Hasta luego / Cuídate", "example": "Hola, Marcos, … ¡Un abrazo, Ana!" },
+        { "id": "f4", "front": "Conectores formales", "back": "No obstante / Sin embargo / Por consiguiente / Asimismo / En consecuencia", "example": "El proyecto avanza según lo previsto. No obstante, surgen algunos contratiempos." },
+        { "id": "f5", "front": "Conectores informales", "back": "Pero / O sea / Además / Así que / Total que", "example": "El proyecto va bien, pero hay algunos problemas. Así que ojo." },
+        { "id": "f6", "front": "Vocabulario: informal → formal", "back": "pedir → solicitar / decir → informar / necesitar → precisar / ver → percibir", "example": "Le informo de que su solicitud ha sido recibida. vs Te digo que ya recibimos tu petición." },
+        { "id": "f7", "front": "Atenuación en lenguaje formal", "back": "Le agradecería que… / Sería conveniente… / Se recomienda…", "example": "Le agradecería que revisara el contrato antes de firmarlo." },
+        { "id": "f8", "front": "La voz pasiva es más frecuente en escritura formal", "back": "Activa: Revisamos tu solicitud. / Pasiva: Su solicitud ha sido revisada.", "example": "El informe fue entregado en el plazo establecido. (formal)" }
+      ]
+    },
+    {
+      "id": "es-34-act-2",
+      "type": "multiple_choice",
+      "title": "¿Formal o informal?",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Estás escribiendo un correo formal a un cliente. ¿Qué saludo usas?",
+          "options": ["¡Hola, Marcos!", "¡Ey!", "Estimado señor Rodríguez:", "¿Qué tal?"],
+          "correctIndex": 2,
+          "explanation": "'Estimado/a + apellido' es el saludo correcto en un correo de negocios formal."
+        },
+        {
+          "id": "mc2",
+          "prompt": "¿Qué oración es más apropiada en un informe formal?",
+          "options": ["O sea, el producto tiene un defecto.", "El producto presenta una deficiencia técnica.", "El producto está mal.", "Total, que el producto falla."],
+          "correctIndex": 1,
+          "explanation": "Vocabulario culto (presenta, deficiencia técnica) y tono neutro → registro formal."
+        },
+        {
+          "id": "mc3",
+          "prompt": "¿Cuál es el equivalente formal de 'Necesitamos retrasar la reunión'?",
+          "options": ["Hay que retrasar la reunión", "La reunión debe ser aplazada", "Tenemos que posponer la reunión, ¿no?", "¿Podemos retrasarla?"],
+          "correctIndex": 1,
+          "explanation": "Voz pasiva + verbo culto (aplazada) → la opción más formal."
+        },
+        {
+          "id": "mc4",
+          "prompt": "¿Qué conector es más apropiado en un ensayo formal?",
+          "options": ["O sea", "Total que", "No obstante", "Pero vamos"],
+          "correctIndex": 2,
+          "explanation": "'No obstante' es un conector adversativo formal. 'O sea' y 'total que' son coloquiales."
+        },
+        {
+          "id": "mc5",
+          "prompt": "¿Qué despedida es correcta cuando conoces el nombre del destinatario?",
+          "options": ["Atentamente", "Un abrazo", "Hasta luego", "Saludos y besos"],
+          "correctIndex": 0,
+          "explanation": "'Atentamente' o 'Un cordial saludo' son las despedidas estándar en correos formales."
+        }
+      ]
+    },
+    {
+      "id": "es-34-act-3",
+      "type": "fill_blank",
+      "title": "Reescribe en lenguaje formal",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Informal: 'Necesitamos más info.' → Formal: 'Precisamos ___ información adicional.'",
+          "blanks": [{ "answer": "de", "alternatives": ["De"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Informal: 'Nos enteramos de un problema.' → Formal: 'Se ha ___ la existencia de una incidencia.'",
+          "blanks": [{ "answer": "detectado", "alternatives": ["Detectado", "constatado", "Constatado"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Informal: 'Retrasamos el plazo.' → Formal: 'El plazo ha sido ___.'",
+          "blanks": [{ "answer": "aplazado", "alternatives": ["Aplazado", "pospuesto", "Pospuesto"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Despedida formal en un correo: '___, Ana García.'",
+          "blanks": [{ "answer": "Atentamente", "alternatives": ["Un cordial saludo"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Informal: 'Además, estamos dentro del presupuesto.' → Formal: '___, nos mantenemos dentro del presupuesto.'",
+          "blanks": [{ "answer": "Asimismo", "alternatives": ["No obstante", "Por otra parte", "Además"] }]
+        }
+      ]
+    }
+  ]
+}

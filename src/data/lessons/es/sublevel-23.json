@@ -1,0 +1,103 @@
+{
+  "id": "es-sublevel-23",
+  "language": "spanish",
+  "number": 23,
+  "level": "intermediate",
+  "title": "El Trabajo y las Profesiones",
+  "description": "Habla de carreras, situaciones laborales y vida profesional con vocabulario práctico en español.",
+  "estimatedMinutes": 13,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-23-act-1",
+      "type": "flashcards",
+      "title": "Vocabulario del mundo laboral",
+      "items": [
+        { "id": "f1", "front": "postularse / solicitar un empleo", "back": "to apply for a job", "example": "Me postulé para cinco puestos y me llamaron a dos entrevistas." },
+        { "id": "f2", "front": "tiempo completo / parcial / autónomo (freelance)", "back": "full-time / part-time / freelance", "example": "Ella trabaja a tiempo parcial para poder estudiar por las mañanas." },
+        { "id": "f3", "front": "salario / sueldo / bono", "back": "salary / wage / bonus", "example": "Recibió un bono del 10% al final del año por sus resultados." },
+        { "id": "f4", "front": "ascender / recibir un ascenso", "back": "to be promoted / to get a promotion", "example": "Trabajó duro y la ascendieron a jefa de equipo." },
+        { "id": "f5", "front": "dimitir / renunciar / jubilarse", "back": "to resign / to quit / to retire", "example": "Renunció porque encontró una oportunidad mejor." },
+        { "id": "f6", "front": "trabajo remoto / desde casa", "back": "remote work / work from home", "example": "Desde la pandemia, muchas empresas permiten trabajar desde casa." },
+        { "id": "f7", "front": "compañero/a / jefe/a / empleado/a", "back": "colleague / boss / employee", "example": "Mis compañeros son muy buenos — adoro a mi equipo." },
+        { "id": "f8", "front": "fecha límite / reunión / presentación", "back": "deadline / meeting / presentation", "example": "La fecha límite es el viernes — hay que terminar para el jueves." },
+        { "id": "f9", "front": "hacer horas extra / tomarse un descanso", "back": "to work overtime / to take time off", "example": "Se tomó dos semanas de vacaciones después del gran proyecto." }
+      ]
+    },
+    {
+      "id": "es-23-act-2",
+      "type": "multiple_choice",
+      "title": "En el trabajo",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Envió su CV y carta de presentación para ___ al puesto de marketing.",
+          "options": ["dimitir", "postularse", "ascender", "jubilarse"],
+          "correctIndex": 1,
+          "explanation": "'Postularse' o 'solicitar' = to apply for a job. Enviar el CV es parte del proceso."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Lleva 30 años en la empresa. Planea ___ la próxima primavera.",
+          "options": ["dimitir", "renunciar", "jubilarse", "despedirse"],
+          "correctIndex": 2,
+          "explanation": "'Jubilarse' = retirarse del trabajo tras una larga carrera profesional."
+        },
+        {
+          "id": "mc3",
+          "prompt": "Necesitamos entregar el informe para el viernes — esa es la ___ límite.",
+          "options": ["cita", "reunión", "fecha", "agenda"],
+          "correctIndex": 2,
+          "explanation": "'Fecha límite' = deadline. Es el plazo máximo para entregar algo."
+        },
+        {
+          "id": "mc4",
+          "prompt": "Después de tres años de excelente trabajo, la ___ a gerente sénior.",
+          "options": ["contrataron", "ascendieron", "ficharon", "emplearon"],
+          "correctIndex": 1,
+          "explanation": "'Ascender' = to promote. La ascendieron = she was promoted to a higher position."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Trabaja de forma ___. Nunca va a la oficina — siempre desde casa.",
+          "options": ["parcial", "extra", "remota", "autónoma"],
+          "correctIndex": 2,
+          "explanation": "'Remota' = remotely. Trabaja de forma remota = works remotely."
+        }
+      ]
+    },
+    {
+      "id": "es-23-act-3",
+      "type": "fill_blank",
+      "title": "Completa las frases laborales",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Voy a ___ para ese puesto — el salario parece excelente.",
+          "blanks": [{ "answer": "postularme", "alternatives": ["solicitar", "Postularme", "Solicitar"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "La fecha ___ es el viernes al mediodía — ¡corremos contra el tiempo!",
+          "blanks": [{ "answer": "límite", "alternatives": ["Límite"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "Recibió un excelente ___ a fin de año por superar todos sus objetivos.",
+          "blanks": [{ "answer": "bono", "alternatives": ["Bono", "bonus", "Bonus"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Decidió ___ porque le ofrecieron un puesto mejor en otra empresa.",
+          "blanks": [{ "answer": "renunciar", "alternatives": ["Renunciar", "dimitir", "Dimitir"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Tuve que hacer ___ la semana pasada — estuve en la oficina hasta las diez.",
+          "blanks": [{ "answer": "horas extra", "alternatives": ["Horas extra", "horas extras", "Horas extras"] }]
+        }
+      ]
+    }
+  ]
+}

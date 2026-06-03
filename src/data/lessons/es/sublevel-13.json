@@ -1,0 +1,102 @@
+{
+  "id": "es-sublevel-13",
+  "language": "spanish",
+  "number": 13,
+  "level": "intermediate",
+  "title": "El Presente de Indicativo",
+  "description": "Conjuga verbos regulares en presente para hablar de hábitos y rutinas en español.",
+  "estimatedMinutes": 15,
+  "pointsReward": 150,
+  "passingScore": 70,
+  "activities": [
+    {
+      "id": "es-13-act-1",
+      "type": "flashcards",
+      "title": "Conjugación del presente",
+      "items": [
+        { "id": "f1", "front": "Verbos -AR: hablar", "back": "hablo, hablas, habla, hablamos, habláis, hablan", "example": "Yo hablo español. Ella habla inglés." },
+        { "id": "f2", "front": "Verbos -ER: comer", "back": "como, comes, come, comemos, coméis, comen", "example": "Nosotros comemos a las dos." },
+        { "id": "f3", "front": "Verbos -IR: vivir", "back": "vivo, vives, vive, vivimos, vivís, viven", "example": "Ellos viven en Bogotá." },
+        { "id": "f4", "front": "Negación: no + verbo", "back": "No hablo chino. No come carne.", "example": "Yo no hablo francés. Él no come pescado." },
+        { "id": "f5", "front": "Pregunta: ¿verbo + sujeto?", "back": "¿Hablas inglés? ¿Come ella aquí?", "example": "¿Hablas español? ¿Vive ella cerca?" },
+        { "id": "f6", "front": "siempre / normalmente / a menudo", "back": "always / usually / often", "example": "Siempre desayuno. Normalmente camino." },
+        { "id": "f7", "front": "a veces / casi nunca / nunca", "back": "sometimes / rarely / never", "example": "A veces veo películas. Nunca tomo café." },
+        { "id": "f8", "front": "todos los días / una vez a la semana", "back": "every day / once a week", "example": "Estudio español todos los días." }
+      ]
+    },
+    {
+      "id": "es-13-act-2",
+      "type": "multiple_choice",
+      "title": "Elige la forma correcta",
+      "items": [
+        {
+          "id": "mc1",
+          "prompt": "Ella ___ español todas las mañanas. (estudiar)",
+          "options": ["estudia", "estudio", "estudian", "estudiamos"],
+          "correctIndex": 0,
+          "explanation": "Ella → 3ª persona singular de -AR: estudia. Ella estudia español."
+        },
+        {
+          "id": "mc2",
+          "prompt": "Nosotros no ___ café. (beber)",
+          "options": ["bebemos", "beben", "bebe", "bebo"],
+          "correctIndex": 0,
+          "explanation": "Nosotros + verbo -ER → bebemos. No bebemos café."
+        },
+        {
+          "id": "mc3",
+          "prompt": "¿___ Ema cerca de aquí? (vivir)",
+          "options": ["Viven", "Vivo", "Vive", "Vivimos"],
+          "correctIndex": 2,
+          "explanation": "Ema (ella) → 3ª persona singular de -IR: vive. ¿Vive Ema cerca?"
+        },
+        {
+          "id": "mc4",
+          "prompt": "Ellos ___ al trabajo a las ocho. (llegar)",
+          "options": ["llego", "llegan", "llegamos", "llegas"],
+          "correctIndex": 1,
+          "explanation": "Ellos → 3ª persona plural de -AR: llegan. Ellos llegan a las ocho."
+        },
+        {
+          "id": "mc5",
+          "prompt": "Ella ___ trabaja de noche — es su horario normal.",
+          "options": ["nunca", "a veces", "siempre", "casi nunca"],
+          "correctIndex": 2,
+          "explanation": "'Siempre' = always. Va antes del verbo: Ella siempre trabaja de noche."
+        }
+      ]
+    },
+    {
+      "id": "es-13-act-3",
+      "type": "fill_blank",
+      "title": "Conjuga en presente",
+      "items": [
+        {
+          "id": "fb1",
+          "sentence": "Gerson ___ inglés todos los días. (estudiar)",
+          "blanks": [{ "answer": "estudia", "alternatives": ["Estudia"] }]
+        },
+        {
+          "id": "fb2",
+          "sentence": "Nosotros no ___ al gimnasio los fines de semana. (ir)",
+          "blanks": [{ "answer": "vamos", "alternatives": ["Vamos"] }]
+        },
+        {
+          "id": "fb3",
+          "sentence": "¿___ Ema español? — Sí, habla muy bien.",
+          "blanks": [{ "answer": "Habla", "alternatives": ["habla"] }]
+        },
+        {
+          "id": "fb4",
+          "sentence": "Él no ___ desayuno. Nunca tiene hambre por la mañana. (comer)",
+          "blanks": [{ "answer": "come", "alternatives": ["Come"] }]
+        },
+        {
+          "id": "fb5",
+          "sentence": "Yo ___ reviso el teléfono — es lo primero que hago.",
+          "blanks": [{ "answer": "siempre", "alternatives": ["Siempre"] }]
+        }
+      ]
+    }
+  ]
+}
