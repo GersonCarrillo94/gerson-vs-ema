@@ -6,6 +6,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { Button } from '@/components/ui/Button';
 import { useUnreadCount, useRealtimeUnreadBadge } from '@/features/chat/hooks/useMessages';
 import { usePendingMeetingsCount, useRealtimePendingBadge } from '@/features/meetings/hooks/useMeetings';
+import { usePushNotifications } from '@/features/notifications/hooks/usePushNotifications';
 
 interface NavItem {
   to: string;
@@ -108,6 +109,7 @@ export function AppLayout({ children }: AppLayoutProps) {
   const { isDark, toggleTheme } = useTheme();
   useRealtimeUnreadBadge();
   useRealtimePendingBadge();
+  usePushNotifications(user?.id);
 
   const [mobileOpen, setMobileOpen] = useState(false);
 

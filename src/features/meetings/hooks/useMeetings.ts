@@ -91,16 +91,26 @@ export function useCreateInstantMeeting() {
 
 export function useConfirmMeeting() {
   const qc = useQueryClient();
+  const userId = useAuthStore((s) => s.user?.id);
   return useMutation({
-    mutationFn: (meetingId: string) => confirmMeeting(meetingId),
+    mutationFn: (meetingId: string) => {
+      const meetings = qc.getQueryData<import('../types').Meeting[]>(['meetings', userId]);
+      const meeting = meetings?.find((m) => m.id === meetingId);
+      return confirmMeeting(meetingId, meeting?.created_by);
+    },
     onSuccess: () => { void qc.invalidateQueries({ queryKey: ['meetings'] }); },
   });
 }
 
 export function useRejectMeeting() {
   const qc = useQueryClient();
+  const userId = useAuthStore((s) => s.user?.id);
   return useMutation({
-    mutationFn: (meetingId: string) => rejectMeeting(meetingId),
+    mutationFn: (meetingId: string) => {
+      const meetings = qc.getQueryData<import('../types').Meeting[]>(['meetings', userId]);
+      const meeting = meetings?.find((m) => m.id === meetingId);
+      return rejectMeeting(meetingId, meeting?.created_by);
+    },
     onSuccess: () => { void qc.invalidateQueries({ queryKey: ['meetings'] }); },
   });
 }

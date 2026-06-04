@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase';
 import { createDailyRoom } from '@/lib/daily';
+import { sendPushNotification } from '@/features/notifications/services/pushService';
 import type { Database } from '@/types/database';
 import type { Meeting, MeetingTimer, CreateMeetingInput, CreateInstantMeetingInput, AttendanceInput } from '../types';
 
@@ -92,6 +93,14 @@ export async function createMeeting(
     }
   }
 
+  // Notificar al partner que tiene una nueva reunión pendiente
+  void sendPushNotification(
+    partnerId,
+    'Nueva reunión agendada',
+    `Tienes una solicitud de reunión pendiente`,
+    '/meetings',
+  );
+
   return meeting;
 }
 
@@ -138,22 +147,30 @@ export async function createInstantMeeting(
   return meeting;
 }
 
-export async function confirmMeeting(meetingId: string): Promise<void> {
+export async function confirmMeeting(meetingId: string, creatorId?: string): Promise<void> {
   const { error } = await supabase
     .from('meetings')
     .update({ status: 'confirmed', confirmed_at: new Date().toISOString() })
     .eq('id', meetingId);
 
   if (error) throw error;
+
+  if (creatorId) {
+    void sendPushNotification(creatorId, 'Reunión confirmada', 'Tu compañero aceptó la reunión', '/meetings');
+  }
 }
 
-export async function rejectMeeting(meetingId: string): Promise<void> {
+export async function rejectMeeting(meetingId: string, creatorId?: string): Promise<void> {
   const { error } = await supabase
     .from('meetings')
     .update({ status: 'rejected' })
     .eq('id', meetingId);
 
   if (error) throw error;
+
+  if (creatorId) {
+    void sendPushNotification(creatorId, 'Reunión rechazada', 'Tu compañero no pudo aceptar la reunión', '/meetings');
+  }
 }
 
 export async function cancelMeeting(meetingId: string): Promise<void> {
