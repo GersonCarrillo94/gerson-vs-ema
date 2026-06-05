@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { Meeting } from '../types';
 import { STATUS_CONFIG } from '../types';
 
@@ -7,8 +8,6 @@ interface Props {
   onDaySelect: (date: string) => void;
   selectedDate: string | null;
 }
-
-const WEEKDAYS = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
 
 function getDaysInMonth(year: number, month: number): number {
   return new Date(year, month + 1, 0).getDate();
@@ -27,7 +26,19 @@ function meetingsOnDay(meetings: Meeting[], dateStr: string): Meeting[] {
   return meetings.filter((m) => m.scheduled_at.startsWith(dateStr));
 }
 
+// Generate Mon–Sun weekday abbreviations for the given locale
+function getWeekdays(locale: string): string[] {
+  // Jan 6–12 2025 is Mon–Sun
+  return Array.from({ length: 7 }, (_, i) => {
+    const date = new Date(2025, 0, 6 + i);
+    return new Intl.DateTimeFormat(locale, { weekday: 'short' }).format(date);
+  });
+}
+
 export function MeetingCalendar({ meetings, onDaySelect, selectedDate }: Props) {
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language.startsWith('en') ? 'en-US' : 'es-ES';
+
   const today = new Date();
   const [viewYear, setViewYear] = useState(today.getFullYear());
   const [viewMonth, setViewMonth] = useState(today.getMonth());
@@ -35,6 +46,8 @@ export function MeetingCalendar({ meetings, onDaySelect, selectedDate }: Props) 
   const totalDays = getDaysInMonth(viewYear, viewMonth);
   const firstOffset = getFirstDayOfWeek(viewYear, viewMonth);
   const todayStr = toDateStr(today.getFullYear(), today.getMonth(), today.getDate());
+
+  const weekdays = getWeekdays(locale);
 
   function prevMonth() {
     if (viewMonth === 0) { setViewYear(y => y - 1); setViewMonth(11); }
@@ -46,22 +59,18 @@ export function MeetingCalendar({ meetings, onDaySelect, selectedDate }: Props) 
     else setViewMonth(m => m + 1);
   }
 
-  const monthName = new Date(viewYear, viewMonth, 1).toLocaleDateString('es-ES', {
+  const monthName = new Date(viewYear, viewMonth, 1).toLocaleDateString(locale, {
     month: 'long',
     year: 'numeric',
   });
 
-  // Celda vacía + días del mes
   const cells = Array.from({ length: firstOffset + totalDays }, (_, i) =>
     i < firstOffset ? null : i - firstOffset + 1,
   );
-
-  // Rellenar hasta múltiplo de 7
   while (cells.length % 7 !== 0) cells.push(null);
 
   return (
     <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden">
-      {/* Header del mes */}
       <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
         <button
           onClick={prevMonth}
@@ -79,16 +88,14 @@ export function MeetingCalendar({ meetings, onDaySelect, selectedDate }: Props) 
       </div>
 
       <div className="px-3 pb-3">
-        {/* Nombres de días */}
         <div className="grid grid-cols-7 mb-1">
-          {WEEKDAYS.map((d) => (
+          {weekdays.map((d) => (
             <div key={d} className="py-2 text-center text-[11px] font-medium text-gray-400">
               {d}
             </div>
           ))}
         </div>
 
-        {/* Celdas de días */}
         <div className="grid grid-cols-7 gap-y-1">
           {cells.map((day, idx) => {
             if (!day) return <div key={`empty-${String(idx)}`} />;
@@ -109,7 +116,6 @@ export function MeetingCalendar({ meetings, onDaySelect, selectedDate }: Props) 
               >
                 <span className="text-sm leading-none">{day}</span>
 
-                {/* Dots de reuniones */}
                 {dayMeetings.length > 0 && (
                   <div className="flex gap-0.5 mt-1 flex-wrap justify-center">
                     {dayMeetings.slice(0, 3).map((m) => (
@@ -134,12 +140,11 @@ export function MeetingCalendar({ meetings, onDaySelect, selectedDate }: Props) 
         </div>
       </div>
 
-      {/* Leyenda */}
       <div className="flex flex-wrap gap-3 px-5 py-3 border-t border-gray-50 bg-gray-50">
         {(['pending', 'confirmed', 'completed', 'missed'] as const).map((s) => (
           <div key={s} className="flex items-center gap-1.5">
             <span className={`w-2 h-2 rounded-full ${STATUS_CONFIG[s].dot}`} />
-            <span className="text-xs text-gray-500">{STATUS_CONFIG[s].label}</span>
+            <span className="text-xs text-gray-500">{t(`meetings.status.${s}`)}</span>
           </div>
         ))}
       </div>

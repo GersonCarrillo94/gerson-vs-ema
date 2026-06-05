@@ -11,7 +11,10 @@
     "continue": "Continue",
     "saving": "Saving...",
     "sending": "Sending...",
-    "pts": "pts"
+    "pts": "pts",
+    "day": "day",
+    "days": "days",
+    "noStreak": "No streak yet"
   },
   "nav": {
     "dashboard": "Dashboard",

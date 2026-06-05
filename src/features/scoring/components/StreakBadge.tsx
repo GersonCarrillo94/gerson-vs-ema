@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 interface Props {
   streak: number;
   size?: 'sm' | 'md' | 'lg';
 }
 
 export function StreakBadge({ streak, size = 'md' }: Props) {
+  const { t } = useTranslation();
+
   const sizeClass = {
     sm: 'text-xs px-2 py-0.5',
     md: 'text-sm px-3 py-1',
@@ -13,7 +17,7 @@ export function StreakBadge({ streak, size = 'md' }: Props) {
   if (streak === 0) {
     return (
       <span className={`inline-flex items-center gap-1 rounded-full bg-gray-100 text-gray-500 font-medium ${sizeClass}`}>
-        💤 Sin racha
+        💤 {t('common.noStreak')}
       </span>
     );
   }
@@ -26,7 +30,7 @@ export function StreakBadge({ streak, size = 'md' }: Props) {
 
   return (
     <span className={`inline-flex items-center gap-1 rounded-full font-bold ${colorClass} ${sizeClass}`}>
-      🔥 {streak} {streak === 1 ? 'día' : 'días'}
+      🔥 {streak} {t(streak === 1 ? 'common.day' : 'common.days')}
     </span>
   );
 }
