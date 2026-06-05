@@ -105,10 +105,11 @@ export async function loginUser(payload: LoginPayload): Promise<UserProfile> {
   return profile;
 }
 
-/** Actualiza el perfil del usuario actual (display_name y/o phone). */
+/** Actualiza el perfil del usuario actual (display_name, phone y/o preferred_language). */
 export async function updateProfile(fields: {
   display_name?: string;
   phone?: string | null;
+  preferred_language?: 'es' | 'en';
 }): Promise<UserProfile> {
   const {
     data: { user },

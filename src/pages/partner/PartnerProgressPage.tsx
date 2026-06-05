@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/features/auth/hooks/useAuth';
 import { useMyScore, usePartnerScore } from '@/features/scoring/hooks/useScore';
 import { LevelBadge } from '@/features/scoring/components/LevelBadge';
@@ -29,6 +30,7 @@ function StatRow({ label, mine, theirs }: { label: string; mine: React.ReactNode
 }
 
 export function PartnerProgressPage() {
+  const { t } = useTranslation();
   const { user } = useAuth();
   const { data: myScore, isLoading: myLoading } = useMyScore();
   const { data: partner, isLoading: partnerLoading } = usePartnerScore();
@@ -46,11 +48,11 @@ export function PartnerProgressPage() {
   if (!user?.partner_id) {
     return (
       <div className="animate-fade-in">
-        <h1 className="text-2xl font-bold text-gray-900">Mi compañero/a</h1>
+        <h1 className="text-2xl font-bold text-gray-900">{t('partner.title')}</h1>
         <div className="mt-8 rounded-2xl border-2 border-dashed border-gray-200 p-12 text-center text-gray-400">
           <p className="text-3xl mb-3">👥</p>
-          <p className="font-medium">Sin compañero vinculado</p>
-          <p className="text-sm mt-1">Pide al equipo que vincule tu cuenta.</p>
+          <p className="font-medium">{t('partner.noPartner')}</p>
+          <p className="text-sm mt-1">{t('partner.noPartnerNote')}</p>
         </div>
       </div>
     );
@@ -58,16 +60,14 @@ export function PartnerProgressPage() {
 
   if (!partner || !myScore) return null;
 
-  const myLangLabel = user.language_learning === 'english' ? 'Inglés' : 'Español';
-  const partnerLangLabel = partner.languageLearning === 'english' ? 'Inglés' : 'Español';
+  const myLangLabel = user.language_learning === 'english' ? t('partner.languageEnglish') : t('partner.languageSpanish');
+  const partnerLangLabel = partner.languageLearning === 'english' ? t('partner.languageEnglish') : t('partner.languageSpanish');
 
   return (
     <div className="animate-fade-in space-y-6 max-w-lg">
-      <h1 className="text-2xl font-bold text-gray-900">Mi compañero/a</h1>
+      <h1 className="text-2xl font-bold text-gray-900">{t('partner.title')}</h1>
 
-      {/* ── Cabeceras de comparación ── */}
       <div className="grid grid-cols-3 gap-2">
-        {/* Yo */}
         <div className="flex flex-col items-center gap-2 p-4 rounded-2xl border border-gray-200 bg-white">
           <InitialsAvatar name={user.display_name} size="lg" />
           <p className="font-bold text-gray-900 text-sm text-center">{user.display_name}</p>
@@ -76,12 +76,10 @@ export function PartnerProgressPage() {
           </span>
         </div>
 
-        {/* VS */}
         <div className="flex items-center justify-center">
           <span className="text-2xl font-black text-gray-200">VS</span>
         </div>
 
-        {/* Compañero */}
         <div className="flex flex-col items-center gap-2 p-4 rounded-2xl border border-brand-ema bg-amber-50">
           <InitialsAvatar name={partner.displayName} size="lg" />
           <p className="font-bold text-gray-900 text-sm text-center">{partner.displayName}</p>
@@ -91,33 +89,32 @@ export function PartnerProgressPage() {
         </div>
       </div>
 
-      {/* ── Tabla de comparación ── */}
       <div className="rounded-2xl border border-gray-200 bg-white px-4 py-2 divide-y divide-gray-100">
         <StatRow
-          label="Nivel"
+          label={t('partner.stats.level')}
           mine={<LevelBadge level={myScore.level} size="sm" />}
           theirs={<LevelBadge level={partner.level} size="sm" />}
         />
         <StatRow
-          label="Racha"
+          label={t('partner.stats.streak')}
           mine={<StreakBadge streak={myScore.currentStreak} size="sm" />}
           theirs={<StreakBadge streak={partner.currentStreak} size="sm" />}
         />
         <StatRow
-          label="Puntaje"
+          label={t('partner.stats.score')}
           mine={
             <span className="text-sm font-bold text-gray-900">
-              {myScore.totalScore} <span className="font-normal text-gray-400">pts</span>
+              {myScore.totalScore} <span className="font-normal text-gray-400">{t('common.pts')}</span>
             </span>
           }
           theirs={
             <span className="text-sm font-bold text-gray-900">
-              {partner.totalScore} <span className="font-normal text-gray-400">pts</span>
+              {partner.totalScore} <span className="font-normal text-gray-400">{t('common.pts')}</span>
             </span>
           }
         />
         <StatRow
-          label="Subniveles"
+          label={t('partner.stats.sublevels')}
           mine={
             <span className="text-sm font-bold text-gray-900">
               {myScore.completedSublevels}
@@ -132,27 +129,26 @@ export function PartnerProgressPage() {
           }
         />
         <StatRow
-          label="Récord racha"
+          label={t('partner.stats.record')}
           mine={
             <span className="text-sm font-semibold text-gray-700">
-              {myScore.longestStreak} días
+              {t('partner.stats.days', { count: myScore.longestStreak })}
             </span>
           }
           theirs={
             <span className="text-sm font-semibold text-gray-700">
-              {partner.longestStreak} días
+              {t('partner.stats.days', { count: partner.longestStreak })}
             </span>
           }
         />
       </div>
 
-      {/* ── Quién va ganando ── */}
       {(() => {
         const diff = myScore.totalScore - partner.totalScore;
         if (diff === 0) {
           return (
             <div className="rounded-2xl bg-gray-50 border border-gray-200 p-4 text-center">
-              <p className="text-lg font-bold text-gray-700">🤝 ¡Están empatados!</p>
+              <p className="text-lg font-bold text-gray-700">{t('partner.tied')}</p>
             </div>
           );
         }
@@ -161,8 +157,8 @@ export function PartnerProgressPage() {
           <div className={`rounded-2xl border p-4 text-center ${ahead ? 'bg-blue-50 border-blue-200' : 'bg-amber-50 border-amber-200'}`}>
             <p className={`text-lg font-bold ${ahead ? 'text-blue-700' : 'text-amber-700'}`}>
               {ahead
-                ? `¡Vas ganando por ${String(diff)} pts! 🏆`
-                : `${partner.displayName} va ganando por ${String(Math.abs(diff))} pts 🔥`}
+                ? t('partner.winning', { count: diff })
+                : t('partner.losing', { name: partner.displayName, count: Math.abs(diff) })}
             </p>
           </div>
         );

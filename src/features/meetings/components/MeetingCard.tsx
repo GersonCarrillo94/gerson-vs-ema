@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import type { Meeting } from '../types';
 import { STATUS_CONFIG, TOPIC_CATEGORIES } from '../types';
 
@@ -9,14 +10,6 @@ interface Props {
   onCancel?: (id: string) => void;
   onMarkAttendance?: (meeting: Meeting) => void;
   onJoinVideo?: (meeting: Meeting) => void;
-}
-
-function formatDateTime(iso: string): { date: string; time: string } {
-  const d = new Date(iso);
-  return {
-    date: d.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }),
-    time: d.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }),
-  };
 }
 
 function isPast(iso: string): boolean {
@@ -55,7 +48,13 @@ export function MeetingCard({
   onMarkAttendance,
   onJoinVideo,
 }: Props) {
-  const { date, time } = formatDateTime(meeting.scheduled_at);
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language.startsWith('en') ? 'en-US' : 'es-ES';
+
+  const d = new Date(meeting.scheduled_at);
+  const dateStr = d.toLocaleDateString(locale, { weekday: 'long', day: 'numeric', month: 'long' });
+  const timeStr = d.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' });
+
   const isCreator = meeting.created_by === currentUserId;
   const isPartner = meeting.partner_id === currentUserId;
   const statusCfg = STATUS_CONFIG[meeting.status];
@@ -72,7 +71,6 @@ export function MeetingCard({
         pendingAttendance ? 'ring-2 ring-amber-400 ring-offset-1' : '',
       ].join(' ')}
     >
-      {/* Banda de color superior */}
       <div
         className={[
           'h-1',
@@ -84,11 +82,10 @@ export function MeetingCard({
       />
 
       <div className="p-4">
-        {/* Cabecera: estado + acción de video */}
         <div className="flex items-start justify-between gap-3 mb-3">
           <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border ${statusCfg.color}`}>
             <span className={`w-1.5 h-1.5 rounded-full ${statusCfg.dot}`} />
-            {statusCfg.label}
+            {t(`meetings.status.${meeting.status}`)}
           </span>
 
           {joinable && onJoinVideo && (
@@ -96,62 +93,56 @@ export function MeetingCard({
               onClick={() => { onJoinVideo(meeting); }}
               className="flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-indigo-700 transition-colors"
             >
-              📹 Unirse ahora
+              {t('meetings.card.joinNow')}
             </button>
           )}
         </div>
 
-        {/* Fecha y hora */}
         <div className="flex items-center gap-2 text-gray-700 mb-1">
           <span className="text-lg">{instant ? '⚡' : '📅'}</span>
           <div>
             <p className="text-sm font-semibold capitalize">
-              {instant ? 'Reunión instantánea' : date}
+              {instant ? t('meetings.card.instantMeeting') : dateStr}
             </p>
-            <p className="text-xs text-gray-500">{time} · {meeting.duration_estimate_minutes} min est.</p>
+            <p className="text-xs text-gray-500">
+              {t('meetings.card.estDuration', { time: timeStr, duration: meeting.duration_estimate_minutes })}
+            </p>
           </div>
         </div>
 
-        {/* Tema */}
         <div className="flex items-center gap-2 text-gray-600 mt-2 mb-2">
           <span>{topicCfg.emoji}</span>
           <div>
-            <span className="text-xs text-gray-400 mr-1">{topicCfg.label}</span>
+            <span className="text-xs text-gray-400 mr-1">{t(`meetings.categories.${meeting.topic_category}`)}</span>
             <span className="text-sm font-medium text-gray-800">{meeting.topic}</span>
           </div>
         </div>
 
-        {/* Lugar o videollamada */}
         <div className="flex items-center gap-2 text-gray-500 text-sm">
           {meeting.is_video_call ? (
-            <><span>🎥</span><span>Videollamada Daily.co</span></>
+            <><span>🎥</span><span>{t('meetings.card.videocall')}</span></>
           ) : meeting.location ? (
             <><span>📍</span><span>{meeting.location}</span></>
           ) : null}
         </div>
 
-        {/* Notas */}
         {meeting.notes && (
           <p className="mt-2 text-xs text-gray-400 italic line-clamp-2">{meeting.notes}</p>
         )}
 
-        {/* Resultado si completada */}
         {meeting.status === 'completed' && meeting.actual_duration_minutes && (
           <div className="mt-2 rounded-lg bg-blue-50 px-3 py-1.5 text-xs text-blue-700">
-            ✅ Completada — {meeting.actual_duration_minutes} min reales
+            {t('meetings.card.completedInfo', { duration: meeting.actual_duration_minutes })}
           </div>
         )}
 
-        {/* Aviso de asistencia pendiente */}
         {pendingAttendance && (
           <div className="mt-2 rounded-lg bg-amber-50 px-3 py-1.5 text-xs text-amber-700">
-            ⏳ ¿Asististe a esta reunión? Márcala ahora.
+            {t('meetings.card.pendingAttendance')}
           </div>
         )}
 
-        {/* Acciones */}
         <div className="mt-3 flex flex-wrap gap-2">
-          {/* Partner puede confirmar/rechazar reuniones pending */}
           {meeting.status === 'pending' && isPartner && (
             <>
               {onConfirm && (
@@ -159,7 +150,7 @@ export function MeetingCard({
                   onClick={() => { onConfirm(meeting.id); }}
                   className="flex-1 rounded-lg bg-green-600 px-3 py-2 text-xs font-semibold text-white hover:bg-green-700 transition-colors"
                 >
-                  ✓ Confirmar
+                  {t('meetings.card.confirm')}
                 </button>
               )}
               {onReject && (
@@ -167,29 +158,27 @@ export function MeetingCard({
                   onClick={() => { onReject(meeting.id); }}
                   className="flex-1 rounded-lg bg-white border border-red-300 px-3 py-2 text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors"
                 >
-                  ✕ Rechazar
+                  {t('meetings.card.reject')}
                 </button>
               )}
             </>
           )}
 
-          {/* Creador puede cancelar reuniones pending o confirmed */}
           {['pending', 'confirmed'].includes(meeting.status) && isCreator && !past && onCancel && (
             <button
               onClick={() => { onCancel(meeting.id); }}
               className="rounded-lg bg-white border border-gray-200 px-3 py-2 text-xs text-gray-500 hover:bg-gray-50 transition-colors"
             >
-              Cancelar
+              {t('meetings.card.cancel')}
             </button>
           )}
 
-          {/* Marcar asistencia */}
           {pendingAttendance && onMarkAttendance && (
             <button
               onClick={() => { onMarkAttendance(meeting); }}
               className="flex-1 rounded-lg bg-amber-500 px-3 py-2 text-xs font-semibold text-white hover:bg-amber-600 transition-colors"
             >
-              Marcar asistencia
+              {t('meetings.card.markAttendance')}
             </button>
           )}
         </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { Meeting } from '../types';
 import { TOPIC_CATEGORIES } from '../types';
 
@@ -10,15 +11,18 @@ interface Props {
 }
 
 export function AttendanceModal({ meeting, iAmCreator: _iAmCreator, onSubmit, onClose }: Props) {
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language.startsWith('en') ? 'en-US' : 'es-ES';
+
   const [attended, setAttended] = useState<boolean | null>(null);
   const [actualDuration, setActualDuration] = useState<number>(meeting.duration_estimate_minutes);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const topicCfg = TOPIC_CATEGORIES[meeting.topic_category];
-  const scheduledDate = new Date(meeting.scheduled_at).toLocaleDateString('es-ES', {
+  const scheduledDate = new Date(meeting.scheduled_at).toLocaleDateString(locale, {
     weekday: 'long', day: 'numeric', month: 'long',
   });
-  const scheduledTime = new Date(meeting.scheduled_at).toLocaleTimeString('es-ES', {
+  const scheduledTime = new Date(meeting.scheduled_at).toLocaleTimeString(locale, {
     hour: '2-digit', minute: '2-digit',
   });
 
@@ -40,12 +44,11 @@ export function AttendanceModal({ meeting, iAmCreator: _iAmCreator, onSubmit, on
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
 
       <div className="relative w-full max-w-sm bg-white rounded-2xl shadow-2xl p-6">
-        {/* Header */}
         <div className="text-center mb-5">
           <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center mx-auto mb-3">
             <span className="text-2xl">📋</span>
           </div>
-          <h2 className="text-lg font-bold text-gray-900">¿Asististe a la reunión?</h2>
+          <h2 className="text-lg font-bold text-gray-900">{t('meetings.attendanceModal.title')}</h2>
           <p className="text-sm text-gray-500 mt-1 capitalize">
             {scheduledDate} · {scheduledTime}
           </p>
@@ -54,7 +57,6 @@ export function AttendanceModal({ meeting, iAmCreator: _iAmCreator, onSubmit, on
           </p>
         </div>
 
-        {/* Botones Sí / No */}
         <div className="grid grid-cols-2 gap-3 mb-4">
           <button
             onClick={() => { setAttended(true); }}
@@ -65,7 +67,7 @@ export function AttendanceModal({ meeting, iAmCreator: _iAmCreator, onSubmit, on
                 : 'bg-white border-gray-200 text-gray-600 hover:border-green-300',
             ].join(' ')}
           >
-            ✅ Sí asistí
+            {t('meetings.attendanceModal.attended')}
           </button>
           <button
             onClick={() => { setAttended(false); }}
@@ -76,15 +78,14 @@ export function AttendanceModal({ meeting, iAmCreator: _iAmCreator, onSubmit, on
                 : 'bg-white border-gray-200 text-gray-600 hover:border-red-300',
             ].join(' ')}
           >
-            ❌ No asistí
+            {t('meetings.attendanceModal.notAttended')}
           </button>
         </div>
 
-        {/* Duración real (solo si asistió y fue videollamada) */}
         {attended && meeting.is_video_call && (
           <div className="mb-4">
             <label className="block text-xs font-medium text-gray-600 mb-1">
-              Duración real de la videollamada
+              {t('meetings.attendanceModal.realDuration')}
             </label>
             <div className="flex items-center gap-2">
               <input
@@ -95,35 +96,35 @@ export function AttendanceModal({ meeting, iAmCreator: _iAmCreator, onSubmit, on
                 onChange={(e) => { setActualDuration(Number(e.target.value)); }}
                 className="w-20 rounded-xl border border-gray-200 px-3 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
-              <span className="text-sm text-gray-500">minutos</span>
-              <span className="text-xs text-gray-400">(estimado: {meeting.duration_estimate_minutes} min)</span>
+              <span className="text-sm text-gray-500">{t('meetings.attendanceModal.minutes')}</span>
+              <span className="text-xs text-gray-400">
+                {t('meetings.attendanceModal.estimated', { count: meeting.duration_estimate_minutes })}
+              </span>
             </div>
           </div>
         )}
 
-        {/* Info de puntos */}
         {attended !== null && (
           <div className={`rounded-xl px-3 py-2.5 mb-4 text-xs ${attended ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
             {attended
-              ? '🎉 Ganarás +100 puntos por asistir.'
-              : '⚠️ Perderás 300 puntos por no asistir.'}
+              ? t('meetings.attendanceModal.pointsGained')
+              : t('meetings.attendanceModal.pointsLost')}
           </div>
         )}
 
-        {/* Acciones */}
         <div className="flex gap-3">
           <button
             onClick={onClose}
             className="flex-1 py-3 rounded-xl border border-gray-200 text-sm text-gray-500 hover:bg-gray-50 transition-colors"
           >
-            Después
+            {t('meetings.attendanceModal.later')}
           </button>
           <button
             onClick={() => { void handleSubmit(); }}
             disabled={attended === null || isSubmitting}
             className="flex-1 py-3 rounded-xl bg-indigo-600 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >
-            {isSubmitting ? 'Guardando...' : 'Confirmar'}
+            {isSubmitting ? t('meetings.attendanceModal.saving') : t('meetings.attendanceModal.confirm')}
           </button>
         </div>
       </div>

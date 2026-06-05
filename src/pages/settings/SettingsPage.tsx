@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/features/auth/hooks/useAuth';
 import { useAuthStore } from '@/store/authStore';
 import { updateProfile, fetchCurrentProfile } from '@/features/auth/services/authService';
@@ -10,32 +11,22 @@ import {
   type SearchMethod,
 } from '@/features/auth/services/partnerService';
 import { Button } from '@/components/ui/Button';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { Spinner } from '@/components/ui/Spinner';
-
-const METHODS: { key: SearchMethod; label: string; placeholder: string; icon: string }[] = [
-  { key: 'name',  label: 'Nombre',   placeholder: 'Buscar por nombre de usuario…',    icon: '👤' },
-  { key: 'email', label: 'Email',    placeholder: 'Buscar por correo electrónico…',   icon: '✉️' },
-  { key: 'phone', label: 'Teléfono', placeholder: 'Número exacto (ej. +521234567890)', icon: '📱' },
-];
-
-const LANG_LABEL: Record<string, string> = {
-  english: 'Aprende inglés 🇺🇸',
-  spanish: 'Aprende español 🇲🇽',
-};
 
 // ── Sección: perfil ──────────────────────────────────────────────────────────
 
 function ProfileSection() {
+  const { t } = useTranslation();
   const { user } = useAuth();
   const { setUser } = useAuthStore();
 
-  const [name, setName]           = useState(user?.display_name ?? '');
-  const [phone, setPhone]         = useState(user?.phone ?? '');
-  const [saving, setSaving]       = useState(false);
-  const [saved, setSaved]         = useState(false);
-  const [error, setError]         = useState<string | null>(null);
+  const [name, setName]     = useState(user?.display_name ?? '');
+  const [phone, setPhone]   = useState(user?.phone ?? '');
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved]   = useState(false);
+  const [error, setError]   = useState<string | null>(null);
 
-  // Sync cuando el user del store cambia (ej. después de vincular)
   useEffect(() => {
     setName(user?.display_name ?? '');
     setPhone(user?.phone ?? '');
@@ -53,7 +44,7 @@ function ProfileSection() {
       setSaved(true);
       setTimeout(() => { setSaved(false); }, 2500);
     } catch {
-      setError('No se pudo guardar. Intenta de nuevo.');
+      setError(t('settings.profile.saveError'));
     } finally {
       setSaving(false);
     }
@@ -65,12 +56,18 @@ function ProfileSection() {
 
   return (
     <section className="rounded-2xl border border-gray-200 bg-white p-6 space-y-4">
-      <h2 className="text-base font-semibold text-gray-900">Perfil</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-base font-semibold text-gray-900">{t('settings.profile.title')}</h2>
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-gray-400">{t('settings.language')}</span>
+          <LanguageSwitcher />
+        </div>
+      </div>
 
       <div className="space-y-3">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Nombre de usuario
+            {t('settings.profile.username')}
           </label>
           <input
             type="text"
@@ -82,16 +79,16 @@ function ProfileSection() {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Número de teléfono
+            {t('settings.profile.phone')}
             <span className="ml-1.5 text-xs font-normal text-gray-400">
-              (para que tu compañero te encuentre)
+              {t('settings.profile.phoneHint')}
             </span>
           </label>
           <input
             type="tel"
             value={phone}
             onChange={(e) => { setPhone(e.target.value); }}
-            placeholder="+521234567890"
+            placeholder={t('settings.profile.phonePlaceholder')}
             className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:border-brand-gerson focus:outline-none focus:ring-2 focus:ring-brand-gerson/30 transition-colors"
           />
         </div>
@@ -108,7 +105,7 @@ function ProfileSection() {
           disabled={!dirty || saving}
           size="sm"
         >
-          {saved ? '✓ Guardado' : 'Guardar cambios'}
+          {saved ? t('settings.profile.saved') : t('settings.profile.saveButton')}
         </Button>
         <p className="text-xs text-gray-400">{user?.email}</p>
       </div>
@@ -119,9 +116,21 @@ function ProfileSection() {
 // ── Sección: buscar compañero ────────────────────────────────────────────────
 
 function PartnerSearchSection() {
+  const { t } = useTranslation();
   const { user } = useAuth();
   const { setUser } = useAuthStore();
   const navigate = useNavigate();
+
+  const METHODS: { key: SearchMethod; label: string; placeholder: string; icon: string }[] = [
+    { key: 'name',  label: t('auth.linkPartner.methodName'),  placeholder: t('auth.linkPartner.searchByName'),  icon: '👤' },
+    { key: 'email', label: t('auth.linkPartner.methodEmail'), placeholder: t('auth.linkPartner.searchByEmail'), icon: '✉️' },
+    { key: 'phone', label: t('auth.linkPartner.methodPhone'), placeholder: t('auth.linkPartner.searchByPhone'), icon: '📱' },
+  ];
+
+  const LANG_LABEL: Record<string, string> = {
+    english: t('auth.linkPartner.learnEnglishLabel'),
+    spanish: t('auth.linkPartner.learnSpanishLabel'),
+  };
 
   const [method, setMethod]           = useState<SearchMethod>('name');
   const [query, setQuery]             = useState('');
@@ -154,7 +163,7 @@ function PartnerSearchSection() {
       setResults(found);
       setSearched(true);
     } catch {
-      setSearchError('No se pudo realizar la búsqueda. Intenta de nuevo.');
+      setSearchError(t('settings.partner.searchError'));
       setSearched(true);
     } finally {
       setIsSearching(false);
@@ -170,23 +179,19 @@ function PartnerSearchSection() {
       setUser(updated);
       navigate('/', { replace: true });
     } catch (err) {
-      setLinkError(err instanceof Error ? err.message : 'Error al vincular. Intenta de nuevo.');
+      setLinkError(err instanceof Error ? err.message : t('settings.partner.linkError'));
       setLinkingId(null);
     }
   }
 
-  // Si ya tiene compañero mostrar info del vínculo
   if (user?.partner_id) {
     return (
       <section className="rounded-2xl border border-gray-200 bg-white p-6 space-y-3">
-        <h2 className="text-base font-semibold text-gray-900">Compañero vinculado</h2>
-        <p className="text-sm text-gray-500">
-          Ya tienes un compañero asignado. Si necesitas cambiar, contacta al administrador por
-          ahora (función de desvincular próximamente).
-        </p>
+        <h2 className="text-base font-semibold text-gray-900">{t('settings.partner.partnerLinked')}</h2>
+        <p className="text-sm text-gray-500">{t('settings.partner.partnerLinkedDesc')}</p>
         <div className="inline-flex items-center gap-2 rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-2">
           <span className="text-emerald-600">✓</span>
-          <span className="text-sm font-medium text-emerald-800">Vínculo activo</span>
+          <span className="text-sm font-medium text-emerald-800">{t('settings.partner.activeLink')}</span>
         </div>
       </section>
     );
@@ -195,13 +200,10 @@ function PartnerSearchSection() {
   return (
     <section className="rounded-2xl border border-gray-200 bg-white p-6 space-y-4">
       <div>
-        <h2 className="text-base font-semibold text-gray-900">Buscar compañero</h2>
-        <p className="mt-0.5 text-sm text-gray-500">
-          Encuentra a la persona con quien quieres aprender y compite.
-        </p>
+        <h2 className="text-base font-semibold text-gray-900">{t('settings.partner.title')}</h2>
+        <p className="mt-0.5 text-sm text-gray-500">{t('settings.partner.subtitle')}</p>
       </div>
 
-      {/* Tabs de método */}
       <div className="flex gap-2">
         {METHODS.map((m) => (
           <button
@@ -220,7 +222,6 @@ function PartnerSearchSection() {
         ))}
       </div>
 
-      {/* Input + botón */}
       <div className="flex gap-2">
         <input
           ref={inputRef}
@@ -238,11 +239,10 @@ function PartnerSearchSection() {
           size="sm"
           className="shrink-0"
         >
-          Buscar
+          {t('common.search')}
         </Button>
       </div>
 
-      {/* Resultados */}
       <div className="space-y-3">
         {isSearching && (
           <div className="flex justify-center py-6">
@@ -256,8 +256,8 @@ function PartnerSearchSection() {
 
         {!isSearching && searched && results.length === 0 && !searchError && (
           <div className="rounded-lg bg-gray-50 px-4 py-5 text-center">
-            <p className="text-sm text-gray-500">No se encontraron usuarios disponibles.</p>
-            <p className="mt-1 text-xs text-gray-400">Solo aparecen usuarios sin compañero asignado.</p>
+            <p className="text-sm text-gray-500">{t('settings.partner.noResults')}</p>
+            <p className="mt-1 text-xs text-gray-400">{t('settings.partner.noResultsNote')}</p>
           </div>
         )}
 
@@ -280,7 +280,7 @@ function PartnerSearchSection() {
               disabled={linkingId !== null}
               className="shrink-0"
             >
-              Vincular
+              {t('settings.partner.linkButton')}
             </Button>
           </div>
         ))}
@@ -296,11 +296,13 @@ function PartnerSearchSection() {
 // ── Página principal ─────────────────────────────────────────────────────────
 
 export function SettingsPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="animate-fade-in space-y-6 max-w-2xl">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Configuración</h1>
-        <p className="mt-1 text-sm text-gray-500">Administra tu perfil y tu vínculo de compañero.</p>
+        <h1 className="text-2xl font-bold text-gray-900">{t('settings.title')}</h1>
+        <p className="mt-1 text-sm text-gray-500">{t('settings.subtitle')}</p>
       </div>
 
       <ProfileSection />

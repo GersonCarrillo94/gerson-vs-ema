@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { EmojiPicker } from './EmojiPicker';
 import { StickerPicker } from './StickerPicker';
 import {
@@ -19,6 +20,7 @@ interface Props {
 type ActivePicker = 'emoji' | 'sticker' | null;
 
 export function MessageInput({ onSend, onTyping, partnerId, myId, disabled }: Props) {
+  const { t } = useTranslation();
   const [text, setText] = useState('');
   const [activePicker, setActivePicker] = useState<ActivePicker>(null);
   const [isUploading, setIsUploading] = useState(false);
@@ -56,7 +58,7 @@ export function MessageInput({ onSend, onTyping, partnerId, myId, disabled }: Pr
         fileSize: file.size,
       });
     } catch (err) {
-      setUploadError(err instanceof Error ? err.message : 'Error al subir el archivo.');
+      setUploadError(err instanceof Error ? err.message : t('chat.uploadError'));
     } finally {
       setIsUploading(false);
       // Reset file input so the same file can be selected again
@@ -122,7 +124,7 @@ export function MessageInput({ onSend, onTyping, partnerId, myId, disabled }: Pr
           value={text}
           onChange={(e) => { setText(e.target.value); onTyping(); }}
           onKeyDown={handleKeyDown}
-          placeholder="Escribe un mensaje..."
+          placeholder={t('chat.messagePlaceholder')}
           rows={1}
           disabled={disabled || isUploading}
           className="flex-1 resize-none rounded-2xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-gerson/40 focus:border-brand-gerson transition-colors min-h-[40px] max-h-[120px] overflow-y-auto"

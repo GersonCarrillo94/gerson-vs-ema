@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/features/auth/hooks/useAuth';
 import { useMyScore, usePartnerScore } from '@/features/scoring/hooks/useScore';
 import { LevelBadge } from '@/features/scoring/components/LevelBadge';
@@ -6,25 +7,17 @@ import { StreakBadge } from '@/features/scoring/components/StreakBadge';
 import { pointsToNextLevel } from '@/features/scoring/utils/levelConfig';
 import { Spinner } from '@/components/ui/Spinner';
 
-const EVENT_LABELS: Record<string, { icon: string; label: string }> = {
-  sublevel_complete:              { icon: '✅', label: 'Completaste una lección' },
-  streak_bonus_weekly:            { icon: '🔥', label: 'Bonus de racha semanal' },
-  no_study_penalty:               { icon: '📉', label: 'Sin estudiar hoy' },
-  consecutive_no_study_penalty:   { icon: '❌', label: '3 días sin estudiar' },
-  level_complete:                 { icon: '🏅', label: 'Nivel completado' },
-  first_try_bonus:                { icon: '⚡', label: 'Bonus primer intento' },
-  meeting_attended:               { icon: '🤝', label: 'Reunión completada' },
-  meeting_missed:                 { icon: '❌', label: 'Reunión perdida' },
-  meeting_compensation:           { icon: '💰', label: 'Compensación de reunión' },
+const EVENT_ICONS: Record<string, string> = {
+  sublevel_complete:              '✅',
+  streak_bonus_weekly:            '🔥',
+  no_study_penalty:               '📉',
+  consecutive_no_study_penalty:   '❌',
+  level_complete:                 '🏅',
+  first_try_bonus:                '⚡',
+  meeting_attended:               '🤝',
+  meeting_missed:                 '❌',
+  meeting_compensation:           '💰',
 };
-
-function formatTimeAgo(dateStr: string): string {
-  const seconds = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
-  if (seconds < 60) return 'hace unos segundos';
-  if (seconds < 3600) return `hace ${String(Math.floor(seconds / 60))} min`;
-  if (seconds < 86400) return `hace ${String(Math.floor(seconds / 3600))} h`;
-  return `hace ${String(Math.floor(seconds / 86400))} días`;
-}
 
 function InitialsAvatar({ name, size = 'md' }: { name: string; size?: 'sm' | 'md' | 'lg' }) {
   const initials = name
@@ -41,11 +34,24 @@ function InitialsAvatar({ name, size = 'md' }: { name: string; size?: 'sm' | 'md
 }
 
 export function DashboardPage() {
+  const { t, i18n } = useTranslation();
   const { user } = useAuth();
   const { data: score, isLoading } = useMyScore();
   const { data: partner } = usePartnerScore();
 
-  const langLabel = user?.language_learning === 'english' ? 'inglés' : 'español';
+  const langLabel = user?.language_learning === 'english'
+    ? t('dashboard.learningEnglish')
+    : t('dashboard.learningSpanish');
+
+  function formatTimeAgo(dateStr: string): string {
+    const seconds = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
+    if (seconds < 60) return t('dashboard.timeAgo.justNow');
+    if (seconds < 3600) return t('dashboard.timeAgo.minutes', { count: Math.floor(seconds / 60) });
+    if (seconds < 86400) return t('dashboard.timeAgo.hours', { count: Math.floor(seconds / 3600) });
+    return t('dashboard.timeAgo.days', { count: Math.floor(seconds / 86400) });
+  }
+
+  void i18n; // used implicitly via t()
 
   if (isLoading) {
     return (
@@ -61,22 +67,19 @@ export function DashboardPage() {
 
   return (
     <div className="animate-fade-in space-y-6 max-w-2xl">
-      {/* ── Cabecera ── */}
       <div className="flex items-center gap-3">
         <InitialsAvatar name={user?.display_name ?? '?'} size="lg" />
         <div>
           <h1 className="text-2xl font-bold text-gray-900">
-            ¡Hola, {user?.display_name ?? 'viajero'}!
+            {t('dashboard.greeting', { name: user?.display_name ?? 'viajero' })}
           </h1>
           <p className="text-sm text-gray-500">
-            Aprendiendo <span className="font-semibold text-brand-gerson">{langLabel}</span>
+            {t('dashboard.learning')} <span className="font-semibold text-brand-gerson">{langLabel}</span>
           </p>
         </div>
       </div>
 
-      {/* ── Stats row ── */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {/* Nivel */}
         <div className="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col gap-3">
           <LevelBadge level={score.level} size="sm" />
           <div>
@@ -87,26 +90,24 @@ export function DashboardPage() {
               />
             </div>
             <p className="mt-1 text-xs text-gray-500">
-              {score.totalScore} pts
+              {score.totalScore} {t('common.pts')}
               {ptsToNext !== null
-                ? ` · faltan ${String(ptsToNext)} para Nv. ${String(score.level.number + 1)}`
-                : ' · ¡nivel máximo!'}
+                ? ` · ${t('dashboard.toNext', { count: ptsToNext, level: score.level.number + 1 })}`
+                : ` · ${t('dashboard.levelMax')}`}
             </p>
           </div>
         </div>
 
-        {/* Racha */}
         <div className="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col gap-2">
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">Racha</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">{t('dashboard.streak')}</p>
           <StreakBadge streak={score.currentStreak} size="lg" />
           <p className="text-xs text-gray-400">
-            Récord: {score.longestStreak} {score.longestStreak === 1 ? 'día' : 'días'}
+            {t('dashboard.record')} {score.longestStreak} {score.longestStreak === 1 ? t('dashboard.day') : t('dashboard.days')}
           </p>
         </div>
 
-        {/* Subniveles */}
         <div className="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col gap-2">
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">Progreso</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">{t('dashboard.progress')}</p>
           <p className="text-3xl font-bold text-gray-900">
             {score.completedSublevels}
             <span className="text-base font-normal text-gray-400">/36</span>
@@ -117,11 +118,10 @@ export function DashboardPage() {
               style={{ width: `${String((score.completedSublevels / 36) * 100)}%` }}
             />
           </div>
-          <p className="text-xs text-gray-400">subniveles completados</p>
+          <p className="text-xs text-gray-400">{t('dashboard.sublevelsCompleted')}</p>
         </div>
       </div>
 
-      {/* ── CTA: continuar aprendiendo ── */}
       {score.nextActiveSublevel !== null && (
         <Link
           to={`/lessons/${String(score.nextActiveSublevel)}`}
@@ -129,10 +129,10 @@ export function DashboardPage() {
         >
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest opacity-80">
-              Continuar aprendiendo
+              {t('dashboard.continueLearning')}
             </p>
             <p className="text-base font-bold mt-0.5">
-              Subnivel {score.nextActiveSublevel}
+              {t('dashboard.sublevel', { number: score.nextActiveSublevel })}
             </p>
           </div>
           <span className="text-2xl">→</span>
@@ -142,19 +142,19 @@ export function DashboardPage() {
       {score.nextActiveSublevel === null && score.completedSublevels === 36 && (
         <div className="rounded-2xl border-2 border-amber-300 bg-amber-50 p-5 text-center">
           <p className="text-2xl">🏆</p>
-          <p className="font-bold text-amber-800 mt-1">¡Completaste los 36 subniveles!</p>
+          <p className="font-bold text-amber-800 mt-1">{t('dashboard.allCompleted')}</p>
         </div>
       )}
 
-      {/* ── Actividad reciente ── */}
       {score.recentEvents.length > 0 && (
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-3">
-            Actividad reciente
+            {t('dashboard.recentActivity')}
           </h2>
           <div className="space-y-2">
             {score.recentEvents.map((event) => {
-              const meta = EVENT_LABELS[event.event_type] ?? { icon: '📋', label: event.event_type };
+              const icon = EVENT_ICONS[event.event_type] ?? '📋';
+              const label = t(`dashboard.events.${event.event_type}`, { defaultValue: event.event_type });
               const isPositive = event.points > 0;
               return (
                 <div
@@ -162,14 +162,14 @@ export function DashboardPage() {
                   className="flex items-center justify-between rounded-xl border border-gray-100 bg-white px-4 py-3"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-xl">{meta.icon}</span>
+                    <span className="text-xl">{icon}</span>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">{meta.label}</p>
+                      <p className="text-sm font-medium text-gray-900">{label}</p>
                       <p className="text-xs text-gray-400">{formatTimeAgo(event.created_at)}</p>
                     </div>
                   </div>
                   <span className={`text-sm font-bold ${isPositive ? 'text-emerald-600' : 'text-red-500'}`}>
-                    {isPositive ? '+' : ''}{event.points} pts
+                    {isPositive ? '+' : ''}{event.points} {t('common.pts')}
                   </span>
                 </div>
               );
@@ -178,11 +178,10 @@ export function DashboardPage() {
         </div>
       )}
 
-      {/* ── Resumen del compañero ── */}
       {partner && (
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-3">
-            Tu compañero/a
+            {t('dashboard.partnerSection')}
           </h2>
           <Link
             to="/partner"
@@ -197,7 +196,7 @@ export function DashboardPage() {
               </div>
             </div>
             <div className="text-right shrink-0">
-              <p className="text-sm font-bold text-gray-900">{partner.totalScore} pts</p>
+              <p className="text-sm font-bold text-gray-900">{partner.totalScore} {t('common.pts')}</p>
               <p className="text-xs text-gray-400">{partner.completedSublevels}/36</p>
             </div>
             <span className="text-gray-300 text-lg">›</span>
@@ -207,7 +206,7 @@ export function DashboardPage() {
 
       {!partner && user?.partner_id == null && (
         <div className="rounded-2xl border-2 border-dashed border-gray-200 p-6 text-center text-gray-400">
-          <p className="text-sm">Sin compañero vinculado aún.</p>
+          <p className="text-sm">{t('dashboard.noPartner')}</p>
         </div>
       )}
     </div>

@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/features/auth/hooks/useAuth';
 import { useMessages } from '@/features/chat/hooks/useMessages';
 import { useTypingIndicator } from '@/features/chat/hooks/useTypingIndicator';
@@ -8,6 +9,7 @@ import { MessageInput } from '@/features/chat/components/MessageInput';
 import { Spinner } from '@/components/ui/Spinner';
 
 function TypingIndicator({ name }: { name: string }) {
+  const { t } = useTranslation();
   return (
     <div className="flex items-center gap-2 text-xs text-gray-400 px-2 pb-1">
       <span className="inline-flex gap-0.5">
@@ -19,13 +21,15 @@ function TypingIndicator({ name }: { name: string }) {
           />
         ))}
       </span>
-      <span>{name} está escribiendo...</span>
+      <span>{t('chat.isTyping', { name })}</span>
     </div>
   );
 }
 
 function DateSeparator({ date }: { date: string }) {
-  const label = new Date(date).toLocaleDateString([], {
+  const { i18n } = useTranslation();
+  const locale = i18n.language.startsWith('en') ? 'en-US' : 'es-ES';
+  const label = new Date(date).toLocaleDateString(locale, {
     weekday: 'long', day: 'numeric', month: 'long',
   });
   return (
@@ -43,6 +47,7 @@ function shouldShowDateSeparator(prev: string | undefined, curr: string): boolea
 }
 
 export function ChatPage() {
+  const { t } = useTranslation();
   const { user } = useAuth();
   const {
     messages,
@@ -61,14 +66,11 @@ export function ChatPage() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const topSentinelRef = useRef<HTMLDivElement>(null);
-  // Saved before loadMore fires — used by useLayoutEffect to restore scroll
   const prevScrollRef = useRef<{ scrollHeight: number; scrollTop: number } | null>(null);
-  // Prevents scroll-to-bottom when prepending older messages
   const isLoadingMoreRef = useRef(false);
 
   void user;
 
-  // Scroll to bottom on new messages or typing indicator
   useEffect(() => {
     if (isLoadingMoreRef.current) {
       isLoadingMoreRef.current = false;
@@ -77,7 +79,6 @@ export function ChatPage() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages.length, partnerIsTyping]);
 
-  // After older messages are prepended, restore scroll position so view doesn't jump
   useLayoutEffect(() => {
     const container = scrollContainerRef.current;
     const prev = prevScrollRef.current;
@@ -86,7 +87,6 @@ export function ChatPage() {
     prevScrollRef.current = null;
   }, [messages.length]);
 
-  // IntersectionObserver: trigger loadMore when sentinel enters view
   useEffect(() => {
     const sentinel = topSentinelRef.current;
     if (!sentinel || !hasMore) return;
@@ -116,54 +116,50 @@ export function ChatPage() {
     return (
       <div className="animate-fade-in flex flex-col items-center justify-center h-64 gap-4 text-center">
         <span className="text-4xl">💬</span>
-        <h1 className="text-xl font-bold text-gray-900">Chat</h1>
-        <p className="text-sm text-gray-500">Sin compañero vinculado todavía.</p>
+        <h1 className="text-xl font-bold text-gray-900">{t('chat.title')}</h1>
+        <p className="text-sm text-gray-500">{t('chat.noPartner')}</p>
       </div>
     );
   }
 
   const partnerName = partner?.displayName ?? '…';
   const partnerInitial = partnerName[0]?.toUpperCase() ?? '?';
+  const partnerLangLabel = partner
+    ? t('chat.learningLanguage', {
+        language: partner.languageLearning === 'english' ? t('partner.languageEnglish') : t('partner.languageSpanish'),
+      })
+    : '';
 
   return (
     <div
       className="-mx-6 flex flex-col overflow-hidden"
       style={{ height: 'calc(100dvh - 56px)', marginTop: '-1.5rem', marginBottom: '-1.5rem' }}
     >
-      {/* ── Header ── */}
       <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shrink-0">
         <div className="w-10 h-10 rounded-full bg-brand-ema text-white font-bold flex items-center justify-center text-sm shrink-0">
           {partnerInitial}
         </div>
         <div>
           <p className="font-semibold text-gray-900 dark:text-white">{partnerName}</p>
-          <p className="text-xs text-gray-400 dark:text-gray-500">
-            {partner
-              ? `Aprendiendo ${partner.languageLearning === 'english' ? 'inglés' : 'español'}`
-              : ''}
-          </p>
+          <p className="text-xs text-gray-400 dark:text-gray-500">{partnerLangLabel}</p>
         </div>
       </div>
 
-      {/* ── Messages list ── */}
       <div
         ref={scrollContainerRef}
         className="flex-1 overflow-y-auto px-4 py-4 space-y-2 bg-gray-50 dark:bg-gray-900"
       >
-        {/* Sentinel: triggers loadMore when scrolled into view */}
         <div ref={topSentinelRef} />
 
-        {/* Loading older messages */}
         {isFetchingMore && (
           <div className="flex justify-center py-3">
             <Spinner size="sm" />
           </div>
         )}
 
-        {/* No more history */}
         {!hasMore && !isLoading && messages.length > 0 && (
           <p className="text-center text-[10px] text-gray-300 py-2">
-            Inicio de la conversación
+            {t('chat.conversationStart')}
           </p>
         )}
 
@@ -174,18 +170,16 @@ export function ChatPage() {
         )}
 
         {isError && (
-          <p className="text-center text-sm text-red-500 py-8">
-            No se pudieron cargar los mensajes.
-          </p>
+          <p className="text-center text-sm text-red-500 py-8">{t('chat.loadError')}</p>
         )}
 
         {!isLoading && messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full gap-3 text-center py-16">
             <span className="text-4xl">👋</span>
             <p className="text-sm font-medium text-gray-700">
-              Empieza la conversación con {partnerName}
+              {t('chat.startConversation', { name: partnerName })}
             </p>
-            <p className="text-xs text-gray-400">Manda el primer mensaje</p>
+            <p className="text-xs text-gray-400">{t('chat.sendFirst')}</p>
           </div>
         )}
 
@@ -202,7 +196,6 @@ export function ChatPage() {
         <div ref={bottomRef} />
       </div>
 
-      {/* ── Input area ── */}
       {myId && partnerId && (
         <MessageInput
           onSend={(payload) => { void send(payload); }}

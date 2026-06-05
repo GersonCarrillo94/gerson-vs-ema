@@ -1,19 +1,18 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { useTranslation } from 'react-i18next';
 import { TOPIC_CATEGORIES, DURATION_OPTIONS } from '../types';
 import type { CreateInstantMeetingInput, DurationEstimate, TopicCategory } from '../types';
 
-const schema = z.object({
-  duration_estimate_minutes: z.number(),
-  is_video_call: z.boolean(),
-  topic: z.string().min(1, 'Escribe el tema').max(300),
-  topic_category: z.string(),
-  notes: z.string(),
-});
-
-type FormData = z.infer<typeof schema>;
+type FormData = {
+  duration_estimate_minutes: number;
+  is_video_call: boolean;
+  topic: string;
+  topic_category: string;
+  notes: string;
+};
 
 interface Props {
   onClose: () => void;
@@ -22,9 +21,18 @@ interface Props {
 }
 
 export function InstantMeetingModal({ onClose, onSubmit, minutesRemaining }: Props) {
+  const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedDuration, setSelectedDuration] = useState<DurationEstimate>(30);
   const [selectedCategory, setSelectedCategory] = useState<TopicCategory>('conversation');
+
+  const schema = useMemo(() => z.object({
+    duration_estimate_minutes: z.number(),
+    is_video_call: z.boolean(),
+    topic: z.string().min(1, t('meetings.createModal.topicRequired')).max(300),
+    topic_category: z.string(),
+    notes: z.string(),
+  }), [t]);
 
   const {
     register,
@@ -67,11 +75,10 @@ export function InstantMeetingModal({ onClose, onSubmit, minutesRemaining }: Pro
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
 
       <div className="relative w-full sm:max-w-lg bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto">
-        {/* Header */}
         <div className="sticky top-0 bg-white rounded-t-3xl sm:rounded-t-2xl px-5 pt-5 pb-3 border-b border-gray-100 flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-bold text-gray-900">⚡ Reunión ahora</h2>
-            <p className="text-xs text-gray-400 mt-0.5">Tu compañero recibirá una notificación para aceptar</p>
+            <h2 className="text-lg font-bold text-gray-900">{t('meetings.instantModal.title')}</h2>
+            <p className="text-xs text-gray-400 mt-0.5">{t('meetings.instantModal.subtitle')}</p>
           </div>
           <button
             onClick={onClose}
@@ -82,9 +89,8 @@ export function InstantMeetingModal({ onClose, onSubmit, minutesRemaining }: Pro
         </div>
 
         <form onSubmit={(e) => { void handleSubmit(handleFormSubmit)(e); }} className="p-5 space-y-5">
-          {/* Duración estimada */}
           <div>
-            <label className="block text-xs font-medium text-gray-600 mb-2">Duración estimada</label>
+            <label className="block text-xs font-medium text-gray-600 mb-2">{t('meetings.createModal.duration')}</label>
             <div className="flex gap-2 flex-wrap">
               {DURATION_OPTIONS.map((d) => (
                 <button
@@ -108,18 +114,17 @@ export function InstantMeetingModal({ onClose, onSubmit, minutesRemaining }: Pro
             {isVideoCall && (
               <p className={`text-xs mt-1.5 ${wouldExceedBudget ? 'text-red-500' : 'text-gray-400'}`}>
                 {wouldExceedBudget
-                  ? `⚠️ Supera el presupuesto disponible (${String(minutesRemaining)} min)`
-                  : `Usará ~${String(selectedDuration)} min del cronómetro (${String(minutesRemaining)} disponibles)`}
+                  ? t('meetings.createModal.budgetExceeded', { count: minutesRemaining })
+                  : t('meetings.createModal.willUse', { duration: selectedDuration, remaining: minutesRemaining })}
               </p>
             )}
           </div>
 
-          {/* Categoría */}
           <div>
-            <label className="block text-xs font-medium text-gray-600 mb-2">Categoría</label>
+            <label className="block text-xs font-medium text-gray-600 mb-2">{t('meetings.createModal.category')}</label>
             <div className="grid grid-cols-3 gap-2">
               {(Object.entries(TOPIC_CATEGORIES) as [TopicCategory, { label: string; emoji: string }][]).map(
-                ([key, { label, emoji }]) => (
+                ([key, { emoji }]) => (
                   <button
                     key={key}
                     type="button"
@@ -135,19 +140,18 @@ export function InstantMeetingModal({ onClose, onSubmit, minutesRemaining }: Pro
                     ].join(' ')}
                   >
                     <span className="text-lg">{emoji}</span>
-                    <span>{label}</span>
+                    <span>{t(`meetings.categories.${key}`)}</span>
                   </button>
                 ),
               )}
             </div>
           </div>
 
-          {/* Tema */}
           <div>
-            <label className="block text-xs font-medium text-gray-600 mb-1">Tema de estudio</label>
+            <label className="block text-xs font-medium text-gray-600 mb-1">{t('meetings.createModal.topic')}</label>
             <input
               type="text"
-              placeholder='Ej: "Practicar conversación libre"'
+              placeholder={t('meetings.instantModal.topicPlaceholder')}
               {...register('topic')}
               className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
             />
@@ -156,9 +160,8 @@ export function InstantMeetingModal({ onClose, onSubmit, minutesRemaining }: Pro
             )}
           </div>
 
-          {/* Videollamada */}
           <div>
-            <label className="block text-xs font-medium text-gray-600 mb-2">Modalidad</label>
+            <label className="block text-xs font-medium text-gray-600 mb-2">{t('meetings.createModal.modality')}</label>
             <label className="flex items-center gap-2 cursor-pointer select-none">
               <input
                 type="checkbox"
@@ -166,42 +169,40 @@ export function InstantMeetingModal({ onClose, onSubmit, minutesRemaining }: Pro
                 className="w-4 h-4 accent-violet-600"
               />
               <span className="text-sm text-gray-700">
-                📹 Videollamada <span className="text-gray-400 text-xs">(Daily.co)</span>
+                {t('meetings.createModal.videoCall')} <span className="text-gray-400 text-xs">(Daily.co)</span>
               </span>
             </label>
             {isVideoCall && wouldExceedBudget && (
               <div className="mt-2 rounded-xl bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-600">
-                Sin minutos suficientes. Reduce la duración o desmarca la videollamada.
+                {t('meetings.instantModal.noMinutes')}
               </div>
             )}
           </div>
 
-          {/* Notas */}
           <div>
-            <label className="block text-xs font-medium text-gray-600 mb-1">Notas (opcional)</label>
+            <label className="block text-xs font-medium text-gray-600 mb-1">{t('meetings.createModal.notes')}</label>
             <textarea
               rows={2}
-              placeholder="Recursos, material a preparar..."
+              placeholder={t('meetings.createModal.notesPlaceholder')}
               {...register('notes')}
               className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent resize-none"
             />
           </div>
 
-          {/* Botones */}
           <div className="flex gap-3 pt-1">
             <button
               type="button"
               onClick={onClose}
               className="flex-1 rounded-xl border border-gray-200 py-3 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
             >
-              Cancelar
+              {t('common.cancel')}
             </button>
             <button
               type="submit"
               disabled={isSubmitting || (isVideoCall && wouldExceedBudget)}
               className="flex-1 rounded-xl bg-violet-600 py-3 text-sm font-semibold text-white hover:bg-violet-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
-              {isSubmitting ? 'Enviando...' : '⚡ Proponer ahora'}
+              {isSubmitting ? t('meetings.createModal.submitting') : t('meetings.instantModal.submitButton')}
             </button>
           </div>
         </form>

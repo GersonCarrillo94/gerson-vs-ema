@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/features/auth/hooks/useAuth';
 import { useAuthStore } from '@/store/authStore';
 import { fetchCurrentProfile } from '@/features/auth/services/authService';
@@ -12,21 +13,22 @@ import {
 import { Button } from '@/components/ui/Button';
 import { Spinner } from '@/components/ui/Spinner';
 
-const METHODS: { key: SearchMethod; label: string; placeholder: string; icon: string }[] = [
-  { key: 'name',  label: 'Nombre',    placeholder: 'Buscar por nombre de usuario…', icon: '👤' },
-  { key: 'email', label: 'Email',     placeholder: 'Buscar por correo electrónico…', icon: '✉️' },
-  { key: 'phone', label: 'Teléfono',  placeholder: 'Número exacto (ej. +521234567890)', icon: '📱' },
-];
-
-const LANG_LABEL: Record<string, string> = {
-  english: 'Aprende inglés 🇺🇸',
-  spanish: 'Aprende español 🇲🇽',
-};
-
 export function LinkPartnerPage() {
+  const { t } = useTranslation();
   const { user } = useAuth();
   const { setUser } = useAuthStore();
   const navigate = useNavigate();
+
+  const METHODS: { key: SearchMethod; label: string; placeholder: string; icon: string }[] = [
+    { key: 'name',  label: t('auth.linkPartner.methodName'),  placeholder: t('auth.linkPartner.searchByName'),  icon: '👤' },
+    { key: 'email', label: t('auth.linkPartner.methodEmail'), placeholder: t('auth.linkPartner.searchByEmail'), icon: '✉️' },
+    { key: 'phone', label: t('auth.linkPartner.methodPhone'), placeholder: t('auth.linkPartner.searchByPhone'), icon: '📱' },
+  ];
+
+  const LANG_LABEL: Record<string, string> = {
+    english: t('auth.linkPartner.learnEnglishLabel'),
+    spanish: t('auth.linkPartner.learnSpanishLabel'),
+  };
 
   const [method, setMethod]           = useState<SearchMethod>('name');
   const [query, setQuery]             = useState('');
@@ -38,12 +40,10 @@ export function LinkPartnerPage() {
   const [linkError, setLinkError]     = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Si ya tiene compañero, redirigir al dashboard
   useEffect(() => {
     if (user?.partner_id) navigate('/', { replace: true });
   }, [user, navigate]);
 
-  // Limpiar búsqueda al cambiar de método
   function handleMethodChange(m: SearchMethod) {
     setMethod(m);
     setQuery('');
@@ -65,7 +65,7 @@ export function LinkPartnerPage() {
       setResults(found);
       setSearched(true);
     } catch {
-      setSearchError('No se pudo realizar la búsqueda. Intenta de nuevo.');
+      setSearchError(t('auth.linkPartner.searchError'));
       setSearched(true);
     } finally {
       setIsSearching(false);
@@ -77,12 +77,11 @@ export function LinkPartnerPage() {
     setLinkError(null);
     try {
       await linkPartner(partner.id);
-      // Refrescar perfil para que partner_id quede en el store
       const updated = await fetchCurrentProfile();
       setUser(updated);
       navigate('/', { replace: true });
     } catch (err) {
-      setLinkError(err instanceof Error ? err.message : 'Error al vincular. Intenta de nuevo.');
+      setLinkError(err instanceof Error ? err.message : t('auth.linkPartner.linkError'));
       setLinkingId(null);
     }
   }
@@ -90,25 +89,21 @@ export function LinkPartnerPage() {
   return (
     <div className="flex min-h-screen items-start justify-center bg-gray-50 px-4 py-12">
       <div className="w-full max-w-lg animate-fade-in">
-        {/* Logo */}
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold">
             <span className="text-brand-gerson">Gerson</span>
             <span className="mx-2 text-gray-400">vs</span>
             <span className="text-brand-ema">Ema</span>
           </h1>
-          <p className="mt-2 text-sm text-gray-500">Aprende juntos, compite juntos</p>
+          <p className="mt-2 text-sm text-gray-500">{t('common.tagline')}</p>
         </div>
 
         <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-100">
           <div className="mb-6">
-            <h2 className="text-xl font-semibold text-gray-900">Vincula a tu compañero</h2>
-            <p className="mt-1 text-sm text-gray-500">
-              Busca a la persona con quien quieres aprender y compite.
-            </p>
+            <h2 className="text-xl font-semibold text-gray-900">{t('auth.linkPartner.title')}</h2>
+            <p className="mt-1 text-sm text-gray-500">{t('auth.linkPartner.subtitle')}</p>
           </div>
 
-          {/* Tabs de método */}
           <div className="mb-5 flex gap-2">
             {METHODS.map((m) => (
               <button
@@ -127,7 +122,6 @@ export function LinkPartnerPage() {
             ))}
           </div>
 
-          {/* Búsqueda */}
           <div className="flex gap-2">
             <input
               ref={inputRef}
@@ -144,11 +138,10 @@ export function LinkPartnerPage() {
               disabled={!query.trim() || isSearching}
               className="shrink-0"
             >
-              Buscar
+              {t('auth.linkPartner.searchButton')}
             </Button>
           </div>
 
-          {/* Resultados */}
           <div className="mt-5 space-y-3">
             {isSearching && (
               <div className="flex justify-center py-8">
@@ -164,12 +157,10 @@ export function LinkPartnerPage() {
               <div className="rounded-lg bg-gray-50 px-4 py-6 text-center">
                 <p className="text-sm text-gray-500">
                   {method === 'phone'
-                    ? 'No se encontró ningún usuario con ese número.'
-                    : 'No se encontraron usuarios disponibles con esa búsqueda.'}
+                    ? t('auth.linkPartner.noResultsPhone')
+                    : t('auth.linkPartner.noResults')}
                 </p>
-                <p className="mt-1 text-xs text-gray-400">
-                  Solo aparecen usuarios sin compañero asignado.
-                </p>
+                <p className="mt-1 text-xs text-gray-400">{t('auth.linkPartner.noResultsNote')}</p>
               </div>
             )}
 
@@ -178,20 +169,15 @@ export function LinkPartnerPage() {
                 key={r.id}
                 className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3 shadow-sm"
               >
-                {/* Avatar */}
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-gerson/15 text-sm font-bold text-brand-gerson">
                   {r.display_name.charAt(0).toUpperCase()}
                 </div>
-
-                {/* Info */}
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-semibold text-gray-900">{r.display_name}</p>
                   <p className="text-xs text-gray-400">
                     {LANG_LABEL[r.language_learning] ?? r.language_learning}
                   </p>
                 </div>
-
-                {/* Acción */}
                 <Button
                   size="sm"
                   onClick={() => void handleLink(r)}
@@ -199,7 +185,7 @@ export function LinkPartnerPage() {
                   disabled={linkingId !== null}
                   className="shrink-0"
                 >
-                  Vincular
+                  {t('auth.linkPartner.linkButton')}
                 </Button>
               </div>
             ))}
@@ -210,16 +196,15 @@ export function LinkPartnerPage() {
           </div>
         </div>
 
-        {/* Logout */}
         <p className="mt-6 text-center text-xs text-gray-400">
-          Sesión iniciada como{' '}
+          {t('auth.linkPartner.sessionAs')}{' '}
           <span className="font-medium text-gray-600">{user?.display_name}</span>
           {' · '}
           <button
             onClick={() => { navigate('/login'); }}
             className="text-brand-gerson hover:underline"
           >
-            Cambiar cuenta
+            {t('auth.linkPartner.changeAccount')}
           </button>
         </p>
       </div>

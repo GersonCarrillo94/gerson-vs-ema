@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { useAuthStore } from '@/store/authStore';
 import { loginUser, logoutUser, registerUser } from '../services/authService';
 import type { LoginPayload, RegisterPayload } from '../types';
+import i18n from '@/i18n';
 
 /**
  * Hook principal de autenticación.
@@ -23,6 +24,7 @@ export function useAuth() {
       try {
         const profile = await loginUser(payload);
         setUser(profile);
+        void i18n.changeLanguage(profile.preferred_language);
       } finally {
         setLoading(false);
       }
@@ -36,6 +38,7 @@ export function useAuth() {
       try {
         const profile = await registerUser(payload);
         setUser(profile);
+        void i18n.changeLanguage(profile.preferred_language);
       } finally {
         setLoading(false);
       }

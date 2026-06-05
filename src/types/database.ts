@@ -36,6 +36,7 @@ export type Database = {
           partner_id: string | null;
           avatar_url: string | null;
           phone: string | null;
+          preferred_language: 'es' | 'en';
           total_score: number;
           current_streak: number;
           longest_streak: number;
@@ -51,6 +52,7 @@ export type Database = {
           partner_id?: string | null;
           avatar_url?: string | null;
           phone?: string | null;
+          preferred_language?: 'es' | 'en';
           total_score?: number;
           current_streak?: number;
           longest_streak?: number;
@@ -66,6 +68,7 @@ export type Database = {
           partner_id?: string | null;
           avatar_url?: string | null;
           phone?: string | null;
+          preferred_language?: 'es' | 'en';
           total_score?: number;
           current_streak?: number;
           longest_streak?: number;

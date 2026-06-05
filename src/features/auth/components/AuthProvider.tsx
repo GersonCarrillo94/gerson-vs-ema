@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useAuthStore } from '@/store/authStore';
 import { fetchCurrentProfile } from '../services/authService';
+import i18n from '@/i18n';
 
 /**
  * Inicializa la sesión de autenticación al arrancar la app.
@@ -34,6 +35,9 @@ export function AuthProvider() {
       void fetchCurrentProfile()
         .then((profile) => {
           setUser(profile ?? null);
+          if (profile?.preferred_language) {
+            void i18n.changeLanguage(profile.preferred_language);
+          }
         })
         .catch(() => {
           setUser(null);
